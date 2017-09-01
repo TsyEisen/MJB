@@ -12,6 +12,7 @@
 
 @interface SYTabBarViewController ()
 @property (nonatomic, strong) NSArray *childVCModels;
+@property (nonatomic, strong) UIImageView *line;
 @end
 
 @implementation SYTabBarViewController
@@ -19,8 +20,12 @@
 - (instancetype)init {
     if (self = [super init]) {
         
-//        self.tabBar.barTintColor = [UIColor blackColor];
+        self.tabBar.barTintColor = [UIColor whiteColor];
         self.tabBar.tintColor = [UIColor sy_colorWithRGB:0xE73859];
+        self.tabBar.backgroundColor = [UIColor whiteColor];
+//        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 0.5)];
+//        line.backgroundColor = [UIColor lineDefaultColor];
+        [self.tabBar addSubview:self.line];
         
         for (SYChildVCModel *model in self.childVCModels) {
             SYBaseViewController *baseVc = [(SYBaseViewController *)[NSClassFromString(model.className) alloc] initWithNibName:model.className bundle:nil];
@@ -48,6 +53,14 @@
         _childVCModels = [SYChildVCModel models];
     }
     return _childVCModels;
+}
+
+- (UIImageView *)line {
+    if (_line == nil) {
+        _line = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 2)];
+        _line.image = [UIImage imageNamed:@"tab_line"];
+    }
+    return _line;
 }
 
 @end

@@ -6,7 +6,7 @@
 		<key>className</key>
 		<string>SYHomeViewController</string>
 		<key>title</key>
-		<string>首页</string>
+		<string>Home</string>
 		<key>imageName</key>
 		<string>tab_home</string>
 		<key>selectedImageName</key>
@@ -16,7 +16,7 @@
 		<key>className</key>
 		<string>SYDiscoverViewController</string>
 		<key>title</key>
-		<string>发现</string>
+		<string>Discover</string>
 		<key>imageName</key>
 		<string>tab_discover</string>
 		<key>selectedImageName</key>
@@ -26,7 +26,7 @@
 		<key>className</key>
 		<string>SYMineViewController</string>
 		<key>title</key>
-		<string>我的</string>
+		<string>Mine</string>
 		<key>imageName</key>
 		<string>tab_mine</string>
 		<key>selectedImageName</key>

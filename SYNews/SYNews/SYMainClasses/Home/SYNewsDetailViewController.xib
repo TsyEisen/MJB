@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SYHomeViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SYNewsDetailViewController">
             <connections>
-                <outlet property="scrollView" destination="F9H-tY-yFi" id="EjQ-eG-CBs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="bfG-YC-aKi" id="Ag2-9F-0Hg"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,19 +20,20 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F9H-tY-yFi">
-                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfG-YC-aKi">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
-                        <outlet property="delegate" destination="-1" id="WK4-FU-x0h"/>
+                        <outlet property="delegate" destination="-1" id="oC1-7S-mbN"/>
                     </connections>
-                </scrollView>
+                </webView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="F9H-tY-yFi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TGM-Ya-xjl"/>
-                <constraint firstItem="F9H-tY-yFi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="gXM-2u-RtC"/>
-                <constraint firstAttribute="trailing" secondItem="F9H-tY-yFi" secondAttribute="trailing" id="hwy-A1-Ew6"/>
-                <constraint firstAttribute="bottom" secondItem="F9H-tY-yFi" secondAttribute="bottom" id="lxO-4D-F6m"/>
+                <constraint firstItem="bfG-YC-aKi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1zs-s8-E92"/>
+                <constraint firstAttribute="trailing" secondItem="bfG-YC-aKi" secondAttribute="trailing" id="hr3-ih-FrE"/>
+                <constraint firstItem="bfG-YC-aKi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pb7-vS-MKT"/>
+                <constraint firstAttribute="bottom" secondItem="bfG-YC-aKi" secondAttribute="bottom" id="qHW-iC-5kp"/>
             </constraints>
         </view>
     </objects>

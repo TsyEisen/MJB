@@ -19,4 +19,7 @@
 #import "UIView+SYExtension.h"
 #import "SYWebViewController.h"
 #import "MJExtension.h"
+#import "APIRequest+Network.h"
+#import "UITableView+SYExtension.h"
+#define DefaultPlaceHolder [UIImage imageNamed:@"placeHolder"]
 #endif /* PrefixHeader_pch */

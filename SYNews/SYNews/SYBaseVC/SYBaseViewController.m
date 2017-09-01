@@ -26,6 +26,10 @@
         barItem.tintColor = color;
         self.navigationItem.leftBarButtonItem = barItem;
     }
+    
+    self.extendedLayoutIncludesOpaqueBars = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.edgesForExtendedLayout = UIRectEdgeBottom | UIRectEdgeLeft | UIRectEdgeRight;
 }
 
 - (void)backButtonClicked{
@@ -34,7 +38,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

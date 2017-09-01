@@ -9,9 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SYHomeViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SYHomeNewsViewController">
             <connections>
-                <outlet property="scrollView" destination="F9H-tY-yFi" id="EjQ-eG-CBs"/>
+                <outlet property="tableView" destination="FtM-Yr-Tyy" id="et1-xp-Me2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,19 +20,21 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F9H-tY-yFi">
-                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FtM-Yr-Tyy">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="delegate" destination="-1" id="WK4-FU-x0h"/>
+                        <outlet property="dataSource" destination="-1" id="gi0-DX-lIN"/>
+                        <outlet property="delegate" destination="-1" id="uXb-kT-17f"/>
                     </connections>
-                </scrollView>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="F9H-tY-yFi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TGM-Ya-xjl"/>
-                <constraint firstItem="F9H-tY-yFi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="gXM-2u-RtC"/>
-                <constraint firstAttribute="trailing" secondItem="F9H-tY-yFi" secondAttribute="trailing" id="hwy-A1-Ew6"/>
-                <constraint firstAttribute="bottom" secondItem="F9H-tY-yFi" secondAttribute="bottom" id="lxO-4D-F6m"/>
+                <constraint firstAttribute="bottom" secondItem="FtM-Yr-Tyy" secondAttribute="bottom" id="53W-1X-geZ"/>
+                <constraint firstItem="FtM-Yr-Tyy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ctt-PA-b2n"/>
+                <constraint firstItem="FtM-Yr-Tyy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QfV-jp-rQt"/>
+                <constraint firstAttribute="trailing" secondItem="FtM-Yr-Tyy" secondAttribute="trailing" id="rX9-eq-9q3"/>
             </constraints>
         </view>
     </objects>

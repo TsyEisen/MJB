@@ -62,6 +62,19 @@
 		F03B91C21F54FF0F0033A3B5 /* SYMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F03B91C01F54FF0F0033A3B5 /* SYMineViewController.xib */; };
 		F03B91C71F55025A0033A3B5 /* SYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B91C51F55025A0033A3B5 /* SYWebViewController.m */; };
 		F03B91C81F55025A0033A3B5 /* SYWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F03B91C61F55025A0033A3B5 /* SYWebViewController.xib */; };
+		F03B91CC1F553D730033A3B5 /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B91CB1F553D730033A3B5 /* APIRequest.m */; };
+		F03B91CF1F553E570033A3B5 /* APIRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B91CE1F553E570033A3B5 /* APIRequestOperationManager.m */; };
+		F03B91D21F553F1A0033A3B5 /* APIRequest+Network.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B91D11F553F1A0033A3B5 /* APIRequest+Network.m */; };
+		F03B91DA1F5557180033A3B5 /* SYHomeNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B91D91F5557180033A3B5 /* SYHomeNewsModel.m */; };
+		F03B91DE1F5557F70033A3B5 /* SYHomeNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B91DC1F5557F70033A3B5 /* SYHomeNewsCell.m */; };
+		F03B91DF1F5557F70033A3B5 /* SYHomeNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F03B91DD1F5557F70033A3B5 /* SYHomeNewsCell.xib */; };
+		F03B91E21F555B2B0033A3B5 /* UITableView+SYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B91E11F555B2B0033A3B5 /* UITableView+SYExtension.m */; };
+		F03B91E61F555ECA0033A3B5 /* SYSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B91E51F555ECA0033A3B5 /* SYSwitchView.m */; };
+		F03B91E91F555ED90033A3B5 /* SYCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B91E81F555ED90033A3B5 /* SYCarouselView.m */; };
+		F03B91ED1F5566800033A3B5 /* SYHomeNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B91EB1F5566800033A3B5 /* SYHomeNewsViewController.m */; };
+		F03B91EE1F5566800033A3B5 /* SYHomeNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F03B91EC1F5566800033A3B5 /* SYHomeNewsViewController.xib */; };
+		F03B91F21F556BED0033A3B5 /* SYNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B91F01F556BED0033A3B5 /* SYNewsDetailViewController.m */; };
+		F03B91F31F556BED0033A3B5 /* SYNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F03B91F11F556BED0033A3B5 /* SYNewsDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -173,6 +186,29 @@
 		F03B91C41F55025A0033A3B5 /* SYWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYWebViewController.h; sourceTree = "<group>"; };
 		F03B91C51F55025A0033A3B5 /* SYWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYWebViewController.m; sourceTree = "<group>"; };
 		F03B91C61F55025A0033A3B5 /* SYWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYWebViewController.xib; sourceTree = "<group>"; };
+		F03B91CA1F553D730033A3B5 /* APIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRequest.h; sourceTree = "<group>"; };
+		F03B91CB1F553D730033A3B5 /* APIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRequest.m; sourceTree = "<group>"; };
+		F03B91CD1F553E570033A3B5 /* APIRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRequestOperationManager.h; sourceTree = "<group>"; };
+		F03B91CE1F553E570033A3B5 /* APIRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRequestOperationManager.m; sourceTree = "<group>"; };
+		F03B91D01F553F1A0033A3B5 /* APIRequest+Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "APIRequest+Network.h"; sourceTree = "<group>"; };
+		F03B91D11F553F1A0033A3B5 /* APIRequest+Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "APIRequest+Network.m"; sourceTree = "<group>"; };
+		F03B91D81F5557180033A3B5 /* SYHomeNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeNewsModel.h; sourceTree = "<group>"; };
+		F03B91D91F5557180033A3B5 /* SYHomeNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeNewsModel.m; sourceTree = "<group>"; };
+		F03B91DB1F5557F70033A3B5 /* SYHomeNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeNewsCell.h; sourceTree = "<group>"; };
+		F03B91DC1F5557F70033A3B5 /* SYHomeNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeNewsCell.m; sourceTree = "<group>"; };
+		F03B91DD1F5557F70033A3B5 /* SYHomeNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYHomeNewsCell.xib; sourceTree = "<group>"; };
+		F03B91E01F555B2B0033A3B5 /* UITableView+SYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SYExtension.h"; sourceTree = "<group>"; };
+		F03B91E11F555B2B0033A3B5 /* UITableView+SYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SYExtension.m"; sourceTree = "<group>"; };
+		F03B91E41F555ECA0033A3B5 /* SYSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSwitchView.h; sourceTree = "<group>"; };
+		F03B91E51F555ECA0033A3B5 /* SYSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSwitchView.m; sourceTree = "<group>"; };
+		F03B91E71F555ED90033A3B5 /* SYCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCarouselView.h; sourceTree = "<group>"; };
+		F03B91E81F555ED90033A3B5 /* SYCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYCarouselView.m; sourceTree = "<group>"; };
+		F03B91EA1F5566800033A3B5 /* SYHomeNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHomeNewsViewController.h; sourceTree = "<group>"; };
+		F03B91EB1F5566800033A3B5 /* SYHomeNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHomeNewsViewController.m; sourceTree = "<group>"; };
+		F03B91EC1F5566800033A3B5 /* SYHomeNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYHomeNewsViewController.xib; sourceTree = "<group>"; };
+		F03B91EF1F556BED0033A3B5 /* SYNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNewsDetailViewController.h; sourceTree = "<group>"; };
+		F03B91F01F556BED0033A3B5 /* SYNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNewsDetailViewController.m; sourceTree = "<group>"; };
+		F03B91F11F556BED0033A3B5 /* SYNewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYNewsDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +243,7 @@
 			children = (
 				F03B91A51F54FDE10033A3B5 /* AppDelegate.h */,
 				F03B91A61F54FDE10033A3B5 /* AppDelegate.m */,
+				F03B91C91F5538C50033A3B5 /* NetworkTools */,
 				F03B91A81F54FE0F0033A3B5 /* SYMainClasses */,
 				F03B91091F54FDC60033A3B5 /* SYBaseVC */,
 				F03B91151F54FDD00033A3B5 /* Vender */,
@@ -247,6 +284,7 @@
 		F03B91151F54FDD00033A3B5 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				F03B91E31F555ECA0033A3B5 /* SYComponent */,
 				F03B91161F54FDD00033A3B5 /* AFNetworking */,
 				F03B91301F54FDD00033A3B5 /* MJExtension */,
 				F03B91461F54FDD00033A3B5 /* SDWebImage */,
@@ -361,6 +399,8 @@
 		F03B916F1F54FDD00033A3B5 /* SYCategory */ = {
 			isa = PBXGroup;
 			children = (
+				F03B91E01F555B2B0033A3B5 /* UITableView+SYExtension.h */,
+				F03B91E11F555B2B0033A3B5 /* UITableView+SYExtension.m */,
 				F03B91701F54FDD00033A3B5 /* SYAttributedStringModel.h */,
 				F03B91711F54FDD00033A3B5 /* SYAttributedStringModel.m */,
 				F03B91721F54FDD00033A3B5 /* UIColor+SYExtension.h */,
@@ -415,6 +455,12 @@
 				F03B91B91F54FEF30033A3B5 /* SYHomeViewController.h */,
 				F03B91BA1F54FEF30033A3B5 /* SYHomeViewController.m */,
 				F03B91BB1F54FEF30033A3B5 /* SYHomeViewController.xib */,
+				F03B91EA1F5566800033A3B5 /* SYHomeNewsViewController.h */,
+				F03B91EB1F5566800033A3B5 /* SYHomeNewsViewController.m */,
+				F03B91EC1F5566800033A3B5 /* SYHomeNewsViewController.xib */,
+				F03B91EF1F556BED0033A3B5 /* SYNewsDetailViewController.h */,
+				F03B91F01F556BED0033A3B5 /* SYNewsDetailViewController.m */,
+				F03B91F11F556BED0033A3B5 /* SYNewsDetailViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -422,6 +468,9 @@
 		F03B91AC1F54FEA40033A3B5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F03B91DB1F5557F70033A3B5 /* SYHomeNewsCell.h */,
+				F03B91DC1F5557F70033A3B5 /* SYHomeNewsCell.m */,
+				F03B91DD1F5557F70033A3B5 /* SYHomeNewsCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -442,6 +491,40 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F03B91C91F5538C50033A3B5 /* NetworkTools */ = {
+			isa = PBXGroup;
+			children = (
+				F03B91D71F5556F70033A3B5 /* Models */,
+				F03B91CA1F553D730033A3B5 /* APIRequest.h */,
+				F03B91CB1F553D730033A3B5 /* APIRequest.m */,
+				F03B91CD1F553E570033A3B5 /* APIRequestOperationManager.h */,
+				F03B91CE1F553E570033A3B5 /* APIRequestOperationManager.m */,
+				F03B91D01F553F1A0033A3B5 /* APIRequest+Network.h */,
+				F03B91D11F553F1A0033A3B5 /* APIRequest+Network.m */,
+			);
+			path = NetworkTools;
+			sourceTree = "<group>";
+		};
+		F03B91D71F5556F70033A3B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F03B91D81F5557180033A3B5 /* SYHomeNewsModel.h */,
+				F03B91D91F5557180033A3B5 /* SYHomeNewsModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F03B91E31F555ECA0033A3B5 /* SYComponent */ = {
+			isa = PBXGroup;
+			children = (
+				F03B91E71F555ED90033A3B5 /* SYCarouselView.h */,
+				F03B91E81F555ED90033A3B5 /* SYCarouselView.m */,
+				F03B91E41F555ECA0033A3B5 /* SYSwitchView.h */,
+				F03B91E51F555ECA0033A3B5 /* SYSwitchView.m */,
+			);
+			path = SYComponent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,11 +587,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F03B91EE1F5566800033A3B5 /* SYHomeNewsViewController.xib in Resources */,
 				F03B91BD1F54FEF30033A3B5 /* SYHomeViewController.xib in Resources */,
+				F03B91F31F556BED0033A3B5 /* SYNewsDetailViewController.xib in Resources */,
 				F03B91C81F55025A0033A3B5 /* SYWebViewController.xib in Resources */,
 				F03B91021F54FD700033A3B5 /* LaunchScreen.storyboard in Resources */,
 				F03B90FF1F54FD700033A3B5 /* Assets.xcassets in Resources */,
 				F03B91141F54FDC60033A3B5 /* SYViewControllerData.plist in Resources */,
+				F03B91DF1F5557F70033A3B5 /* SYHomeNewsCell.xib in Resources */,
 				F03B91B81F54FEE60033A3B5 /* SYDiscoverViewController.xib in Resources */,
 				F03B91C21F54FF0F0033A3B5 /* SYMineViewController.xib in Resources */,
 			);
@@ -521,6 +607,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F03B91E61F555ECA0033A3B5 /* SYSwitchView.m in Sources */,
 				F03B917B1F54FDD00033A3B5 /* AFSecurityPolicy.m in Sources */,
 				F03B91B71F54FEE60033A3B5 /* SYDiscoverViewController.m in Sources */,
 				F03B91911F54FDD00033A3B5 /* SDImageCache.m in Sources */,
@@ -528,9 +615,11 @@
 				F03B917D1F54FDD00033A3B5 /* AFURLResponseSerialization.m in Sources */,
 				F03B91A01F54FDD00033A3B5 /* UIView+WebCacheOperation.m in Sources */,
 				F03B918F1F54FDD00033A3B5 /* NSData+ImageContentType.m in Sources */,
+				F03B91DA1F5557180033A3B5 /* SYHomeNewsModel.m in Sources */,
 				F03B90F41F54FD6F0033A3B5 /* main.m in Sources */,
 				F03B91961F54FDD00033A3B5 /* SDWebImageDownloaderOperation.m in Sources */,
 				F03B91981F54FDD00033A3B5 /* SDWebImagePrefetcher.m in Sources */,
+				F03B91DE1F5557F70033A3B5 /* SYHomeNewsCell.m in Sources */,
 				F03B91A11F54FDD00033A3B5 /* SYAttributedStringModel.m in Sources */,
 				F03B91881F54FDD00033A3B5 /* MJPropertyType.m in Sources */,
 				F03B918C1F54FDD00033A3B5 /* NSObject+MJProperty.m in Sources */,
@@ -541,6 +630,7 @@
 				F03B91991F54FDD00033A3B5 /* UIButton+WebCache.m in Sources */,
 				F03B919A1F54FDD00033A3B5 /* UIImage+GIF.m in Sources */,
 				F03B91A71F54FDE10033A3B5 /* AppDelegate.m in Sources */,
+				F03B91CF1F553E570033A3B5 /* APIRequestOperationManager.m in Sources */,
 				F03B917E1F54FDD00033A3B5 /* AFURLSessionManager.m in Sources */,
 				F03B91871F54FDD00033A3B5 /* MJPropertyKey.m in Sources */,
 				F03B91841F54FDD00033A3B5 /* MJExtensionConst.m in Sources */,
@@ -557,17 +647,23 @@
 				F03B91861F54FDD00033A3B5 /* MJProperty.m in Sources */,
 				F03B91901F54FDD00033A3B5 /* NSImage+WebCache.m in Sources */,
 				F03B917C1F54FDD00033A3B5 /* AFURLRequestSerialization.m in Sources */,
+				F03B91E91F555ED90033A3B5 /* SYCarouselView.m in Sources */,
 				F03B919E1F54FDD00033A3B5 /* UIImageView+WebCache.m in Sources */,
+				F03B91CC1F553D730033A3B5 /* APIRequest.m in Sources */,
 				F03B91C11F54FF0F0033A3B5 /* SYMineViewController.m in Sources */,
 				F03B91951F54FDD00033A3B5 /* SDWebImageDownloader.m in Sources */,
 				F03B91921F54FDD00033A3B5 /* SDImageCacheConfig.m in Sources */,
 				F03B91BC1F54FEF30033A3B5 /* SYHomeViewController.m in Sources */,
 				F03B918E1F54FDD00033A3B5 /* MKAnnotationView+WebCache.m in Sources */,
+				F03B91ED1F5566800033A3B5 /* SYHomeNewsViewController.m in Sources */,
+				F03B91E21F555B2B0033A3B5 /* UITableView+SYExtension.m in Sources */,
 				F03B91C71F55025A0033A3B5 /* SYWebViewController.m in Sources */,
 				F03B91941F54FDD00033A3B5 /* SDWebImageDecoder.m in Sources */,
+				F03B91D21F553F1A0033A3B5 /* APIRequest+Network.m in Sources */,
 				F03B91931F54FDD00033A3B5 /* SDWebImageCompat.m in Sources */,
 				F03B919D1F54FDD00033A3B5 /* UIImageView+HighlightedWebCache.m in Sources */,
 				F03B918D1F54FDD00033A3B5 /* NSString+MJExtension.m in Sources */,
+				F03B91F21F556BED0033A3B5 /* SYNewsDetailViewController.m in Sources */,
 				F03B91851F54FDD00033A3B5 /* MJFoundation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

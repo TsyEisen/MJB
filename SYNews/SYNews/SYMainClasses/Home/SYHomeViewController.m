@@ -7,8 +7,12 @@
 //
 
 #import "SYHomeViewController.h"
+#import "SYSwitchView.h"
+#import "SYHomeNewsViewController.h"
 
-@interface SYHomeViewController ()
+@interface SYHomeViewController ()<UIScrollViewDelegate>
+@property (nonatomic, strong) SYSwitchView *switchView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -16,22 +20,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.view addSubview:self.switchView];
+    for (int i = 0; i < 7; i++) {
+        SYHomeNewsViewController *newsVc = [SYHomeNewsViewController instancetFromNib];
+        newsVc.section = i;
+        newsVc.view.frame = CGRectMake(ScreenW * i, 0, ScreenW, ScreenH - 88);
+        [self addChildViewController:newsVc];
+        [self.scrollView addSubview:newsVc.view];
+    }
+    self.scrollView.contentSize = CGSizeMake(ScreenW * 7, 0);
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)scrollToIndex:(NSInteger)index {
+    [self.scrollView setContentOffset:CGPointMake(ScreenW *index, 0) animated:YES];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSInteger index = (NSInteger)(scrollView.contentOffset.x/ScreenW);
+    [self.switchView setIndex:index];
 }
-*/
+
+- (SYSwitchView *)switchView {
+    if (_switchView == nil) {
+        _switchView = [[SYSwitchView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 44)];
+        __weak typeof(self) weakSelf = self;
+        [_switchView setSelectBlock:^(NSInteger index){
+            [weakSelf scrollToIndex:index];
+        }];
+    }
+    return _switchView;
+}
 
 @end
