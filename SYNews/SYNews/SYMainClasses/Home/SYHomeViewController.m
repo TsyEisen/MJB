@@ -29,6 +29,7 @@
         [self.scrollView addSubview:newsVc.view];
     }
     self.scrollView.contentSize = CGSizeMake(ScreenW * 7, 0);
+    self.edgesForExtendedLayout = UIRectEdgeBottom | UIRectEdgeLeft | UIRectEdgeRight;
 }
 
 - (void)scrollToIndex:(NSInteger)index {

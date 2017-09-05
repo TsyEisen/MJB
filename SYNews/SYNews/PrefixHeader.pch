@@ -21,5 +21,7 @@
 #import "MJExtension.h"
 #import "APIRequest+Network.h"
 #import "UITableView+SYExtension.h"
+#import "MBProgressHUD+Add.h"
+
 #define DefaultPlaceHolder [UIImage imageNamed:@"placeHolder"]
 #endif /* PrefixHeader_pch */

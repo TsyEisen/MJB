@@ -60,6 +60,6 @@
 }
 
 + (UIColor *)appMainColor {
-    return [self sy_colorWithRGB:0xE73859];
+    return [self sy_colorWithRGB:0xEF1A29];
 }
 @end

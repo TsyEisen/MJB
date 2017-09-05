@@ -16,14 +16,12 @@
 //NSString *const kBaseUrl = @"http://api.miaocloud.cn:8081";
 //#endif
 
-NSString *const kBaseUrl = @"http://61.129.118.77";
-
 @implementation APIRequestOperationManager
 + (instancetype)sharedRequestOperationManager {
     static dispatch_once_t onceToken;
     static APIRequestOperationManager *manager;
     dispatch_once(&onceToken, ^{
-        manager = [[self alloc] initWithBaseURL:[NSURL URLWithString:kBaseUrl]];
+        manager = [[self alloc] initWithBaseURL:nil];
         
         manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/html", @"text/plain"]];
     });
