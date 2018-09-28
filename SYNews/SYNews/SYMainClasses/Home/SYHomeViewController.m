@@ -9,7 +9,7 @@
 #import "SYHomeViewController.h"
 #import "SYSwitchView.h"
 #import "SYHomeNewsViewController.h"
-
+#import "AFHTTPSessionManager.h"
 @interface SYHomeViewController ()<UIScrollViewDelegate>
 @property (nonatomic, strong) SYSwitchView *switchView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -30,6 +30,15 @@
     }
     self.scrollView.contentSize = CGSizeMake(ScreenW * 7, 0);
     self.edgesForExtendedLayout = UIRectEdgeBottom | UIRectEdgeLeft | UIRectEdgeRight;
+    
+    [[AFHTTPSessionManager manager] POST:@"http://ald.1001alading.com/api/home_list" parameters:@{@"access_token":@"4170fa02947baeed645293310f478bb4",@"method":@"POST"
+                                                                                                  } progress:^(NSProgress * _Nonnull uploadProgress) {
+                                                                                                      NSLog(@"----%@",uploadProgress);
+                                                                                                  } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                                                                                      NSLog(@"----%@",responseObject);
+                                                                                                  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                                                                                      NSLog(@"----%@",error);
+                                                                                                  }];
 }
 
 - (void)scrollToIndex:(NSInteger)index {

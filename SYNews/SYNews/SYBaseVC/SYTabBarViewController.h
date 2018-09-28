@@ -13,6 +13,7 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *imageName;
 @property (nonatomic, copy) NSString *selectedImageName;
+@property (nonatomic, strong) NSNumber *type;
 + (NSArray *)models;
 @end
 

@@ -4,9 +4,9 @@
 <array>
 	<dict>
 		<key>className</key>
-		<string>SYHomeViewController</string>
+		<string>SYListViewController</string>
 		<key>title</key>
-		<string>Home</string>
+		<string>赛事</string>
 		<key>imageName</key>
 		<string>tab_home</string>
 		<key>selectedImageName</key>
@@ -14,9 +14,9 @@
 	</dict>
 	<dict>
 		<key>className</key>
-		<string>SYDiscoverViewController</string>
+		<string>SYListViewController</string>
 		<key>title</key>
-		<string>Discover</string>
+		<string>临近</string>
 		<key>imageName</key>
 		<string>tab_discover</string>
 		<key>selectedImageName</key>
@@ -24,9 +24,19 @@
 	</dict>
 	<dict>
 		<key>className</key>
-		<string>SYMineViewController</string>
+		<string>SYListViewController</string>
 		<key>title</key>
-		<string>Mine</string>
+		<string>交易</string>
+		<key>imageName</key>
+		<string>tab_mine</string>
+		<key>selectedImageName</key>
+		<string>tab_mine_selected</string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>SYListViewController</string>
+		<key>title</key>
+		<string>收藏</string>
 		<key>imageName</key>
 		<string>tab_mine</string>
 		<key>selectedImageName</key>

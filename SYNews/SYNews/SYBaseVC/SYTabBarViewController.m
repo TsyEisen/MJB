@@ -23,18 +23,22 @@
         self.tabBar.barTintColor = [UIColor whiteColor];
         self.tabBar.tintColor = [UIColor sy_colorWithRGB:0xE73859];
         self.tabBar.backgroundColor = [UIColor whiteColor];
-//        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 0.5)];
-//        line.backgroundColor = [UIColor lineDefaultColor];
         [self.tabBar addSubview:self.line];
         
         for (SYChildVCModel *model in self.childVCModels) {
-            SYBaseViewController *baseVc = [(SYBaseViewController *)[NSClassFromString(model.className) alloc] initWithNibName:model.className bundle:nil];
+            NSString*nibPath = [[NSBundle mainBundle] pathForResource:model.className ofType:@"nib"];
+            SYBaseViewController *baseVc = [[NSClassFromString(model.className) alloc] init];
+            if (nibPath) {
+                baseVc = [(SYBaseViewController *)[NSClassFromString(model.className) alloc] initWithNibName:model.className bundle:nil];
+                if (model.type.integerValue > 0) {
+                    [baseVc setValue:model.type forKey:@"type"];
+                }
+            }
             SYNavgationViewController *nvaVc = [[SYNavgationViewController alloc] initWithRootViewController:baseVc];
             baseVc.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:model.imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:model.selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
             baseVc.tabBarItem.title = model.title;
             baseVc.title = model.title;
             [self addChildViewController:nvaVc];
-            
         }
     }
     return self;

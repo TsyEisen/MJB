@@ -11,7 +11,7 @@
 #define Develop 1
 
 //#if Develop
-//NSString *const kBaseUrl = @"http://api.yingxintong.com";
+NSString *const kBaseUrl = @"http://api.spdex.com";
 //#else
 //NSString *const kBaseUrl = @"http://api.miaocloud.cn:8081";
 //#endif
@@ -21,7 +21,7 @@
     static dispatch_once_t onceToken;
     static APIRequestOperationManager *manager;
     dispatch_once(&onceToken, ^{
-        manager = [[self alloc] initWithBaseURL:nil];
+        manager = [[self alloc] initWithBaseURL:[NSURL URLWithString:kBaseUrl]];
         
         manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/html", @"text/plain"]];
     });
