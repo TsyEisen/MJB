@@ -111,6 +111,7 @@ SYSingleton_implementation(SYSportDataManager)
     
     _payTopList = [[temp_payTopList sortedArrayUsingDescriptors:@[paySD]] mutableCopy];
     _nearList = [[temp_nearList sortedArrayUsingDescriptors:@[timeSD]] mutableCopy];
+    _allGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
 }
 
 - (void)requestWithParams:(NSDictionary *)params byType:(SYSportDataType)type completion:(void (^)(id result))completion{
@@ -151,21 +152,25 @@ SYSingleton_implementation(SYSportDataManager)
 }
 
 - (void)changeScoreModel:(SYGameListModel *)model {
-    NSMutableDictionary *dict = [self.collectionCache objectForKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
+    
+    NSMutableDictionary *dict = [self.gameJsons objectForKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
+    
     if (dict) {
         dict[@"score"] = model.score?:@"";
         dict[@"homeScore"] = model.homeScore?:@"";
         dict[@"awayScore"] = model.awayScore?:@"";
+    }else {
+        dict = model.mj_keyValues;
     }
-    [self.gameJsons setObject:model.mj_keyValues forKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
-    [self.collectionCache setObject:model.mj_keyValues forKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
+    
+    [self.gameJsons setObject:dict forKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
+    [self.collectionCache setObject:dict forKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
     
     for (SYGameListModel *item in _hotGameList) {
         if (item.EventId == model.EventId) {
             item.score = model.score;
             item.homeScore = model.homeScore;
             item.awayScore = model.awayScore;
-            return;
         }
     }
     
@@ -174,7 +179,6 @@ SYSingleton_implementation(SYSportDataManager)
             item.score = model.score;
             item.homeScore = model.homeScore;
             item.awayScore = model.awayScore;
-            return;
         }
     }
     
@@ -183,7 +187,14 @@ SYSingleton_implementation(SYSportDataManager)
             item.score = model.score;
             item.homeScore = model.homeScore;
             item.awayScore = model.awayScore;
-            return;
+        }
+    }
+    
+    for (SYGameListModel *item in _allGames) {
+        if (item.EventId == model.EventId) {
+            item.score = model.score;
+            item.homeScore = model.homeScore;
+            item.awayScore = model.awayScore;
         }
     }
     
@@ -211,6 +222,30 @@ SYSingleton_implementation(SYSportDataManager)
     _hotGameList = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.collectionCache.allValues];
     [self sy_writeToFile:self.collectionCache forPath:[self dataPathWithFileName:hotGamesJsonPath]];
     [MBProgressHUD showSuccess:@"删除成功" toView:nil];
+}
+
+- (NSArray *)getAllHistoryGames {
+    NSMutableArray *temp = [NSMutableArray array];
+    for (SYGameListModel *model in self.allGames) {
+        NSDate *date = [NSDate sy_dateWithString:[model.MatchTime stringByReplacingOccurrencesOfString:@"T" withString:@"-"] formate:@"yyyy-MM-dd-HH:mm:ss"];
+        
+        if ((-1)*[date timeIntervalSinceNow] > 7200) {
+            [temp addObject:model];
+        }
+    }
+    NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:NO];
+    return [[temp sortedArrayUsingDescriptors:@[timeSD]] mutableCopy];
+}
+
+- (NSArray *)getAllScoreGames {
+    NSMutableArray *temp = [NSMutableArray array];
+    for (SYGameListModel *model in self.allGames) {
+        if (model.score.length > 0) {
+            [temp addObject:model];
+        }
+    }
+    NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:NO];
+    return [[temp sortedArrayUsingDescriptors:@[timeSD]] mutableCopy];
 }
 
 - (void)sy_writeToFile:(id)datas forPath:(NSString *)path{
@@ -281,10 +316,10 @@ SYSingleton_implementation(SYSportDataManager)
     return _currentGameJsons;
 }
 
-- (NSArray *)scoreGames {
-    if (_scoreGames == nil) {
-        _scoreGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];;
+- (NSArray *)allGames {
+    if (_allGames == nil) {
+        _allGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];;
     }
-    return _scoreGames;
+    return _allGames;
 }
 @end

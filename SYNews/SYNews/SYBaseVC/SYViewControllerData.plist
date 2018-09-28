@@ -36,7 +36,17 @@
 		<key>className</key>
 		<string>SYListViewController</string>
 		<key>title</key>
-		<string>收藏</string>
+		<string>历史</string>
+		<key>imageName</key>
+		<string>tab_mine</string>
+		<key>selectedImageName</key>
+		<string>tab_mine_selected</string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>SYCompareViewController</string>
+		<key>title</key>
+		<string>对比</string>
 		<key>imageName</key>
 		<string>tab_mine</string>
 		<key>selectedImageName</key>

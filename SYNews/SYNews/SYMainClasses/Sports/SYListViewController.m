@@ -15,13 +15,15 @@ typedef NS_ENUM(NSUInteger, SYListType) {
     SYListTypeCategory = 1,
     SYListTypePayTop = 2,
     SYListTypeNear = 3,
-    SYListTypeCollection = 4
+    SYListTypeCollection = 4,
+    SYListTypeHistory = 5
 };
 
 @interface SYListViewController ()<UITableViewDataSource,UITableViewDelegate,UIViewControllerTransitioningDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property(nonatomic,assign)SYListType type;
 @property (nonatomic, strong) UIBarButtonItem *rightItem;
+@property (nonatomic, strong) NSArray *datas;
 @end
 
 @implementation SYListViewController
@@ -52,9 +54,11 @@ typedef NS_ENUM(NSUInteger, SYListType) {
 
 - (void)refreshAction {
     if (self.type == SYListTypeCollection) {
+        _datas = nil;
         [self.tableView reloadData];
     }else {
         [[SYSportDataManager sharedSYSportDataManager] reuqestAllSportsCompletion:^{
+            _datas = nil;
             [self.tableView reloadData];
         }];
     }
@@ -81,13 +85,9 @@ typedef NS_ENUM(NSUInteger, SYListType) {
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.type == SYListTypeCategory) {
-        return [[[SYSportDataManager sharedSYSportDataManager].categaryList objectAtIndex:section] count];
-    }else if (self.type == SYListTypeNear){
-        return [SYSportDataManager sharedSYSportDataManager].nearList.count;
-    }else if (self.type == SYListTypePayTop){
-        return [SYSportDataManager sharedSYSportDataManager].payTopList.count;
+        return [self.datas[section] count];
     }else {
-        return [SYSportDataManager sharedSYSportDataManager].hotGameList.count;
+        return self.datas.count;
     }
 }
 
@@ -158,13 +158,9 @@ typedef NS_ENUM(NSUInteger, SYListType) {
 - (SYGameListModel *)modelFromIndexPath:(NSIndexPath *)indexPath {
     SYGameListModel *model = nil;
     if (self.type == SYListTypeCategory) {
-        model = [[[SYSportDataManager sharedSYSportDataManager].categaryList objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    }else if (self.type == SYListTypeNear){
-        model = [SYSportDataManager sharedSYSportDataManager].nearList[indexPath.row];
-    }else if (self.type == SYListTypePayTop){
-        model = [SYSportDataManager sharedSYSportDataManager].payTopList[indexPath.row];
+        model = self.datas[indexPath.section][indexPath.row];
     }else {
-        model = [SYSportDataManager sharedSYSportDataManager].hotGameList[indexPath.row];
+        model = self.datas[indexPath.row];
     }
     return model;
 }
@@ -202,6 +198,8 @@ typedef NS_ENUM(NSUInteger, SYListType) {
             _type = SYListTypeNear;
         }else if ([self.title isEqualToString:@"交易"]) {
             _type = SYListTypePayTop;
+        }else if ([self.title isEqualToString:@"历史"]) {
+            _type = SYListTypeHistory;
         }else {
             _type = SYListTypeCollection;
         }
@@ -215,5 +213,22 @@ typedef NS_ENUM(NSUInteger, SYListType) {
         _rightItem.tintColor = [UIColor whiteColor];
     }
     return _rightItem;
+}
+
+- (NSArray *)datas {
+    if (_datas == nil) {
+        if (self.type == SYListTypeCategory) {
+            _datas = [SYSportDataManager sharedSYSportDataManager].categaryList;
+        }else if (self.type == SYListTypeNear){
+            _datas = [SYSportDataManager sharedSYSportDataManager].nearList;
+        }else if (self.type == SYListTypePayTop){
+            _datas = [SYSportDataManager sharedSYSportDataManager].payTopList;
+        }else if (self.type == SYListTypeHistory){
+            _datas = [[SYSportDataManager sharedSYSportDataManager] getAllHistoryGames];
+        }else {
+            _datas = [SYSportDataManager sharedSYSportDataManager].hotGameList;
+        };
+    }
+    return _datas;
 }
 @end

@@ -136,3 +136,14 @@
 @property(nonatomic,assign)NSInteger dateSeconds;
 @end
 
+typedef NS_ENUM(NSUInteger, SYGameScoreType) {
+    SYGameScoreTypeHome,
+    SYGameScoreTypeDraw,
+    SYGameScoreTypeAway
+};
+
+@interface SYNumberModel : NSObject
+@property (nonatomic, assign) SYGameScoreType status;
+@property (nonatomic, assign) CGFloat num;
++ (instancetype)modelWithStatus:(SYGameScoreType)type num:(CGFloat)num;
+@end

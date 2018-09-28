@@ -30,8 +30,11 @@ SYSingleton_interface(SYSportDataManager)
 @property (nonatomic, strong) NSArray *nearList;
 @property (nonatomic, strong) NSArray *categaryList;
 @property (nonatomic, strong) NSArray *hotGameList;
+@property (nonatomic, strong) NSArray *allGames;
 
-@property (nonatomic, strong) NSArray *scoreGames;
+//@property (nonatomic, strong) NSArray *scoreGames;
+- (NSArray *)getAllHistoryGames;
+- (NSArray *)getAllScoreGames;
 
 - (void)changeScoreModel:(SYGameListModel *)model;
 - (void)saveHotGame:(SYGameListModel *)model;

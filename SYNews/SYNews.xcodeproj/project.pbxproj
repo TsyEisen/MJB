@@ -700,7 +700,6 @@
 		F03B91A81F54FE0F0033A3B5 /* SYMainClasses */ = {
 			isa = PBXGroup;
 			children = (
-				F0F63ABD2154CF7C000D7A15 /* SportHistory */,
 				F0F63ABF2154CF7C000D7A15 /* Sports */,
 				F03B91A91F54FEA40033A3B5 /* Discover */,
 				F03B91AB1F54FEA40033A3B5 /* Home */,
@@ -937,21 +936,6 @@
 				F03FC24C1F5D3ED200DF465B /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		F0F63ABD2154CF7C000D7A15 /* SportHistory */ = {
-			isa = PBXGroup;
-			children = (
-				F0F63ABE2154CF7C000D7A15 /* Views */,
-			);
-			path = SportHistory;
-			sourceTree = "<group>";
-		};
-		F0F63ABE2154CF7C000D7A15 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		F0F63ABF2154CF7C000D7A15 /* Sports */ = {

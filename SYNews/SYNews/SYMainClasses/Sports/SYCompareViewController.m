@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) UITableView *rightTableView;
 @property (nonatomic, strong) NSArray *datas;
+@property (nonatomic, strong) UIBarButtonItem *rightItem;
 @end
 
 @implementation SYCompareViewController
@@ -20,15 +21,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.scrollView addSubview:self.rightTableView];
+    NSArray *titles = @[@"概率大",@"概率中",@"概率小",@"交易大",@"交易中",@"交易小",@"方差大",@"方差中",@"方差小",@"单注"];
     CGFloat w = 80;
     CGFloat h = 20;
     for (int i = 0; i < 10; i++) {
+        NSString *title = titles[i];
         SYDataLabel *label = [[SYDataLabel alloc] initWithFrame:CGRectMake(i*w, 0, w, h)];
         label.tag = i;
+        label.text = title;
         [self.scrollView addSubview:label];
     }
     self.scrollView.contentSize = CGSizeMake(self.rightTableView.sy_width, 0);
     [self.rightTableView sy_registerCellWithClass:[SYGameTableCell class]];
+    self.navigationItem.rightBarButtonItem = self.rightItem;
+    self.leftTabelView.tableFooterView = [UIView new];
+}
+
+- (void)refreshAction {
+    _datas = nil;
+    [self.rightTableView reloadData];
+    [self.leftTabelView reloadData];
 }
 
 #pragma mark - tableView DataSource
@@ -50,6 +62,7 @@
         }
         cell.textLabel.text = [NSString stringWithFormat:@"%@ vs %@",model.HomeTeam,model.AwayTeam];
         cell.textLabel.font = [UIFont systemFontOfSize:10];
+        cell.textLabel.numberOfLines = 0;
         [cell.textLabel sizeToFit];
         return cell;
     }else {
@@ -57,6 +70,10 @@
         cell.model = model;
         return cell;
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 40;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -78,14 +95,23 @@
         _rightTableView.delegate = self;
         _rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _rightTableView.backgroundColor = [UIColor sy_colorWithRGB:0xf4f4f4];
+        _rightTableView.tableFooterView = [UIView new];
     }
     return _rightTableView;
 }
 
 - (NSArray *)datas {
     if (_datas == nil) {
-        _datas = [[NSArray alloc] init];
+        _datas = [[SYSportDataManager sharedSYSportDataManager] getAllScoreGames];
     }
     return _datas;
+}
+
+- (UIBarButtonItem *)rightItem {
+    if (_rightItem == nil) {
+        _rightItem = [[UIBarButtonItem alloc] initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(refreshAction)];
+        _rightItem.tintColor = [UIColor whiteColor];
+    }
+    return _rightItem;
 }
 @end

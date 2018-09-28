@@ -23,3 +23,12 @@
 }
 
 @end
+
+@implementation SYNumberModel
++ (instancetype)modelWithStatus:(SYGameScoreType)type num:(CGFloat)num {
+    SYNumberModel *model = [SYNumberModel new];
+    model.status = type;
+    model.num = num;
+    return model;
+}
+@end

@@ -10,8 +10,11 @@
 
 @interface SYDataLabel : UILabel
 @property (nonatomic, assign) BOOL red;
+@property(nonatomic,assign)SYGameScoreType type;
+@property (nonatomic, strong) SYNumberModel *model;
 @end
 
 @interface SYGameTableCell : UITableViewCell
+
 @property (nonatomic, strong) SYGameListModel *model;
 @end

@@ -25,11 +25,12 @@
 }
 
 - (void)saveAction {
-    if (self.homeTextField.text && self.awayTextField.text) {
+    if (self.homeTextField.text.length > 0 && self.awayTextField.text.length > 0) {
         self.model.homeScore = self.homeTextField.text;
         self.model.awayScore = self.awayTextField.text;
         self.model.score = [NSString stringWithFormat:@"%@:%@",self.homeTextField.text,self.awayTextField.text];
         [MBProgressHUD showSuccess:@"保存成功" toView:nil];
+        [[SYSportDataManager sharedSYSportDataManager] changeScoreModel:self.model];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
