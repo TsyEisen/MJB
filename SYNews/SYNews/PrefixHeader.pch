@@ -26,6 +26,7 @@
 #import "Masonry.h"
 #import "SYCommentRequest.h"
 #import "SYCoder.h"
+#import "SYSportDataManager.h"
 
 #define DefaultPlaceHolder [UIImage imageNamed:@"placeHolder"]
 #endif /* PrefixHeader_pch */

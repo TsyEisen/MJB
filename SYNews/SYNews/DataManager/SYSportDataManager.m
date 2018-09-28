@@ -14,6 +14,7 @@
 #define gamesJsonPath @"gamesJsonPath.plist"
 #define sportsJsonPath @"sportsJsonPath.plist"
 #define hotGamesJsonPath @"hotGamesJsonPath.plist"
+#define scoreGamesJsonPath @"scoreGamesJsonPath.plist"
 
 @interface SYSportDataManager()
 
@@ -278,5 +279,12 @@ SYSingleton_implementation(SYSportDataManager)
         _currentGameJsons = [[NSMutableDictionary alloc] init];
     }
     return _currentGameJsons;
+}
+
+- (NSArray *)scoreGames {
+    if (_scoreGames == nil) {
+        _scoreGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];;
+    }
+    return _scoreGames;
 }
 @end
