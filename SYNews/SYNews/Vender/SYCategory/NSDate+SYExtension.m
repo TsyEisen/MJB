@@ -120,4 +120,17 @@
     return [now sy_showTimeFrom:creat];
 }
 
++ (NSString *)sy_showMatchTimeWithTime:(NSString *)time {
+    NSDate *date = [NSDate sy_dateWithString:[time stringByReplacingOccurrencesOfString:@"T" withString:@"-"] formate:@"yyyy-MM-dd-HH:mm:ss"];
+    if ([date sy_isToday]) {
+        return [date sy_stringWithFormat:@"HH:mm"];
+    }else if ([date sy_isYesterday]) {
+        return [date sy_stringWithFormat:@"昨天 HH:mm"];
+    }else if ([date sy_isTomorrow]) {
+        return [date sy_stringWithFormat:@"明天 HH:mm"];
+    }else {
+        return [date sy_stringWithFormat:@"MM-dd HH:mm"];
+    }
+}
+
 @end

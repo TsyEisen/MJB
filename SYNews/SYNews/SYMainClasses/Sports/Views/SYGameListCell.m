@@ -39,11 +39,14 @@
 - (void)setModel:(SYGameListModel *)model {
     _model = model;
     
-    self.timeLabel.text = [NSString stringWithFormat:@"%@\n%@",model.SortName,[self timeStringWithMatchTime:model.MatchTime]];
+    self.timeLabel.text = [NSString stringWithFormat:@"%@\n%@",model.SortName,[NSDate sy_showMatchTimeWithTime:model.MatchTime]];
     self.homeLabel.text = model.HomeTeam;
     self.drawLabel.text = model.AwayTeam;
     self.vsLabel.text = [NSString stringWithFormat:@"VS %@",model.AsianAvrLet];
-    self.lastRefreshTimeLabel.text = [NSString stringWithFormat:@"最后刷新时间:%@",[self timeStringWithMatchTime:model.MaxUpdateTime]];
+    
+//    SYGameScoreType sigle_pay_type = model.MaxTeamId == model.HomeTeamId?SYGameScoreTypeHome : SYGameScoreTypeAway;
+    
+    self.lastRefreshTimeLabel.text = [NSString stringWithFormat:@"最后刷新时间:%@ 单笔交易最大:%@ %.2f万",[NSDate sy_showMatchTimeWithTime:model.MaxUpdateTime],model.MaxTeamId == model.HomeTeamId?@"主":@"客",model.MaxTradedChange/10000];
     self.scoreLabel.text = model.score;
     
     self.moneyLabel.text = [NSString stringWithFormat:@"%.1f万",model.totalPAmount/10000];
@@ -62,19 +65,7 @@
     self.jsAwayLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountAway*model.BfIndexAway/10000];
 }
 
-- (NSString *)timeStringWithMatchTime:(NSString *)matchTime {
-//    self.model.MatchTime
-    NSDate *date = [NSDate sy_dateWithString:[matchTime stringByReplacingOccurrencesOfString:@"T" withString:@"-"] formate:@"yyyy-MM-dd-HH:mm:ss"];
-    if ([date sy_isToday]) {
-        return [date sy_stringWithFormat:@"HH:mm"];
-    }else if ([date sy_isYesterday]) {
-        return [date sy_stringWithFormat:@"昨天 HH:mm"];
-    }else if ([date sy_isTomorrow]) {
-        return [date sy_stringWithFormat:@"明天 HH:mm"];
-    }else {
-        return [date sy_stringWithFormat:@"MM-dd HH:mm"];
-    }
-}
+
 
 //- (void)setModel:(SYGameModel *)model {
 //    _model = model;

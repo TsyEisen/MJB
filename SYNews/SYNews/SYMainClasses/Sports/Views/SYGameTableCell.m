@@ -18,8 +18,9 @@
 }
 
 - (void)setUpUI {
-    CGFloat w = 80;
-    CGFloat h = 40;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    CGFloat w = SYGameTableCellWidth;
+    CGFloat h = SYGameTableCellHeight;
     for (int i = 0; i < 10; i++) {
         SYDataLabel *label = [[SYDataLabel alloc] initWithFrame:CGRectMake(i*w, 0, w, h)];
         label.tag = i;
@@ -64,7 +65,7 @@
     
     SYGameScoreType sigle_pay_type = model.MaxTeamId == model.HomeTeamId?SYGameScoreTypeHome : SYGameScoreTypeAway;
     
-    SYNumberModel *sigle_pay = [SYNumberModel modelWithStatus:sigle_pay_type num:model.MaxTradedChange];
+    SYNumberModel *sigle_pay = [SYNumberModel modelWithStatus:sigle_pay_type num:model.MaxTradedChange/10000];
     
     for (SYDataLabel *label in self.contentView.subviews) {
         switch (label.tag) {

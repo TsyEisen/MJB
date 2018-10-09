@@ -25,4 +25,5 @@
 
 - (NSString *)sy_showTimeFrom:(NSDate *)date;
 + (NSString *)sy_showTimeFromNowTime:(NSString *)nowTime toCreateTime:(NSString *)createTime;
++ (NSString *)sy_showMatchTimeWithTime:(NSString *)time;
 @end

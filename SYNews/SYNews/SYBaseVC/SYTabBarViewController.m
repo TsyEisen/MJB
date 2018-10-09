@@ -35,7 +35,8 @@
                 }
             }
             SYNavgationViewController *nvaVc = [[SYNavgationViewController alloc] initWithRootViewController:baseVc];
-            baseVc.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:model.imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:model.selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//            baseVc.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:model.imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:model.selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+            baseVc.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:model.imageName] selectedImage:[UIImage imageNamed:model.selectedImageName]];
             baseVc.tabBarItem.title = model.title;
             baseVc.title = model.title;
             [self addChildViewController:nvaVc];

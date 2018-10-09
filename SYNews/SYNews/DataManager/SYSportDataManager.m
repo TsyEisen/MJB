@@ -23,7 +23,7 @@
 @property (nonatomic, strong) NSMutableDictionary *currentGameJsons;
 @property (nonatomic, strong) NSMutableDictionary *categaryCache;
 @property (nonatomic, strong) NSMutableDictionary *collectionCache;
-
+@property (nonatomic, strong) NSArray *allGames;
 @end
 
 @implementation SYSportDataManager
@@ -153,15 +153,16 @@ SYSingleton_implementation(SYSportDataManager)
 
 - (void)changeScoreModel:(SYGameListModel *)model {
     
-    NSMutableDictionary *dict = [self.gameJsons objectForKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
-    
-    if (dict) {
-        dict[@"score"] = model.score?:@"";
-        dict[@"homeScore"] = model.homeScore?:@"";
-        dict[@"awayScore"] = model.awayScore?:@"";
-    }else {
-        dict = model.mj_keyValues;
-    }
+    NSDictionary *json = [self.gameJsons objectForKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+   if (json) {
+       [dict addEntriesFromDictionary:json]; 
+       [dict setValue:model.score?:@"" forKey:@"score"];
+       [dict setValue:model.homeScore?:@"" forKey:@"homeScore"];
+       [dict setValue:model.awayScore?:@"" forKey:@"awayScore"];
+   }else {
+       dict = model.mj_keyValues;
+   }
     
     [self.gameJsons setObject:dict forKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
     [self.collectionCache setObject:dict forKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
@@ -234,18 +235,31 @@ SYSingleton_implementation(SYSportDataManager)
         }
     }
     NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:NO];
-    return [[temp sortedArrayUsingDescriptors:@[timeSD]] mutableCopy];
+    NSSortDescriptor *name=[NSSortDescriptor sortDescriptorWithKey:@"SortName" ascending:NO];
+    return [[temp sortedArrayUsingDescriptors:@[timeSD,name]] mutableCopy];
 }
 
-- (NSArray *)getAllScoreGames {
+- (NSArray *)getAllScoreGamesByCategory:(BOOL)category {
+//    if (category) {
+//
+//    }else {
+//
+//    }
     NSMutableArray *temp = [NSMutableArray array];
     for (SYGameListModel *model in self.allGames) {
         if (model.score.length > 0) {
             [temp addObject:model];
         }
     }
-    NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:NO];
-    return [[temp sortedArrayUsingDescriptors:@[timeSD]] mutableCopy];
+    if (category) {
+        NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"SortName" ascending:NO];
+        return [[temp sortedArrayUsingDescriptors:@[timeSD]] mutableCopy];
+    }else {
+        NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"totalPAmount" ascending:NO];
+        return [[temp sortedArrayUsingDescriptors:@[timeSD]] mutableCopy];
+    }
+    
+    
 }
 
 - (void)sy_writeToFile:(id)datas forPath:(NSString *)path{

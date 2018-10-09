@@ -14,6 +14,9 @@
 @property (nonatomic, strong) SYNumberModel *model;
 @end
 
+#define SYGameTableCellHeight 50
+#define SYGameTableCellWidth 60
+
 @interface SYGameTableCell : UITableViewCell
 
 @property (nonatomic, strong) SYGameListModel *model;

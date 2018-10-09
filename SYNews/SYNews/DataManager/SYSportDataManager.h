@@ -17,24 +17,15 @@ typedef NS_ENUM(NSUInteger, SYSportDataType) {
     SYSportDataTypeGameDetail
 };
 
-
-//@interface SYGameDataBase : NSObject
-//- (instancetype)initwithType:()
-//@property (nonatomic, strong) NSMutableDictionary *jsons;
-//@property (nonatomic, strong) NSArray *models;
-//@end
-
 @interface SYSportDataManager : NSObject
 SYSingleton_interface(SYSportDataManager)
 @property (nonatomic, strong) NSArray *payTopList;
 @property (nonatomic, strong) NSArray *nearList;
 @property (nonatomic, strong) NSArray *categaryList;
 @property (nonatomic, strong) NSArray *hotGameList;
-@property (nonatomic, strong) NSArray *allGames;
 
-//@property (nonatomic, strong) NSArray *scoreGames;
 - (NSArray *)getAllHistoryGames;
-- (NSArray *)getAllScoreGames;
+- (NSArray *)getAllScoreGamesByCategory:(BOOL)category;
 
 - (void)changeScoreModel:(SYGameListModel *)model;
 - (void)saveHotGame:(SYGameListModel *)model;

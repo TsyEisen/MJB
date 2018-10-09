@@ -8,9 +8,9 @@
 		<key>title</key>
 		<string>赛事</string>
 		<key>imageName</key>
-		<string>tab_home</string>
+		<string>football2</string>
 		<key>selectedImageName</key>
-		<string>tab_home_selected</string>
+		<string>football2</string>
 	</dict>
 	<dict>
 		<key>className</key>
@@ -18,9 +18,9 @@
 		<key>title</key>
 		<string>临近</string>
 		<key>imageName</key>
-		<string>tab_discover</string>
+		<string>football2</string>
 		<key>selectedImageName</key>
-		<string>tab_discover_selected</string>
+		<string>football2</string>
 	</dict>
 	<dict>
 		<key>className</key>
@@ -28,9 +28,9 @@
 		<key>title</key>
 		<string>交易</string>
 		<key>imageName</key>
-		<string>tab_mine</string>
+		<string>football2</string>
 		<key>selectedImageName</key>
-		<string>tab_mine_selected</string>
+		<string>football2</string>
 	</dict>
 	<dict>
 		<key>className</key>
@@ -38,9 +38,9 @@
 		<key>title</key>
 		<string>历史</string>
 		<key>imageName</key>
-		<string>tab_mine</string>
+		<string>football2</string>
 		<key>selectedImageName</key>
-		<string>tab_mine_selected</string>
+		<string>football2</string>
 	</dict>
 	<dict>
 		<key>className</key>
@@ -48,9 +48,9 @@
 		<key>title</key>
 		<string>对比</string>
 		<key>imageName</key>
-		<string>tab_mine</string>
+		<string>football2</string>
 		<key>selectedImageName</key>
-		<string>tab_mine_selected</string>
+		<string>football2</string>
 	</dict>
 </array>
 </plist>
