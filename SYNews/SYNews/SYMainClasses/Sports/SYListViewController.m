@@ -10,12 +10,16 @@
 #import "SYGameListCell.h"
 #import "SYSportDataManager.h"
 #import "SYInputScoreViewController.h"
+#import "MJRefresh.h"
+#import "SYPickerTool.h"
+#import "SYPickerViewTool.h"
 
-@interface SYListViewController ()<UITableViewDataSource,UITableViewDelegate,UIViewControllerTransitioningDelegate>
+@interface SYListViewController ()<UITableViewDataSource,UITableViewDelegate,UIViewControllerTransitioningDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
-@property(nonatomic,assign)SYListType type;
-@property (nonatomic, strong) UIBarButtonItem *rightItem;
+@property (nonatomic, assign) SYListType type;
+@property (nonatomic, strong) SYPickerViewTool *pickerViewTool;
 @property (nonatomic, strong) NSArray *datas;
+@property (nonatomic, strong) SYGameListModel *selectedModel;
 @end
 
 @implementation SYListViewController
@@ -29,12 +33,17 @@
     [super viewDidLoad];
     [self setUpUI];
     [self.tableView sy_registerNibWithClass:[SYGameListCell class]];
-    if (self.type == SYListTypeCategory) {
-        [[SYSportDataManager sharedSYSportDataManager] reuqestAllSportsCompletion:^{
-            [self.tableView reloadData];
-        }];
-    }
-    self.navigationItem.rightBarButtonItem = self.rightItem;
+    [self setupMJRefresh];
+    
+//    self.navigationItem.rightBarButtonItem = self.rightItem;
+}
+
+- (void)setupMJRefresh {
+    __weak typeof (self) weakSelf = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf refreshAction];
+    }];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)setUpUI {
@@ -45,22 +54,19 @@
 }
 
 - (void)refreshAction {
-    if (self.type == SYListTypeCollection) {
-        _datas = nil;
+    [[SYSportDataManager sharedSYSportDataManager] requestDatasBySYListType:self.type Completion:^(NSArray *datas) {
+        [self.tableView.mj_header endRefreshing];
+        self.datas = datas;
         [self.tableView reloadData];
-    }else {
-        [[SYSportDataManager sharedSYSportDataManager] reuqestAllSportsCompletion:^{
-            _datas = nil;
-            [self.tableView reloadData];
-        }];
-    }
+    }];
 }
 
 #pragma mark - tableView DataSource
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (self.type == SYListTypeCategory) {
-        SYGameListModel *model = [[[SYSportDataManager sharedSYSportDataManager].categaryList objectAtIndex:section] objectAtIndex:0];
+        NSArray *item = self.datas[section];
+        SYGameListModel *model = item.firstObject;
         return model.SortName;
     }else {
         return nil;
@@ -69,7 +75,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (self.type == SYListTypeCategory) {
-        return [SYSportDataManager sharedSYSportDataManager].categaryList.count;
+        return self.datas.count;
     }else {
         return 1;
     }
@@ -89,32 +95,18 @@
     return cell;
 }
 
-//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.section == self.manager.datas.count - 1) {
-//        [self.manager loadMoreData];
-//    }
-//}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    SYGameDataViewController *vc = [SYGameDataViewController instancetFromNib];
-//    SYGameListModel *model = self.manager.datas[indexPath.row];
-//    vc.eventId = model.EventId;
-//    [self.navigationController pushViewController:vc animated:YES];
-    SYGameListCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"输入比分" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        SYInputScoreViewController *vc = [SYInputScoreViewController instancetFromNib];
-        vc.model = [self modelFromIndexPath:indexPath];
-        [self.navigationController pushViewController:vc animated:YES];
+//        SYInputScoreViewController *vc = [SYInputScoreViewController instancetFromNib];
+//        vc.model = [self modelFromIndexPath:indexPath];
+//        [self.navigationController pushViewController:vc animated:YES];
+        self.selectedModel = [self modelFromIndexPath:indexPath];
+        [self show];
     }];
     [alert addAction:action1];
-    if (self.type != SYListTypeCollection) {
-        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"收藏" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [[SYSportDataManager sharedSYSportDataManager] saveHotGame:cell.model];
-        }];
-        [alert addAction:action2];
-    }
     
     UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
@@ -130,21 +122,12 @@
 
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     SYGameListModel *model = [self modelFromIndexPath:indexPath];
-    if (self.type == SYListTypeCollection) {
-        UITableViewRowAction *action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-            [[SYSportDataManager sharedSYSportDataManager] deleteHotGame:model];
-            [self.tableView reloadData];
-        }];
-        return @[action];
-    }else {
-        UITableViewRowAction *action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"复制" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-            UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-            pasteboard.string = [NSString stringWithFormat:@"%@ %@VS%@",model.SortName,model.HomeTeam,model.AwayTeam];
-            [MBProgressHUD showSuccess:@"复制成功" toView:nil];
-        }];
-        return @[action];
-    }
-    
+    UITableViewRowAction *action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"复制" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = [NSString stringWithFormat:@"%@ %@VS%@",model.SortName,model.HomeTeam,model.AwayTeam];
+        [MBProgressHUD showSuccess:@"复制成功" toView:nil];
+    }];
+    return @[action];
 }
 
 - (SYGameListModel *)modelFromIndexPath:(NSIndexPath *)indexPath {
@@ -156,19 +139,47 @@
     }
     return model;
 }
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    return 10;
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    return 0.01;
-//}
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    return [UIView new];
-//}
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 2;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return 11;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [NSString stringWithFormat:@"%zd",row];
+}
+
+- (void)show {
+    [self.pickerViewTool show];
+}
+
+- (void)completScore {
+    NSString *homeScore = [self pickerView:self.pickerViewTool.pickerView titleForRow:[self.pickerViewTool.pickerView selectedRowInComponent:0] forComponent:0];
+    NSString *awayScore = [self pickerView:self.pickerViewTool.pickerView titleForRow:[self.pickerViewTool.pickerView selectedRowInComponent:1] forComponent:1];
+    self.selectedModel.homeScore = homeScore;
+    self.selectedModel.awayScore = awayScore;
+    self.selectedModel.score = [NSString stringWithFormat:@"%@:%@",homeScore,awayScore];
+    [[SYSportDataManager sharedSYSportDataManager] changeScoreModel:self.selectedModel];
+    [self.tableView reloadData];
+}
 
 #pragma mark - 懒加载
+
+- (SYPickerViewTool *)pickerViewTool {
+    if (_pickerViewTool == nil) {
+        _pickerViewTool = [[SYPickerViewTool alloc] init];
+        _pickerViewTool.delegate = self;
+        __weak typeof(self) weakSelf = self;
+        [_pickerViewTool setDoneAction:^{
+            [weakSelf completScore];
+        }];
+    }
+    return _pickerViewTool;
+}
+
 - (UITableView *)tableView {
     if (_tableView == nil) {
         _tableView = [[UITableView alloc] init];
@@ -192,35 +203,33 @@
             _type = SYListTypePayTop;
         }else if ([self.title isEqualToString:@"历史"]) {
             _type = SYListTypeHistory;
-        }else {
-            _type = SYListTypeCollection;
         }
     }
     return _type;
 }
 
-- (UIBarButtonItem *)rightItem {
-    if (_rightItem == nil) {
-        _rightItem = [[UIBarButtonItem alloc] initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(refreshAction)];
-        _rightItem.tintColor = [UIColor whiteColor];
-    }
-    return _rightItem;
-}
+//- (UIBarButtonItem *)rightItem {
+//    if (_rightItem == nil) {
+//        _rightItem = [[UIBarButtonItem alloc] initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(refreshAction)];
+//        _rightItem.tintColor = [UIColor whiteColor];
+//    }
+//    return _rightItem;
+//}
 
-- (NSArray *)datas {
-    if (_datas == nil) {
-        if (self.type == SYListTypeCategory) {
-            _datas = [SYSportDataManager sharedSYSportDataManager].categaryList;
-        }else if (self.type == SYListTypeNear){
-            _datas = [SYSportDataManager sharedSYSportDataManager].nearList;
-        }else if (self.type == SYListTypePayTop){
-            _datas = [SYSportDataManager sharedSYSportDataManager].payTopList;
-        }else if (self.type == SYListTypeHistory){
-            _datas = [[SYSportDataManager sharedSYSportDataManager] getAllHistoryGames];
-        }else {
-            _datas = [SYSportDataManager sharedSYSportDataManager].hotGameList;
-        };
-    }
-    return _datas;
-}
+//- (NSArray *)datas {
+//    if (_datas == nil) {
+//        if (self.type == SYListTypeCategory) {
+//            _datas = [SYSportDataManager sharedSYSportDataManager].categaryList;
+//        }else if (self.type == SYListTypeNear){
+//            _datas = [SYSportDataManager sharedSYSportDataManager].nearList;
+//        }else if (self.type == SYListTypePayTop){
+//            _datas = [SYSportDataManager sharedSYSportDataManager].payTopList;
+//        }else if (self.type == SYListTypeHistory){
+//            _datas = [[SYSportDataManager sharedSYSportDataManager] getAllHistoryGames];
+//        }else {
+//            _datas = [SYSportDataManager sharedSYSportDataManager].hotGameList;
+//        };
+//    }
+//    return _datas;
+//}
 @end

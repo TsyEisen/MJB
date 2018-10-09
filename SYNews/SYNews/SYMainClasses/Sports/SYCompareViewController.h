@@ -9,5 +9,5 @@
 #import "SYBaseViewController.h"
 
 @interface SYCompareViewController : SYBaseViewController
-
+@property (nonatomic, strong) NSArray *datas;
 @end

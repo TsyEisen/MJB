@@ -17,19 +17,25 @@ typedef NS_ENUM(NSUInteger, SYSportDataType) {
     SYSportDataTypeGameDetail
 };
 
+typedef NS_ENUM(NSUInteger, SYListType) {
+    SYListTypeCategory = 0,
+    SYListTypePayTop = 1,
+    SYListTypeNear = 2,
+    SYListTypeHistory = 3,
+    SYListTypeCompare = 4
+};
+
 @interface SYSportDataManager : NSObject
 SYSingleton_interface(SYSportDataManager)
-@property (nonatomic, strong) NSArray *payTopList;
-@property (nonatomic, strong) NSArray *nearList;
-@property (nonatomic, strong) NSArray *categaryList;
-@property (nonatomic, strong) NSArray *hotGameList;
 
-- (NSArray *)getAllHistoryGames;
-- (NSArray *)getAllScoreGamesByCategory:(BOOL)category;
+//- (NSArray *)getAllHistoryGames;
+//- (NSArray *)getAllScoreGamesByCategory:(BOOL)category;
 
+//- (void)reuqestAllSportsCompletion:(void(^)())completion;
+- (void)requestDatasBySYListType:(SYListType)type Completion:(void(^)(NSArray *datas))completion;
 - (void)changeScoreModel:(SYGameListModel *)model;
-- (void)saveHotGame:(SYGameListModel *)model;
-- (void)deleteHotGame:(SYGameListModel *)model;
-- (void)reuqestAllSportsCompletion:(void(^)())completion;
+
+//- (void)saveHotGame:(SYGameListModel *)model;
+//- (void)deleteHotGame:(SYGameListModel *)model;
 
 @end

@@ -44,7 +44,7 @@
 	</dict>
 	<dict>
 		<key>className</key>
-		<string>SYCompareViewController</string>
+		<string>SYCategoryViewController</string>
 		<key>title</key>
 		<string>对比</string>
 		<key>imageName</key>

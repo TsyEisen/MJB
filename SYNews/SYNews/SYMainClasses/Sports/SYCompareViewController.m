@@ -15,12 +15,12 @@
 @property (weak, nonatomic) IBOutlet UITableView *leftTabelView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) UITableView *rightTableView;
-@property (nonatomic, strong) NSArray *datas;
+
 @property (nonatomic, strong) NSArray *categoryDatas;
 @property (nonatomic, strong) UIBarButtonItem *rightItem;
 @property (nonatomic, strong) SYGameDetailView *detailView;
 @property (nonatomic, strong) SYSelectBox *box;
-@property (nonatomic, strong) UISegmentedControl *segment;
+//@property (nonatomic, strong) UISegmentedControl *segment;
 @end
 
 @implementation SYCompareViewController
@@ -43,20 +43,22 @@
     [self.leftTabelView sy_registerNibWithClass:[SYGameTableTitleCell class]];
     self.navigationItem.rightBarButtonItem = self.rightItem;
     self.leftTabelView.tableFooterView = [UIView new];
-    self.navigationItem.titleView = self.segment;
+//    self.navigationItem.titleView = self.segment;
+    SYGameListModel *model = self.datas.firstObject;
+    self.navigationItem.title = model.SortName;
 }
 
-- (void)refreshAction {
-    _datas = nil;
-    _categoryDatas = nil;
-    [self.rightTableView reloadData];
-    [self.leftTabelView reloadData];
-}
-
-- (void)segmentChange {
-    [self.leftTabelView reloadData];
-    [self.rightTableView reloadData];
-}
+//- (void)refreshAction {
+//    _datas = nil;
+//    _categoryDatas = nil;
+//    [self.rightTableView reloadData];
+//    [self.leftTabelView reloadData];
+//}
+//
+//- (void)segmentChange {
+//    [self.leftTabelView reloadData];
+//    [self.rightTableView reloadData];
+//}
 
 #pragma mark - tableView DataSource
 
@@ -65,11 +67,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.segment.selectedSegmentIndex == 0 ? self.datas.count:self.categoryDatas.count;
+    return self.datas.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SYGameListModel *model = self.segment.selectedSegmentIndex == 0 ? self.datas[indexPath.row]:self.categoryDatas[indexPath.row];
+    SYGameListModel *model = self.datas[indexPath.row];
     if (tableView == self.leftTabelView) {
         SYGameTableTitleCell *cell =  [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SYGameTableTitleCell class])];
         cell.model = model;
@@ -98,7 +100,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (tableView == self.leftTabelView) {
-        SYGameListModel *model = self.segment.selectedSegmentIndex == 0 ? self.datas[indexPath.row]:self.categoryDatas[indexPath.row];
+        SYGameListModel *model = self.datas[indexPath.row];
         SYGameTableTitleCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         self.detailView.model = model;
         [self.box showDependentOnView:cell.contentView];
@@ -117,28 +119,28 @@
     return _rightTableView;
 }
 
-- (NSArray *)datas {
-    if (_datas == nil) {
-        _datas = [[SYSportDataManager sharedSYSportDataManager] getAllScoreGamesByCategory:NO];
-    }
-    return _datas;
-}
+//- (NSArray *)datas {
+//    if (_datas == nil) {
+//        _datas = [[SYSportDataManager sharedSYSportDataManager] getAllScoreGamesByCategory:NO];
+//    }
+//    return _datas;
+//}
+//
+//- (NSArray *)categoryDatas {
+//    if (_categoryDatas == nil) {
+//        _categoryDatas = [[SYSportDataManager sharedSYSportDataManager] getAllScoreGamesByCategory:YES];
+//    }
+//    return _categoryDatas;
+//}
 
-- (NSArray *)categoryDatas {
-    if (_categoryDatas == nil) {
-        _categoryDatas = [[SYSportDataManager sharedSYSportDataManager] getAllScoreGamesByCategory:YES];
-    }
-    return _categoryDatas;
-}
 
-
-- (UIBarButtonItem *)rightItem {
-    if (_rightItem == nil) {
-        _rightItem = [[UIBarButtonItem alloc] initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(refreshAction)];
-        _rightItem.tintColor = [UIColor whiteColor];
-    }
-    return _rightItem;
-}
+//- (UIBarButtonItem *)rightItem {
+//    if (_rightItem == nil) {
+//        _rightItem = [[UIBarButtonItem alloc] initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(refreshAction)];
+//        _rightItem.tintColor = [UIColor whiteColor];
+//    }
+//    return _rightItem;
+//}
 
 - (SYGameDetailView *)detailView {
     if (_detailView == nil) {
@@ -154,13 +156,13 @@
     return _box;
 }
 
-- (UISegmentedControl *)segment {
-    if (_segment == nil) {
-        _segment = [[UISegmentedControl alloc] initWithItems:@[@"  成交   ",@"  联赛   "]];
-        _segment.tintColor = [UIColor whiteColor];
-        _segment.selectedSegmentIndex = 0;
-        [_segment addTarget:self action:@selector(segmentChange) forControlEvents:UIControlEventValueChanged];
-    }
-    return _segment;
-}
+//- (UISegmentedControl *)segment {
+//    if (_segment == nil) {
+//        _segment = [[UISegmentedControl alloc] initWithItems:@[@"  成交   ",@"  联赛   "]];
+//        _segment.tintColor = [UIColor whiteColor];
+//        _segment.selectedSegmentIndex = 0;
+//        [_segment addTarget:self action:@selector(segmentChange) forControlEvents:UIControlEventValueChanged];
+//    }
+//    return _segment;
+//}
 @end

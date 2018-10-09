@@ -8,14 +8,6 @@
 
 #import "SYBaseViewController.h"
 
-typedef NS_ENUM(NSUInteger, SYListType) {
-    SYListTypeCategory = 1,
-    SYListTypePayTop = 2,
-    SYListTypeNear = 3,
-    SYListTypeCollection = 4,
-    SYListTypeHistory = 5
-};
-
 @interface SYListViewController : SYBaseViewController
 
 @end

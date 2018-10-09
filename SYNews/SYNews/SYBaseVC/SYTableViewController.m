@@ -32,6 +32,7 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf.manager loadNewData];
     }];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)requestData {
