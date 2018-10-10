@@ -245,6 +245,7 @@
                 <outlet property="jyDrawLabel" destination="7DR-Kh-y8v" id="GNd-0u-m2X"/>
                 <outlet property="jyHomeLabel" destination="r32-QJ-Ix0" id="dJq-I0-noo"/>
                 <outlet property="lastRefreshTimeLabel" destination="e7X-0f-tn8" id="KGb-wp-DHR"/>
+                <outlet property="lastTitleLabel" destination="QMh-Gc-17A" id="2zj-eO-3df"/>
                 <outlet property="moneyLabel" destination="3QW-Tq-5As" id="fUF-m3-ewU"/>
                 <outlet property="scoreLabel" destination="tfb-0q-Vu1" id="bre-MO-VO2"/>
                 <outlet property="timeLabel" destination="XJR-kF-12J" id="nEB-Sm-bbt"/>

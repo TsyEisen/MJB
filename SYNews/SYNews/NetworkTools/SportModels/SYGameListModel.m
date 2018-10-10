@@ -22,6 +22,17 @@
     return _dateSeconds;
 }
 
+- (SYGameScoreType)resultType {
+    SYGameScoreType type = SYGameScoreTypeHome;
+    
+    if ([self.homeScore integerValue] == [self.awayScore integerValue]) {
+        type = SYGameScoreTypeDraw;
+    }else if ([self.homeScore integerValue] < [self.awayScore integerValue]) {
+        type = SYGameScoreTypeAway;
+    }
+    return type;
+}
+
 @end
 
 @implementation SYNumberModel

@@ -32,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *jsHomeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *jsDrawLabel;
 @property (weak, nonatomic) IBOutlet UILabel *jsAwayLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lastTitleLabel;
 @end
 
 @implementation SYGameListCell
@@ -60,9 +61,33 @@
     self.fcDrawLabel.text = [NSString stringWithFormat:@"%.f",model.KellyDraw];
     self.fcAwayLabel.text = [NSString stringWithFormat:@"%.f",model.KellyAway];
 
-    self.jsHomeLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountHome*model.BfIndexHome/10000];
-    self.jsDrawLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountDraw*model.BfIndexDraw/10000];
-    self.jsAwayLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountAway*model.BfIndexAway/10000];
+    if (model.recommendType > 0) {
+        self.lastTitleLabel.text = @"推介";
+        self.jsHomeLabel.text = nil;
+        self.jsAwayLabel.text = nil;
+        NSString *title = nil;
+        switch (model.recommendType) {
+            case SYGameScoreTypeHome:
+                title = @"胜";
+                break;
+            case SYGameScoreTypeDraw:
+                title = @"平";
+                break;
+            case SYGameScoreTypeAway:
+                title = @"负";
+                break;
+            default:
+                break;
+        }
+        self.jsDrawLabel.text = title;
+        self.backgroundColor = model.resultType == model.recommendType?[UIColor appMainColor]:[UIColor whiteColor];
+        self.contentView.backgroundColor = model.resultType == model.recommendType?[UIColor appMainColor]:[UIColor whiteColor];
+    }else {
+        self.lastTitleLabel.text = @"计算";
+        self.jsHomeLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountHome*model.BfIndexHome/10000];
+        self.jsDrawLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountDraw*model.BfIndexDraw/10000];
+        self.jsAwayLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountAway*model.BfIndexAway/10000];
+    }
 }
 
 

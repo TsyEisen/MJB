@@ -19,16 +19,11 @@
 @interface SYSportDataManager()
 
 @property (nonatomic, strong) NSArray *sports;
-
-//@property (nonatomic, strong) NSArray *payTopList;
-//@property (nonatomic, strong) NSArray *nearList;
-//@property (nonatomic, strong) NSArray *categaryList;
-//@property (nonatomic, strong) NSArray *hotGameList;
-
 @property (nonatomic, strong) NSMutableDictionary *gameJsons;
 @property (nonatomic, strong) NSMutableDictionary *currentGameJsons;
 @property (nonatomic, strong) NSMutableDictionary *categaryCache;
 @property (nonatomic, strong) NSArray *allGames;
+
 @end
 
 @implementation SYSportDataManager
@@ -236,7 +231,6 @@ SYSingleton_implementation(SYSportDataManager)
         }
     }
     
-//    [self sy_writeToFile:self.collectionCache forPath:[self dataPathWithFileName:hotGamesJsonPath]];
     [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
 }
 
@@ -258,45 +252,6 @@ SYSingleton_implementation(SYSportDataManager)
         [[NSNotificationCenter defaultCenter] postNotificationName:@"dataNeedRefresh" object:nil];
     }
 }
-
-//- (void)saveHotGame:(SYGameListModel *)model {
-//
-//    [self.collectionCache setValue:model.mj_keyValues forKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
-//
-//    _hotGameList = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.collectionCache.allValues];
-//
-//    [self sy_writeToFile:self.collectionCache forPath:[self dataPathWithFileName:hotGamesJsonPath]];
-//    [MBProgressHUD showSuccess:@"收藏成功" toView:nil];
-//    //    if (status) {
-//    //
-//    //    }else {
-//    //        [MBProgressHUD showError:@"保存失败" toView:nil];
-//    //    }
-//}
-
-//- (void)deleteHotGame:(SYGameListModel *)model {
-//    [self.collectionCache removeObjectForKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
-//    _hotGameList = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.collectionCache.allValues];
-//    [self sy_writeToFile:self.collectionCache forPath:[self dataPathWithFileName:hotGamesJsonPath]];
-//    [MBProgressHUD showSuccess:@"删除成功" toView:nil];
-//}
-
-//- (NSArray *)getAllScoreGamesByCategory:(BOOL)category {
-//
-//    NSMutableArray *temp = [NSMutableArray array];
-//    for (SYGameListModel *model in self.allGames) {
-//        if (model.score.length > 0) {
-//            [temp addObject:model];
-//        }
-//    }
-//    if (category) {
-//        NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"SortName" ascending:NO];
-//        return [[temp sortedArrayUsingDescriptors:@[timeSD]] mutableCopy];
-//    }else {
-//        NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"totalPAmount" ascending:NO];
-//        return [[temp sortedArrayUsingDescriptors:@[timeSD]] mutableCopy];
-//    }
-//}
 
 - (void)sy_writeToFile:(id)datas forPath:(NSString *)path{
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
@@ -320,27 +275,6 @@ SYSingleton_implementation(SYSportDataManager)
     }
     return _sports;
 }
-//
-//- (NSArray *)hotGameList {
-//    if (_hotGameList == nil) {
-//        if (self.collectionCache.count > 0) {
-//            _hotGameList = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.collectionCache.allValues];
-//        }else {
-//            _hotGameList = [[NSArray alloc] init];
-//        }
-//    }
-//    return _hotGameList;
-//}
-//
-//- (NSMutableDictionary *)collectionCache {
-//    if (_collectionCache == nil) {
-//        _collectionCache = [[NSMutableDictionary alloc] initWithContentsOfFile:[self dataPathWithFileName:hotGamesJsonPath]];
-//        if (_collectionCache == nil) {
-//            _collectionCache = [NSMutableDictionary dictionary];
-//        }
-//    }
-//    return _collectionCache;
-//}
 
 - (NSMutableDictionary *)categaryCache {
     if (_categaryCache == nil) {
@@ -378,5 +312,13 @@ SYSingleton_implementation(SYSportDataManager)
         _timer = [NSTimer timerWithTimeInterval:600 target:self selector:@selector(refreshGameData) userInfo:nil repeats:YES];
     }
     return _timer;
+}
+
+- (NSArray *)recommends {
+    if (_recommends == nil) {
+        NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Recommend.plist" ofType:nil]];
+        _recommends = [SYRecommendModel mj_objectArrayWithKeyValuesArray:array];
+    }
+    return _recommends;
 }
 @end

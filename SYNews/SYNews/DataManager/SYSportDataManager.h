@@ -10,6 +10,7 @@
 #import "SYGameModel.h"
 #import "SYSportModel.h"
 #import "SYGameListModel.h"
+#import "SYRecommendModel.h"
 
 typedef NS_ENUM(NSUInteger, SYSportDataType) {
     SYSportDataTypeHomeSport,
@@ -28,6 +29,7 @@ typedef NS_ENUM(NSUInteger, SYListType) {
 @interface SYSportDataManager : NSObject
 SYSingleton_interface(SYSportDataManager)
 
+@property (nonatomic, strong) NSArray *recommends;
 @property (nonatomic, strong) NSTimer *timer;
 - (void)requestDatasBySYListType:(SYListType)type Completion:(void(^)(NSArray *datas))completion;
 - (void)changeScoreModel:(SYGameListModel *)model;

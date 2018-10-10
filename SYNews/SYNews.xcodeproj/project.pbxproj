@@ -148,6 +148,11 @@
 		F09A6654216CAC4B00C3C20A /* SYPickerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6650216CAC4B00C3C20A /* SYPickerTool.m */; };
 		F09A6655216CAC4B00C3C20A /* SYPickerViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6652216CAC4B00C3C20A /* SYPickerViewTool.m */; };
 		F09A6658216DEB9B00C3C20A /* SYRecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6657216DEB9B00C3C20A /* SYRecommendModel.m */; };
+		F09A665A216DFC3100C3C20A /* Recommend.plist in Resources */ = {isa = PBXBuildFile; fileRef = F09A6659216DFC3100C3C20A /* Recommend.plist */; };
+		F09A665D216DFF8900C3C20A /* SYScorePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A665C216DFF8900C3C20A /* SYScorePicker.m */; };
+		F09A6660216DFFA000C3C20A /* SYRecommendPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A665F216DFFA000C3C20A /* SYRecommendPicker.m */; };
+		F09A6663216E193C00C3C20A /* SYRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6662216E193C00C3C20A /* SYRecommendViewController.m */; };
+		F09A6669216E208300C3C20A /* SYMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6668216E208300C3C20A /* SYMoreViewController.m */; };
 		F0F63ACA2154D223000D7A15 /* SYSportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63AC82154D222000D7A15 /* SYSportViewController.m */; };
 		F0F63ACD2154D375000D7A15 /* APIRequest+Sports.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63ACC2154D375000D7A15 /* APIRequest+Sports.m */; };
 		F0F63AD02154D53D000D7A15 /* SYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63ACF2154D53D000D7A15 /* SYTableViewController.m */; };
@@ -434,6 +439,15 @@
 		F09A6652216CAC4B00C3C20A /* SYPickerViewTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPickerViewTool.m; sourceTree = "<group>"; };
 		F09A6656216DEB9B00C3C20A /* SYRecommendModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYRecommendModel.h; sourceTree = "<group>"; };
 		F09A6657216DEB9B00C3C20A /* SYRecommendModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYRecommendModel.m; sourceTree = "<group>"; };
+		F09A6659216DFC3100C3C20A /* Recommend.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Recommend.plist; sourceTree = "<group>"; };
+		F09A665B216DFF8900C3C20A /* SYScorePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYScorePicker.h; sourceTree = "<group>"; };
+		F09A665C216DFF8900C3C20A /* SYScorePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYScorePicker.m; sourceTree = "<group>"; };
+		F09A665E216DFFA000C3C20A /* SYRecommendPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYRecommendPicker.h; sourceTree = "<group>"; };
+		F09A665F216DFFA000C3C20A /* SYRecommendPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYRecommendPicker.m; sourceTree = "<group>"; };
+		F09A6661216E193C00C3C20A /* SYRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYRecommendViewController.h; sourceTree = "<group>"; };
+		F09A6662216E193C00C3C20A /* SYRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYRecommendViewController.m; sourceTree = "<group>"; };
+		F09A6667216E208300C3C20A /* SYMoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYMoreViewController.h; sourceTree = "<group>"; };
+		F09A6668216E208300C3C20A /* SYMoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYMoreViewController.m; sourceTree = "<group>"; };
 		F0F63AC62154D222000D7A15 /* SYSportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSportViewController.h; sourceTree = "<group>"; };
 		F0F63AC82154D222000D7A15 /* SYSportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSportViewController.m; sourceTree = "<group>"; };
 		F0F63ACB2154D375000D7A15 /* APIRequest+Sports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APIRequest+Sports.h"; sourceTree = "<group>"; };
@@ -511,6 +525,7 @@
 				9F34989521562FE30058B99E /* SYSportDataManager.m */,
 				F09A6656216DEB9B00C3C20A /* SYRecommendModel.h */,
 				F09A6657216DEB9B00C3C20A /* SYRecommendModel.m */,
+				F09A6659216DFC3100C3C20A /* Recommend.plist */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -1005,6 +1020,10 @@
 				F09A6650216CAC4B00C3C20A /* SYPickerTool.m */,
 				F09A6651216CAC4B00C3C20A /* SYPickerViewTool.h */,
 				F09A6652216CAC4B00C3C20A /* SYPickerViewTool.m */,
+				F09A665B216DFF8900C3C20A /* SYScorePicker.h */,
+				F09A665C216DFF8900C3C20A /* SYScorePicker.m */,
+				F09A665E216DFFA000C3C20A /* SYRecommendPicker.h */,
+				F09A665F216DFFA000C3C20A /* SYRecommendPicker.m */,
 			);
 			path = SYPicker;
 			sourceTree = "<group>";
@@ -1022,6 +1041,10 @@
 				F0F63B1521550422000D7A15 /* SYGameDataViewController.xib */,
 				9F1500CC21573F8B00696F7C /* SYListViewController.h */,
 				9F1500CD21573F8B00696F7C /* SYListViewController.m */,
+				F09A6661216E193C00C3C20A /* SYRecommendViewController.h */,
+				F09A6662216E193C00C3C20A /* SYRecommendViewController.m */,
+				F09A6667216E208300C3C20A /* SYMoreViewController.h */,
+				F09A6668216E208300C3C20A /* SYMoreViewController.m */,
 				F09A6642216CA1E700C3C20A /* SYCategoryViewController.h */,
 				F09A6643216CA1E700C3C20A /* SYCategoryViewController.m */,
 				F09A6644216CA1E700C3C20A /* SYCategoryViewController.xib */,
@@ -1134,6 +1157,7 @@
 				F03B91BD1F54FEF30033A3B5 /* SYHomeViewController.xib in Resources */,
 				F03FC22F1F5CFFE400DF465B /* MJRefresh.bundle in Resources */,
 				F03B91F31F556BED0033A3B5 /* SYNewsDetailViewController.xib in Resources */,
+				F09A665A216DFC3100C3C20A /* Recommend.plist in Resources */,
 				F03FC1B11F5CF3DC00DF465B /* SYDiscoverCell.xib in Resources */,
 				F09A6646216CA1E700C3C20A /* SYCategoryViewController.xib in Resources */,
 				9F1500D32157435700696F7C /* SYGameListCell.xib in Resources */,
@@ -1176,6 +1200,7 @@
 				F03B91911F54FDD00033A3B5 /* SDImageCache.m in Sources */,
 				9FEF95C5215A30F800BC0A69 /* SYTransitionAnimation.m in Sources */,
 				F03FC2331F5CFFE400DF465B /* UIScrollView+MJRefresh.m in Sources */,
+				F09A665D216DFF8900C3C20A /* SYScorePicker.m in Sources */,
 				F03FC2341F5CFFE400DF465B /* UIView+MJExtension.m in Sources */,
 				F03FC2451F5D3CE300DF465B /* SYFeedbackViewController.m in Sources */,
 				F03B918B1F54FDD00033A3B5 /* NSObject+MJKeyValue.m in Sources */,
@@ -1187,6 +1212,8 @@
 				9F34988A21562F6D0058B99E /* ViewController+MASAdditions.m in Sources */,
 				F03FC22B1F5CFFE400DF465B /* MJRefreshBackStateFooter.m in Sources */,
 				F09A664A216CA2EA00C3C20A /* SYCategoryCell.m in Sources */,
+				F09A6660216DFFA000C3C20A /* SYRecommendPicker.m in Sources */,
+				F09A6669216E208300C3C20A /* SYMoreViewController.m in Sources */,
 				F03B918F1F54FDD00033A3B5 /* NSData+ImageContentType.m in Sources */,
 				F03B91DA1F5557180033A3B5 /* SYHomeNewsModel.m in Sources */,
 				F03B90F41F54FD6F0033A3B5 /* main.m in Sources */,
@@ -1257,6 +1284,7 @@
 				F03B919E1F54FDD00033A3B5 /* UIImageView+WebCache.m in Sources */,
 				F03B91CC1F553D730033A3B5 /* APIRequest.m in Sources */,
 				9F1500D22157435700696F7C /* SYGameListCell.m in Sources */,
+				F09A6663216E193C00C3C20A /* SYRecommendViewController.m in Sources */,
 				F09A6654216CAC4B00C3C20A /* SYPickerTool.m in Sources */,
 				F03FC2211F5CFFE400DF465B /* MJRefreshAutoFooter.m in Sources */,
 				9F34988E21562F6D0058B99E /* NSArray+MASAdditions.m in Sources */,

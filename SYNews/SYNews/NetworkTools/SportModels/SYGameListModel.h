@@ -49,6 +49,12 @@
  }
  */
 
+typedef NS_ENUM(NSUInteger, SYGameScoreType) {
+    SYGameScoreTypeHome = 1,
+    SYGameScoreTypeDraw = 2,
+    SYGameScoreTypeAway = 3
+};
+
 @interface SYGameListModel : NSObject
 
 @property (nonatomic, copy) NSString *AsianAvrLet;
@@ -134,13 +140,11 @@
 @property (nonatomic, copy) NSString *awayScore;
 
 @property(nonatomic,assign)NSInteger dateSeconds;
-@end
 
-typedef NS_ENUM(NSUInteger, SYGameScoreType) {
-    SYGameScoreTypeHome,
-    SYGameScoreTypeDraw,
-    SYGameScoreTypeAway
-};
+@property (nonatomic, assign) SYGameScoreType recommendType;
+
+@property (nonatomic, assign) SYGameScoreType resultType;
+@end
 
 @interface SYNumberModel : NSObject
 @property (nonatomic, assign) SYGameScoreType status;

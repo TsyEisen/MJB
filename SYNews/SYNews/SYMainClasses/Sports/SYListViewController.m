@@ -12,12 +12,14 @@
 #import "SYInputScoreViewController.h"
 #import "MJRefresh.h"
 #import "SYPickerTool.h"
-#import "SYPickerViewTool.h"
+#import "SYScorePicker.h"
+#import "SYRecommendPicker.h"
 
-@interface SYListViewController ()<UITableViewDataSource,UITableViewDelegate,UIViewControllerTransitioningDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
+@interface SYListViewController ()<UITableViewDataSource,UITableViewDelegate,UIViewControllerTransitioningDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, assign) SYListType type;
-@property (nonatomic, strong) SYPickerViewTool *pickerViewTool;
+@property (nonatomic, strong) SYScorePicker *scorePicker;
+@property (nonatomic, strong) SYRecommendPicker *recommendPicker;
 @property (nonatomic, strong) NSArray *datas;
 @property (nonatomic, strong) SYGameListModel *selectedModel;
 @property (nonatomic, assign) BOOL exit;
@@ -112,7 +114,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     self.selectedModel = [self modelFromIndexPath:indexPath];
-    [self show];
+    if (self.type == SYListTypeHistory) {
+        [self.scorePicker show];
+    }else {
+        self.recommendPicker.model = [self modelFromIndexPath:indexPath];
+        [self.recommendPicker show];
+    }
 //    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
 //    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"输入比分" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
 ////        SYInputScoreViewController *vc = [SYInputScoreViewController instancetFromNib];
@@ -154,44 +161,28 @@
     return model;
 }
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 2;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return 11;
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [NSString stringWithFormat:@"%zd",row];
-}
-
-- (void)show {
-    [self.pickerViewTool show];
-}
-
-- (void)completScore {
-    NSString *homeScore = [self pickerView:self.pickerViewTool.pickerView titleForRow:[self.pickerViewTool.pickerView selectedRowInComponent:0] forComponent:0];
-    NSString *awayScore = [self pickerView:self.pickerViewTool.pickerView titleForRow:[self.pickerViewTool.pickerView selectedRowInComponent:1] forComponent:1];
-    self.selectedModel.homeScore = homeScore;
-    self.selectedModel.awayScore = awayScore;
-    self.selectedModel.score = [NSString stringWithFormat:@"%@:%@",homeScore,awayScore];
-    [[SYSportDataManager sharedSYSportDataManager] changeScoreModel:self.selectedModel];
-    [self.tableView reloadData];
-}
-
 #pragma mark - 懒加载
 
-- (SYPickerViewTool *)pickerViewTool {
-    if (_pickerViewTool == nil) {
-        _pickerViewTool = [[SYPickerViewTool alloc] init];
-        _pickerViewTool.delegate = self;
+- (SYScorePicker *)scorePicker {
+    if (_scorePicker == nil) {
+        _scorePicker = [[SYScorePicker alloc] init];
         __weak typeof(self) weakSelf = self;
-        [_pickerViewTool setDoneAction:^{
-            [weakSelf completScore];
+        [_scorePicker setScoreAction:^(NSString *homeScore, NSString *awayScore) {
+            weakSelf.selectedModel.homeScore = homeScore;
+            weakSelf.selectedModel.awayScore = awayScore;
+            weakSelf.selectedModel.score = [NSString stringWithFormat:@"%@:%@",homeScore,awayScore];
+            [[SYSportDataManager sharedSYSportDataManager] changeScoreModel:weakSelf.selectedModel];
+            [weakSelf.tableView reloadData];
         }];
     }
-    return _pickerViewTool;
+    return _scorePicker;
+}
+
+- (SYRecommendPicker *)recommendPicker {
+    if (_recommendPicker == nil) {
+        _recommendPicker = [[SYRecommendPicker alloc] init];
+    }
+    return _recommendPicker;
 }
 
 - (UITableView *)tableView {
@@ -221,29 +212,4 @@
     }
     return _type;
 }
-
-//- (UIBarButtonItem *)rightItem {
-//    if (_rightItem == nil) {
-//        _rightItem = [[UIBarButtonItem alloc] initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(refreshAction)];
-//        _rightItem.tintColor = [UIColor whiteColor];
-//    }
-//    return _rightItem;
-//}
-
-//- (NSArray *)datas {
-//    if (_datas == nil) {
-//        if (self.type == SYListTypeCategory) {
-//            _datas = [SYSportDataManager sharedSYSportDataManager].categaryList;
-//        }else if (self.type == SYListTypeNear){
-//            _datas = [SYSportDataManager sharedSYSportDataManager].nearList;
-//        }else if (self.type == SYListTypePayTop){
-//            _datas = [SYSportDataManager sharedSYSportDataManager].payTopList;
-//        }else if (self.type == SYListTypeHistory){
-//            _datas = [[SYSportDataManager sharedSYSportDataManager] getAllHistoryGames];
-//        }else {
-//            _datas = [SYSportDataManager sharedSYSportDataManager].hotGameList;
-//        };
-//    }
-//    return _datas;
-//}
 @end
