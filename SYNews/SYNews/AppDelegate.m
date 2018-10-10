@@ -22,6 +22,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = tabBarVc;
     [self.window makeKeyAndVisible];
+    [[SYSportDataManager sharedSYSportDataManager].timer fire];
     return YES;
 }
 
@@ -36,7 +37,7 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    [[SYSportDataManager sharedSYSportDataManager].timer fire];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

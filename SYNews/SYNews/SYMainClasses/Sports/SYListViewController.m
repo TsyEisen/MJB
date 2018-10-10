@@ -20,13 +20,24 @@
 @property (nonatomic, strong) SYPickerViewTool *pickerViewTool;
 @property (nonatomic, strong) NSArray *datas;
 @property (nonatomic, strong) SYGameListModel *selectedModel;
+@property (nonatomic, assign) BOOL exit;
 @end
 
 @implementation SYListViewController
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.exit = YES;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.tableView reloadData];
+    if (self.exit && self.type != SYListTypeCategory) {
+        NSDate *date = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"SYListViewControllerLastRefreshTime_%zd",self.type]];
+        if (date && ([date timeIntervalSinceNow] < - 1800)) {
+            [self.tableView.mj_header beginRefreshing];
+        }
+    }
 }
 
 - (void)viewDidLoad {
@@ -34,8 +45,10 @@
     [self setUpUI];
     [self.tableView sy_registerNibWithClass:[SYGameListCell class]];
     [self setupMJRefresh];
+    if (self.type == SYListTypeCategory) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshAction) name:@"dataNeedRefresh" object:nil];
+    }
     
-//    self.navigationItem.rightBarButtonItem = self.rightItem;
 }
 
 - (void)setupMJRefresh {
@@ -54,6 +67,7 @@
 }
 
 - (void)refreshAction {
+    [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:[NSString stringWithFormat:@"SYListViewControllerLastRefreshTime_%zd",self.type]];
     [[SYSportDataManager sharedSYSportDataManager] requestDatasBySYListType:self.type Completion:^(NSArray *datas) {
         [self.tableView.mj_header endRefreshing];
         self.datas = datas;

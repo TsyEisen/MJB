@@ -20,7 +20,7 @@
 @property (nonatomic, strong) UIBarButtonItem *rightItem;
 @property (nonatomic, strong) SYGameDetailView *detailView;
 @property (nonatomic, strong) SYSelectBox *box;
-//@property (nonatomic, strong) UISegmentedControl *segment;
+@property (nonatomic, strong) UISegmentedControl *segment;
 @end
 
 @implementation SYCompareViewController
@@ -43,9 +43,11 @@
     [self.leftTabelView sy_registerNibWithClass:[SYGameTableTitleCell class]];
     self.navigationItem.rightBarButtonItem = self.rightItem;
     self.leftTabelView.tableFooterView = [UIView new];
-//    self.navigationItem.titleView = self.segment;
-    SYGameListModel *model = self.datas.firstObject;
-    self.navigationItem.title = model.SortName;
+    self.navigationItem.titleView = self.segment;
+//    SYGameListModel *model = self.datas.firstObject;
+//    self.navigationItem.title = model.SortName;
+    
+    [self segmentChange];
 }
 
 //- (void)refreshAction {
@@ -55,10 +57,19 @@
 //    [self.leftTabelView reloadData];
 //}
 //
-//- (void)segmentChange {
-//    [self.leftTabelView reloadData];
-//    [self.rightTableView reloadData];
-//}
+- (void)segmentChange {
+    NSSortDescriptor *contidion = nil;
+    if (self.segment.selectedSegmentIndex == 0) {
+        //时间
+        contidion = [NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:YES];
+    }else {
+        contidion = [NSSortDescriptor sortDescriptorWithKey:@"totalPAmount" ascending:NO];
+    }
+    self.datas = [self.datas sortedArrayUsingDescriptors:@[contidion]];
+    
+    [self.leftTabelView reloadData];
+    [self.rightTableView reloadData];
+}
 
 #pragma mark - tableView DataSource
 
@@ -156,13 +167,13 @@
     return _box;
 }
 
-//- (UISegmentedControl *)segment {
-//    if (_segment == nil) {
-//        _segment = [[UISegmentedControl alloc] initWithItems:@[@"  成交   ",@"  联赛   "]];
-//        _segment.tintColor = [UIColor whiteColor];
-//        _segment.selectedSegmentIndex = 0;
-//        [_segment addTarget:self action:@selector(segmentChange) forControlEvents:UIControlEventValueChanged];
-//    }
-//    return _segment;
-//}
+- (UISegmentedControl *)segment {
+    if (_segment == nil) {
+        _segment = [[UISegmentedControl alloc] initWithItems:@[@"  时间   ",@"  交易   "]];
+        _segment.tintColor = [UIColor whiteColor];
+        _segment.selectedSegmentIndex = 0;
+        [_segment addTarget:self action:@selector(segmentChange) forControlEvents:UIControlEventValueChanged];
+    }
+    return _segment;
+}
 @end

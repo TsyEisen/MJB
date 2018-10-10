@@ -28,14 +28,7 @@ typedef NS_ENUM(NSUInteger, SYListType) {
 @interface SYSportDataManager : NSObject
 SYSingleton_interface(SYSportDataManager)
 
-//- (NSArray *)getAllHistoryGames;
-//- (NSArray *)getAllScoreGamesByCategory:(BOOL)category;
-
-//- (void)reuqestAllSportsCompletion:(void(^)())completion;
+@property (nonatomic, strong) NSTimer *timer;
 - (void)requestDatasBySYListType:(SYListType)type Completion:(void(^)(NSArray *datas))completion;
 - (void)changeScoreModel:(SYGameListModel *)model;
-
-//- (void)saveHotGame:(SYGameListModel *)model;
-//- (void)deleteHotGame:(SYGameListModel *)model;
-
 @end

@@ -147,6 +147,7 @@
 		F09A6653216CAC4B00C3C20A /* SYDatePickerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A664E216CAC4B00C3C20A /* SYDatePickerTool.m */; };
 		F09A6654216CAC4B00C3C20A /* SYPickerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6650216CAC4B00C3C20A /* SYPickerTool.m */; };
 		F09A6655216CAC4B00C3C20A /* SYPickerViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6652216CAC4B00C3C20A /* SYPickerViewTool.m */; };
+		F09A6658216DEB9B00C3C20A /* SYRecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6657216DEB9B00C3C20A /* SYRecommendModel.m */; };
 		F0F63ACA2154D223000D7A15 /* SYSportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63AC82154D222000D7A15 /* SYSportViewController.m */; };
 		F0F63ACD2154D375000D7A15 /* APIRequest+Sports.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63ACC2154D375000D7A15 /* APIRequest+Sports.m */; };
 		F0F63AD02154D53D000D7A15 /* SYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63ACF2154D53D000D7A15 /* SYTableViewController.m */; };
@@ -431,6 +432,8 @@
 		F09A6650216CAC4B00C3C20A /* SYPickerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPickerTool.m; sourceTree = "<group>"; };
 		F09A6651216CAC4B00C3C20A /* SYPickerViewTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYPickerViewTool.h; sourceTree = "<group>"; };
 		F09A6652216CAC4B00C3C20A /* SYPickerViewTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPickerViewTool.m; sourceTree = "<group>"; };
+		F09A6656216DEB9B00C3C20A /* SYRecommendModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYRecommendModel.h; sourceTree = "<group>"; };
+		F09A6657216DEB9B00C3C20A /* SYRecommendModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYRecommendModel.m; sourceTree = "<group>"; };
 		F0F63AC62154D222000D7A15 /* SYSportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSportViewController.h; sourceTree = "<group>"; };
 		F0F63AC82154D222000D7A15 /* SYSportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSportViewController.m; sourceTree = "<group>"; };
 		F0F63ACB2154D375000D7A15 /* APIRequest+Sports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APIRequest+Sports.h"; sourceTree = "<group>"; };
@@ -506,6 +509,8 @@
 			children = (
 				9F34989421562FE30058B99E /* SYSportDataManager.h */,
 				9F34989521562FE30058B99E /* SYSportDataManager.m */,
+				F09A6656216DEB9B00C3C20A /* SYRecommendModel.h */,
+				F09A6657216DEB9B00C3C20A /* SYRecommendModel.m */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -1192,6 +1197,7 @@
 				F03FC1AC1F5CF24D00DF465B /* SYDiscoverNewsModel.m in Sources */,
 				F03FC2291F5CFFE400DF465B /* MJRefreshBackGifFooter.m in Sources */,
 				F03B91DE1F5557F70033A3B5 /* SYHomeNewsCell.m in Sources */,
+				F09A6658216DEB9B00C3C20A /* SYRecommendModel.m in Sources */,
 				F068019E215F0D150032C4DA /* SYGameTableTitleCell.m in Sources */,
 				F06801A2215F1EA50032C4DA /* SYGameDetailView.m in Sources */,
 				F0F63B122154F7D3000D7A15 /* NSDate+SYExtension.m in Sources */,

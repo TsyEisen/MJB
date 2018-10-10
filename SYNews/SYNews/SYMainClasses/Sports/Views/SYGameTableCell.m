@@ -144,7 +144,6 @@
     }else {
         self.text = [NSString stringWithFormat:@"%@%.2f",name,model.num];
     }
-    
 }
 
 - (void)setType:(SYGameScoreType)type {
