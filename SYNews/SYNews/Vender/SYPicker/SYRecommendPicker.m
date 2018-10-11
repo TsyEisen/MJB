@@ -55,7 +55,7 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return component == 0 ? [SYSportDataManager sharedSYSportDataManager].recommends.count : 3;
+    return component == 0 ? [SYSportDataManager sharedSYSportDataManager].recommends.count : 5;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {

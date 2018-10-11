@@ -23,11 +23,15 @@
 }
 
 - (SYGameScoreType)resultType {
-    SYGameScoreType type = SYGameScoreTypeHome;
-    if ([self.homeScore integerValue] == [self.awayScore integerValue]) {
-        type = SYGameScoreTypeDraw;
-    }else if ([self.homeScore integerValue] < [self.awayScore integerValue]) {
-        type = SYGameScoreTypeAway;
+    SYGameScoreType type = 0;
+    if (self.score.length > 0) {
+        if ([self.homeScore integerValue] == [self.awayScore integerValue]) {
+            type = SYGameScoreTypeDraw;
+        }else if ([self.homeScore integerValue] < [self.awayScore integerValue]) {
+            type = SYGameScoreTypeAway;
+        }else if ([self.homeScore integerValue] > [self.awayScore integerValue]){
+            type = SYGameScoreTypeHome;
+        }
     }
     return type;
 }

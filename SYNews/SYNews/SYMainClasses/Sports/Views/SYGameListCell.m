@@ -79,7 +79,7 @@
             case SYGameScoreTypeAway|SYGameScoreTypeDraw:
                 title = @"客不败";
                 break;
-            case SYGameScoreTypeAway|SYGameScoreTypeHome:
+            case SYGameScoreTypeDraw|SYGameScoreTypeHome:
                 title = @"主不败";
                 break;
             default:
