@@ -44,7 +44,20 @@
 
 - (NSString *)path {
     if (_path == nil) {
-        _path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true).firstObject stringByAppendingPathComponent:[NSString stringWithFormat:@"SYRecommend/SYRecommend_%zd",self.tag]];
+        NSString *directory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true).firstObject stringByAppendingPathComponent:@"SYRecommend"];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        BOOL isDir = NO;
+        BOOL isDirExist = [fileManager fileExistsAtPath:directory isDirectory:&isDir];
+        if(!(isDirExist && isDir)){
+            BOOL bCreateDir = [fileManager createDirectoryAtPath:directory withIntermediateDirectories:YES attributes:nil error:nil];
+                if(!bCreateDir){
+                    NSLog(@"创建文件夹失败！");
+                }
+        }
+        _path = [directory stringByAppendingFormat:@"/SYRecommend_%zd.plist",self.tag];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:_path]) {
+            [[NSFileManager defaultManager] createFileAtPath:_path contents:nil attributes:nil];
+        }
     }
     return _path;
 }
@@ -56,7 +69,7 @@
 - (NSMutableDictionary *)jsons {
     if (_jsons == nil) {
         _jsons = [[NSMutableDictionary alloc] initWithContentsOfFile:self.path];
-        if (_jsons) {
+        if (_jsons == nil) {
             _jsons = [NSMutableDictionary dictionary];
         }
     }

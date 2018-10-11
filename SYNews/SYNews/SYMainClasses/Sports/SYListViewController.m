@@ -17,7 +17,6 @@
 
 @interface SYListViewController ()<UITableViewDataSource,UITableViewDelegate,UIViewControllerTransitioningDelegate>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, assign) SYListType type;
 @property (nonatomic, strong) SYScorePicker *scorePicker;
 @property (nonatomic, strong) SYRecommendPicker *recommendPicker;
 @property (nonatomic, strong) NSArray *datas;
@@ -196,20 +195,5 @@
         _tableView.backgroundColor = [UIColor sy_colorWithRGB:0xf4f4f4];
     }
     return _tableView;
-}
-
-- (SYListType)type {
-    if (_type == 0) {
-        if ([self.title isEqualToString:@"赛事"]) {
-            _type = SYListTypeCategory;
-        }else if ([self.title isEqualToString:@"临近"]) {
-            _type = SYListTypeNear;
-        }else if ([self.title isEqualToString:@"交易"]) {
-            _type = SYListTypePayTop;
-        }else if ([self.title isEqualToString:@"历史"]) {
-            _type = SYListTypeHistory;
-        }
-    }
-    return _type;
 }
 @end

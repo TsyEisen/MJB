@@ -27,7 +27,7 @@
 //    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.left.right.bottom.top.equalTo(self.view);
 //    }];
-    
+    [self.view addSubview:self.scrollView];
     CGFloat w = ScreenW;
     CGFloat h = 20;
     for (int i = 0; i < [SYSportDataManager sharedSYSportDataManager].recommends.count; i++) {
@@ -44,7 +44,7 @@
         tableView.estimatedRowHeight = 100;
         tableView.backgroundColor = [UIColor sy_colorWithRGB:0xf4f4f4];
         tableView.tag = i;
-        
+        [tableView sy_registerNibWithClass:[SYGameListCell class]];
         [self.scrollView addSubview:tableView];
     }
     

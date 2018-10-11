@@ -13,6 +13,7 @@
 @interface SYTabBarViewController ()
 @property (nonatomic, strong) NSArray *childVCModels;
 @property (nonatomic, strong) UIImageView *line;
+
 @end
 
 @implementation SYTabBarViewController
@@ -30,10 +31,12 @@
             SYBaseViewController *baseVc = [[NSClassFromString(model.className) alloc] init];
             if (nibPath) {
                 baseVc = [(SYBaseViewController *)[NSClassFromString(model.className) alloc] initWithNibName:model.className bundle:nil];
-                if (model.type.integerValue > 0) {
-                    [baseVc setValue:model.type forKey:@"type"];
-                }
             }
+            
+            if ([model.className isEqualToString:@"SYListViewController"]) {
+                [baseVc setValue:@(model.type) forKey:@"type"];
+            }
+            
             SYNavgationViewController *nvaVc = [[SYNavgationViewController alloc] initWithRootViewController:baseVc];
 //            baseVc.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[[UIImage imageNamed:model.imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:model.selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
             baseVc.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:model.imageName] selectedImage:[UIImage imageNamed:model.selectedImageName]];
@@ -55,7 +58,7 @@
 
 - (NSArray *)childVCModels {
     if (_childVCModels == nil) {
-        _childVCModels = [SYChildVCModel models];
+        _childVCModels = [SYChildVCModel tabBarVcModels];
     }
     return _childVCModels;
 }
@@ -72,22 +75,15 @@
 
 @implementation SYChildVCModel
 
-- (instancetype)initWithDict:(NSDictionary *)dict {
-    if (self = [super init]) {
-        [self setValuesForKeysWithDictionary:dict];
-    }
-    return self;
++ (NSArray *)moreVcModels {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"SYMoreVCData" ofType:@"plist"];
+    NSArray *array = [NSArray arrayWithContentsOfFile:path];
+    return [SYChildVCModel mj_objectArrayWithKeyValuesArray:array];
 }
-
-+ (NSArray *)models {
++ (NSArray *)tabBarVcModels {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"SYViewControllerData" ofType:@"plist"];
     NSArray *array = [NSArray arrayWithContentsOfFile:path];
-    NSMutableArray *tempArray = [NSMutableArray array];
-    for (NSDictionary *dict  in array) {
-        SYChildVCModel *model = [[SYChildVCModel alloc] initWithDict:dict];
-        [tempArray addObject:model];
-    }
-    return tempArray;
+    return [SYChildVCModel mj_objectArrayWithKeyValuesArray:array];
 }
 
 @end

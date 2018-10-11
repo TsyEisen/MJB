@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>className</key>
+		<string>SYCategoryViewController</string>
+		<key>title</key>
+		<string>赛程对比</string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>SYCompareViewController</string>
+		<key>title</key>
+		<string>全部对比</string>
+		<key>type</key>
+		<string>5</string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>SYListViewController</string>
+		<key>title</key>
+		<string>比分录入</string>
+		<key>type</key>
+		<string>6</string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>SYRecommendViewController</string>
+		<key>title</key>
+		<string>推介</string>
+	</dict>
+</array>
+</plist>

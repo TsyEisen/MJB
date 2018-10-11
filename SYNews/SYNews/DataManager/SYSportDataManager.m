@@ -85,6 +85,13 @@ SYSingleton_implementation(SYSportDataManager)
             _allGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
             completion([_categaryCache allValues]);
         }
+        
+        NSArray *currentGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.currentGameJsons.allValues];
+        for (SYGameListModel *model in currentGames) {
+            for (SYRecommendModel *recommend in self.recommends) {
+                [recommend changeModelInformation:model];
+            }
+        }
     });
 }
 
@@ -155,6 +162,7 @@ SYSingleton_implementation(SYSportDataManager)
             completion(array);
             
         }else if (type == SYListTypeCompare) {
+            
             NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
             for (SYGameListModel *model in self.allGames) {
                 if (model.score.length > 0) {
@@ -167,6 +175,27 @@ SYSingleton_implementation(SYSportDataManager)
                 }
             }
             completion(mutableDict.allValues);
+            
+        }else if (type == SYListTypeCompare_all) {
+            
+            NSMutableArray *tempArray = [NSMutableArray array];
+            for (SYGameListModel *model in self.allGames) {
+                if (model.score.length > 0) {
+                    [tempArray addObject:model];
+                }
+            }
+            completion(tempArray);
+            
+        }else if (type == SYListTypeNoScore) {
+            
+            NSMutableArray *tempArray = [NSMutableArray array];
+            for (SYGameListModel *model in self.allGames) {
+                if (model.score.length == 0) {
+                    [tempArray addObject:model];
+                }
+            }
+            completion(tempArray);
+            
         }
     }
 }
@@ -242,11 +271,10 @@ SYSingleton_implementation(SYSportDataManager)
         NSInteger i = 0;
         do {
             SYGameListModel *model = array[i];
-            needRefresh = fabs(model.dateSeconds - [[NSDate date] timeIntervalSince1970]) <= 600;
+            needRefresh = fabs(model.dateSeconds - [[NSDate date] timeIntervalSince1970]) <= 1800;
             i++;
         } while ((!needRefresh)&&(i<array.count));
     }
-    
     
     if (needRefresh) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"dataNeedRefresh" object:nil];
@@ -309,7 +337,7 @@ SYSingleton_implementation(SYSportDataManager)
 
 - (NSTimer *)timer {
     if (_timer == nil) {
-        _timer = [NSTimer timerWithTimeInterval:600 target:self selector:@selector(refreshGameData) userInfo:nil repeats:YES];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1800 target:self selector:@selector(refreshGameData) userInfo:nil repeats:YES];
     }
     return _timer;
 }

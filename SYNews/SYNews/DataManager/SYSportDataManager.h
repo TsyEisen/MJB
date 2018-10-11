@@ -20,10 +20,12 @@ typedef NS_ENUM(NSUInteger, SYSportDataType) {
 
 typedef NS_ENUM(NSUInteger, SYListType) {
     SYListTypeCategory = 0,
-    SYListTypePayTop = 1,
-    SYListTypeNear = 2,
+    SYListTypeNear = 1,
+    SYListTypePayTop = 2,
     SYListTypeHistory = 3,
-    SYListTypeCompare = 4
+    SYListTypeCompare = 4,
+    SYListTypeCompare_all = 5,
+    SYListTypeNoScore = 6,
 };
 
 @interface SYSportDataManager : NSObject

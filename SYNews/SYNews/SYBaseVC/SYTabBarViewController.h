@@ -13,8 +13,9 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *imageName;
 @property (nonatomic, copy) NSString *selectedImageName;
-@property (nonatomic, strong) NSNumber *type;
-+ (NSArray *)models;
+@property (nonatomic, assign) SYListType type;
++ (NSArray *)moreVcModels;
++ (NSArray *)tabBarVcModels;
 @end
 
 @interface SYTabBarViewController : UITabBarController

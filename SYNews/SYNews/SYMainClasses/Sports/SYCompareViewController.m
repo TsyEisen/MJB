@@ -27,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self.scrollView addSubview:self.rightTableView];
     NSArray *titles = @[@"概率大",@"概率中",@"概率小",@"交易大",@"交易中",@"交易小",@"方差大",@"方差中",@"方差小",@"单注(万)"];
     CGFloat w = SYGameTableCellWidth;
@@ -47,7 +48,14 @@
 //    SYGameListModel *model = self.datas.firstObject;
 //    self.navigationItem.title = model.SortName;
     
-    [self segmentChange];
+    if (_datas == nil) {
+        [[SYSportDataManager sharedSYSportDataManager] requestDatasBySYListType:SYListTypeCompare_all Completion:^(NSArray *datas) {
+            _datas = datas;
+            [self segmentChange];
+        }];
+    }else {
+        [self segmentChange];
+    }
 }
 
 //- (void)refreshAction {
@@ -176,4 +184,5 @@
     }
     return _segment;
 }
+
 @end

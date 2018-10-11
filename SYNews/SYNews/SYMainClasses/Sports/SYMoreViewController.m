@@ -7,9 +7,11 @@
 //
 
 #import "SYMoreViewController.h"
+#import "SYTabBarViewController.h"
 
 @interface SYMoreViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSArray *datas;
 @end
 
 @implementation SYMoreViewController
@@ -32,7 +34,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return self.datas.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -40,14 +42,30 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([UITableViewCell class])];
     }
+    SYChildVCModel *model = self.datas[indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = indexPath.row == 0?@"对比":@"推介";
+    cell.textLabel.text = model.title;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    SYChildVCModel *model = self.datas[indexPath.row];
+    NSString*nibPath = [[NSBundle mainBundle] pathForResource:model.className ofType:@"nib"];
+    SYBaseViewController *baseVc = [[NSClassFromString(model.className) alloc] init];
+    if (nibPath) {
+        baseVc = [(SYBaseViewController *)[NSClassFromString(model.className) alloc] initWithNibName:model.className bundle:nil];
+    }
+    baseVc.hidesBottomBarWhenPushed = YES;
+    baseVc.title = model.title;
     
+    if ([model.className isEqualToString:@"SYListViewController"]) {
+        [baseVc setValue:@(model.type) forKey:@"type"];
+    }
+    
+    
+    
+    [self.navigationController pushViewController:baseVc animated:YES];
 }
 
 - (UITableView *)tableView {
@@ -55,12 +73,18 @@
         _tableView = [[UITableView alloc] init];
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.rowHeight = UITableViewAutomaticDimension;
-        _tableView.estimatedRowHeight = 100;
+        _tableView.rowHeight = 50;
+//        _tableView.estimatedRowHeight = 100;
         _tableView.backgroundColor = [UIColor sy_colorWithRGB:0xf4f4f4];
+        _tableView.tableFooterView = [UIView new];
     }
     return _tableView;
 }
 
+- (NSArray *)datas {
+    if (_datas == nil) {
+        _datas = [SYChildVCModel moreVcModels];
+    }
+    return _datas;
+}
 @end

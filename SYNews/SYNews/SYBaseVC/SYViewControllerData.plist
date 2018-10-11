@@ -11,6 +11,8 @@
 		<string>football2</string>
 		<key>selectedImageName</key>
 		<string>football2</string>
+		<key>type</key>
+		<string>0</string>
 	</dict>
 	<dict>
 		<key>className</key>
@@ -21,6 +23,8 @@
 		<string>football2</string>
 		<key>selectedImageName</key>
 		<string>football2</string>
+		<key>type</key>
+		<string>1</string>
 	</dict>
 	<dict>
 		<key>className</key>
@@ -31,6 +35,8 @@
 		<string>football2</string>
 		<key>selectedImageName</key>
 		<string>football2</string>
+		<key>type</key>
+		<string>2</string>
 	</dict>
 	<dict>
 		<key>className</key>
@@ -41,12 +47,14 @@
 		<string>football2</string>
 		<key>selectedImageName</key>
 		<string>football2</string>
+		<key>type</key>
+		<string>3</string>
 	</dict>
 	<dict>
 		<key>className</key>
-		<string>SYCategoryViewController</string>
+		<string>SYMoreViewController</string>
 		<key>title</key>
-		<string>对比</string>
+		<string>更多</string>
 		<key>imageName</key>
 		<string>football2</string>
 		<key>selectedImageName</key>
