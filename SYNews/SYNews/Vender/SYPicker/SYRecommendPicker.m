@@ -26,7 +26,25 @@
 
 - (void)completionAction {
     SYRecommendModel *model = [[SYSportDataManager sharedSYSportDataManager].recommends objectAtIndex:[self.pickerView selectedRowInComponent:0]];
-    SYGameScoreType type = [self.pickerView selectedRowInComponent:1] + 1;
+    NSInteger row = [self.pickerView selectedRowInComponent:1];
+    SYGameScoreType type;
+    switch (row) {
+        case 0:
+            type = SYGameScoreTypeHome|SYGameScoreTypeDraw;
+            break;
+        case 1:
+            type = SYGameScoreTypeHome;
+            break;
+        case 2:
+            type = SYGameScoreTypeDraw;
+            break;
+        case 3:
+            type = SYGameScoreTypeAway;
+            break;
+        case 4:
+            type = SYGameScoreTypeAway|SYGameScoreTypeDraw;
+            break;
+    }
     self.model.recommendType = type;
     [model saveModel:self.model];
     [MBProgressHUD showSuccess:@"收藏成功" toView:nil];
@@ -47,13 +65,19 @@
     }else {
         switch (row) {
             case 0:
-                return @"胜";
+                return @"主不败";
                 break;
             case 1:
-                return @"平";
+                return @"胜";
                 break;
             case 2:
+                return @"平";
+                break;
+            case 3:
                 return @"负";
+                break;
+            case 4:
+                return @"客不败";
                 break;
             default:
                 return nil;

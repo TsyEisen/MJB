@@ -50,9 +50,9 @@
  */
 
 typedef NS_ENUM(NSUInteger, SYGameScoreType) {
-    SYGameScoreTypeHome = 1,
-    SYGameScoreTypeDraw = 2,
-    SYGameScoreTypeAway = 3
+    SYGameScoreTypeHome = 1 << 0,
+    SYGameScoreTypeDraw = 1 << 1,
+    SYGameScoreTypeAway = 1 << 2
 };
 
 @interface SYGameListModel : NSObject

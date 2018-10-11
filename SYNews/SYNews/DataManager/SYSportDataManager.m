@@ -271,7 +271,7 @@ SYSingleton_implementation(SYSportDataManager)
         NSInteger i = 0;
         do {
             SYGameListModel *model = array[i];
-            needRefresh = fabs(model.dateSeconds - [[NSDate date] timeIntervalSince1970]) <= 1800;
+            needRefresh = fabs(model.dateSeconds - [[NSDate date] timeIntervalSince1970]) <= 2000;
             i++;
         } while ((!needRefresh)&&(i<array.count));
     }

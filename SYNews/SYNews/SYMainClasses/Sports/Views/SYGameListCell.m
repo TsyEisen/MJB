@@ -76,12 +76,18 @@
             case SYGameScoreTypeAway:
                 title = @"负";
                 break;
+            case SYGameScoreTypeAway|SYGameScoreTypeDraw:
+                title = @"客不败";
+                break;
+            case SYGameScoreTypeAway|SYGameScoreTypeHome:
+                title = @"主不败";
+                break;
             default:
                 break;
         }
         self.jsDrawLabel.text = title;
-        self.backgroundColor = model.resultType == model.recommendType?[UIColor appMainColor]:[UIColor whiteColor];
-        self.contentView.backgroundColor = model.resultType == model.recommendType?[UIColor appMainColor]:[UIColor whiteColor];
+        self.backgroundColor = model.resultType & model.recommendType?[UIColor appMainColor]:[UIColor whiteColor];
+        self.contentView.backgroundColor = model.resultType & model.recommendType?[UIColor appMainColor]:[UIColor whiteColor];
     }else {
         self.lastTitleLabel.text = @"计算";
         self.jsHomeLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountHome*model.BfIndexHome/10000];
