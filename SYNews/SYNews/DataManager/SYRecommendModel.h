@@ -14,4 +14,5 @@
 @property (nonatomic, strong,readonly) NSArray *datas;
 - (void)saveModel:(SYGameListModel *)model;
 - (void)changeModelInformation:(SYGameListModel *)model;
+- (void)deleteModel:(SYGameListModel *)model;
 @end

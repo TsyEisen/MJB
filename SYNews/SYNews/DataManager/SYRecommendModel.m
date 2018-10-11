@@ -42,6 +42,12 @@
     }
 }
 
+- (void)deleteModel:(SYGameListModel *)model {
+    [self.list removeObject:model];
+    [self.jsons removeObjectForKey:[NSString stringWithFormat:@"%zd",model.EventId]];
+    [self.jsons writeToFile:self.path atomically:YES];
+}
+
 - (NSString *)path {
     if (_path == nil) {
         NSString *directory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true).firstObject stringByAppendingPathComponent:@"SYRecommend"];
