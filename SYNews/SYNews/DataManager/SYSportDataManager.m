@@ -330,7 +330,7 @@ SYSingleton_implementation(SYSportDataManager)
 - (void)refreshGameData {
     NSArray *array = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.currentGameJsons.allValues];
     BOOL needRefresh = NO;
-    
+
     if (array.count > 0) {
         NSInteger i = 0;
         do {
@@ -339,7 +339,7 @@ SYSingleton_implementation(SYSportDataManager)
             i++;
         } while ((!needRefresh)&&(i<array.count));
     }
-    
+
     if (needRefresh) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"dataNeedRefresh" object:nil];
     }

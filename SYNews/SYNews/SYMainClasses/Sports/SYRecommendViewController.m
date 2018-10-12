@@ -71,6 +71,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SYGameListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SYGameListCell class])];
+    cell.recommend = YES;
     SYRecommendModel *model = [SYSportDataManager sharedSYSportDataManager].recommends[self.switchView.index];
     cell.model = model.datas[indexPath.row];
     return cell;

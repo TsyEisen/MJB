@@ -61,7 +61,7 @@
     self.fcDrawLabel.text = [NSString stringWithFormat:@"%.f",model.KellyDraw];
     self.fcAwayLabel.text = [NSString stringWithFormat:@"%.f",model.KellyAway];
 
-    if (model.recommendType > 0) {
+    if (model.recommendType > 0 && self.recommend) {
         self.lastTitleLabel.text = @"推介";
         self.jsHomeLabel.text = nil;
         self.jsAwayLabel.text = nil;
@@ -89,10 +89,13 @@
         self.backgroundColor = model.resultType & model.recommendType?[UIColor appMainColor]:[UIColor whiteColor];
         self.contentView.backgroundColor = model.resultType & model.recommendType?[UIColor appMainColor]:[UIColor whiteColor];
     }else {
-        self.lastTitleLabel.text = @"计算";
-        self.jsHomeLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountHome*model.BfIndexHome/10000];
-        self.jsDrawLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountDraw*model.BfIndexDraw/10000];
-        self.jsAwayLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountAway*model.BfIndexAway/10000];
+        self.lastTitleLabel.text = nil;
+//        self.jsHomeLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountHome*model.BfIndexHome/10000];
+//        self.jsDrawLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountDraw*model.BfIndexDraw/10000];
+//        self.jsAwayLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountAway*model.BfIndexAway/10000];
+        self.jsHomeLabel.text = nil;
+        self.jsDrawLabel.text = nil;
+        self.jsAwayLabel.text = nil;
     }
 }
 

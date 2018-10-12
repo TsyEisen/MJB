@@ -62,5 +62,11 @@
 		<key>tag</key>
 		<integer>8</integer>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>安小念</string>
+		<key>tag</key>
+		<integer>9</integer>
+	</dict>
 </array>
 </plist>

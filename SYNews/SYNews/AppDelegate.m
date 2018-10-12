@@ -44,7 +44,7 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    [[SYSportDataManager sharedSYSportDataManager].timer fire];
+//    [[SYSportDataManager sharedSYSportDataManager].timer fire];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

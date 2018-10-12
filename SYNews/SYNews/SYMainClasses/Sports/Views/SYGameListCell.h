@@ -11,4 +11,5 @@
 
 @interface SYGameListCell : UITableViewCell
 @property (nonatomic, strong) SYGameListModel *model;
+@property(nonatomic,assign)BOOL recommend;
 @end
