@@ -35,5 +35,6 @@ SYSingleton_interface(SYSportDataManager)
 @property (nonatomic, strong) NSTimer *timer;
 - (void)requestDatasBySYListType:(SYListType)type Completion:(void(^)(NSArray *datas))completion;
 - (void)changeScoreModel:(SYGameListModel *)model;
+- (void)deleteModel:(SYGameListModel *)model;
 - (void)replaceDataForNewest;
 @end

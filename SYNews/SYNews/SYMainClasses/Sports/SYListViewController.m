@@ -121,14 +121,35 @@
         [alert addAction:action1];
         
         UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"推介" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            self.recommendPicker.model = [self modelFromIndexPath:indexPath];
             [self.recommendPicker show];
         }];
         [alert addAction:action2];
-    
-        UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-    
+        
+        UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            UIAlertController *deleteAlert = [UIAlertController alertControllerWithTitle:@"提示" message:@"确定删除" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *deleteAlertAction1 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            UIAlertAction *deleteAlertAction2 = [UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                [[SYSportDataManager sharedSYSportDataManager] deleteModel:self.selectedModel];
+                NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.datas];
+                [tempArray removeObjectAtIndex:indexPath.row];
+                self.datas = tempArray;
+                [self.tableView reloadData];
+            }];
+            [deleteAlert addAction:deleteAlertAction1];
+            [deleteAlert addAction:deleteAlertAction2];
+            [self.navigationController presentViewController:deleteAlert animated:YES completion:nil];
+            
         }];
         [alert addAction:action3];
+    
+        UIAlertAction *action4 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    
+        }];
+        [alert addAction:action4];
     
         [self.navigationController presentViewController:alert animated:YES completion:nil];
     }else if(self.type == SYListTypeNoScore){

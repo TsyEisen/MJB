@@ -69,7 +69,7 @@
     NSSortDescriptor *contidion = nil;
     if (self.segment.selectedSegmentIndex == 0) {
         //时间
-        contidion = [NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:YES];
+        contidion = [NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:NO];
     }else {
         contidion = [NSSortDescriptor sortDescriptorWithKey:@"totalPAmount" ascending:NO];
     }

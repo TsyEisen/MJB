@@ -249,6 +249,12 @@ SYSingleton_implementation(SYSportDataManager)
     }];
 }
 
+- (void)deleteModel:(SYGameListModel *)model {
+    [self.gameJsons removeObjectForKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
+    [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
+    _allGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
+}
+
 - (void)changeScoreModel:(SYGameListModel *)model {
     
     NSDictionary *json = [self.gameJsons objectForKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
