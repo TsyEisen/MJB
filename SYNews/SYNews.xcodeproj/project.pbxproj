@@ -155,6 +155,7 @@
 		F09A6669216E208300C3C20A /* SYMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6668216E208300C3C20A /* SYMoreViewController.m */; };
 		F0E242C4216EFB26008CB6D8 /* SYMoreVCData.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E242C3216EFB26008CB6D8 /* SYMoreVCData.plist */; };
 		F0E242D7216F6360008CB6D8 /* ERSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E242D6216F6360008CB6D8 /* ERSwitchView.m */; };
+		F0E242DC21703EA5008CB6D8 /* 20181012.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E242DB21703EA5008CB6D8 /* 20181012.plist */; };
 		F0F63ACA2154D223000D7A15 /* SYSportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63AC82154D222000D7A15 /* SYSportViewController.m */; };
 		F0F63ACD2154D375000D7A15 /* APIRequest+Sports.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63ACC2154D375000D7A15 /* APIRequest+Sports.m */; };
 		F0F63AD02154D53D000D7A15 /* SYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63ACF2154D53D000D7A15 /* SYTableViewController.m */; };
@@ -453,6 +454,7 @@
 		F0E242C3216EFB26008CB6D8 /* SYMoreVCData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SYMoreVCData.plist; sourceTree = "<group>"; };
 		F0E242D5216F6360008CB6D8 /* ERSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSwitchView.h; sourceTree = "<group>"; };
 		F0E242D6216F6360008CB6D8 /* ERSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSwitchView.m; sourceTree = "<group>"; };
+		F0E242DB21703EA5008CB6D8 /* 20181012.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181012.plist; sourceTree = "<group>"; };
 		F0F63AC62154D222000D7A15 /* SYSportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSportViewController.h; sourceTree = "<group>"; };
 		F0F63AC82154D222000D7A15 /* SYSportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSportViewController.m; sourceTree = "<group>"; };
 		F0F63ACB2154D375000D7A15 /* APIRequest+Sports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APIRequest+Sports.h"; sourceTree = "<group>"; };
@@ -526,6 +528,7 @@
 		9F34989321562F9F0058B99E /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				F0E242DA21703AB6008CB6D8 /* lastData */,
 				9F34989421562FE30058B99E /* SYSportDataManager.h */,
 				9F34989521562FE30058B99E /* SYSportDataManager.m */,
 				F09A6656216DEB9B00C3C20A /* SYRecommendModel.h */,
@@ -1035,6 +1038,14 @@
 			path = SYPicker;
 			sourceTree = "<group>";
 		};
+		F0E242DA21703AB6008CB6D8 /* lastData */ = {
+			isa = PBXGroup;
+			children = (
+				F0E242DB21703EA5008CB6D8 /* 20181012.plist */,
+			);
+			path = lastData;
+			sourceTree = "<group>";
+		};
 		F0F63ABF2154CF7C000D7A15 /* Sports */ = {
 			isa = PBXGroup;
 			children = (
@@ -1179,6 +1190,7 @@
 				F03B91141F54FDC60033A3B5 /* SYViewControllerData.plist in Resources */,
 				F03B91DF1F5557F70033A3B5 /* SYHomeNewsCell.xib in Resources */,
 				9FEF95C2215A2E9000BC0A69 /* SYInputScoreViewController.xib in Resources */,
+				F0E242DC21703EA5008CB6D8 /* 20181012.plist in Resources */,
 				F0F63B1721550422000D7A15 /* SYGameDataViewController.xib in Resources */,
 				F068019A215E22910032C4DA /* SYCompareViewController.xib in Resources */,
 				F09A664B216CA2EA00C3C20A /* SYCategoryCell.xib in Resources */,

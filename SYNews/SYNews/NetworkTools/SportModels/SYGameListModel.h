@@ -141,6 +141,8 @@ typedef NS_ENUM(NSUInteger, SYGameScoreType) {
 
 @property(nonatomic,assign)NSInteger dateSeconds;
 
+@property (nonatomic, assign) NSInteger updateSeconds;
+
 @property (nonatomic, assign) SYGameScoreType recommendType;
 
 @property (nonatomic, assign) SYGameScoreType resultType;

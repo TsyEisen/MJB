@@ -22,6 +22,14 @@
     return _dateSeconds;
 }
 
+- (NSInteger)updateSeconds {
+    if (_updateSeconds == 0) {
+        NSDate *date = [NSDate sy_dateWithString:[self.MaxUpdateTime stringByReplacingOccurrencesOfString:@"T" withString:@"-"] formate:@"yyyy-MM-dd-HH:mm:ss"];
+        _updateSeconds = [date timeIntervalSince1970];
+    }
+    return _updateSeconds;
+}
+
 - (SYGameScoreType)resultType {
     SYGameScoreType type = 0;
     if (self.score.length > 0) {

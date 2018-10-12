@@ -23,6 +23,13 @@
     self.window.rootViewController = tabBarVc;
     [self.window makeKeyAndVisible];
     [[SYSportDataManager sharedSYSportDataManager].timer fire];
+    
+    if (TARGET_IPHONE_SIMULATOR) {
+        
+    }else {
+        [[SYSportDataManager sharedSYSportDataManager] replaceDataForNewest];
+    }
+    
     return YES;
 }
 

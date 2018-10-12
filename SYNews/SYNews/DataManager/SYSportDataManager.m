@@ -261,6 +261,52 @@ SYSingleton_implementation(SYSportDataManager)
     }
     
     [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
+    
+    for (SYRecommendModel *recommend in self.recommends) {
+        [recommend changeModelInformation:model];
+    }
+}
+
+- (void)replaceDataForNewest {
+    NSString *todayString = [[NSDate date] sy_stringWithFormat:@"yyyyMMdd"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:todayString ofType:@"plist"];
+    if (path == nil) {
+        return;
+    }
+    
+    NSDate *date = [[NSUserDefaults standardUserDefaults] objectForKey:@"replaceDataForNewest"];
+    if (date != nil && [date sy_isToday]) {
+        return;
+    }
+    if (path.length > 0) {
+        NSDictionary *json = [NSDictionary dictionaryWithContentsOfFile:path];
+        for (NSString *key in json.allKeys) {
+            NSDictionary *newDict = [json objectForKey:key];
+            NSDictionary *oldDict = [self.gameJsons objectForKey:key];
+            if (oldDict) {
+                SYGameListModel *newModel = [SYGameListModel mj_objectWithKeyValues:newDict];
+                SYGameListModel *oldModel = [SYGameListModel mj_objectWithKeyValues:oldDict];
+                
+                if (newModel.updateSeconds > oldModel.updateSeconds) {
+                    newModel.score = oldModel.score;
+                    newModel.homeScore = oldModel.score;
+                    newModel.awayScore = oldModel.awayScore;
+                    
+                    [self.gameJsons setObject:[newModel mj_keyValues] forKey:key];
+                    
+                    for (SYRecommendModel *recommend in self.recommends) {
+                        [recommend changeModelInformation:newModel];
+                    }
+                    
+                }
+            }else {
+                [self.gameJsons setObject:newDict forKey:key];
+            }
+            [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"replaceDataForNewest"];
+            [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
+            [MBProgressHUD showSuccess:@"今日更新执行完毕" toView:nil];
+        }
+    }
 }
 
 - (void)refreshGameData {
