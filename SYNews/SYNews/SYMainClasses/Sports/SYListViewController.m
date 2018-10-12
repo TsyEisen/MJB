@@ -114,26 +114,29 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     self.selectedModel = [self modelFromIndexPath:indexPath];
     if (self.type == SYListTypeHistory) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"输入比分" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.scorePicker show];
+        }];
+        [alert addAction:action1];
+        
+        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"推介" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.recommendPicker show];
+        }];
+        [alert addAction:action2];
+    
+        UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    
+        }];
+        [alert addAction:action3];
+    
+        [self.navigationController presentViewController:alert animated:YES completion:nil];
+    }else if(self.type == SYListTypeNoScore){
         [self.scorePicker show];
     }else {
         self.recommendPicker.model = [self modelFromIndexPath:indexPath];
         [self.recommendPicker show];
     }
-//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-//    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"输入比分" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-////        SYInputScoreViewController *vc = [SYInputScoreViewController instancetFromNib];
-////        vc.model = [self modelFromIndexPath:indexPath];
-////        [self.navigationController pushViewController:vc animated:YES];
-//
-//    }];
-//    [alert addAction:action1];
-//
-//    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-//
-//    }];
-//    [alert addAction:action3];
-//
-//    [self.navigationController presentViewController:alert animated:YES completion:nil];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

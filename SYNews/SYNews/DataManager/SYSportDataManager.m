@@ -174,7 +174,14 @@ SYSingleton_implementation(SYSportDataManager)
                     [temp addObject:model];
                 }
             }
-            completion(mutableDict.allValues);
+            
+            NSArray *temp = mutableDict.allValues;
+            
+            NSArray *array = [temp sortedArrayUsingComparator:^NSComparisonResult(NSArray *  _Nonnull obj1, NSArray *  _Nonnull obj2) {
+                return obj1.count < obj2.count;
+            }];
+            
+            completion(array);
             
         }else if (type == SYListTypeCompare_all) {
             
@@ -190,11 +197,16 @@ SYSingleton_implementation(SYSportDataManager)
             
             NSMutableArray *tempArray = [NSMutableArray array];
             for (SYGameListModel *model in self.allGames) {
-                if (model.score.length == 0) {
+                NSDate *date = [NSDate sy_dateWithString:[model.MatchTime stringByReplacingOccurrencesOfString:@"T" withString:@"-"] formate:@"yyyy-MM-dd-HH:mm:ss"];
+                
+                if (model.score.length == 0 && (-1)*[date timeIntervalSinceNow] > 7200) {
                     [tempArray addObject:model];
                 }
             }
-            completion(tempArray);
+            NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:NO];
+            NSSortDescriptor *name=[NSSortDescriptor sortDescriptorWithKey:@"SortName" ascending:NO];
+            NSArray *array = [[tempArray sortedArrayUsingDescriptors:@[timeSD,name]] mutableCopy];
+            completion(array);
             
         }
     }
