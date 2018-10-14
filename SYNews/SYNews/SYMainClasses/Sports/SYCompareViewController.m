@@ -45,8 +45,6 @@
     self.navigationItem.rightBarButtonItem = self.rightItem;
     self.leftTabelView.tableFooterView = [UIView new];
     self.navigationItem.titleView = self.segment;
-//    SYGameListModel *model = self.datas.firstObject;
-//    self.navigationItem.title = model.SortName;
     
     if (_datas == nil) {
         [[SYSportDataManager sharedSYSportDataManager] requestDatasBySYListType:SYListTypeCompare_all Completion:^(NSArray *datas) {
@@ -58,13 +56,6 @@
     }
 }
 
-//- (void)refreshAction {
-//    _datas = nil;
-//    _categoryDatas = nil;
-//    [self.rightTableView reloadData];
-//    [self.leftTabelView reloadData];
-//}
-//
 - (void)segmentChange {
     NSSortDescriptor *contidion = nil;
     if (self.segment.selectedSegmentIndex == 0) {
@@ -137,21 +128,6 @@
     }
     return _rightTableView;
 }
-
-//- (NSArray *)datas {
-//    if (_datas == nil) {
-//        _datas = [[SYSportDataManager sharedSYSportDataManager] getAllScoreGamesByCategory:NO];
-//    }
-//    return _datas;
-//}
-//
-//- (NSArray *)categoryDatas {
-//    if (_categoryDatas == nil) {
-//        _categoryDatas = [[SYSportDataManager sharedSYSportDataManager] getAllScoreGamesByCategory:YES];
-//    }
-//    return _categoryDatas;
-//}
-
 
 //- (UIBarButtonItem *)rightItem {
 //    if (_rightItem == nil) {

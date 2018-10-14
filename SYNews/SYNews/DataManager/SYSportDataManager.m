@@ -101,6 +101,7 @@ SYSingleton_implementation(SYSportDataManager)
         if (type == SYListTypeCategory) {
             
             _currentGameJsons = nil;
+            _categaryCache = nil;
             [self requestWithParams:nil byType:SYSportDataTypeHomeSport completion:^(id result) {
                 if (result) {
                     [[NSUserDefaults standardUserDefaults] setObject:[[NSDate date] sy_stringWithFormat:@"yyyyMMdd"] forKey:@"SYSportLastDate"];

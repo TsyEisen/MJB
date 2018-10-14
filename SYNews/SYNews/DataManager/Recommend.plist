@@ -54,19 +54,19 @@
 		<key>name</key>
 		<string>藏獒咬庄</string>
 		<key>tag</key>
-		<integer>8</integer>
+		<integer>9</integer>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>稳如哈士奇</string>
 		<key>tag</key>
-		<integer>8</integer>
+		<integer>10</integer>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>安小念</string>
 		<key>tag</key>
-		<integer>9</integer>
+		<integer>11</integer>
 	</dict>
 </array>
 </plist>

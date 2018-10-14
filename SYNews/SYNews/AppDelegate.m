@@ -22,10 +22,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = tabBarVc;
     [self.window makeKeyAndVisible];
-    [[SYSportDataManager sharedSYSportDataManager].timer fire];
     
     if (TARGET_IPHONE_SIMULATOR) {
-        
+        [[SYSportDataManager sharedSYSportDataManager].timer fire];
     }else {
         [[SYSportDataManager sharedSYSportDataManager] replaceDataForNewest];
     }
