@@ -17,19 +17,29 @@
 @implementation SYRecommendModel
 
 - (void)saveModel:(SYGameListModel *)model {
-    if (self.list.count > 0) {
-        SYGameListModel *item = self.list.lastObject;
-        if (item.EventId == model.EventId) {
-            if (model.recommendType == 0) {
-                model.recommendType = item.recommendType;
+    if (self.list.count > 0 && model.recommendType > 0) {
+        SYGameListModel *exitItem = nil;
+        for (SYGameListModel *item in self.list) {
+            if (item.EventId == model.EventId) {
+                exitItem = item;
             }
-            [self.list removeLastObject];
-            [self.list addObject:model];
+        }
+        
+        if (exitItem) {
+            if (model.recommendType == 0) {
+                model.recommendType = exitItem.recommendType;
+            }
+            [self.list replaceObjectAtIndex:[self.list indexOfObject:exitItem] withObject:model];
         }else {
+            if (model.recommendType > 0) {
+                [self.list addObject:model];
+            }
+        }
+    
+    }else {
+        if (model.recommendType > 0) {
             [self.list addObject:model];
         }
-    }else {
-        [self.list addObject:model];
     }
     
     [self.jsons setObject:[model mj_keyValues] forKey:[NSString stringWithFormat:@"%zd",model.EventId]];
@@ -37,8 +47,11 @@
 }
 
 - (void)changeModelInformation:(SYGameListModel *)model {
-    if ([self.jsons.allKeys containsObject:[NSString stringWithFormat:@"%zd",model.EventId]]) {
-        [self saveModel:model];
+    NSDictionary *dict = [self.jsons objectForKey:[NSString stringWithFormat:@"%zd",model.EventId]];
+    if (dict) {
+        model.recommendType = [dict[@"recommendType"] integerValue];
+        [self.jsons setObject:[model mj_keyValues] forKey:[NSString stringWithFormat:@"%zd",model.EventId]];
+        [self.jsons writeToFile:self.path atomically:YES];
     }
 }
 

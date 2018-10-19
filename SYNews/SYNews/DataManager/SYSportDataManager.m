@@ -57,6 +57,9 @@ SYSingleton_implementation(SYSportDataManager)
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_group_t group = dispatch_group_create();
     for (SYSportModel *model in self.sports) {
+        if ([model.SortName containsString:@"NBA"]) {
+            continue;
+        }
         dispatch_group_enter(group);
         dispatch_group_async(group, queue, ^{
             NSDictionary *dict = @{
@@ -287,12 +290,13 @@ SYSingleton_implementation(SYSportDataManager)
 }
 
 - (void)replaceDataForNewest {
+    
     NSString *todayString = [[NSDate date] sy_stringWithFormat:@"yyyyMMdd"];
     NSString *path = [[NSBundle mainBundle] pathForResource:todayString ofType:@"plist"];
     if (path == nil) {
         return;
     }
-    
+
     NSDate *date = [[NSUserDefaults standardUserDefaults] objectForKey:@"replaceDataForNewest"];
     if (date != nil && [date sy_isToday]) {
         return;
@@ -305,18 +309,20 @@ SYSingleton_implementation(SYSportDataManager)
             if (oldDict) {
                 SYGameListModel *newModel = [SYGameListModel mj_objectWithKeyValues:newDict];
                 SYGameListModel *oldModel = [SYGameListModel mj_objectWithKeyValues:oldDict];
-                
+
                 if (newModel.updateSeconds > oldModel.updateSeconds) {
+
                     newModel.score = oldModel.score;
-                    newModel.homeScore = oldModel.score;
+                    newModel.homeScore = oldModel.homeScore;
                     newModel.awayScore = oldModel.awayScore;
-                    
+                    newModel.recommendType = oldModel.recommendType;
+
                     [self.gameJsons setObject:[newModel mj_keyValues] forKey:key];
-                    
+
                     for (SYRecommendModel *recommend in self.recommends) {
                         [recommend changeModelInformation:newModel];
                     }
-                    
+
                 }
             }else {
                 [self.gameJsons setObject:newDict forKey:key];

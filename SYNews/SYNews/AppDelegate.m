@@ -26,7 +26,9 @@
     if (TARGET_IPHONE_SIMULATOR) {
         [[SYSportDataManager sharedSYSportDataManager].timer fire];
     }else {
-        [[SYSportDataManager sharedSYSportDataManager] replaceDataForNewest];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [[SYSportDataManager sharedSYSportDataManager] replaceDataForNewest];
+        });
     }
     
     return YES;

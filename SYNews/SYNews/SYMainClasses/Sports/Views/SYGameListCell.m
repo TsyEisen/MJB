@@ -99,25 +99,4 @@
     }
 }
 
-
-
-//- (void)setModel:(SYGameModel *)model {
-//    _model = model;
-//    self.moneyLabel.text = [NSString stringWithFormat:@"%.f",(model.BfAmountHome + model.BfAmountAway + model.BfAmountDraw)/10000];
-//
-//    self.jyHomeLabel.text = [NSString stringWithFormat:@"%.f",model.BfPerHome];
-//    self.jyDrawLabel.text = [NSString stringWithFormat:@"%.f",model.BfPerDraw];
-//    self.jyAwayLabel.text = [NSString stringWithFormat:@"%.f",model.BfPerAway];
-//    self.glHomeLabel.text = [NSString stringWithFormat:@"%.f",model.BfIndexHome];
-//    self.glDrawLabel.text = [NSString stringWithFormat:@"%.f",model.BfIndexDraw];
-//    self.glAwayLabel.text = [NSString stringWithFormat:@"%.f",model.BfIndexAway];
-//    self.fcHomeLabel.text = [NSString stringWithFormat:@"%.f",model.KellyHome];
-//    self.fcDrawLabel.text = [NSString stringWithFormat:@"%.f",model.KellyDraw];
-//    self.fcAwayLabel.text = [NSString stringWithFormat:@"%.f",model.KellyAway];
-//
-//    self.jsHomeLabel.text = [NSString stringWithFormat:@"%.f",model.BfPerHome * model.BfIndexHome*0.01/ model.KellyHome];
-//    self.jsDrawLabel.text = [NSString stringWithFormat:@"%.f",model.BfPerDraw * model.BfIndexDraw*0.01 / model.KellyDraw];
-//    self.jsAwayLabel.text = [NSString stringWithFormat:@"%.f",model.BfPerDraw * model.BfIndexAway*0.01 / model.KellyAway];
-//
-//}
 @end

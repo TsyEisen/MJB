@@ -8,6 +8,11 @@
 
 #import "SYBaseViewController.h"
 
+@interface SYResultModel : NSObject
+@property (nonatomic, assign) NSInteger tag;
+@property (nonatomic, assign) BOOL red;
+@end
+
 @interface SYCompareViewController : SYBaseViewController
 @property (nonatomic, strong) NSArray *datas;
 @end

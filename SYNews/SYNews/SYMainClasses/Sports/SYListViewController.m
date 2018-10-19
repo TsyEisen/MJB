@@ -49,7 +49,6 @@
     if (self.type == SYListTypeCategory) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshAction) name:@"dataNeedRefresh" object:nil];
     }
-    
 }
 
 - (void)setupMJRefresh {

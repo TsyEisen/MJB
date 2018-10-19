@@ -9,6 +9,7 @@
 #import "SYCategoryViewController.h"
 #import "SYCategoryCell.h"
 #import "SYCompareViewController.h"
+#import "SYNormalListViewController.h"
 
 @interface SYCategoryViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -63,10 +64,17 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    SYCompareViewController *vc = [[SYCompareViewController alloc] initWithNibName:NSStringFromClass([SYCompareViewController class]) bundle:nil];
-    vc.datas = self.datas[indexPath.item];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
+    if ([self.title isEqualToString:@"赛程对比"]) {
+        SYCompareViewController *vc = [[SYCompareViewController alloc] initWithNibName:NSStringFromClass([SYCompareViewController class]) bundle:nil];
+        vc.datas = self.datas[indexPath.item];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else {
+        SYNormalListViewController *vc = [[SYNormalListViewController alloc] init];
+        vc.datas = self.datas[indexPath.item];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (NSArray *)datas {

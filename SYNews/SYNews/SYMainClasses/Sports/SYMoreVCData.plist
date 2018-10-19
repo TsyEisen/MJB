@@ -10,6 +10,12 @@
 	</dict>
 	<dict>
 		<key>className</key>
+		<string>SYCategoryViewController</string>
+		<key>title</key>
+		<string>历史回顾</string>
+	</dict>
+	<dict>
+		<key>className</key>
 		<string>SYCompareViewController</string>
 		<key>title</key>
 		<string>全部对比</string>
