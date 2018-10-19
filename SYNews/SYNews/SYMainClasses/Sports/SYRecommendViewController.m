@@ -120,7 +120,11 @@
         [_switchView setButtonAciton:^(NSInteger index) {
             [weakSelf.tableView reloadData];
             SYRecommendModel *model = [SYSportDataManager sharedSYSportDataManager].recommends[index];
-            [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:model.datas.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
+            if (model.datas.count > 0) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:model.datas.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
+                });
+            }
         }];
         _switchView.titles = tempArray;
     }
