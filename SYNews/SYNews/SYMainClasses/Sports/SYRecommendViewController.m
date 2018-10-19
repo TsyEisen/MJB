@@ -119,6 +119,8 @@
         __weak typeof(self) weakSelf = self;
         [_switchView setButtonAciton:^(NSInteger index) {
             [weakSelf.tableView reloadData];
+            SYRecommendModel *model = [SYSportDataManager sharedSYSportDataManager].recommends[index];
+            [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:model.datas.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
         }];
         _switchView.titles = tempArray;
     }

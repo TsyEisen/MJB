@@ -4,6 +4,12 @@
 <array>
 	<dict>
 		<key>name</key>
+		<string>锦鲤大大</string>
+		<key>tag</key>
+		<integer>11</integer>
+	</dict>
+	<dict>
+		<key>name</key>
 		<string>飞刀</string>
 		<key>tag</key>
 		<integer>1</integer>
@@ -61,12 +67,6 @@
 		<string>稳如哈士奇</string>
 		<key>tag</key>
 		<integer>10</integer>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>安小念</string>
-		<key>tag</key>
-		<integer>11</integer>
 	</dict>
 </array>
 </plist>

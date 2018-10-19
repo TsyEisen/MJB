@@ -98,7 +98,10 @@
 - (NSMutableArray *)list {
     if (_list == nil) {
         if (self.jsons.count > 0) {
-            _list = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.jsons.allValues];
+            NSArray *array = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.jsons.allValues];
+            NSSortDescriptor *contidion = [NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:YES];
+            array = [array sortedArrayUsingDescriptors:@[contidion]];
+            _list = [NSMutableArray arrayWithArray:array];
         }else {
             _list = [NSMutableArray array];
         }
