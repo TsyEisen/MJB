@@ -9,7 +9,6 @@
 #import "SYListViewController.h"
 #import "SYGameListCell.h"
 #import "SYSportDataManager.h"
-#import "SYInputScoreViewController.h"
 #import "MJRefresh.h"
 #import "SYPickerTool.h"
 #import "SYScorePicker.h"
@@ -21,6 +20,9 @@
 @property (nonatomic, strong) SYRecommendPicker *recommendPicker;
 @property (nonatomic, strong) NSArray *datas;
 @property (nonatomic, strong) SYGameListModel *selectedModel;
+@property (nonatomic, strong) UISegmentedControl *segment;
+@property (nonatomic, strong) NSArray *startDatas;
+@property (nonatomic, strong) NSArray *unStartDatas;
 @property (nonatomic, assign) BOOL exit;
 @end
 
@@ -49,6 +51,10 @@
     if (self.type == SYListTypeCategory) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshAction) name:@"dataNeedRefresh" object:nil];
     }
+    
+    if (self.type == SYListTypeNear) {
+        self.navigationItem.titleView = self.segment;
+    }
 }
 
 - (void)setupMJRefresh {
@@ -71,14 +77,32 @@
     [[SYSportDataManager sharedSYSportDataManager] requestDatasBySYListType:self.type Completion:^(NSArray *datas) {
         [self.tableView.mj_header endRefreshing];
         self.datas = datas;
+        if (self.type == SYListTypeNear) {
+            [self segmentChange];
+        }
         [self.tableView reloadData];
     }];
+}
+
+- (void)segmentChange {
+    NSMutableArray *tempArrayStart = [NSMutableArray array];
+    NSMutableArray *tempArrayUnStart = [NSMutableArray array];
+    for (SYGameListModel *model in self.datas) {
+        if (model.dateSeconds <= [[NSDate date] timeIntervalSince1970]) {
+            [tempArrayStart addObject:model];
+        }else {
+            [tempArrayUnStart addObject:model];
+        }
+    }
+    self.startDatas = tempArrayStart;
+    self.unStartDatas = tempArrayUnStart;
+    [self.tableView reloadData];
 }
 
 #pragma mark - tableView DataSource
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (self.type == SYListTypeCategory) {
+    if (self.type == SYListTypeCategory || self.type == SYListTypeNoScore) {
         NSArray *item = self.datas[section];
         SYGameListModel *model = item.firstObject;
         return model.SortName;
@@ -88,7 +112,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if (self.type == SYListTypeCategory) {
+    if (self.type == SYListTypeCategory || self.type == SYListTypeNoScore) {
         return self.datas.count;
     }else {
         return 1;
@@ -96,8 +120,10 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.type == SYListTypeCategory) {
+    if (self.type == SYListTypeCategory || self.type == SYListTypeNoScore) {
         return [self.datas[section] count];
+    }else if (self.type == SYListTypeNear){
+        return self.segment.selectedSegmentIndex == 0 ? self.startDatas.count : self.unStartDatas.count;
     }else {
         return self.datas.count;
     }
@@ -175,9 +201,11 @@
 
 - (SYGameListModel *)modelFromIndexPath:(NSIndexPath *)indexPath {
     SYGameListModel *model = nil;
-    if (self.type == SYListTypeCategory) {
+    if (self.type == SYListTypeCategory || self.type == SYListTypeNoScore) {
         model = self.datas[indexPath.section][indexPath.row];
-    }else {
+    }else if (self.type == SYListTypeNear){
+        model = self.segment.selectedSegmentIndex == 0 ? self.startDatas[indexPath.row] : self.unStartDatas[indexPath.row];
+    }else{
         model = self.datas[indexPath.row];
     }
     return model;
@@ -219,4 +247,29 @@
     }
     return _tableView;
 }
+
+- (UISegmentedControl *)segment {
+    if (_segment == nil) {
+        _segment = [[UISegmentedControl alloc] initWithItems:@[@"  滚球   ",@"  即将开始  "]];
+        _segment.tintColor = [UIColor whiteColor];
+        _segment.selectedSegmentIndex = 0;
+        [_segment addTarget:self action:@selector(segmentChange) forControlEvents:UIControlEventValueChanged];
+    }
+    return _segment;
+}
+
+- (NSArray *)startDatas {
+    if (_startDatas == nil) {
+        _startDatas = [[NSArray alloc] init];
+    }
+    return _startDatas;
+}
+
+- (NSArray *)unStartDatas {
+    if (_unStartDatas == nil) {
+        _unStartDatas = [[NSArray alloc] init];
+    }
+    return _unStartDatas;
+}
+
 @end

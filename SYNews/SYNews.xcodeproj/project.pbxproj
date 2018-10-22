@@ -24,8 +24,6 @@
 		9F3498A1215631700058B99E /* NSArray+SYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F349899215631700058B99E /* NSArray+SYExtension.m */; };
 		9F3498A2215631700058B99E /* SYCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F34989A215631700058B99E /* SYCacheManager.m */; };
 		9F3498A3215631700058B99E /* NSObject+SYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F34989C215631700058B99E /* NSObject+SYExtension.m */; };
-		9FEF95C1215A2E9000BC0A69 /* SYInputScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF95BF215A2E9000BC0A69 /* SYInputScoreViewController.m */; };
-		9FEF95C2215A2E9000BC0A69 /* SYInputScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FEF95C0215A2E9000BC0A69 /* SYInputScoreViewController.xib */; };
 		9FEF95C5215A30F800BC0A69 /* SYTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF95C3215A30F800BC0A69 /* SYTransitionAnimation.m */; };
 		F03B90F41F54FD6F0033A3B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B90F31F54FD6F0033A3B5 /* main.m */; };
 		F03B90FF1F54FD700033A3B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F03B90FE1F54FD700033A3B5 /* Assets.xcassets */; };
@@ -153,6 +151,7 @@
 		F09A6660216DFFA000C3C20A /* SYRecommendPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A665F216DFFA000C3C20A /* SYRecommendPicker.m */; };
 		F09A6663216E193C00C3C20A /* SYRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6662216E193C00C3C20A /* SYRecommendViewController.m */; };
 		F09A6669216E208300C3C20A /* SYMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6668216E208300C3C20A /* SYMoreViewController.m */; };
+		F0C9143C217D6B3B00DF1B4A /* 20181022.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0C9143B217D6B3A00DF1B4A /* 20181022.plist */; };
 		F0E242C4216EFB26008CB6D8 /* SYMoreVCData.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E242C3216EFB26008CB6D8 /* SYMoreVCData.plist */; };
 		F0E242D7216F6360008CB6D8 /* ERSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E242D6216F6360008CB6D8 /* ERSwitchView.m */; };
 		F0E242DC21703EA5008CB6D8 /* 20181012.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E242DB21703EA5008CB6D8 /* 20181012.plist */; };
@@ -215,9 +214,6 @@
 		9F34989E215631700058B99E /* SYCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCacheManager.h; sourceTree = "<group>"; };
 		9F34989F215631700058B99E /* NSArray+SYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SYExtension.h"; sourceTree = "<group>"; };
 		9F3498A0215631700058B99E /* NSObject+SYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SYExtension.h"; sourceTree = "<group>"; };
-		9FEF95BE215A2E9000BC0A69 /* SYInputScoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYInputScoreViewController.h; sourceTree = "<group>"; };
-		9FEF95BF215A2E9000BC0A69 /* SYInputScoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYInputScoreViewController.m; sourceTree = "<group>"; };
-		9FEF95C0215A2E9000BC0A69 /* SYInputScoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SYInputScoreViewController.xib; sourceTree = "<group>"; };
 		9FEF95C3215A30F800BC0A69 /* SYTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYTransitionAnimation.m; sourceTree = "<group>"; };
 		9FEF95C4215A30F800BC0A69 /* SYTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYTransitionAnimation.h; sourceTree = "<group>"; };
 		F03B90EF1F54FD6F0033A3B5 /* SYNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -455,6 +451,7 @@
 		F09A6662216E193C00C3C20A /* SYRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYRecommendViewController.m; sourceTree = "<group>"; };
 		F09A6667216E208300C3C20A /* SYMoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYMoreViewController.h; sourceTree = "<group>"; };
 		F09A6668216E208300C3C20A /* SYMoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYMoreViewController.m; sourceTree = "<group>"; };
+		F0C9143B217D6B3A00DF1B4A /* 20181022.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181022.plist; sourceTree = "<group>"; };
 		F0E242C3216EFB26008CB6D8 /* SYMoreVCData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SYMoreVCData.plist; sourceTree = "<group>"; };
 		F0E242D5216F6360008CB6D8 /* ERSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSwitchView.h; sourceTree = "<group>"; };
 		F0E242D6216F6360008CB6D8 /* ERSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSwitchView.m; sourceTree = "<group>"; };
@@ -1054,6 +1051,7 @@
 				F0E242DB21703EA5008CB6D8 /* 20181012.plist */,
 				F0E242DD2174271E008CB6D8 /* 20181015.plist */,
 				F0E4E6EB2176C8F9007C7FAB /* 20181017.plist */,
+				F0C9143B217D6B3A00DF1B4A /* 20181022.plist */,
 			);
 			path = lastData;
 			sourceTree = "<group>";
@@ -1084,9 +1082,6 @@
 				F0680196215E22910032C4DA /* SYCompareViewController.h */,
 				F0680197215E22910032C4DA /* SYCompareViewController.m */,
 				F0680198215E22910032C4DA /* SYCompareViewController.xib */,
-				9FEF95BE215A2E9000BC0A69 /* SYInputScoreViewController.h */,
-				9FEF95BF215A2E9000BC0A69 /* SYInputScoreViewController.m */,
-				9FEF95C0215A2E9000BC0A69 /* SYInputScoreViewController.xib */,
 			);
 			path = Sports;
 			sourceTree = "<group>";
@@ -1203,12 +1198,12 @@
 				F03FC2411F5D05D100DF465B /* SYDiscoverDetailViewController.xib in Resources */,
 				F03B91141F54FDC60033A3B5 /* SYViewControllerData.plist in Resources */,
 				F03B91DF1F5557F70033A3B5 /* SYHomeNewsCell.xib in Resources */,
-				9FEF95C2215A2E9000BC0A69 /* SYInputScoreViewController.xib in Resources */,
 				F0E4E6EC2176C8F9007C7FAB /* 20181017.plist in Resources */,
 				F0E242DC21703EA5008CB6D8 /* 20181012.plist in Resources */,
 				F0F63B1721550422000D7A15 /* SYGameDataViewController.xib in Resources */,
 				F068019A215E22910032C4DA /* SYCompareViewController.xib in Resources */,
 				F0E242DE2174271F008CB6D8 /* 20181015.plist in Resources */,
+				F0C9143C217D6B3B00DF1B4A /* 20181022.plist in Resources */,
 				F09A664B216CA2EA00C3C20A /* SYCategoryCell.xib in Resources */,
 				F03B91B81F54FEE60033A3B5 /* SYDiscoverViewController.xib in Resources */,
 				F03B91C21F54FF0F0033A3B5 /* SYMineViewController.xib in Resources */,
@@ -1294,7 +1289,6 @@
 				F03B91A21F54FDD00033A3B5 /* UIColor+SYExtension.m in Sources */,
 				F03FC24D1F5D3ED200DF465B /* MBProgressHUD+Add.m in Sources */,
 				F0F63ACA2154D223000D7A15 /* SYSportViewController.m in Sources */,
-				9FEF95C1215A2E9000BC0A69 /* SYInputScoreViewController.m in Sources */,
 				F03FC2231F5CFFE400DF465B /* MJRefreshComponent.m in Sources */,
 				F0F63AF72154D755000D7A15 /* ListRequestManager.m in Sources */,
 				F03FC2311F5CFFE400DF465B /* NSBundle+MJRefresh.m in Sources */,

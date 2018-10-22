@@ -199,18 +199,47 @@ SYSingleton_implementation(SYSportDataManager)
             
         }else if (type == SYListTypeNoScore) {
             
-            NSMutableArray *tempArray = [NSMutableArray array];
+            NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
             for (SYGameListModel *model in self.allGames) {
-                NSDate *date = [NSDate sy_dateWithString:[model.MatchTime stringByReplacingOccurrencesOfString:@"T" withString:@"-"] formate:@"yyyy-MM-dd-HH:mm:ss"];
-                
-                if (model.score.length == 0 && (-1)*[date timeIntervalSinceNow] > 7200) {
-                    [tempArray addObject:model];
+                if (model.score.length == 0 && model.dateSeconds + 7200 < [[NSDate date] timeIntervalSince1970]) {
+                    NSMutableArray *temp = [mutableDict objectForKey:[NSString stringWithFormat:@"%zd",model.LeagueId]];
+                    if (!temp) {
+                        temp = [NSMutableArray array];
+                        [mutableDict setObject:temp forKey:[NSString stringWithFormat:@"%zd",model.LeagueId]];
+                    }
+                    [temp addObject:model];
                 }
             }
+            
+            NSMutableArray *temp = [NSMutableArray arrayWithArray:mutableDict.allValues];
             NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:NO];
-            NSSortDescriptor *name=[NSSortDescriptor sortDescriptorWithKey:@"SortName" ascending:NO];
-            NSArray *array = [[tempArray sortedArrayUsingDescriptors:@[timeSD,name]] mutableCopy];
+
+            for (int i = 0; i < temp.count; i++) {
+                NSArray *games = temp[i];
+                NSArray * newgames = [games sortedArrayUsingDescriptors:@[timeSD]];
+                [temp replaceObjectAtIndex:i withObject:newgames];
+            }
+            
+            NSArray *array = [temp sortedArrayUsingComparator:^NSComparisonResult(NSArray *  _Nonnull obj1, NSArray *  _Nonnull obj2) {
+                
+                return obj1.count < obj2.count;
+            }];
+            
             completion(array);
+            
+            
+//            NSMutableArray *tempArray = [NSMutableArray array];
+//            for (SYGameListModel *model in self.allGames) {
+//                NSDate *date = [NSDate sy_dateWithString:[model.MatchTime stringByReplacingOccurrencesOfString:@"T" withString:@"-"] formate:@"yyyy-MM-dd-HH:mm:ss"];
+//
+//                if (model.score.length == 0 && (-1)*[date timeIntervalSinceNow] > 7200) {
+//                    [tempArray addObject:model];
+//                }
+//            }
+//            NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:NO];
+//            NSSortDescriptor *name=[NSSortDescriptor sortDescriptorWithKey:@"SortName" ascending:NO];
+//            NSArray *array = [[tempArray sortedArrayUsingDescriptors:@[timeSD,name]] mutableCopy];
+//            completion(array);
             
         }
     }
@@ -301,36 +330,42 @@ SYSingleton_implementation(SYSportDataManager)
     if (date != nil && [date sy_isToday]) {
         return;
     }
+    
     if (path.length > 0) {
         NSDictionary *json = [NSDictionary dictionaryWithContentsOfFile:path];
-        for (NSString *key in json.allKeys) {
-            NSDictionary *newDict = [json objectForKey:key];
-            NSDictionary *oldDict = [self.gameJsons objectForKey:key];
-            if (oldDict) {
-                SYGameListModel *newModel = [SYGameListModel mj_objectWithKeyValues:newDict];
-                SYGameListModel *oldModel = [SYGameListModel mj_objectWithKeyValues:oldDict];
-
-                if (newModel.updateSeconds > oldModel.updateSeconds) {
-
-                    newModel.score = oldModel.score;
-                    newModel.homeScore = oldModel.homeScore;
-                    newModel.awayScore = oldModel.awayScore;
-                    newModel.recommendType = oldModel.recommendType;
-
-                    [self.gameJsons setObject:[newModel mj_keyValues] forKey:key];
-
-                    for (SYRecommendModel *recommend in self.recommends) {
-                        [recommend changeModelInformation:newModel];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            for (NSString *key in json.allKeys) {
+                NSDictionary *newDict = [json objectForKey:key];
+                NSDictionary *oldDict = [self.gameJsons objectForKey:key];
+                if (oldDict) {
+                    SYGameListModel *newModel = [SYGameListModel mj_objectWithKeyValues:newDict];
+                    SYGameListModel *oldModel = [SYGameListModel mj_objectWithKeyValues:oldDict];
+                    
+                    if (![newModel.MaxUpdateTime isEqualToString:oldModel.MaxUpdateTime] && newModel.updateSeconds > oldModel.updateSeconds) {
+                        
+                        newModel.score = oldModel.score;
+                        newModel.homeScore = oldModel.homeScore;
+                        newModel.awayScore = oldModel.awayScore;
+                        newModel.recommendType = oldModel.recommendType;
+                        
+                        [self.gameJsons setObject:[newModel mj_keyValues] forKey:key];
+                        
+                        for (SYRecommendModel *recommend in self.recommends) {
+                            [recommend changeModelInformation:newModel];
+                        }
+                        
                     }
-
+                }else {
+                    [self.gameJsons setObject:newDict forKey:key];
                 }
-            }else {
-                [self.gameJsons setObject:newDict forKey:key];
             }
-            [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"replaceDataForNewest"];
-            [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
-            [MBProgressHUD showSuccess:@"今日更新执行完毕" toView:nil];
-        }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"replaceDataForNewest"];
+                [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
+                [MBProgressHUD showSuccess:@"今日更新执行完毕" toView:nil];
+            });
+        });
+        
     }
 }
 
@@ -408,7 +443,7 @@ SYSingleton_implementation(SYSportDataManager)
 
 - (NSTimer *)timer {
     if (_timer == nil) {
-        _timer = [NSTimer scheduledTimerWithTimeInterval:1800 target:self selector:@selector(refreshGameData) userInfo:nil repeats:YES];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1000 target:self selector:@selector(refreshGameData) userInfo:nil repeats:YES];
     }
     return _timer;
 }
