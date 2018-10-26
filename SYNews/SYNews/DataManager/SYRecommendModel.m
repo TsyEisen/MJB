@@ -52,6 +52,7 @@
         model.recommendType = [dict[@"recommendType"] integerValue];
         [self.jsons setObject:[model mj_keyValues] forKey:[NSString stringWithFormat:@"%zd",model.EventId]];
         [self.jsons writeToFile:self.path atomically:YES];
+        [self saveModel:model];
     }
 }
 

@@ -50,6 +50,7 @@
     [self setupMJRefresh];
     if (self.type == SYListTypeCategory) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshAction) name:@"dataNeedRefresh" object:nil];
+        
     }
     
     if (self.type == SYListTypeNear) {
@@ -191,12 +192,30 @@
 
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     SYGameListModel *model = [self modelFromIndexPath:indexPath];
-    UITableViewRowAction *action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"复制" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-        pasteboard.string = [NSString stringWithFormat:@"%@ %@VS%@",model.SortName,model.HomeTeam,model.AwayTeam];
-        [MBProgressHUD showSuccess:@"复制成功" toView:nil];
-    }];
-    return @[action];
+    if (self.type == SYListTypeNoScore) {
+        __weak typeof(self) weakSelf = self;
+        UITableViewRowAction *action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+            NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.datas[indexPath.section]];
+            [tempArray removeObjectAtIndex:indexPath.row];
+            NSMutableArray *temp = [NSMutableArray arrayWithArray:self.datas];
+            if (tempArray.count == 0) {
+                [temp removeObjectAtIndex:indexPath.section];
+            }else {
+                [temp replaceObjectAtIndex:indexPath.section withObject:tempArray];
+            }
+            [[SYSportDataManager sharedSYSportDataManager] deleteModel:model];
+            self.datas = temp.copy;
+            [weakSelf.tableView reloadData];
+        }];
+        return @[action];
+    }else {
+        UITableViewRowAction *action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"复制" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+            UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+            pasteboard.string = [NSString stringWithFormat:@"%@ %@VS%@",model.SortName,model.HomeTeam,model.AwayTeam];
+            [MBProgressHUD showSuccess:@"复制成功" toView:nil];
+        }];
+        return @[action];
+    }
 }
 
 - (SYGameListModel *)modelFromIndexPath:(NSIndexPath *)indexPath {

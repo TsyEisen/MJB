@@ -48,7 +48,7 @@
     self.navigationItem.titleView = self.segment;
     
     if (_datas == nil) {
-        [[SYSportDataManager sharedSYSportDataManager] requestDatasBySYListType:SYListTypeCompare_all Completion:^(NSArray *datas) {
+        [[SYSportDataManager sharedSYSportDataManager] requestDatasBySYListType:self.type Completion:^(NSArray *datas) {
             _datas = datas;
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
                 [self calculatorData];
@@ -126,7 +126,7 @@
 
 - (UITableView *)rightTableView {
     if (_rightTableView == nil) {
-        _rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, 10 * SYGameTableCellWidth, ScreenH - 154) style:UITableViewStylePlain];
+        _rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, 10 * SYGameTableCellWidth, ScreenH - 164) style:UITableViewStylePlain];
         _rightTableView.dataSource = self;
         _rightTableView.delegate = self;
         _rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;

@@ -9,5 +9,5 @@
 #import "SYBaseViewController.h"
 
 @interface SYCategoryViewController : SYBaseViewController
-
+@property (nonatomic, assign) SYListType type;
 @end

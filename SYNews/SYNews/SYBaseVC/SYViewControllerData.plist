@@ -12,7 +12,7 @@
 		<key>selectedImageName</key>
 		<string>football2</string>
 		<key>type</key>
-		<string>0</string>
+		<string>1</string>
 	</dict>
 	<dict>
 		<key>className</key>
@@ -24,7 +24,7 @@
 		<key>selectedImageName</key>
 		<string>football2</string>
 		<key>type</key>
-		<string>1</string>
+		<string>2</string>
 	</dict>
 	<dict>
 		<key>className</key>
@@ -36,7 +36,7 @@
 		<key>selectedImageName</key>
 		<string>football2</string>
 		<key>type</key>
-		<string>2</string>
+		<string>3</string>
 	</dict>
 	<dict>
 		<key>className</key>
@@ -48,7 +48,7 @@
 		<key>selectedImageName</key>
 		<string>football2</string>
 		<key>type</key>
-		<string>3</string>
+		<string>4</string>
 	</dict>
 	<dict>
 		<key>className</key>

@@ -52,13 +52,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>狗皇看盘</string>
-		<key>tag</key>
-		<integer>8</integer>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>藏獒咬庄</string>
+		<string>藏獒看球</string>
 		<key>tag</key>
 		<integer>9</integer>
 	</dict>

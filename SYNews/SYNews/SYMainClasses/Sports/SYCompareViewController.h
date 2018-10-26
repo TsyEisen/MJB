@@ -15,4 +15,5 @@
 
 @interface SYCompareViewController : SYBaseViewController
 @property (nonatomic, strong) NSArray *datas;
+@property (nonatomic, assign) SYListType type;
 @end

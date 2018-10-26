@@ -56,14 +56,17 @@
     if (nibPath) {
         baseVc = [(SYBaseViewController *)[NSClassFromString(model.className) alloc] initWithNibName:model.className bundle:nil];
     }
-    baseVc.hidesBottomBarWhenPushed = YES;
-    baseVc.title = model.title;
     
-    if ([model.className isEqualToString:@"SYListViewController"]) {
+    if (model.type > 0) {
         [baseVc setValue:@(model.type) forKey:@"type"];
     }
     
-    
+    baseVc.hidesBottomBarWhenPushed = YES;
+    baseVc.title = model.title;
+//
+//    if ([model.className isEqualToString:@"SYListViewController"]) {
+//        [baseVc setValue:model.type forKey:@"type"];
+//    }
     
     [self.navigationController pushViewController:baseVc animated:YES];
 }

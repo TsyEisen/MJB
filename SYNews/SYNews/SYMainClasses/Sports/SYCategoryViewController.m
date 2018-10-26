@@ -39,7 +39,7 @@
 }
 
 - (void)refreshAction {
-    [[SYSportDataManager sharedSYSportDataManager] requestDatasBySYListType:SYListTypeCompare Completion:^(NSArray *datas) {
+    [[SYSportDataManager sharedSYSportDataManager] requestDatasBySYListType:self.type Completion:^(NSArray *datas) {
         [self.collectionView.mj_header endRefreshing];
         self.datas = datas;
         [self.collectionView reloadData];
@@ -64,7 +64,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self.title isEqualToString:@"赛程对比"]) {
+    if (![self.title isEqualToString:@"历史回顾"]) {
         SYCompareViewController *vc = [[SYCompareViewController alloc] initWithNibName:NSStringFromClass([SYCompareViewController class]) bundle:nil];
         vc.datas = self.datas[indexPath.item];
         vc.hidesBottomBarWhenPushed = YES;

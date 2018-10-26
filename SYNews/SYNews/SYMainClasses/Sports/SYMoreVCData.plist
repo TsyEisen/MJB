@@ -7,6 +7,16 @@
 		<string>SYCategoryViewController</string>
 		<key>title</key>
 		<string>赛程对比</string>
+		<key>type</key>
+		<string>5</string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>SYCategoryViewController</string>
+		<key>title</key>
+		<string>赛程优质数据</string>
+		<key>type</key>
+		<string>8</string>
 	</dict>
 	<dict>
 		<key>className</key>
@@ -20,7 +30,15 @@
 		<key>title</key>
 		<string>全部对比</string>
 		<key>type</key>
-		<string>5</string>
+		<string>6</string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>SYCompareViewController</string>
+		<key>title</key>
+		<string>全部优质数据</string>
+		<key>type</key>
+		<string>9</string>
 	</dict>
 	<dict>
 		<key>className</key>
@@ -28,7 +46,7 @@
 		<key>title</key>
 		<string>比分录入</string>
 		<key>type</key>
-		<string>6</string>
+		<string>7</string>
 	</dict>
 	<dict>
 		<key>className</key>

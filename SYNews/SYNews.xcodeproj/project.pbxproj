@@ -151,13 +151,8 @@
 		F09A6660216DFFA000C3C20A /* SYRecommendPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A665F216DFFA000C3C20A /* SYRecommendPicker.m */; };
 		F09A6663216E193C00C3C20A /* SYRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6662216E193C00C3C20A /* SYRecommendViewController.m */; };
 		F09A6669216E208300C3C20A /* SYMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6668216E208300C3C20A /* SYMoreViewController.m */; };
-		F0C9143C217D6B3B00DF1B4A /* 20181022.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0C9143B217D6B3A00DF1B4A /* 20181022.plist */; };
 		F0E242C4216EFB26008CB6D8 /* SYMoreVCData.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E242C3216EFB26008CB6D8 /* SYMoreVCData.plist */; };
 		F0E242D7216F6360008CB6D8 /* ERSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E242D6216F6360008CB6D8 /* ERSwitchView.m */; };
-		F0E242DC21703EA5008CB6D8 /* 20181012.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E242DB21703EA5008CB6D8 /* 20181012.plist */; };
-		F0E242DE2174271F008CB6D8 /* 20181015.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E242DD2174271E008CB6D8 /* 20181015.plist */; };
-		F0E242E421757505008CB6D8 /* 20181016.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E242E321757504008CB6D8 /* 20181016.plist */; };
-		F0E4E6EC2176C8F9007C7FAB /* 20181017.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E4E6EB2176C8F9007C7FAB /* 20181017.plist */; };
 		F0E4E74C2179B7C8007C7FAB /* SYNormalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E4E74B2179B7C5007C7FAB /* SYNormalListViewController.m */; };
 		F0F63ACA2154D223000D7A15 /* SYSportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63AC82154D222000D7A15 /* SYSportViewController.m */; };
 		F0F63ACD2154D375000D7A15 /* APIRequest+Sports.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63ACC2154D375000D7A15 /* APIRequest+Sports.m */; };
@@ -451,14 +446,9 @@
 		F09A6662216E193C00C3C20A /* SYRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYRecommendViewController.m; sourceTree = "<group>"; };
 		F09A6667216E208300C3C20A /* SYMoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYMoreViewController.h; sourceTree = "<group>"; };
 		F09A6668216E208300C3C20A /* SYMoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYMoreViewController.m; sourceTree = "<group>"; };
-		F0C9143B217D6B3A00DF1B4A /* 20181022.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181022.plist; sourceTree = "<group>"; };
 		F0E242C3216EFB26008CB6D8 /* SYMoreVCData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SYMoreVCData.plist; sourceTree = "<group>"; };
 		F0E242D5216F6360008CB6D8 /* ERSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSwitchView.h; sourceTree = "<group>"; };
 		F0E242D6216F6360008CB6D8 /* ERSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSwitchView.m; sourceTree = "<group>"; };
-		F0E242DB21703EA5008CB6D8 /* 20181012.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181012.plist; sourceTree = "<group>"; };
-		F0E242DD2174271E008CB6D8 /* 20181015.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181015.plist; sourceTree = "<group>"; };
-		F0E242E321757504008CB6D8 /* 20181016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181016.plist; sourceTree = "<group>"; };
-		F0E4E6EB2176C8F9007C7FAB /* 20181017.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181017.plist; sourceTree = "<group>"; };
 		F0E4E74A2179B7C5007C7FAB /* SYNormalListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYNormalListViewController.h; sourceTree = "<group>"; };
 		F0E4E74B2179B7C5007C7FAB /* SYNormalListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYNormalListViewController.m; sourceTree = "<group>"; };
 		F0F63AC62154D222000D7A15 /* SYSportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSportViewController.h; sourceTree = "<group>"; };
@@ -1047,11 +1037,6 @@
 		F0E242DA21703AB6008CB6D8 /* lastData */ = {
 			isa = PBXGroup;
 			children = (
-				F0E242E321757504008CB6D8 /* 20181016.plist */,
-				F0E242DB21703EA5008CB6D8 /* 20181012.plist */,
-				F0E242DD2174271E008CB6D8 /* 20181015.plist */,
-				F0E4E6EB2176C8F9007C7FAB /* 20181017.plist */,
-				F0C9143B217D6B3A00DF1B4A /* 20181022.plist */,
 			);
 			path = lastData;
 			sourceTree = "<group>";
@@ -1198,17 +1183,12 @@
 				F03FC2411F5D05D100DF465B /* SYDiscoverDetailViewController.xib in Resources */,
 				F03B91141F54FDC60033A3B5 /* SYViewControllerData.plist in Resources */,
 				F03B91DF1F5557F70033A3B5 /* SYHomeNewsCell.xib in Resources */,
-				F0E4E6EC2176C8F9007C7FAB /* 20181017.plist in Resources */,
-				F0E242DC21703EA5008CB6D8 /* 20181012.plist in Resources */,
 				F0F63B1721550422000D7A15 /* SYGameDataViewController.xib in Resources */,
 				F068019A215E22910032C4DA /* SYCompareViewController.xib in Resources */,
-				F0E242DE2174271F008CB6D8 /* 20181015.plist in Resources */,
-				F0C9143C217D6B3B00DF1B4A /* 20181022.plist in Resources */,
 				F09A664B216CA2EA00C3C20A /* SYCategoryCell.xib in Resources */,
 				F03B91B81F54FEE60033A3B5 /* SYDiscoverViewController.xib in Resources */,
 				F03B91C21F54FF0F0033A3B5 /* SYMineViewController.xib in Resources */,
 				F068019F215F0D150032C4DA /* SYGameTableTitleCell.xib in Resources */,
-				F0E242E421757505008CB6D8 /* 20181016.plist in Resources */,
 				F03FC2461F5D3CE300DF465B /* SYFeedbackViewController.xib in Resources */,
 				F03FC23C1F5D047B00DF465B /* SYDiscoverDetailCell.xib in Resources */,
 			);
