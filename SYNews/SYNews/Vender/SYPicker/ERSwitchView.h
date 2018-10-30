@@ -10,6 +10,8 @@
 
 @interface ERSwitchView : UIView
 @property (nonatomic, copy) void(^buttonAciton)(NSInteger index);
+
+@property (nonatomic, copy) void(^longPressAction)(NSInteger index);
 /**
  当前索引
  */

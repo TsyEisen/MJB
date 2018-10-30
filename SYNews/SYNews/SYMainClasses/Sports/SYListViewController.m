@@ -23,7 +23,7 @@
 @property (nonatomic, strong) UISegmentedControl *segment;
 @property (nonatomic, strong) NSArray *startDatas;
 @property (nonatomic, strong) NSArray *unStartDatas;
-@property (nonatomic, assign) BOOL exit;
+@property (nonatomic, assign) BOOL exit; 
 @end
 
 @implementation SYListViewController

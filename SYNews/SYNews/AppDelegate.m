@@ -27,7 +27,7 @@
         [[SYSportDataManager sharedSYSportDataManager].timer fire];
         NSLog(@"地址 : %@",NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true).firstObject);
     }else {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [[SYSportDataManager sharedSYSportDataManager] replaceDataForNewest];
         });
     }

@@ -121,6 +121,10 @@
         [btn addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         btn.frame = CGRectMake(lastX + marginX, 0, title.length * 15 + 10, self.bounds.size.height);
         [self.scrollView addSubview:btn];
+        
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressFun:)];
+        longPress.minimumPressDuration = 3;
+        [btn addGestureRecognizer:longPress];
 
         if (i == 0) {
             [btn setTitleColor:self.selectedColor forState:UIControlStateNormal];
@@ -173,6 +177,25 @@
     [sender2 setTitleColor:[UIColor sy_colorWithRGB:0x333333] forState:UIControlStateNormal];
 }
 
+- (void)longPressFun:(UILongPressGestureRecognizer *)sender {
+    if (self.longPressAction) {
+        self.longPressAction(sender.view.tag - BaseTag);
+    }
+//    CGPoint point = [sender locationInView:self];
+//
+//    for (UIView *sub in self.subviews) {
+//        if (sub.tag >= 100) {
+//            if (CGRectContainsPoint(sub.frame, point)) {
+//                if (self.longPressAction) {
+//                    self.longPressAction(sender.view.tag - BaseTag);
+//                    return;
+//                }
+//            }
+//        }
+//    }
+}
+
+#pragma mark - 懒加载
 - (UIView *)line {
     if (_line == nil) {
         _line = [UIView new];

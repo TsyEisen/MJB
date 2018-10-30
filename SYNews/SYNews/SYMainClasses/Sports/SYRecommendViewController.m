@@ -126,10 +126,48 @@
                 });
             }
         }];
+        
+        [_switchView setLongPressAction:^(NSInteger index) {
+            SYRecommendModel *model = [SYSportDataManager sharedSYSportDataManager].recommends[index];
+            NSMutableString *str = [NSMutableString string];
+            for (SYGameListModel *item in model.datas) {
+                [str appendFormat:@"%@ %@ %@ VS %@ %@ %@ %@ %@\n",item.MatchTime,item.SortName,item.HomeTeam,item.AwayTeam,[weakSelf recommendString:item],item.score,item.AsianAvrLet,item.resultType & item.recommendType ? @"红":@"黑"];
+            }
+            UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+            pasteboard.string = str;
+            NSLog(@"结果:\n%@",str);
+            [MBProgressHUD showSuccess:@"复制成功" toView:nil];
+        }];
+        
         _switchView.titles = tempArray;
     }
     return _switchView;
 }
+
+- (NSString *)recommendString:(SYGameListModel *)model {
+    NSString *title = nil;
+    switch (model.recommendType) {
+        case SYGameScoreTypeHome:
+            title = @"胜";
+            break;
+        case SYGameScoreTypeDraw:
+            title = @"平";
+            break;
+        case SYGameScoreTypeAway:
+            title = @"负";
+            break;
+        case SYGameScoreTypeAway|SYGameScoreTypeDraw:
+            title = @"客不败";
+            break;
+        case SYGameScoreTypeDraw|SYGameScoreTypeHome:
+            title = @"主不败";
+            break;
+        default:
+            break;
+    }
+    return title;
+}
+
 //- (UIScrollView *)scrollView {
 //    if (_scrollView == nil) {
 //        _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];

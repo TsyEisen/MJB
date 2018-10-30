@@ -25,6 +25,8 @@
 		9F3498A2215631700058B99E /* SYCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F34989A215631700058B99E /* SYCacheManager.m */; };
 		9F3498A3215631700058B99E /* NSObject+SYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F34989C215631700058B99E /* NSObject+SYExtension.m */; };
 		9FEF95C5215A30F800BC0A69 /* SYTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF95C3215A30F800BC0A69 /* SYTransitionAnimation.m */; };
+		F005D5E921869FDE00F2EB74 /* 20181029.plist in Resources */ = {isa = PBXBuildFile; fileRef = F005D5E821869FDE00F2EB74 /* 20181029.plist */; };
+		F005D5F2218803C900F2EB74 /* 20181030.plist in Resources */ = {isa = PBXBuildFile; fileRef = F005D5F1218803C800F2EB74 /* 20181030.plist */; };
 		F03B90F41F54FD6F0033A3B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B90F31F54FD6F0033A3B5 /* main.m */; };
 		F03B90FF1F54FD700033A3B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F03B90FE1F54FD700033A3B5 /* Assets.xcassets */; };
 		F03B91021F54FD700033A3B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F03B91001F54FD700033A3B5 /* LaunchScreen.storyboard */; };
@@ -211,6 +213,8 @@
 		9F3498A0215631700058B99E /* NSObject+SYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SYExtension.h"; sourceTree = "<group>"; };
 		9FEF95C3215A30F800BC0A69 /* SYTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYTransitionAnimation.m; sourceTree = "<group>"; };
 		9FEF95C4215A30F800BC0A69 /* SYTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYTransitionAnimation.h; sourceTree = "<group>"; };
+		F005D5E821869FDE00F2EB74 /* 20181029.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181029.plist; sourceTree = "<group>"; };
+		F005D5F1218803C800F2EB74 /* 20181030.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181030.plist; sourceTree = "<group>"; };
 		F03B90EF1F54FD6F0033A3B5 /* SYNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F03B90F31F54FD6F0033A3B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F03B90FE1F54FD700033A3B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1037,6 +1041,8 @@
 		F0E242DA21703AB6008CB6D8 /* lastData */ = {
 			isa = PBXGroup;
 			children = (
+				F005D5E821869FDE00F2EB74 /* 20181029.plist */,
+				F005D5F1218803C800F2EB74 /* 20181030.plist */,
 			);
 			path = lastData;
 			sourceTree = "<group>";
@@ -1168,6 +1174,7 @@
 				F03B91EE1F5566800033A3B5 /* SYHomeNewsViewController.xib in Resources */,
 				F03FC24E1F5D3ED200DF465B /* MBProgressHUD.bundle in Resources */,
 				F03B91BD1F54FEF30033A3B5 /* SYHomeViewController.xib in Resources */,
+				F005D5F2218803C900F2EB74 /* 20181030.plist in Resources */,
 				F03FC22F1F5CFFE400DF465B /* MJRefresh.bundle in Resources */,
 				F03B91F31F556BED0033A3B5 /* SYNewsDetailViewController.xib in Resources */,
 				F09A665A216DFC3100C3C20A /* Recommend.plist in Resources */,
@@ -1179,6 +1186,7 @@
 				F03B91021F54FD700033A3B5 /* LaunchScreen.storyboard in Resources */,
 				F03B90FF1F54FD700033A3B5 /* Assets.xcassets in Resources */,
 				F06801A4215F1EAD0032C4DA /* SYGameDetailView.xib in Resources */,
+				F005D5E921869FDE00F2EB74 /* 20181029.plist in Resources */,
 				F03FC2541F5D425B00DF465B /* SYAboutUsViewController.xib in Resources */,
 				F03FC2411F5D05D100DF465B /* SYDiscoverDetailViewController.xib in Resources */,
 				F03B91141F54FDC60033A3B5 /* SYViewControllerData.plist in Resources */,
