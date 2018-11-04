@@ -27,7 +27,6 @@
     
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([SYCategoryCell class]) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([SYCategoryCell class])];
     [self setupMJRefresh];
-    
 }
 
 - (void)setupMJRefresh {
