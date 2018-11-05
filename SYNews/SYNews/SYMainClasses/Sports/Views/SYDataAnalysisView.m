@@ -300,9 +300,9 @@
 + (instancetype)modelWithTitle:(NSString *)title home:(NSInteger)home draw:(NSInteger)draw away:(NSInteger)away total:(NSInteger)total{
     SYDataAnalysisModel *model = [SYDataAnalysisModel new];
     model.oneStr = title;
-    model.twoStr = total == 0 ? @"0":[NSString stringWithFormat:@"%.2f",home*1.0/total];
-    model.threeStr = total == 0 ? @"0":[NSString stringWithFormat:@"%.2f",draw*1.0/total];
-    model.fourStr = total == 0 ? @"0":[NSString stringWithFormat:@"%.2f",away*1.0/total];
+    model.twoStr = total == 0 ? @"0":[NSString stringWithFormat:@"%.2f(%zd)",home*1.0/total,home];
+    model.threeStr = total == 0 ? @"0":[NSString stringWithFormat:@"%.2f(%zd)",draw*1.0/total,draw];
+    model.fourStr = total == 0 ? @"0":[NSString stringWithFormat:@"%.2f(%zd)",away*1.0/total,away];
     return model;
 }
 @end

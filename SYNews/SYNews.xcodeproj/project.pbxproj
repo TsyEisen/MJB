@@ -29,6 +29,7 @@
 		9F767B60218F1262002865EA /* SYDataAnalysisCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F767B5E218F1262002865EA /* SYDataAnalysisCell.m */; };
 		9F767B61218F1262002865EA /* SYDataAnalysisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F767B5F218F1262002865EA /* SYDataAnalysisCell.xib */; };
 		9FEF95C5215A30F800BC0A69 /* SYTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF95C3215A30F800BC0A69 /* SYTransitionAnimation.m */; };
+		F0034B79218C6508008B43C9 /* 20181102.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0034B78218C6508008B43C9 /* 20181102.plist */; };
 		F005D5E921869FDE00F2EB74 /* 20181029.plist in Resources */ = {isa = PBXBuildFile; fileRef = F005D5E821869FDE00F2EB74 /* 20181029.plist */; };
 		F005D5F2218803C900F2EB74 /* 20181030.plist in Resources */ = {isa = PBXBuildFile; fileRef = F005D5F1218803C800F2EB74 /* 20181030.plist */; };
 		F03B90F41F54FD6F0033A3B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B90F31F54FD6F0033A3B5 /* main.m */; };
@@ -144,6 +145,7 @@
 		F06801AC215F21970032C4DA /* SYBezierModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F06801A7215F21970032C4DA /* SYBezierModel.m */; };
 		F06801AD215F21970032C4DA /* SYSelectBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F06801A9215F21970032C4DA /* SYSelectBox.m */; };
 		F06801AE215F21970032C4DA /* SYSelectTable.m in Sources */ = {isa = PBXBuildFile; fileRef = F06801AB215F21970032C4DA /* SYSelectTable.m */; };
+		F0681D1A218FD09300071B23 /* 20181105.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0681D19218FD09200071B23 /* 20181105.plist */; };
 		F09A6645216CA1E700C3C20A /* SYCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6643216CA1E700C3C20A /* SYCategoryViewController.m */; };
 		F09A6646216CA1E700C3C20A /* SYCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09A6644216CA1E700C3C20A /* SYCategoryViewController.xib */; };
 		F09A664A216CA2EA00C3C20A /* SYCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6648216CA2EA00C3C20A /* SYCategoryCell.m */; };
@@ -223,6 +225,7 @@
 		9F767B5F218F1262002865EA /* SYDataAnalysisCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SYDataAnalysisCell.xib; sourceTree = "<group>"; };
 		9FEF95C3215A30F800BC0A69 /* SYTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYTransitionAnimation.m; sourceTree = "<group>"; };
 		9FEF95C4215A30F800BC0A69 /* SYTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYTransitionAnimation.h; sourceTree = "<group>"; };
+		F0034B78218C6508008B43C9 /* 20181102.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181102.plist; sourceTree = "<group>"; };
 		F005D5E821869FDE00F2EB74 /* 20181029.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181029.plist; sourceTree = "<group>"; };
 		F005D5F1218803C800F2EB74 /* 20181030.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181030.plist; sourceTree = "<group>"; };
 		F03B90EF1F54FD6F0033A3B5 /* SYNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -437,6 +440,7 @@
 		F06801A9215F21970032C4DA /* SYSelectBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSelectBox.m; sourceTree = "<group>"; };
 		F06801AA215F21970032C4DA /* SYSelectTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSelectTable.h; sourceTree = "<group>"; };
 		F06801AB215F21970032C4DA /* SYSelectTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSelectTable.m; sourceTree = "<group>"; };
+		F0681D19218FD09200071B23 /* 20181105.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181105.plist; sourceTree = "<group>"; };
 		F09A6642216CA1E700C3C20A /* SYCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYCategoryViewController.h; sourceTree = "<group>"; };
 		F09A6643216CA1E700C3C20A /* SYCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYCategoryViewController.m; sourceTree = "<group>"; };
 		F09A6644216CA1E700C3C20A /* SYCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SYCategoryViewController.xib; sourceTree = "<group>"; };
@@ -1053,6 +1057,8 @@
 			children = (
 				F005D5E821869FDE00F2EB74 /* 20181029.plist */,
 				F005D5F1218803C800F2EB74 /* 20181030.plist */,
+				F0034B78218C6508008B43C9 /* 20181102.plist */,
+				F0681D19218FD09200071B23 /* 20181105.plist */,
 			);
 			path = lastData;
 			sourceTree = "<group>";
@@ -1206,10 +1212,12 @@
 				F06801A4215F1EAD0032C4DA /* SYGameDetailView.xib in Resources */,
 				F005D5E921869FDE00F2EB74 /* 20181029.plist in Resources */,
 				F03FC2541F5D425B00DF465B /* SYAboutUsViewController.xib in Resources */,
+				F0034B79218C6508008B43C9 /* 20181102.plist in Resources */,
 				F03FC2411F5D05D100DF465B /* SYDiscoverDetailViewController.xib in Resources */,
 				F03B91141F54FDC60033A3B5 /* SYViewControllerData.plist in Resources */,
 				F03B91DF1F5557F70033A3B5 /* SYHomeNewsCell.xib in Resources */,
 				F0F63B1721550422000D7A15 /* SYGameDataViewController.xib in Resources */,
+				F0681D1A218FD09300071B23 /* 20181105.plist in Resources */,
 				F068019A215E22910032C4DA /* SYCompareViewController.xib in Resources */,
 				F09A664B216CA2EA00C3C20A /* SYCategoryCell.xib in Resources */,
 				F03B91B81F54FEE60033A3B5 /* SYDiscoverViewController.xib in Resources */,
