@@ -10,10 +10,14 @@
 #import "SYGameListCell.h"
 #import "SYGameTableCell.h"
 #import "ERSwitchView.h"
+#import "SYAlertView.h"
+#import "SYAddNewRecommendView.h"
+
 @interface SYRecommendViewController ()<UITableViewDataSource,UITableViewDelegate>
-//@property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) ERSwitchView *switchView;
+@property (nonatomic, strong) UIBarButtonItem *addBtn;
+@property (nonatomic, strong) UIBarButtonItem *deleteBtn;
 @end
 
 @implementation SYRecommendViewController
@@ -22,7 +26,6 @@
     [super viewDidLoad];
     [self setUpUI];
     self.title = @"推介";
-   
 }
 
 - (void)setUpUI {
@@ -33,29 +36,34 @@
         make.left.right.bottom.equalTo(self.view);
         make.top.equalTo(@50);
     }];
-//    [self.view addSubview:self.scrollView];
-//    CGFloat w = ScreenW;
-//    CGFloat h = 50;
-//    for (int i = 0; i < [SYSportDataManager sharedSYSportDataManager].recommends.count; i++) {
-//        SYRecommendModel *model = [SYSportDataManager sharedSYSportDataManager].recommends[i];
-//        SYDataLabel *label = [[SYDataLabel alloc] initWithFrame:CGRectMake(i*w, 0, w, h)];
-//        label.font = [UIFont boldSystemFontOfSize:15];
-//        label.text = model.name;
-//        [self.scrollView addSubview:label];
-//
-//        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(i*w, 20, w, ScreenH - 64-h)];
-//        tableView.dataSource = self;
-//        tableView.delegate = self;
-//        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//        tableView.rowHeight = UITableViewAutomaticDimension;
-//        tableView.estimatedRowHeight = 100;
-//        tableView.backgroundColor = [UIColor sy_colorWithRGB:0xf4f4f4];
-//        tableView.tag = i;
-//        [tableView sy_registerNibWithClass:[SYGameListCell class]];
-//        [self.scrollView addSubview:tableView];
-//    }
-//
-//    [self.scrollView setContentSize:CGSizeMake(w * [SYSportDataManager sharedSYSportDataManager].recommends.count, 0)];
+    self.navigationItem.rightBarButtonItems = @[self.deleteBtn,self.addBtn];
+}
+
+- (void)addNewAction {
+    SYAddNewRecommendView *recommendView = [SYAddNewRecommendView viewFromNib];
+    recommendView.isAdd = YES;
+    SYAlertView *alert = [[SYAlertView alloc] initWithCustom:recommendView cancelButtonTitle:@"取消" conformButtonTitle:@"确定" size:CGSizeMake(260, 120)];
+    [alert setConformAction:^{
+        if (recommendView.textField.text.length > 0) {
+            [[SYSportDataManager sharedSYSportDataManager] creatNewRecommend:recommendView.textField.text];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
+    alert.allowTapBackgroundDismiss = YES;
+    [alert show];
+}
+
+- (void)deleteAction {
+    SYAddNewRecommendView *recommendView = [SYAddNewRecommendView viewFromNib];
+    SYAlertView *alert = [[SYAlertView alloc] initWithCustom:recommendView cancelButtonTitle:@"取消" conformButtonTitle:@"确定" size:CGSizeMake(260, 180)];
+    [alert setConformAction:^{
+        if (recommendView.selectedIndex) {
+            [[SYSportDataManager sharedSYSportDataManager] deleteRecommendAtIndex:recommendView.selectedIndex.row];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
+    alert.allowTapBackgroundDismiss = YES;
+    [alert show];
 }
 
 #pragma mark - tableView DataSource
@@ -65,8 +73,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    SYRecommendModel *model = [SYSportDataManager sharedSYSportDataManager].recommends[self.switchView.index];
-    return model.datas.count;
+    if ([SYSportDataManager sharedSYSportDataManager].recommends.count == 0) {
+        return 0;
+    }else {
+        SYRecommendModel *model = [SYSportDataManager sharedSYSportDataManager].recommends[self.switchView.index];
+        return model.datas.count;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -92,7 +104,16 @@
         [model deleteModel:model.datas[indexPath.row]];
         [weakSelf.tableView reloadData];
     }];
-    return @[action];
+    
+    UITableViewRowAction *copyaction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"复制" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        SYGameListModel *item = model.datas[indexPath.row];
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = [NSString stringWithFormat:@"%@ %@VS%@",item.SortName,item.HomeTeam,item.AwayTeam];
+        [MBProgressHUD showSuccess:@"复制成功" toView:nil];
+        [weakSelf.tableView reloadData];
+    }];
+    
+    return @[action,copyaction];
 }
 
 - (UITableView *)tableView {
@@ -166,6 +187,22 @@
             break;
     }
     return title;
+}
+
+- (UIBarButtonItem *)addBtn {
+    if (_addBtn == nil) {
+        _addBtn = [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStyleDone target:self action:@selector(addNewAction)];
+        _addBtn.tintColor = [UIColor whiteColor];
+    }
+    return _addBtn;
+}
+
+- (UIBarButtonItem *)deleteBtn {
+    if (_deleteBtn == nil) {
+        _deleteBtn = [[UIBarButtonItem alloc] initWithTitle:@"删除" style:UIBarButtonItemStyleDone target:self action:@selector(deleteAction)];
+        _deleteBtn.tintColor = [UIColor whiteColor];
+    }
+    return _deleteBtn;
 }
 
 //- (UIScrollView *)scrollView {

@@ -13,17 +13,21 @@
 #import "SYPickerTool.h"
 #import "SYScorePicker.h"
 #import "SYRecommendPicker.h"
-
+#import "SYAlertView.h"
+#import "SYRenameView.h"
 @interface SYListViewController ()<UITableViewDataSource,UITableViewDelegate,UIViewControllerTransitioningDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) SYScorePicker *scorePicker;
 @property (nonatomic, strong) SYRecommendPicker *recommendPicker;
+//@property (nonatomic, strong) SYRenameView *renameView;
+@property (nonatomic, strong) UISegmentedControl *segment;
+
 @property (nonatomic, strong) NSArray *datas;
 @property (nonatomic, strong) SYGameListModel *selectedModel;
-@property (nonatomic, strong) UISegmentedControl *segment;
 @property (nonatomic, strong) NSArray *startDatas;
 @property (nonatomic, strong) NSArray *unStartDatas;
-@property (nonatomic, assign) BOOL exit; 
+@property (nonatomic, assign) BOOL exit;
+
 @end
 
 @implementation SYListViewController
@@ -207,7 +211,13 @@
             self.datas = temp.copy;
             [weakSelf.tableView reloadData];
         }];
-        return @[action];
+        
+        UITableViewRowAction *renameaction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"命名" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+            weakSelf.selectedModel = model;
+            [weakSelf renameAction];
+            [weakSelf.tableView reloadData];
+        }];
+        return @[action,renameaction];
     }else {
         UITableViewRowAction *action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"复制" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
             UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
@@ -228,6 +238,19 @@
         model = self.datas[indexPath.row];
     }
     return model;
+}
+
+- (void)renameAction {
+   SYRenameView *renameView = [SYRenameView viewFromNib];
+    renameView.homeLabel.text = self.selectedModel.HomeTeam;
+    renameView.awayLabel.text = self.selectedModel.AwayTeam;
+    SYAlertView *alert = [[SYAlertView alloc] initWithCustom:renameView cancelButtonTitle:@"取消" conformButtonTitle:@"确定" size:CGSizeMake(260, 140)];
+    [alert setConformAction:^{
+        [[SYSportDataManager sharedSYSportDataManager] replaceNameForTeamId:self.selectedModel.HomeTeamId byName:renameView.homeTextField.text];
+        [[SYSportDataManager sharedSYSportDataManager] replaceNameForTeamId:self.selectedModel.AwayTeamId byName:renameView.awayTextField.text];
+    }];
+    alert.allowTapBackgroundDismiss = YES;
+    [alert show];
 }
 
 #pragma mark - 懒加载
@@ -276,6 +299,13 @@
     }
     return _segment;
 }
+
+//- (SYRenameView *)renameView {
+//    if (_renameView == nil) {
+//        _renameView = [SYRenameView viewFromNib];
+//    }
+//    return _renameView;
+//}
 
 - (NSArray *)startDatas {
     if (_startDatas == nil) {
