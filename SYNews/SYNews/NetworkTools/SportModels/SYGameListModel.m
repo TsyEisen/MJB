@@ -44,6 +44,22 @@
     return type;
 }
 
+- (NSString *)HomeTeam {
+    NSString *name = [[SYSportDataManager sharedSYSportDataManager].replaceNames objectForKey:[NSString stringWithFormat:@"%zd",self.HomeTeamId]];
+    if (name.length > 0) {
+        return name;
+    }
+    return _HomeTeam;
+}
+
+- (NSString *)AwayTeam {
+    NSString *name = [[SYSportDataManager sharedSYSportDataManager].replaceNames objectForKey:[NSString stringWithFormat:@"%zd",self.AwayTeamId]];
+    if (name.length > 0) {
+        return name;
+    }
+    return _AwayTeam;
+}
+
 @end
 
 @implementation SYNumberModel

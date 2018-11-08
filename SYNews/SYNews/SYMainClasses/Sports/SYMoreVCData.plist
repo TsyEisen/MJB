@@ -23,6 +23,8 @@
 		<string>SYCategoryViewController</string>
 		<key>title</key>
 		<string>历史回顾</string>
+		<key>type</key>
+		<string>5</string>
 	</dict>
 	<dict>
 		<key>className</key>

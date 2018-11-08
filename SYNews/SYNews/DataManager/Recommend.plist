@@ -22,45 +22,9 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>忠犬红单</string>
+		<string>狗哥</string>
 		<key>tag</key>
 		<integer>3</integer>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>狗狗暴走</string>
-		<key>tag</key>
-		<integer>4</integer>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>小狗看盘</string>
-		<key>tag</key>
-		<integer>5</integer>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>竞彩导盲犬</string>
-		<key>tag</key>
-		<integer>6</integer>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>狗哥无敌</string>
-		<key>tag</key>
-		<integer>7</integer>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>藏獒看球</string>
-		<key>tag</key>
-		<integer>9</integer>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>稳如哈士奇</string>
-		<key>tag</key>
-		<integer>10</integer>
 	</dict>
 </array>
 </plist>

@@ -9,9 +9,9 @@
 #import "SYRecommendModel.h"
 
 @interface SYRecommendModel ()
-@property (nonatomic, copy) NSString *path;
 @property (nonatomic, strong) NSMutableArray *list;
 @property (nonatomic, strong) NSMutableDictionary *jsons;
+@property (nonatomic, copy) NSString *path;
 @end
 
 @implementation SYRecommendModel
@@ -109,4 +109,5 @@
     }
     return _list;
 }
+
 @end

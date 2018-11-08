@@ -15,6 +15,7 @@
 #define sportsJsonPath @"sportsJsonPath.plist"
 #define hotGamesJsonPath @"hotGamesJsonPath.plist"
 #define scoreGamesJsonPath @"scoreGamesJsonPath.plist"
+#define replaceNamePath @"replaceNamePath.plist"
 
 @interface SYSportDataManager()
 
@@ -32,25 +33,6 @@ SYSingleton_implementation(SYSportDataManager)
 /*
  http://api.spdex.com/spdex/match_data/sports?class=-1&jcfrom=1&sports=1,7522&app=z&version=i3.11
  */
-
-//- (void)reuqestAllSportsCompletion:(void (^)())completion {
-//    _currentGameJsons = nil;
-////    NSString *lastDate = [[NSUserDefaults standardUserDefaults] stringForKey:@"SYSportLastDate"];
-////    if ([lastDate isEqualToString:[[NSDate date] sy_stringWithFormat:@"yyyyMMdd"]]) {
-////        [self requestAllDatasCompletion:completion];
-////    }else {
-////        [self requestWithParams:nil byType:SYSportDataTypeHomeSport completion:^(id result) {
-////            if (result) {
-////                [[NSUserDefaults standardUserDefaults] setObject:[[NSDate date] sy_stringWithFormat:@"yyyyMMdd"] forKey:@"SYSportLastDate"];
-////                //保存
-////                [self sy_writeToFile:result forPath:[self dataPathWithFileName:sportsJsonPath]];
-////                self.sports = [SYSportModel mj_objectArrayWithKeyValuesArray:result];
-////                [self requestAllDatasCompletion:completion];
-////            }
-////        }];
-////    }
-//
-//}
 
 - (void)requestAllDatasCompletion:(void (^)(NSArray *))completion {
    
@@ -486,11 +468,86 @@ SYSingleton_implementation(SYSportDataManager)
     return _timer;
 }
 
-- (NSArray *)recommends {
+- (void)creatNewRecommend:(NSString *)name {
+    for (SYRecommendModel *model in self.recommends) {
+        if ([model.name isEqualToString:name]) {
+            return;
+        }
+    }
+    SYRecommendModel *model = [SYRecommendModel new];
+    model.name = name;
+    model.tag = self.recommends.count;
+    [self.recommends addObject:model];
+    [self saveRecommends];
+}
+
+- (void)deleteRecommendAtIndex:(NSInteger)index {
+    if (self.recommends.count > index) {
+        [self.recommends removeObjectAtIndex:index];
+        [self saveRecommends];
+    }
+}
+
+- (void)saveRecommends {
+    NSMutableArray *tempArray = [NSMutableArray array];
+    for (SYRecommendModel *model in self.recommends) {
+        [tempArray addObject:@{@"name":model.name,@"tag":@(model.tag)}];
+    }
+    [tempArray writeToFile:[self recommendModelsPath] atomically:YES];
+}
+
+- (NSMutableArray *)recommends {
     if (_recommends == nil) {
-        NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Recommend.plist" ofType:nil]];
-        _recommends = [SYRecommendModel mj_objectArrayWithKeyValuesArray:array];
+//        NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Recommend.plist" ofType:nil]];
+        //        [tempArray addObjectsFromArray:array];
+        //        [tempArray writeToFile:[self recommendModelsPath] atomically:YES];
+        NSMutableArray *tempArray = [NSMutableArray arrayWithContentsOfFile:[self recommendModelsPath]];
+        if (tempArray == nil) {
+            tempArray = [NSMutableArray array];
+        }
+        _recommends = [SYRecommendModel mj_objectArrayWithKeyValuesArray:tempArray];
+        
+        NSString *documentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/SYRecommend"];
+        NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtPath:documentsPath];
+        for (NSString *fileName in enumerator) {
+            BOOL exit = NO;
+            for (SYRecommendModel *recommend in _recommends) {
+                if ([fileName containsString:[NSString stringWithFormat:@"SYRecommend_%zd.plist",recommend.tag]]) {
+                    exit = YES;
+                    break;
+                }
+            }
+            if (exit == NO) {
+                [[NSFileManager defaultManager] removeItemAtPath:[documentsPath stringByAppendingPathComponent:fileName] error:nil];
+                NSLog(@"不包含----%@",fileName);
+            }
+        }
+        
     }
     return _recommends;
+}
+
+- (NSString *)recommendModelsPath {
+    return [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/SYRecommendModelsPath.plist"];
+}
+
+- (void)replaceNameForTeamId:(NSInteger)teamId byName:(NSString *)name {
+    NSString *key = [NSString stringWithFormat:@"%zd",teamId];
+    if (name.length == 0 || [name isEqualToString:@" "]) {
+        [self.replaceNames removeObjectForKey:key];
+    }else {
+        [self.replaceNames setValue:name forKey:key];
+    }
+    [self.replaceNames writeToFile:[self dataPathWithFileName:replaceNamePath] atomically:YES];
+}
+
+- (NSMutableDictionary *)replaceNames {
+    if (_replaceNames == nil) {
+        _replaceNames = [[NSMutableDictionary alloc] initWithContentsOfFile:[self dataPathWithFileName:replaceNamePath]];
+        if (_replaceNames == nil) {
+            _replaceNames = [NSMutableDictionary dictionary];
+        }
+    }
+    return _replaceNames;
 }
 @end

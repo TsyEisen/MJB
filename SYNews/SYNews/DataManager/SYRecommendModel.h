@@ -11,8 +11,10 @@
 @interface SYRecommendModel : NSObject
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) NSInteger tag;
-@property (nonatomic, strong,readonly) NSArray *datas;
+//@property (nonatomic, strong,readonly) NSArray *datas;
 - (void)saveModel:(SYGameListModel *)model;
 - (void)changeModelInformation:(SYGameListModel *)model;
 - (void)deleteModel:(SYGameListModel *)model;
++ (NSArray *)models;
+- (NSArray *)datas;
 @end

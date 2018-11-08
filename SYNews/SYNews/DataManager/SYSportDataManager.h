@@ -27,16 +27,23 @@ typedef NS_ENUM(NSUInteger, SYListType) {
     SYListTypeCompare_all = 6,
     SYListTypeNoScore = 7,
     SYListTypeCompare_HighQuality = 8,
-    SYListTypeCompare_HighQuality_all = 9
+    SYListTypeCompare_HighQuality_all = 9,
 };
 
 @interface SYSportDataManager : NSObject
 SYSingleton_interface(SYSportDataManager)
 
-@property (nonatomic, strong) NSArray *recommends;
+@property (nonatomic, strong) NSMutableArray *recommends;
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) NSMutableDictionary *replaceNames;
+
 - (void)requestDatasBySYListType:(SYListType)type Completion:(void(^)(NSArray *datas))completion;
 - (void)changeScoreModel:(SYGameListModel *)model;
 - (void)deleteModel:(SYGameListModel *)model;
 - (void)replaceDataForNewest;
+
+- (void)creatNewRecommend:(NSString *)name;
+- (void)deleteRecommendAtIndex:(NSInteger)index;
+
+- (void)replaceNameForTeamId:(NSInteger)teamId byName:(NSString *)name;
 @end
