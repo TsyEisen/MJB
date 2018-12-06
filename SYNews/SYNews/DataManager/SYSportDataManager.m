@@ -72,6 +72,8 @@ SYSingleton_implementation(SYSportDataManager)
             [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
             _allGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
             
+            
+            
             NSArray *tempArray = [_categaryCache allValues];
             for (NSArray *arr in tempArray) {
                 [self bindProbabilityWithModels:arr];
@@ -573,6 +575,7 @@ SYSingleton_implementation(SYSportDataManager)
     for (SYSportDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports) {
         if (pro.sportId == ((SYGameListModel *)models.firstObject).LeagueId) {
             probability = pro;
+            break;
         }
     }
     
@@ -584,6 +587,7 @@ SYSingleton_implementation(SYSportDataManager)
         for (SYDataProbability *pro in probability.kellys) {
             if (pro.type == type) {
                 model.probability = pro;
+                break;
             }
         }
     }
