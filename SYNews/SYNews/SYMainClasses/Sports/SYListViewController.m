@@ -21,6 +21,7 @@
 @property (nonatomic, strong) SYRecommendPicker *recommendPicker;
 //@property (nonatomic, strong) SYRenameView *renameView;
 @property (nonatomic, strong) UISegmentedControl *segment;
+@property (nonatomic, strong) UIBarButtonItem *rightItem;
 
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) NSArray *datas;
@@ -61,6 +62,15 @@
     if (self.type == SYListTypeNear) {
         self.navigationItem.titleView = self.segment;
     }
+    if (self.type == SYListTypeCategory) {
+        self.navigationItem.rightBarButtonItem = self.rightItem;
+    }
+}
+
+- (void)dataAction {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [[SYDataAnalyzeManager sharedSYDataAnalyzeManager] calculatorDatas];
+    });
 }
 
 - (void)setupMJRefresh {
@@ -339,6 +349,14 @@
         _unStartDatas = [[NSArray alloc] init];
     }
     return _unStartDatas;
+}
+
+- (UIBarButtonItem *)rightItem {
+    if (_rightItem == nil) {
+        _rightItem = [[UIBarButtonItem alloc] initWithTitle:@"计算" style:UIBarButtonItemStyleDone target:self action:@selector(dataAction)];
+        _rightItem.tintColor = [UIColor whiteColor];
+    }
+    return _rightItem;
 }
 
 @end

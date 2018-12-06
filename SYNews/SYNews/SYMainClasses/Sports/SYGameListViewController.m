@@ -12,7 +12,7 @@
 #import "SYSportDataManager.h"
 
 @interface SYGameListViewController ()
-@property (nonatomic, strong) UIBarButtonItem *rightItem;
+
 @end
 
 @implementation SYGameListViewController
@@ -26,15 +26,9 @@
                             @"class":@"-1"
                             };
     [self requestData];
-    
-    self.navigationItem.rightBarButtonItem = self.rightItem;
+
 }
 
-- (void)dataAction {
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        [[SYDataAnalyzeManager sharedSYDataAnalyzeManager] calculatorDatas];
-    });
-}
 
 #pragma mark - tableView DataSource
 
@@ -80,14 +74,6 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     return [UIView new];
-}
-
-- (UIBarButtonItem *)rightItem {
-    if (_rightItem == nil) {
-        _rightItem = [[UIBarButtonItem alloc] initWithTitle:@"计算" style:UIBarButtonItemStyleDone target:self action:@selector(dataAction)];
-        _rightItem.tintColor = [UIColor whiteColor];
-    }
-    return _rightItem;
 }
 
 @end
