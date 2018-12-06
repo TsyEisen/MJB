@@ -115,9 +115,9 @@
         
         if (model.probability) {
             self.lastTitleLabel.text = @"方差概率";
-            self.jsHomeLabel.text = model.probability.gl_home == 0 ?@"0": [NSString stringWithFormat:@"%.2f",model.probability.gl_home];
-            self.jsDrawLabel.text = model.probability.gl_draw == 0 ?@"0":[NSString stringWithFormat:@"%.2f",model.probability.gl_draw];;
-            self.jsAwayLabel.text = model.probability.gl_away == 0 ?@"0":[NSString stringWithFormat:@"%.2f",model.probability.gl_away];;
+            self.jsHomeLabel.text = model.probability.gl_home == 0 ?@"0": [NSString stringWithFormat:@"%.2f\n(%zd/%zd)",model.probability.gl_home,model.probability.count_home,model.probability.total];
+            self.jsDrawLabel.text = model.probability.gl_draw == 0 ?@"0":[NSString stringWithFormat:@"%.2f\n(%zd/%zd)",model.probability.gl_draw,model.probability.count_draw,model.probability.total];
+            self.jsAwayLabel.text = model.probability.gl_away == 0 ?@"0":[NSString stringWithFormat:@"%.2f\n(%zd/%zd)",model.probability.gl_away,model.probability.count_away,model.probability.total];
         }else {
             self.lastTitleLabel.text = nil;
             self.jsHomeLabel.text = nil;
