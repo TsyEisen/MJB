@@ -34,8 +34,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *jsAwayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lastTitleLabel;
 
-@property (nonatomic, strong) SYSportDataProbability *probability;
-@property (nonatomic, strong) NSMutableArray *probabilitys;
+//@property (nonatomic, strong) SYSportDataProbability *probability;
+//@property (nonatomic, strong) NSMutableArray *probabilitys;
 @end
 
 @implementation SYGameListCell
@@ -93,31 +93,31 @@
         self.contentView.backgroundColor = model.resultType & model.recommendType?[UIColor appMainColor]:[UIColor whiteColor];
     }else {
         
-        if (self.probability) {
-            if (self.probability.sportId != model.LeagueId) {
-                for (SYSportDataProbability *pro in self.probabilitys) {
-                    if (pro.sportId == model.LeagueId) {
-                        _probability = pro;
-                        break;
-                    }
-                }
-            }
-            if (_probability.sportId != model.LeagueId) {
-                for (SYSportDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports) {
-                    if (pro.sportId == model.LeagueId) {
-                        _probability = pro;
-                        [self.probabilitys addObject:pro];
-                        break;
-                    }
-                }
-            }
-        }
+//        if (self.probability) {
+//            if (self.probability.sportId != model.LeagueId) {
+//                for (SYSportDataProbability *pro in self.probabilitys) {
+//                    if (pro.sportId == model.LeagueId) {
+//                        _probability = pro;
+//                        break;
+//                    }
+//                }
+//            }
+//            if (_probability.sportId != model.LeagueId) {
+//                for (SYSportDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports) {
+//                    if (pro.sportId == model.LeagueId) {
+//                        _probability = pro;
+//                        [self.probabilitys addObject:pro];
+//                        break;
+//                    }
+//                }
+//            }
+//        }
         
-        if (self.probability) {
+        if (model.probability) {
             self.lastTitleLabel.text = @"方差概率";
-            self.jsHomeLabel.text = nil;
-            self.jsDrawLabel.text = nil;
-            self.jsAwayLabel.text = nil;
+            self.jsHomeLabel.text = model.probability.gl_home == 0 ?@"0": [NSString stringWithFormat:@"%.2f",model.probability.gl_home];
+            self.jsDrawLabel.text = model.probability.gl_draw == 0 ?@"0":[NSString stringWithFormat:@"%.2f",model.probability.gl_draw];;
+            self.jsAwayLabel.text = model.probability.gl_away == 0 ?@"0":[NSString stringWithFormat:@"%.2f",model.probability.gl_away];;
         }else {
             self.lastTitleLabel.text = nil;
             self.jsHomeLabel.text = nil;
@@ -134,10 +134,10 @@
     }
 }
 
-- (NSMutableArray *)probabilitys {
-    if (_probabilitys == nil) {
-        _probabilitys = [[NSMutableArray alloc] init];
-    }
-    return _probabilitys;
-}
+//- (NSMutableArray *)probabilitys {
+//    if (_probabilitys == nil) {
+//        _probabilitys = [[NSMutableArray alloc] init];
+//    }
+//    return _probabilitys;
+//}
 @end

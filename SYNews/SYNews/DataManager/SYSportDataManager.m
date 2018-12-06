@@ -65,11 +65,17 @@ SYSingleton_implementation(SYSportDataManager)
         });
     }
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        
+        
+        
         if (completion) {
             [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
             _allGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
             
             NSArray *tempArray = [_categaryCache allValues];
+            for (NSArray *arr in tempArray) {
+                [self bindProbabilityWithModels:arr];
+            }
             tempArray = [tempArray sortedArrayUsingComparator:^NSComparisonResult(NSArray *  _Nonnull obj1, NSArray *  _Nonnull obj2) {
                 return obj1.count < obj2.count;
             }];
@@ -554,5 +560,69 @@ SYSingleton_implementation(SYSportDataManager)
         }
     }
     return _replaceNames;
+}
+
+
+#pragma mark - 绑定概率
+- (void)bindProbabilityWithModels:(NSArray *)models {
+    
+    if ([SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports.count == 0) {
+        return;
+    }
+    SYSportDataProbability *probability = nil;
+    for (SYSportDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports) {
+        if (pro.sportId == ((SYGameListModel *)models.firstObject).LeagueId) {
+            probability = pro;
+        }
+    }
+    
+    if (probability == nil) {
+        return;
+    }
+    for (SYGameListModel *model in models) {
+        SYHDAType type = [self HDATypeWithModel:model];
+        for (SYDataProbability *pro in probability.kellys) {
+            if (pro.type == type) {
+                model.probability = pro;
+            }
+        }
+    }
+}
+
+- (SYHDAType)HDATypeWithModel:(SYGameListModel *)model {
+    NSArray *kelly_array = [self gameDataStatisticsWithArray:@[@(model.KellyHome),@(model.KellyDraw),@(model.KellyAway)]];
+    if (((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeHome &&
+        ((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeDraw &&
+        ((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeAway) {
+        return SYHDAType_HDA;
+    }else if (((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeHome &&
+              ((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeDraw &&
+              ((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeAway){
+        return SYHDAType_HAD;
+    }else if (((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeHome &&
+              ((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeDraw &&
+              ((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeAway){
+        return SYHDAType_AHD;
+    }else if (((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeHome &&
+              ((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeDraw &&
+              ((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeAway){
+        return SYHDAType_ADH;
+    }else if (((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeHome &&
+              ((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeDraw &&
+              ((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeAway){
+        return SYHDAType_DHA;
+    }else{
+        return SYHDAType_DAH;
+    }
+}
+
+- (NSArray *)gameDataStatisticsWithArray:(NSArray *)array {
+    NSMutableArray *tempArray = [NSMutableArray array];
+    SYNumberModel *home = [SYNumberModel modelWithStatus:SYGameScoreTypeHome num:[array.firstObject doubleValue]];
+    SYNumberModel *draw = [SYNumberModel modelWithStatus:SYGameScoreTypeDraw num:[array[1] doubleValue]];
+    SYNumberModel *away = [SYNumberModel modelWithStatus:SYGameScoreTypeAway num:[array.lastObject doubleValue]];
+    [tempArray addObjectsFromArray:@[home,draw,away]];
+    NSSortDescriptor *numSD = [NSSortDescriptor sortDescriptorWithKey:@"num" ascending:NO];
+    return [[tempArray sortedArrayUsingDescriptors:@[numSD]] mutableCopy];
 }
 @end

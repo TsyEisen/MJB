@@ -148,7 +148,10 @@ typedef NS_ENUM(NSUInteger, SYGameScoreType) {
 
 @property (nonatomic, assign) SYGameScoreType resultType;
 
-- (SYSportDataProbability *)probability;
+@property (nonatomic, strong) SYDataProbability *probability;
+
+@property (nonatomic, strong) SYDataProbability *global;
+
 @end
 
 @interface SYNumberModel : NSObject

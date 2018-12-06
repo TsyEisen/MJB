@@ -110,7 +110,12 @@
             [tempArrayUnStart addObject:model];
         }
     }
-    self.startDatas = [tempArrayStart reverseObjectEnumerator];
+//    if (tempArrayStart.count > 0) {
+//        self.startDatas = [tempArrayStart reverseObjectEnumerator];
+//    }else {
+//        
+//    }
+    self.startDatas = tempArrayStart;
     self.unStartDatas = tempArrayUnStart;
     [self.tableView reloadData];
 }

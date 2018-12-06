@@ -31,12 +31,12 @@ SYSingleton_implementation(SYDataAnalyzeManager)
 
 - (void)calculatorDatas {
     
-    NSLog(@"开始计算---%f",CACurrentMediaTime());
+//    NSLog(@"开始计算---%f",CACurrentMediaTime());
     [[SYSportDataManager sharedSYSportDataManager] requestDatasBySYListType:SYListTypeCompare_all Completion:^(NSArray *datas) {
         if (datas.count > 0) {
             _global = [self calculatorWithDatas:datas];
             [[_global mj_keyValues] writeToFile:self.globalPath atomically:YES];
-            NSLog(@"全局完毕---%f",CACurrentMediaTime());
+//            NSLog(@"全局完毕---%f",CACurrentMediaTime());
         }
     }];
     
@@ -52,7 +52,11 @@ SYSingleton_implementation(SYDataAnalyzeManager)
             _sports = tempArray;
             
             [tempDictArray writeToFile:self.sportsPath atomically:YES];
-            NSLog(@"分组完毕---%f",CACurrentMediaTime());
+//            NSLog(@"分组完毕---%f",CACurrentMediaTime());
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MBProgressHUD showSuccess:@"计算完毕" toView:nil];
+            });
         }
     }];
 }
@@ -145,6 +149,33 @@ SYSingleton_implementation(SYDataAnalyzeManager)
 //        ((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeAway) {
 //        return SYHDAType_HDA;
 //    }else if (<#expression#>)
+//}
+
+//- (SYHDAType)HDATypeWithModel:(SYGameListModel *)model {
+//    NSArray *kelly_array = [self gameDataStatisticsWithArray:@[@(model.KellyHome),@(model.KellyDraw),@(model.KellyAway)]];
+//    if (((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeHome &&
+//        ((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeDraw &&
+//        ((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeAway) {
+//        return SYHDAType_HDA;
+//    }else if (((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeHome &&
+//              ((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeDraw &&
+//              ((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeAway){
+//        return SYHDAType_HAD;
+//    }else if (((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeHome &&
+//              ((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeDraw &&
+//              ((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeAway){
+//        return SYHDAType_AHD;
+//    }else if (((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeHome &&
+//              ((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeDraw &&
+//              ((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeAway){
+//        return SYHDAType_ADH;
+//    }else if (((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeHome &&
+//              ((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeDraw &&
+//              ((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeAway){
+//        return SYHDAType_DHA;
+//    }else{
+//        return SYHDAType_DAH;
+//    }
 //}
 
 - (NSArray *)gameDataStatisticsWithArray:(NSArray *)array {

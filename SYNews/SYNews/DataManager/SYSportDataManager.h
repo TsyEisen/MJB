@@ -46,4 +46,5 @@ SYSingleton_interface(SYSportDataManager)
 - (void)deleteRecommendAtIndex:(NSInteger)index;
 
 - (void)replaceNameForTeamId:(NSInteger)teamId byName:(NSString *)name;
+
 @end
