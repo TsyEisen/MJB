@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SYDataProbability.h"
 /*
  {
  "EventId": 28875078,
@@ -146,6 +147,8 @@ typedef NS_ENUM(NSUInteger, SYGameScoreType) {
 @property (nonatomic, assign) SYGameScoreType recommendType;
 
 @property (nonatomic, assign) SYGameScoreType resultType;
+
+- (SYSportDataProbability *)probability;
 @end
 
 @interface SYNumberModel : NSObject

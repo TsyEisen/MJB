@@ -27,8 +27,11 @@
 #import "SYCommentRequest.h"
 #import "SYCoder.h"
 #import "SYSportDataManager.h"
+#import "SYDataAnalyzeManager.h"
+
 #import "NSDate+SYExtension.h"
 #import "NSAttributedString+SYExtension.h"
 #import "NSString+SYExtension.h"
+
 #define DefaultPlaceHolder [UIImage imageNamed:@"placeHolder"]
 #endif /* PrefixHeader_pch */

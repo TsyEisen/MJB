@@ -33,6 +33,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *jsDrawLabel;
 @property (weak, nonatomic) IBOutlet UILabel *jsAwayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lastTitleLabel;
+
+@property (nonatomic, strong) SYSportDataProbability *probability;
+@property (nonatomic, strong) NSMutableArray *probabilitys;
 @end
 
 @implementation SYGameListCell
@@ -89,14 +92,52 @@
         self.backgroundColor = model.resultType & model.recommendType?[UIColor appMainColor]:[UIColor whiteColor];
         self.contentView.backgroundColor = model.resultType & model.recommendType?[UIColor appMainColor]:[UIColor whiteColor];
     }else {
-        self.lastTitleLabel.text = nil;
+        
+        if (self.probability) {
+            if (self.probability.sportId != model.LeagueId) {
+                for (SYSportDataProbability *pro in self.probabilitys) {
+                    if (pro.sportId == model.LeagueId) {
+                        _probability = pro;
+                        break;
+                    }
+                }
+            }
+            if (_probability.sportId != model.LeagueId) {
+                for (SYSportDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports) {
+                    if (pro.sportId == model.LeagueId) {
+                        _probability = pro;
+                        [self.probabilitys addObject:pro];
+                        break;
+                    }
+                }
+            }
+        }
+        
+        if (self.probability) {
+            self.lastTitleLabel.text = @"方差概率";
+            self.jsHomeLabel.text = nil;
+            self.jsDrawLabel.text = nil;
+            self.jsAwayLabel.text = nil;
+        }else {
+            self.lastTitleLabel.text = nil;
+            self.jsHomeLabel.text = nil;
+            self.jsDrawLabel.text = nil;
+            self.jsAwayLabel.text = nil;
+        }
+//        self.lastTitleLabel.text = @"方差概率";
 //        self.jsHomeLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountHome*model.BfIndexHome/10000];
 //        self.jsDrawLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountDraw*model.BfIndexDraw/10000];
 //        self.jsAwayLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountAway*model.BfIndexAway/10000];
-        self.jsHomeLabel.text = nil;
-        self.jsDrawLabel.text = nil;
-        self.jsAwayLabel.text = nil;
+//        self.jsHomeLabel.text = nil;
+//        self.jsDrawLabel.text = nil;
+//        self.jsAwayLabel.text = nil;
     }
 }
 
+- (NSMutableArray *)probabilitys {
+    if (_probabilitys == nil) {
+        _probabilitys = [[NSMutableArray alloc] init];
+    }
+    return _probabilitys;
+}
 @end

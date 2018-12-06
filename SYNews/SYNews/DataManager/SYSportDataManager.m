@@ -94,7 +94,7 @@ SYSingleton_implementation(SYSportDataManager)
             _categaryCache = nil;
             [self requestWithParams:nil byType:SYSportDataTypeHomeSport completion:^(id result) {
                 if (result) {
-                    [[NSUserDefaults standardUserDefaults] setObject:[[NSDate date] sy_stringWithFormat:@"yyyyMMdd"] forKey:@"SYSportLastDate"];
+                    [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"SYSportLastDate"];
                     //保存
                     [self sy_writeToFile:result forPath:[self dataPathWithFileName:sportsJsonPath]];
                     self.sports = [SYSportModel mj_objectArrayWithKeyValuesArray:result];
@@ -392,8 +392,13 @@ SYSingleton_implementation(SYSportDataManager)
 - (void)refreshGameData {
     NSArray *array = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.currentGameJsons.allValues];
     BOOL needRefresh = NO;
-
-    if (array.count > 0) {
+    
+    NSDate *date = [[NSUserDefaults standardUserDefaults] objectForKey:@"SYSportLastDate"];
+    if (date && [date isKindOfClass:[NSDate class]]) {
+         needRefresh = [[NSDate date] timeIntervalSince1970] - [date timeIntervalSince1970] > 7200;
+    }
+   
+    if (array.count > 0 && needRefresh == NO) {
         NSInteger i = 0;
         do {
             SYGameListModel *model = array[i];

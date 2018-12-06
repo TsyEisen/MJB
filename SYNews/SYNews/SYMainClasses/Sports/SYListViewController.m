@@ -22,6 +22,7 @@
 //@property (nonatomic, strong) SYRenameView *renameView;
 @property (nonatomic, strong) UISegmentedControl *segment;
 
+@property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) NSArray *datas;
 @property (nonatomic, strong) SYGameListModel *selectedModel;
 @property (nonatomic, strong) NSArray *startDatas;
@@ -82,6 +83,16 @@
     [[SYSportDataManager sharedSYSportDataManager] requestDatasBySYListType:self.type Completion:^(NSArray *datas) {
         [self.tableView.mj_header endRefreshing];
         self.datas = datas;
+        
+        if (self.type == SYListTypeCategory) {
+            NSMutableArray *tempArray = [NSMutableArray array];
+            for (NSArray *item in self.datas) {
+                SYGameListModel *model = item.firstObject;
+                [tempArray addObject:[model.SortName substringToIndex:2]];
+                self.titles = tempArray;
+            }
+        }
+        
         if (self.type == SYListTypeNear) {
             [self segmentChange];
         }
@@ -99,7 +110,7 @@
             [tempArrayUnStart addObject:model];
         }
     }
-    self.startDatas = tempArrayStart;
+    self.startDatas = [tempArrayStart reverseObjectEnumerator];
     self.unStartDatas = tempArrayUnStart;
     [self.tableView reloadData];
 }
@@ -138,6 +149,10 @@
     SYGameListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SYGameListCell class])];
     cell.model = [self modelFromIndexPath:indexPath];
     return cell;
+}
+
+- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return self.titles;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -29,9 +29,9 @@
 		9F767B60218F1262002865EA /* SYDataAnalysisCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F767B5E218F1262002865EA /* SYDataAnalysisCell.m */; };
 		9F767B61218F1262002865EA /* SYDataAnalysisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F767B5F218F1262002865EA /* SYDataAnalysisCell.xib */; };
 		9FEF95C5215A30F800BC0A69 /* SYTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF95C3215A30F800BC0A69 /* SYTransitionAnimation.m */; };
-		F0034B79218C6508008B43C9 /* 20181102.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0034B78218C6508008B43C9 /* 20181102.plist */; };
-		F005D5E921869FDE00F2EB74 /* 20181029.plist in Resources */ = {isa = PBXBuildFile; fileRef = F005D5E821869FDE00F2EB74 /* 20181029.plist */; };
-		F005D5F2218803C900F2EB74 /* 20181030.plist in Resources */ = {isa = PBXBuildFile; fileRef = F005D5F1218803C800F2EB74 /* 20181030.plist */; };
+		F0285F8821B8EF6700FB95F6 /* 20181206.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0285F8721B8EF6600FB95F6 /* 20181206.plist */; };
+		F0285F8B21B905DB00FB95F6 /* SYDataProbability.m in Sources */ = {isa = PBXBuildFile; fileRef = F0285F8A21B905DA00FB95F6 /* SYDataProbability.m */; };
+		F0285F8E21B914F700FB95F6 /* SYDataAnalyzeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0285F8D21B914F700FB95F6 /* SYDataAnalyzeManager.m */; };
 		F03B90F41F54FD6F0033A3B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B90F31F54FD6F0033A3B5 /* main.m */; };
 		F03B90FF1F54FD700033A3B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F03B90FE1F54FD700033A3B5 /* Assets.xcassets */; };
 		F03B91021F54FD700033A3B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F03B91001F54FD700033A3B5 /* LaunchScreen.storyboard */; };
@@ -145,8 +145,6 @@
 		F06801AC215F21970032C4DA /* SYBezierModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F06801A7215F21970032C4DA /* SYBezierModel.m */; };
 		F06801AD215F21970032C4DA /* SYSelectBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F06801A9215F21970032C4DA /* SYSelectBox.m */; };
 		F06801AE215F21970032C4DA /* SYSelectTable.m in Sources */ = {isa = PBXBuildFile; fileRef = F06801AB215F21970032C4DA /* SYSelectTable.m */; };
-		F0681D1A218FD09300071B23 /* 20181105.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0681D19218FD09200071B23 /* 20181105.plist */; };
-		F0681D202193D37100071B23 /* 20181108.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0681D1F2193D36D00071B23 /* 20181108.plist */; };
 		F0681D2521940DCA00071B23 /* SYRenameView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0681D2421940DCA00071B23 /* SYRenameView.m */; };
 		F0681D2921940F4100071B23 /* SYAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0681D2821940F4100071B23 /* SYAlertView.m */; };
 		F0681D2F219410C300071B23 /* NSAttributedString+SYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F0681D2D219410C300071B23 /* NSAttributedString+SYExtension.m */; };
@@ -245,9 +243,11 @@
 		9F767B5F218F1262002865EA /* SYDataAnalysisCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SYDataAnalysisCell.xib; sourceTree = "<group>"; };
 		9FEF95C3215A30F800BC0A69 /* SYTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYTransitionAnimation.m; sourceTree = "<group>"; };
 		9FEF95C4215A30F800BC0A69 /* SYTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYTransitionAnimation.h; sourceTree = "<group>"; };
-		F0034B78218C6508008B43C9 /* 20181102.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181102.plist; sourceTree = "<group>"; };
-		F005D5E821869FDE00F2EB74 /* 20181029.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181029.plist; sourceTree = "<group>"; };
-		F005D5F1218803C800F2EB74 /* 20181030.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181030.plist; sourceTree = "<group>"; };
+		F0285F8721B8EF6600FB95F6 /* 20181206.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181206.plist; sourceTree = "<group>"; };
+		F0285F8921B905DA00FB95F6 /* SYDataProbability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYDataProbability.h; sourceTree = "<group>"; };
+		F0285F8A21B905DA00FB95F6 /* SYDataProbability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYDataProbability.m; sourceTree = "<group>"; };
+		F0285F8C21B914F700FB95F6 /* SYDataAnalyzeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYDataAnalyzeManager.h; sourceTree = "<group>"; };
+		F0285F8D21B914F700FB95F6 /* SYDataAnalyzeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYDataAnalyzeManager.m; sourceTree = "<group>"; };
 		F03B90EF1F54FD6F0033A3B5 /* SYNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F03B90F31F54FD6F0033A3B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F03B90FE1F54FD700033A3B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -460,8 +460,6 @@
 		F06801A9215F21970032C4DA /* SYSelectBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSelectBox.m; sourceTree = "<group>"; };
 		F06801AA215F21970032C4DA /* SYSelectTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSelectTable.h; sourceTree = "<group>"; };
 		F06801AB215F21970032C4DA /* SYSelectTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSelectTable.m; sourceTree = "<group>"; };
-		F0681D19218FD09200071B23 /* 20181105.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181105.plist; sourceTree = "<group>"; };
-		F0681D1F2193D36D00071B23 /* 20181108.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181108.plist; sourceTree = "<group>"; };
 		F0681D2321940DCA00071B23 /* SYRenameView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYRenameView.h; sourceTree = "<group>"; };
 		F0681D2421940DCA00071B23 /* SYRenameView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYRenameView.m; sourceTree = "<group>"; };
 		F0681D2721940F4100071B23 /* SYAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYAlertView.h; sourceTree = "<group>"; };
@@ -579,6 +577,10 @@
 				F09A6656216DEB9B00C3C20A /* SYRecommendModel.h */,
 				F09A6657216DEB9B00C3C20A /* SYRecommendModel.m */,
 				F09A6659216DFC3100C3C20A /* Recommend.plist */,
+				F0285F8921B905DA00FB95F6 /* SYDataProbability.h */,
+				F0285F8A21B905DA00FB95F6 /* SYDataProbability.m */,
+				F0285F8C21B914F700FB95F6 /* SYDataAnalyzeManager.h */,
+				F0285F8D21B914F700FB95F6 /* SYDataAnalyzeManager.m */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -1098,11 +1100,7 @@
 		F0E242DA21703AB6008CB6D8 /* lastData */ = {
 			isa = PBXGroup;
 			children = (
-				F005D5E821869FDE00F2EB74 /* 20181029.plist */,
-				F005D5F1218803C800F2EB74 /* 20181030.plist */,
-				F0034B78218C6508008B43C9 /* 20181102.plist */,
-				F0681D19218FD09200071B23 /* 20181105.plist */,
-				F0681D1F2193D36D00071B23 /* 20181108.plist */,
+				F0285F8721B8EF6600FB95F6 /* 20181206.plist */,
 			);
 			path = lastData;
 			sourceTree = "<group>";
@@ -1247,15 +1245,14 @@
 			files = (
 				F03B91EE1F5566800033A3B5 /* SYHomeNewsViewController.xib in Resources */,
 				F03FC24E1F5D3ED200DF465B /* MBProgressHUD.bundle in Resources */,
+				F0285F8821B8EF6700FB95F6 /* 20181206.plist in Resources */,
 				F03B91BD1F54FEF30033A3B5 /* SYHomeViewController.xib in Resources */,
-				F005D5F2218803C900F2EB74 /* 20181030.plist in Resources */,
 				F03FC22F1F5CFFE400DF465B /* MJRefresh.bundle in Resources */,
 				F03B91F31F556BED0033A3B5 /* SYNewsDetailViewController.xib in Resources */,
 				F09A665A216DFC3100C3C20A /* Recommend.plist in Resources */,
 				F03FC1B11F5CF3DC00DF465B /* SYDiscoverCell.xib in Resources */,
 				9F42B594218EE198001451A5 /* SYDataAnalysisView.xib in Resources */,
 				F0E242C4216EFB26008CB6D8 /* SYMoreVCData.plist in Resources */,
-				F0681D202193D37100071B23 /* 20181108.plist in Resources */,
 				F09A6646216CA1E700C3C20A /* SYCategoryViewController.xib in Resources */,
 				9F767B61218F1262002865EA /* SYDataAnalysisCell.xib in Resources */,
 				9F1500D32157435700696F7C /* SYGameListCell.xib in Resources */,
@@ -1265,14 +1262,11 @@
 				F0681D36219418A200071B23 /* SYRenameView.xib in Resources */,
 				F03B90FF1F54FD700033A3B5 /* Assets.xcassets in Resources */,
 				F06801A4215F1EAD0032C4DA /* SYGameDetailView.xib in Resources */,
-				F005D5E921869FDE00F2EB74 /* 20181029.plist in Resources */,
 				F03FC2541F5D425B00DF465B /* SYAboutUsViewController.xib in Resources */,
-				F0034B79218C6508008B43C9 /* 20181102.plist in Resources */,
 				F03FC2411F5D05D100DF465B /* SYDiscoverDetailViewController.xib in Resources */,
 				F03B91141F54FDC60033A3B5 /* SYViewControllerData.plist in Resources */,
 				F03B91DF1F5557F70033A3B5 /* SYHomeNewsCell.xib in Resources */,
 				F0F63B1721550422000D7A15 /* SYGameDataViewController.xib in Resources */,
-				F0681D1A218FD09300071B23 /* 20181105.plist in Resources */,
 				F068019A215E22910032C4DA /* SYCompareViewController.xib in Resources */,
 				F09A664B216CA2EA00C3C20A /* SYCategoryCell.xib in Resources */,
 				F03B91B81F54FEE60033A3B5 /* SYDiscoverViewController.xib in Resources */,
@@ -1297,6 +1291,7 @@
 				F03B917B1F54FDD00033A3B5 /* AFSecurityPolicy.m in Sources */,
 				F03FC2221F5CFFE400DF465B /* MJRefreshBackFooter.m in Sources */,
 				F03B91B71F54FEE60033A3B5 /* SYDiscoverViewController.m in Sources */,
+				F0285F8B21B905DB00FB95F6 /* SYDataProbability.m in Sources */,
 				F03FC24F1F5D3ED200DF465B /* MBProgressHUD.m in Sources */,
 				F0680199215E22910032C4DA /* SYCompareViewController.m in Sources */,
 				F03B91911F54FDD00033A3B5 /* SDImageCache.m in Sources */,
@@ -1411,6 +1406,7 @@
 				F03B918E1F54FDD00033A3B5 /* MKAnnotationView+WebCache.m in Sources */,
 				F03B91ED1F5566800033A3B5 /* SYHomeNewsViewController.m in Sources */,
 				F03FC22C1F5CFFE400DF465B /* MJRefreshGifHeader.m in Sources */,
+				F0285F8E21B914F700FB95F6 /* SYDataAnalyzeManager.m in Sources */,
 				9F34988F21562F6D0058B99E /* View+MASAdditions.m in Sources */,
 				F03B91E21F555B2B0033A3B5 /* UITableView+SYExtension.m in Sources */,
 				F09A6655216CAC4B00C3C20A /* SYPickerViewTool.m in Sources */,

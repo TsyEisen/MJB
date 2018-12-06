@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SYTabBarViewController.h"
-
+#import "SYDataAnalyzeManager.h"
 @interface AppDelegate ()
 
 @end
@@ -29,6 +29,9 @@
     }else {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [[SYSportDataManager sharedSYSportDataManager] replaceDataForNewest];
+        });
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [[SYDataAnalyzeManager sharedSYDataAnalyzeManager] calculatorDatas];
         });
     }
     
