@@ -12,9 +12,9 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) NSInteger tag;
 //@property (nonatomic, strong,readonly) NSArray *datas;
-- (void)saveModel:(SYGameListModel *)model;
-- (void)changeModelInformation:(SYGameListModel *)model;
-- (void)deleteModel:(SYGameListModel *)model;
+- (void)saveModel:(SYGameListModel *)outmodel;
+- (void)changeModelInformation:(SYGameListModel *)outmodel;
+- (void)deleteModel:(SYGameListModel *)outmodel;
 + (NSArray *)models;
 - (NSArray *)datas;
 @end

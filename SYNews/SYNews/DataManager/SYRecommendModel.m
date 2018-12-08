@@ -16,7 +16,8 @@
 
 @implementation SYRecommendModel
 
-- (void)saveModel:(SYGameListModel *)model {
+- (void)saveModel:(SYGameListModel *)outmodel {
+    SYGameListModel *model = [SYGameListModel mj_objectWithKeyValues:outmodel.mj_keyValues];
     if (self.list.count > 0 && model.recommendType > 0) {
         SYGameListModel *exitItem = nil;
         for (SYGameListModel *item in self.list) {
@@ -46,7 +47,8 @@
     [self.jsons writeToFile:self.path atomically:YES];
 }
 
-- (void)changeModelInformation:(SYGameListModel *)model {
+- (void)changeModelInformation:(SYGameListModel *)outmodel {
+    SYGameListModel *model = [SYGameListModel mj_objectWithKeyValues:outmodel.mj_keyValues];
     NSDictionary *dict = [self.jsons objectForKey:[NSString stringWithFormat:@"%zd",model.EventId]];
     if (dict) {
         model.recommendType = [dict[@"recommendType"] integerValue];
@@ -56,8 +58,15 @@
     }
 }
 
-- (void)deleteModel:(SYGameListModel *)model {
-    [self.list removeObject:model];
+- (void)deleteModel:(SYGameListModel *)outmodel {
+    SYGameListModel *model = [SYGameListModel mj_objectWithKeyValues:outmodel.mj_keyValues];
+    for (SYGameListModel *item in self.list) {
+        if (item.EventId == model.EventId) {
+            [self.list removeObject:item];
+            break;
+        }
+    }
+
     [self.jsons removeObjectForKey:[NSString stringWithFormat:@"%zd",model.EventId]];
     [self.jsons writeToFile:self.path atomically:YES];
 }
