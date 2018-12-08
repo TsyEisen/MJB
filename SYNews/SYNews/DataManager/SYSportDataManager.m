@@ -67,7 +67,6 @@ SYSingleton_implementation(SYSportDataManager)
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         
         
-        
         if (completion) {
             [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
             _allGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
@@ -125,7 +124,7 @@ SYSingleton_implementation(SYSportDataManager)
                 NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:YES];
                 NSArray *array = [[temp_nearList sortedArrayUsingDescriptors:@[timeSD]] mutableCopy];
                 
-                completion(array);
+                completion([self bindProbabilityWithModels:array]);
             }
             
         }else if (type == SYListTypePayTop) {
@@ -158,7 +157,7 @@ SYSingleton_implementation(SYSportDataManager)
             NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:NO];
             NSSortDescriptor *name=[NSSortDescriptor sortDescriptorWithKey:@"SortName" ascending:NO];
             NSArray *array = [[temp sortedArrayUsingDescriptors:@[timeSD,name]] mutableCopy];
-            completion(array);
+            completion([self bindProbabilityWithModels:array]);
             
         }else if (type == SYListTypeCompare) {
             
@@ -566,12 +565,13 @@ SYSingleton_implementation(SYSportDataManager)
 
 
 #pragma mark - 绑定概率
-- (void)bindProbabilityWithModels:(NSArray *)models {
+- (NSArray *)bindProbabilityWithModels:(NSArray *)models {
     
     if ([SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports.count == 0) {
-        return;
+        return models;
     }
     SYSportDataProbability *probability = nil;
+    
     for (SYSportDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports) {
         if (pro.sportId == ((SYGameListModel *)models.firstObject).LeagueId) {
             probability = pro;
@@ -580,7 +580,7 @@ SYSingleton_implementation(SYSportDataManager)
     }
     
     if (probability == nil) {
-        return;
+        return models;
     }
     for (SYGameListModel *model in models) {
         SYHDAType type = [self HDATypeWithModel:model];
@@ -590,7 +590,17 @@ SYSingleton_implementation(SYSportDataManager)
                 break;
             }
         }
+        for (SYDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].global.kellys) {
+            if (pro.type == type) {
+                model.global = pro;
+                break;
+            }
+        }
     }
+    
+    
+    
+    return models;
 }
 
 - (SYHDAType)HDATypeWithModel:(SYGameListModel *)model {
