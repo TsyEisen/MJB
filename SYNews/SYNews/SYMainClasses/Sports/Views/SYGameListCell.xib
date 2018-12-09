@@ -170,6 +170,11 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计算" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8N-hj-ht2">
+                        <rect key="frame" x="361" y="15.5" width="27" height="16"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="J1k-ym-a0G" firstAttribute="centerY" secondItem="GCs-o0-8Jz" secondAttribute="centerY" id="1Kr-gV-kyy"/>
@@ -221,6 +226,8 @@
                     <constraint firstItem="x9K-Bw-Gaa" firstAttribute="leading" secondItem="GCs-o0-8Jz" secondAttribute="trailing" constant="20" id="nd2-xd-o8X"/>
                     <constraint firstItem="QMh-Gc-17A" firstAttribute="centerX" secondItem="sZ5-OV-xVg" secondAttribute="centerX" id="nhF-MV-lrI"/>
                     <constraint firstItem="1ww-7A-1R0" firstAttribute="centerX" secondItem="r8M-LH-Ssj" secondAttribute="centerX" id="pOY-0b-VYT"/>
+                    <constraint firstAttribute="trailing" secondItem="S8N-hj-ht2" secondAttribute="trailing" constant="10" id="pWM-f3-2Ru"/>
+                    <constraint firstItem="S8N-hj-ht2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="pXN-Mq-6fX"/>
                     <constraint firstItem="lDA-fB-jhG" firstAttribute="centerX" secondItem="r8M-LH-Ssj" secondAttribute="centerX" id="t14-RR-ixf"/>
                     <constraint firstItem="7DR-Kh-y8v" firstAttribute="centerY" secondItem="1ww-7A-1R0" secondAttribute="centerY" id="top-CK-Vsl"/>
                     <constraint firstItem="4dQ-FD-JJc" firstAttribute="centerY" secondItem="1ww-7A-1R0" secondAttribute="centerY" id="u6P-Ce-cwk"/>
@@ -247,6 +254,7 @@
                 <outlet property="lastRefreshTimeLabel" destination="e7X-0f-tn8" id="KGb-wp-DHR"/>
                 <outlet property="lastTitleLabel" destination="QMh-Gc-17A" id="2zj-eO-3df"/>
                 <outlet property="moneyLabel" destination="3QW-Tq-5As" id="fUF-m3-ewU"/>
+                <outlet property="recommendLabel" destination="S8N-hj-ht2" id="seA-Uc-wZT"/>
                 <outlet property="scoreLabel" destination="tfb-0q-Vu1" id="bre-MO-VO2"/>
                 <outlet property="timeLabel" destination="XJR-kF-12J" id="nEB-Sm-bbt"/>
                 <outlet property="vsLabel" destination="1ww-7A-1R0" id="JKQ-i7-iEQ"/>

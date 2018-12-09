@@ -28,6 +28,7 @@
 @property (nonatomic, strong) SYGameListModel *selectedModel;
 @property (nonatomic, strong) NSArray *startDatas;
 @property (nonatomic, strong) NSArray *unStartDatas;
+@property (nonatomic, strong) NSArray *recommend_AI;
 @property (nonatomic, assign) BOOL exit;
 
 @end
@@ -113,18 +114,34 @@
 - (void)segmentChange {
     NSMutableArray *tempArrayStart = [NSMutableArray array];
     NSMutableArray *tempArrayUnStart = [NSMutableArray array];
+    NSMutableArray *tempArrayAI = [NSMutableArray array];
     for (SYGameListModel *model in self.datas) {
         if (model.dateSeconds <= [[NSDate date] timeIntervalSince1970]) {
             [tempArrayStart addObject:model];
         }else {
             [tempArrayUnStart addObject:model];
         }
+        
+        SYGameListModel *model_AI = [SYGameListModel mj_objectWithKeyValues:model.mj_keyValues];
+        
+        if (model_AI.probability.gl_home > 0.6) {
+            model_AI.recommendType = SYGameScoreTypeHome;
+        }else if (model_AI.probability.gl_draw > 0.6) {
+            model_AI.recommendType = SYGameScoreTypeDraw;
+        }else if (model_AI.probability.gl_away > 0.6) {
+            model_AI.recommendType = SYGameScoreTypeAway;
+        }else if ([model_AI.AsianAvrLet doubleValue] > 0 && (model_AI.probability.gl_home + model_AI.probability.gl_draw > 0.6)) {
+            model_AI.recommendType = SYGameScoreTypeHome|SYGameScoreTypeDraw;
+        }else if ([model_AI.AsianAvrLet doubleValue] < 0 && (model_AI.probability.gl_away + model_AI.probability.gl_draw > 0.6)) {
+            model_AI.recommendType = SYGameScoreTypeAway|SYGameScoreTypeDraw;
+        }
+        
+        if (model_AI.recommendType > 0) {
+            [tempArrayAI addObject:model_AI];
+        }
     }
-//    if (tempArrayStart.count > 0) {
-//        self.startDatas = [tempArrayStart reverseObjectEnumerator];
-//    }else {
-//        
-//    }
+
+    self.recommend_AI = tempArrayAI;
     self.startDatas = tempArrayStart;
     self.unStartDatas = tempArrayUnStart;
     [self.tableView reloadData];
@@ -154,7 +171,13 @@
     if (self.type == SYListTypeCategory || self.type == SYListTypeNoScore) {
         return [self.datas[section] count];
     }else if (self.type == SYListTypeNear){
-        return self.segment.selectedSegmentIndex == 0 ? self.startDatas.count : self.unStartDatas.count;
+        if (self.segment.selectedSegmentIndex == 0) {
+            return self.startDatas.count;
+        } else if (self.segment.selectedSegmentIndex == 1) {
+            return self.unStartDatas.count;
+        }else {
+            return self.recommend_AI.count;
+        }
     }else {
         return self.datas.count;
     }
@@ -162,6 +185,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SYGameListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SYGameListCell class])];
+    cell.recommend = self.type == SYListTypeNear && self.segment.selectedSegmentIndex == 2;
     cell.model = [self modelFromIndexPath:indexPath];
     return cell;
 }
@@ -263,7 +287,13 @@
     if (self.type == SYListTypeCategory || self.type == SYListTypeNoScore) {
         model = self.datas[indexPath.section][indexPath.row];
     }else if (self.type == SYListTypeNear){
-        model = self.segment.selectedSegmentIndex == 0 ? self.startDatas[indexPath.row] : self.unStartDatas[indexPath.row];
+        if (self.segment.selectedSegmentIndex == 0) {
+            model = self.startDatas[indexPath.row];
+        } else if (self.segment.selectedSegmentIndex == 1) {
+            model = self.unStartDatas[indexPath.row];
+        }else {
+            model = self.recommend_AI[indexPath.row];
+        }
     }else{
         model = self.datas[indexPath.row];
     }
@@ -322,7 +352,7 @@
 
 - (UISegmentedControl *)segment {
     if (_segment == nil) {
-        _segment = [[UISegmentedControl alloc] initWithItems:@[@"  滚球   ",@"  即将开始  "]];
+        _segment = [[UISegmentedControl alloc] initWithItems:@[@" 滚球 ",@" 即将开始 ",@" AI推荐 "]];
         _segment.tintColor = [UIColor whiteColor];
         _segment.selectedSegmentIndex = 0;
         [_segment addTarget:self action:@selector(segmentChange) forControlEvents:UIControlEventValueChanged];

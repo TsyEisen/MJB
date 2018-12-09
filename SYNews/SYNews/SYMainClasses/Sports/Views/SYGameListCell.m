@@ -9,6 +9,12 @@
 #import "SYGameListCell.h"
 #import "NSDate+SYExtension.h"
 
+typedef NS_ENUM(NSUInteger, SYGameProbabilityType) {
+    SYGameProbabilityTypeHome,
+    SYGameProbabilityTypeDraw,
+    SYGameProbabilityTypeAway
+};
+
 @interface SYGameListCell()
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *homeLabel;
@@ -33,6 +39,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *jsDrawLabel;
 @property (weak, nonatomic) IBOutlet UILabel *jsAwayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lastTitleLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *recommendLabel;
+
 
 //@property (nonatomic, strong) SYSportDataProbability *probability;
 //@property (nonatomic, strong) NSMutableArray *probabilitys;
@@ -60,14 +69,14 @@
     self.glHomeLabel.text = [NSString stringWithFormat:@"%.2f",model.BfIndexHome/100];
     self.glDrawLabel.text = [NSString stringWithFormat:@"%.2f",model.BfIndexDraw/100];
     self.glAwayLabel.text = [NSString stringWithFormat:@"%.2f",model.BfIndexAway/100];
-    self.fcHomeLabel.text = [NSString stringWithFormat:@"%.f",model.KellyHome];
-    self.fcDrawLabel.text = [NSString stringWithFormat:@"%.f",model.KellyDraw];
-    self.fcAwayLabel.text = [NSString stringWithFormat:@"%.f",model.KellyAway];
+    self.fcHomeLabel.text = [NSString stringWithFormat:@"%.1f",model.KellyHome];
+    self.fcDrawLabel.text = [NSString stringWithFormat:@"%.1f",model.KellyDraw];
+    self.fcAwayLabel.text = [NSString stringWithFormat:@"%.1f",model.KellyAway];
 
     if (model.recommendType > 0 && self.recommend) {
-        self.lastTitleLabel.text = @"推介";
-        self.jsHomeLabel.text = nil;
-        self.jsAwayLabel.text = nil;
+//        self.lastTitleLabel.text = @"推介";
+//        self.jsHomeLabel.text = nil;
+//        self.jsAwayLabel.text = nil;
         NSString *title = nil;
         switch (model.recommendType) {
             case SYGameScoreTypeHome:
@@ -88,49 +97,73 @@
             default:
                 break;
         }
-        self.jsDrawLabel.text = title;
+        self.recommendLabel.text = title;
         self.backgroundColor = model.resultType & model.recommendType?[UIColor appMainColor]:[UIColor whiteColor];
         self.contentView.backgroundColor = model.resultType & model.recommendType?[UIColor appMainColor]:[UIColor whiteColor];
     }else {
-        
-//        if (self.probability) {
-//            if (self.probability.sportId != model.LeagueId) {
-//                for (SYSportDataProbability *pro in self.probabilitys) {
-//                    if (pro.sportId == model.LeagueId) {
-//                        _probability = pro;
-//                        break;
-//                    }
-//                }
-//            }
-//            if (_probability.sportId != model.LeagueId) {
-//                for (SYSportDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports) {
-//                    if (pro.sportId == model.LeagueId) {
-//                        _probability = pro;
-//                        [self.probabilitys addObject:pro];
-//                        break;
-//                    }
-//                }
-//            }
-//        }
-        
-        if (model.probability) {
-            self.lastTitleLabel.text = @"方差概率";
-            self.jsHomeLabel.text = model.probability.gl_home == 0 ?@"0": [NSString stringWithFormat:@"%.2f\n(%zd/%zd)",model.probability.gl_home,model.probability.count_home,model.probability.total];
-            self.jsDrawLabel.text = model.probability.gl_draw == 0 ?@"0":[NSString stringWithFormat:@"%.2f\n(%zd/%zd)",model.probability.gl_draw,model.probability.count_draw,model.probability.total];
-            self.jsAwayLabel.text = model.probability.gl_away == 0 ?@"0":[NSString stringWithFormat:@"%.2f\n(%zd/%zd)",model.probability.gl_away,model.probability.count_away,model.probability.total];
-        }else {
-            self.lastTitleLabel.text = nil;
-            self.jsHomeLabel.text = nil;
-            self.jsDrawLabel.text = nil;
-            self.jsAwayLabel.text = nil;
-        }
-//        self.lastTitleLabel.text = @"方差概率";
-//        self.jsHomeLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountHome*model.BfIndexHome/10000];
-//        self.jsDrawLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountDraw*model.BfIndexDraw/10000];
-//        self.jsAwayLabel.text = [NSString stringWithFormat:@"%.f",model.BfAmountAway*model.BfIndexAway/10000];
-//        self.jsHomeLabel.text = nil;
-//        self.jsDrawLabel.text = nil;
-//        self.jsAwayLabel.text = nil;
+        self.recommendLabel.text = nil;
+    }
+    
+    if (model.probability) {
+        self.lastTitleLabel.text = @"方差概率";
+        self.jsHomeLabel.text = [self showMessageWithType:SYGameProbabilityTypeHome];
+        self.jsDrawLabel.text = [self showMessageWithType:SYGameProbabilityTypeDraw];
+        self.jsAwayLabel.text = [self showMessageWithType:SYGameProbabilityTypeAway];
+    }else {
+        self.lastTitleLabel.text = nil;
+        self.jsHomeLabel.text = nil;
+        self.jsDrawLabel.text = nil;
+        self.jsAwayLabel.text = nil;
+    }
+}
+
+- (NSString *)showMessageWithType:(SYGameProbabilityType)type{
+    
+    NSString *pro = nil;
+    switch (type) {
+        case SYGameProbabilityTypeHome:
+            pro = _model.global.gl_home == 0 ? @"0":[NSString stringWithFormat:@"%.2f",_model.global.gl_home];
+            break;
+        case SYGameProbabilityTypeDraw:
+            pro = _model.global.gl_draw == 0 ? @"0":[NSString stringWithFormat:@"%.2f",_model.global.gl_draw];
+            break;
+        case SYGameProbabilityTypeAway:
+            pro = _model.global.gl_away == 0 ? @"0":[NSString stringWithFormat:@"%.2f",_model.global.gl_away];
+            break;
+            
+        default:
+            break;
+    }
+    
+    return [NSString stringWithFormat:@"%@\n%@",[self showProbabilityMessageWithModel:_model.probability type:type],pro];
+}
+
+- (NSString *)showProbabilityMessageWithModel:(SYDataProbability *)model type:(SYGameProbabilityType)type {
+    switch (type) {
+        case SYGameProbabilityTypeHome:
+            if (model.gl_home == 0) {
+                return @"0";
+            } else {
+                return [NSString stringWithFormat:@"%.2f(%zd/%zd)",model.gl_home,model.count_home,model.total];
+            }
+            break;
+        case SYGameProbabilityTypeDraw:
+            if (model.gl_draw == 0) {
+                return @"0";
+            } else {
+                return [NSString stringWithFormat:@"%.2f(%zd/%zd)",model.gl_draw,model.count_draw,model.total];
+            }
+            break;
+        case SYGameProbabilityTypeAway:
+            if (model.gl_away == 0) {
+                return @"0";
+            } else {
+                return [NSString stringWithFormat:@"%.2f(%zd/%zd)",model.gl_away,model.count_away,model.total];
+            }
+            break;
+        default:
+            return @"0";
+            break;
     }
 }
 

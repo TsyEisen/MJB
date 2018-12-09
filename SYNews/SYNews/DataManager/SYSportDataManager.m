@@ -75,7 +75,7 @@ SYSingleton_implementation(SYSportDataManager)
             
             NSArray *tempArray = [_categaryCache allValues];
             for (NSArray *arr in tempArray) {
-                [self bindProbabilityWithModels:arr];
+                [self bindProbabilityWithModels:arr sameSport:YES];
             }
             tempArray = [tempArray sortedArrayUsingComparator:^NSComparisonResult(NSArray *  _Nonnull obj1, NSArray *  _Nonnull obj2) {
                 return obj1.count < obj2.count;
@@ -124,7 +124,7 @@ SYSingleton_implementation(SYSportDataManager)
                 NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:YES];
                 NSArray *array = [[temp_nearList sortedArrayUsingDescriptors:@[timeSD]] mutableCopy];
                 
-                completion([self bindProbabilityWithModels:array]);
+                completion([self bindProbabilityWithModels:array sameSport:NO]);
             }
             
         }else if (type == SYListTypePayTop) {
@@ -157,7 +157,7 @@ SYSingleton_implementation(SYSportDataManager)
             NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:NO];
             NSSortDescriptor *name=[NSSortDescriptor sortDescriptorWithKey:@"SortName" ascending:NO];
             NSArray *array = [[temp sortedArrayUsingDescriptors:@[timeSD,name]] mutableCopy];
-            completion([self bindProbabilityWithModels:array]);
+            completion([self bindProbabilityWithModels:array sameSport:NO]);
             
         }else if (type == SYListTypeCompare) {
             
@@ -565,42 +565,76 @@ SYSingleton_implementation(SYSportDataManager)
 
 
 #pragma mark - 绑定概率
-- (NSArray *)bindProbabilityWithModels:(NSArray *)models {
+- (NSArray *)bindProbabilityWithModels:(NSArray *)models sameSport:(BOOL)same{
     
     if ([SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports.count == 0) {
         return models;
     }
-    SYSportDataProbability *probability = nil;
     
-    for (SYSportDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports) {
-        if (pro.sportId == ((SYGameListModel *)models.firstObject).LeagueId) {
-            probability = pro;
-            break;
+    if (same) {
+        
+        SYSportDataProbability *probability = nil;
+        for (SYSportDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports) {
+            if (pro.sportId == ((SYGameListModel *)models.firstObject).LeagueId) {
+                probability = pro;
+                break;
+            }
         }
-    }
-    
-    if (probability == nil) {
+        
+        if (probability == nil) {
+            return models;
+        }
+        for (SYGameListModel *model in models) {
+            SYHDAType type = [self HDATypeWithModel:model];
+            for (SYDataProbability *pro in probability.kellys) {
+                if (pro.type == type) {
+                    model.probability = pro;
+                    break;
+                }
+            }
+            for (SYDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].global.kellys) {
+                if (pro.type == type) {
+                    model.global = pro;
+                    break;
+                }
+            }
+        }
+
+        return models;
+    }else {
+        SYSportDataProbability *probability = nil;
+        
+        for (SYGameListModel *model in models) {
+            
+            for (SYSportDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports) {
+                if (pro.sportId == model.LeagueId) {
+                    probability = pro;
+                    break;
+                }
+            }
+            
+            if (probability == nil) {
+                return models;
+            }
+            
+            SYHDAType type = [self HDATypeWithModel:model];
+            for (SYDataProbability *pro in probability.kellys) {
+                if (pro.type == type) {
+                    model.probability = pro;
+                    break;
+                }
+            }
+            for (SYDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].global.kellys) {
+                if (pro.type == type) {
+                    model.global = pro;
+                    break;
+                }
+            }
+        }
+        
         return models;
     }
-    for (SYGameListModel *model in models) {
-        SYHDAType type = [self HDATypeWithModel:model];
-        for (SYDataProbability *pro in probability.kellys) {
-            if (pro.type == type) {
-                model.probability = pro;
-                break;
-            }
-        }
-        for (SYDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].global.kellys) {
-            if (pro.type == type) {
-                model.global = pro;
-                break;
-            }
-        }
-    }
     
-    
-    
-    return models;
 }
 
 - (SYHDAType)HDATypeWithModel:(SYGameListModel *)model {
