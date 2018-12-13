@@ -9,8 +9,6 @@
 #import "SYSportDataManager.h"
 #import "NSDate+SYExtension.h"
 
-#define kBaseUrl @"http://api.spdex.com"
-
 #define gamesJsonPath @"gamesJsonPath.plist"
 #define sportsJsonPath @"sportsJsonPath.plist"
 #define hotGamesJsonPath @"hotGamesJsonPath.plist"
@@ -141,7 +139,7 @@ SYSingleton_implementation(SYSportDataManager)
                 }
                 NSSortDescriptor *paySD = [NSSortDescriptor sortDescriptorWithKey:@"totalPAmount" ascending:NO];
                 NSArray *array = [[temp_payTopList sortedArrayUsingDescriptors:@[paySD]] mutableCopy];
-                completion(array);
+                completion([self bindProbabilityWithModels:array sameSport:NO]);
             }
             
         }else if (type == SYListTypeHistory) {
@@ -176,6 +174,8 @@ SYSingleton_implementation(SYSportDataManager)
             NSArray *temp = mutableDict.allValues;
             
             NSArray *array = [temp sortedArrayUsingComparator:^NSComparisonResult(NSArray *  _Nonnull obj1, NSArray *  _Nonnull obj2) {
+                [self bindProbabilityWithModels:obj1 sameSport:YES];
+                [self bindProbabilityWithModels:obj2 sameSport:YES];
                 return obj1.count < obj2.count;
             }];
             
@@ -189,7 +189,7 @@ SYSingleton_implementation(SYSportDataManager)
                     [tempArray addObject:model];
                 }
             }
-            completion(tempArray);
+            completion([self bindProbabilityWithModels:tempArray sameSport:NO]);
             
         }else if (type == SYListTypeNoScore) {
             
@@ -614,11 +614,11 @@ SYSingleton_implementation(SYSportDataManager)
             }
             
             if (probability == nil) {
-                return models;
+                continue;
             }
             
             SYHDAType type = [self HDATypeWithModel:model];
-            for (SYDataProbability *pro in probability.kellys) {
+            for (SYDataProbability *pro in probability.kellys) { 
                 if (pro.type == type) {
                     model.probability = pro;
                     break;

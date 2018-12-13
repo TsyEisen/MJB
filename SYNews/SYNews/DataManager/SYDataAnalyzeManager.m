@@ -7,10 +7,18 @@
 //
 
 #import "SYDataAnalyzeManager.h"
+#import "NSDate+SYExtension.h"
 
 @interface SYDataAnalyzeManager ()
 @property (nonatomic, copy) NSString *globalPath;
 @property (nonatomic, copy) NSString *sportsPath;
+@property (nonatomic, copy) NSString *resultSportsPath;
+@property (nonatomic, copy) NSString *resultGamesPath;
+
+@property (nonatomic, strong) NSMutableDictionary *resultSprots;
+@property (nonatomic, strong) NSMutableDictionary *resultGames;
+@property (nonatomic, strong) NSMutableDictionary *sportIdToResultSprorId;
+@property (nonatomic, strong) NSMutableDictionary *gameIdToResultGameName;
 @end
 
 @implementation SYDataAnalyzeManager
@@ -188,6 +196,59 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     return [[tempArray sortedArrayUsingDescriptors:@[numSD]] mutableCopy];
 }
 
+#pragma mark - 获取比分
+
+// http://api.nowscore.com//info/GetSchedule?lang=0&date=2018-12-12&from=2
+- (void)requestResultByDate:(NSDate *)date completion:(void (^)(id result))completion {
+    if (date == nil) {
+        date = [NSDate date];
+    }
+    
+    NSString *url = @"http://api.nowscore.com//info/GetSchedule";
+    NSDictionary *params = @{@"lang":@"0",@"from":@"2",@"date":[date sy_stringWithFormat:@"yyyy-mm-dd"]};
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/html", @"text/plain"]];
+    [manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            [self handleData:responseObject completion:completion];
+        }else {
+            completion(nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        completion(nil);
+    }];
+}
+
+- (void)handleData:(NSDictionary *)result completion:(void (^)(id result))completion {
+    NSString *date = [result objectForKey:@"date"];
+    NSArray *sports = [result objectForKey:@"sclasss"];
+    NSArray *games = [result objectForKey:@"schedules"];
+    if (date.length < 8) {
+        completion(nil);
+        return;
+    }
+    
+    for (NSDictionary *sport in sports) {
+        [self.resultSprots setObject:sport forKey:[sport objectForKey:@"sid"]];
+    }
+    
+    [self.resultGames setObject:games forKey:[date substringToIndex:8]];
+    [self.resultSprots writeToFile:self.resultSportsPath atomically:YES];
+    [self.resultGames writeToFile:self.resultGamesPath atomically:YES];
+    
+    completion([SYGameResultModel mj_objectArrayWithKeyValuesArray:games]);
+}
+
+//- (void)requestResultWithModel:(SYGameListModel *)model completion:(void (^)(NSArray *array))completion {
+//    if (<#condition#>) {
+//        <#statements#>
+//    }
+//}
+
+
+
+#pragma mark - 懒加载
 - (NSString *)globalPath {
     if (_globalPath == nil) {
         _globalPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true).firstObject stringByAppendingPathComponent:@"globalProbability.plist"];
@@ -202,4 +263,37 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     return _sportsPath;
 }
 
+- (NSString *)resultSportsPath {
+    if (_resultSportsPath == nil) {
+        _resultSportsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true).firstObject stringByAppendingPathComponent:@"reslut_sports.plist"];
+    }
+    return _resultSportsPath;
+}
+
+- (NSString *)resultGamesPath {
+    if (_resultGamesPath == nil) {
+        _resultGamesPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true).firstObject stringByAppendingPathComponent:@"reslut_games.plist"];
+    }
+    return _resultGamesPath;
+}
+
+- (NSMutableDictionary *)resultSprots {
+    if (_resultSprots == nil) {
+        _resultSprots = [[NSMutableDictionary alloc] initWithContentsOfFile:self.resultSportsPath];
+        if (_resultSprots == nil) {
+            _resultSprots = [NSMutableDictionary dictionary];
+        }
+    }
+    return _resultSprots;
+}
+
+- (NSMutableDictionary *)resultGames {
+    if (_resultGames == nil) {
+        _resultGames = [[NSMutableDictionary alloc] initWithContentsOfFile:self.resultGamesPath];
+        if (_resultGames == nil) {
+            _resultGames = [NSMutableDictionary dictionary];
+        }
+    }
+    return _resultGames;
+}
 @end

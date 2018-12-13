@@ -17,6 +17,11 @@ SYSingleton_interface(SYDataAnalyzeManager)
 @property (nonatomic, strong) NSArray *sports;
 
 - (void)calculatorDatas;
+
+
+- (void)requestResultByDate:(NSDate *)date completion:(void (^)(id result))completion;
+
+- (void)requestResultWithModel:(SYGameListModel *)model completion:(void (^)(NSArray *array))completion;
 @end
 
 NS_ASSUME_NONNULL_END

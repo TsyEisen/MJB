@@ -11,7 +11,7 @@
 #define Develop 1
 
 //#if Develop
-NSString *const kBaseUrl = @"http://api.spdex.com";
+//NSString *const kBaseUrl = @"http://api.spdex.com";
 //#else
 //NSString *const kBaseUrl = @"http://api.miaocloud.cn:8081";
 //#endif
