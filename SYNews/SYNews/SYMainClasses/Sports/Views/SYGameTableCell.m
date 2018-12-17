@@ -63,7 +63,7 @@
     }
     
     
-    SYGameScoreType sigle_pay_type = model.MaxTeamId == model.HomeTeamId?SYGameScoreTypeHome : SYGameScoreTypeAway;
+    SYGameScoreType sigle_pay_type = model.MaxTeamId == model.HomeTeamId.integerValue?SYGameScoreTypeHome : SYGameScoreTypeAway;
     
     SYNumberModel *sigle_pay = [SYNumberModel modelWithStatus:sigle_pay_type num:model.MaxTradedChange/10000];
     

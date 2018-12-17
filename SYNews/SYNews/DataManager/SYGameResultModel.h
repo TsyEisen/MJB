@@ -4,6 +4,43 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+ {
+ "sid": 1648074,
+ "sclassID": 805,
+ "state": -1,
+ "time": "20181212183000",
+ "time2": "20181212193400",
+ "hTeam": "里烙汉后备队",
+ "gTeam": "南区后备队",
+ "hOrder": "",
+ "gOrder": "",
+ "hScore": "1",
+ "gScore": "2",
+ "hHScore": "0",
+ "gHScore": "2",
+ "hRed": "0",
+ "gRed": "0",
+ "hYellow": "0",
+ "gYellow": "1",
+ "hCorner": "8",
+ "gCorner": "2",
+ "hWin": "",
+ "gWin": "",
+ "draw": "",
+ "letGoal": "",
+ "hOdds": "",
+ "gOdds": "",
+ "totalGoal": "",
+ "upOdds": "",
+ "downOdds": "",
+ "ifVideo": false,
+ "explain": "",
+ "isGoalC": 0,
+ "isWfc": 0,
+ "isJc": 0
+ }
+ */
 
 @interface SYGameResultModel : NSObject
 
@@ -27,7 +64,7 @@
 
 @property (nonatomic, assign) NSInteger isWfc;
 
-@property (nonatomic, assign) NSInteger sid;
+@property (nonatomic, copy) NSString *sid;
 
 @property (nonatomic, copy) NSString *letGoal;
 
@@ -45,7 +82,7 @@
 
 @property (nonatomic, assign) BOOL ifVideo;
 
-@property (nonatomic, assign) NSInteger sclassID;
+@property (nonatomic, copy) NSString *sclassID;
 
 @property (nonatomic, copy) NSString *upOdds;
 

@@ -162,10 +162,10 @@ SYSingleton_implementation(SYSportDataManager)
             NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
             for (SYGameListModel *model in self.allGames) {
                 if (model.score.length > 0) {
-                    NSMutableArray *temp = [mutableDict objectForKey:[NSString stringWithFormat:@"%zd",model.LeagueId]];
+                    NSMutableArray *temp = [mutableDict objectForKey:model.LeagueId];
                     if (!temp) {
                         temp = [NSMutableArray array];
-                        [mutableDict setObject:temp forKey:[NSString stringWithFormat:@"%zd",model.LeagueId]];
+                        [mutableDict setObject:temp forKey:model.LeagueId];
                     }
                     [temp addObject:model];
                 }
@@ -196,10 +196,10 @@ SYSingleton_implementation(SYSportDataManager)
             NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
             for (SYGameListModel *model in self.allGames) {
                 if (model.score.length == 0 && model.dateSeconds + 7200 < [[NSDate date] timeIntervalSince1970]) {
-                    NSMutableArray *temp = [mutableDict objectForKey:[NSString stringWithFormat:@"%zd",model.LeagueId]];
+                    NSMutableArray *temp = [mutableDict objectForKey:model.LeagueId];
                     if (!temp) {
                         temp = [NSMutableArray array];
-                        [mutableDict setObject:temp forKey:[NSString stringWithFormat:@"%zd",model.LeagueId]];
+                        [mutableDict setObject:temp forKey:model.LeagueId];
                     }
                     [temp addObject:model];
                 }
@@ -225,10 +225,10 @@ SYSingleton_implementation(SYSportDataManager)
             NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
             for (SYGameListModel *model in self.allGames) {
                 if (model.score.length > 0 && [self highQualityGame:model]) {
-                    NSMutableArray *temp = [mutableDict objectForKey:[NSString stringWithFormat:@"%zd",model.LeagueId]];
+                    NSMutableArray *temp = [mutableDict objectForKey:model.LeagueId];
                     if (!temp) {
                         temp = [NSMutableArray array];
-                        [mutableDict setObject:temp forKey:[NSString stringWithFormat:@"%zd",model.LeagueId]];
+                        [mutableDict setObject:temp forKey:model.LeagueId];
                     }
                     [temp addObject:model];
                 }
@@ -575,7 +575,7 @@ SYSingleton_implementation(SYSportDataManager)
         
         SYSportDataProbability *probability = nil;
         for (SYSportDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports) {
-            if (pro.sportId == ((SYGameListModel *)models.firstObject).LeagueId) {
+            if (pro.sportId == ((SYGameListModel *)models.firstObject).LeagueId.integerValue) {
                 probability = pro;
                 break;
             }
@@ -607,7 +607,7 @@ SYSingleton_implementation(SYSportDataManager)
         for (SYGameListModel *model in models) {
             
             for (SYSportDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports) {
-                if (pro.sportId == model.LeagueId) {
+                if (pro.sportId == model.LeagueId.integerValue) {
                     probability = pro;
                     break;
                 }

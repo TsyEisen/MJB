@@ -14,9 +14,12 @@
 @property (nonatomic, copy) NSString *sportsPath;
 @property (nonatomic, copy) NSString *resultSportsPath;
 @property (nonatomic, copy) NSString *resultGamesPath;
+@property (nonatomic, copy) NSString *sportsIdConverPath;
+@property (nonatomic, copy) NSString *gameConverPath;
 
 @property (nonatomic, strong) NSMutableDictionary *resultSprots;
 @property (nonatomic, strong) NSMutableDictionary *resultGames;
+
 @property (nonatomic, strong) NSMutableDictionary *sportIdToResultSprorId;
 @property (nonatomic, strong) NSMutableDictionary *gameIdToResultGameName;
 @end
@@ -146,7 +149,7 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     [tempArray addObject:[SYDataProbability modelWithType:SYHDAType_DHA home:DHA_H draw:DHA_D away:DHA_A total:DHA]];
     [tempArray addObject:[SYDataProbability modelWithType:SYHDAType_DAH home:DAH_H draw:DAH_D away:DAH_A total:DAH]];
     SYSportDataProbability *sprotData = [SYSportDataProbability new];
-    sprotData.sportId = ((SYGameListModel *)datas.firstObject).LeagueId;
+    sprotData.sportId = ((SYGameListModel *)datas.firstObject).LeagueId.integerValue;
     sprotData.kellys = tempArray;
     return sprotData;
 }
@@ -241,12 +244,10 @@ SYSingleton_implementation(SYDataAnalyzeManager)
 }
 
 //- (void)requestResultWithModel:(SYGameListModel *)model completion:(void (^)(NSArray *array))completion {
-//    if (<#condition#>) {
+//    if () {
 //        <#statements#>
 //    }
 //}
-
-
 
 #pragma mark - 懒加载
 - (NSString *)globalPath {
@@ -276,6 +277,13 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     }
     return _resultGamesPath;
 }
+
+//- (NSString *)resultGamesPath {
+//    if (_resultGamesPath == nil) {
+//        _resultGamesPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true).firstObject stringByAppendingPathComponent:@"reslut_games.plist"];
+//    }
+//    return _resultGamesPath;
+//}
 
 - (NSMutableDictionary *)resultSprots {
     if (_resultSprots == nil) {

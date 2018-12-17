@@ -306,8 +306,8 @@
     renameView.awayLabel.text = self.selectedModel.AwayTeam;
     SYAlertView *alert = [[SYAlertView alloc] initWithCustom:renameView cancelButtonTitle:@"取消" conformButtonTitle:@"确定" size:CGSizeMake(260, 140)];
     [alert setConformAction:^{
-        [[SYSportDataManager sharedSYSportDataManager] replaceNameForTeamId:self.selectedModel.HomeTeamId byName:renameView.homeTextField.text];
-        [[SYSportDataManager sharedSYSportDataManager] replaceNameForTeamId:self.selectedModel.AwayTeamId byName:renameView.awayTextField.text];
+        [[SYSportDataManager sharedSYSportDataManager] replaceNameForTeamId:self.selectedModel.HomeTeamId.integerValue byName:renameView.homeTextField.text];
+        [[SYSportDataManager sharedSYSportDataManager] replaceNameForTeamId:self.selectedModel.AwayTeamId.integerValue byName:renameView.awayTextField.text];
     }];
     alert.allowTapBackgroundDismiss = YES;
     [alert show];

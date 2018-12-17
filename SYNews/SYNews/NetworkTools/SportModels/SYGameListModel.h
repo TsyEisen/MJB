@@ -104,7 +104,7 @@ typedef NS_ENUM(NSUInteger, SYGameScoreType) {
 
 @property (nonatomic, assign) NSInteger UnusualIndex;
 
-@property (nonatomic, assign) NSInteger HomeTeamId;
+@property (nonatomic, copy) NSString *HomeTeamId;
 
 @property (nonatomic, assign) NSInteger EventId;
 
@@ -114,9 +114,9 @@ typedef NS_ENUM(NSUInteger, SYGameScoreType) {
 
 @property (nonatomic, assign) CGFloat BfAmountHome;
 
-@property (nonatomic, assign) NSInteger AwayTeamId;
+@property (nonatomic, copy) NSString *AwayTeamId;
 
-@property (nonatomic, assign) NSInteger LeagueId;
+@property (nonatomic, copy) NSString *LeagueId;
 
 @property (nonatomic, assign) CGFloat BfAmountDraw;
 

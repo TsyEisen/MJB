@@ -45,7 +45,7 @@
 }
 
 - (NSString *)HomeTeam {
-    NSString *name = [[SYSportDataManager sharedSYSportDataManager].replaceNames objectForKey:[NSString stringWithFormat:@"%zd",self.HomeTeamId]];
+    NSString *name = [[SYSportDataManager sharedSYSportDataManager].replaceNames objectForKey:self.HomeTeamId];
     if (name.length > 0) {
         return name;
     }
@@ -53,7 +53,7 @@
 }
 
 - (NSString *)AwayTeam {
-    NSString *name = [[SYSportDataManager sharedSYSportDataManager].replaceNames objectForKey:[NSString stringWithFormat:@"%zd",self.AwayTeamId]];
+    NSString *name = [[SYSportDataManager sharedSYSportDataManager].replaceNames objectForKey:self.AwayTeamId];
     if (name.length > 0) {
         return name;
     }
