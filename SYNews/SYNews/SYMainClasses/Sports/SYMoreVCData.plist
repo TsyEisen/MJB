@@ -52,6 +52,12 @@
 	</dict>
 	<dict>
 		<key>className</key>
+		<string>SYFootballScoreSetViewController</string>
+		<key>title</key>
+		<string>比分对比录入</string>
+	</dict>
+	<dict>
+		<key>className</key>
 		<string>SYRecommendViewController</string>
 		<key>title</key>
 		<string>推介</string>

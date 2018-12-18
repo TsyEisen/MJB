@@ -134,6 +134,8 @@
 		F03FC24F1F5D3ED200DF465B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F03FC24C1F5D3ED200DF465B /* MBProgressHUD.m */; };
 		F03FC2531F5D425B00DF465B /* SYAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03FC2511F5D425B00DF465B /* SYAboutUsViewController.m */; };
 		F03FC2541F5D425B00DF465B /* SYAboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F03FC2521F5D425B00DF465B /* SYAboutUsViewController.xib */; };
+		F0499A9421C8F1D9004CD78D /* SYFootballScoreSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0499A9221C8F1D9004CD78D /* SYFootballScoreSetViewController.m */; };
+		F0499A9521C8F1D9004CD78D /* SYFootballScoreSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0499A9321C8F1D9004CD78D /* SYFootballScoreSetViewController.xib */; };
 		F059741821C10FBD00CFD804 /* 20181212.plist in Resources */ = {isa = PBXBuildFile; fileRef = F059741721C10FBC00CFD804 /* 20181212.plist */; };
 		F059741B21C1F60100CFD804 /* SYNBADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F059741A21C1F60100CFD804 /* SYNBADataManager.m */; };
 		F059741F21C1FF4E00CFD804 /* SYBasketBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F059741E21C1FF4E00CFD804 /* SYBasketBallViewController.m */; };
@@ -446,6 +448,9 @@
 		F03FC2501F5D425B00DF465B /* SYAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAboutUsViewController.h; sourceTree = "<group>"; };
 		F03FC2511F5D425B00DF465B /* SYAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAboutUsViewController.m; sourceTree = "<group>"; };
 		F03FC2521F5D425B00DF465B /* SYAboutUsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYAboutUsViewController.xib; sourceTree = "<group>"; };
+		F0499A9121C8F1D9004CD78D /* SYFootballScoreSetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYFootballScoreSetViewController.h; sourceTree = "<group>"; };
+		F0499A9221C8F1D9004CD78D /* SYFootballScoreSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYFootballScoreSetViewController.m; sourceTree = "<group>"; };
+		F0499A9321C8F1D9004CD78D /* SYFootballScoreSetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SYFootballScoreSetViewController.xib; sourceTree = "<group>"; };
 		F059741721C10FBC00CFD804 /* 20181212.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181212.plist; sourceTree = "<group>"; };
 		F059741921C1F60100CFD804 /* SYNBADataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYNBADataManager.h; sourceTree = "<group>"; };
 		F059741A21C1F60100CFD804 /* SYNBADataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYNBADataManager.m; sourceTree = "<group>"; };
@@ -1074,6 +1079,16 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		F0499A9021C8F1BC004CD78D /* Football */ = {
+			isa = PBXGroup;
+			children = (
+				F0499A9121C8F1D9004CD78D /* SYFootballScoreSetViewController.h */,
+				F0499A9221C8F1D9004CD78D /* SYFootballScoreSetViewController.m */,
+				F0499A9321C8F1D9004CD78D /* SYFootballScoreSetViewController.xib */,
+			);
+			path = Football;
+			sourceTree = "<group>";
+		};
 		F059741C21C1FF2800CFD804 /* BasketBall */ = {
 			isa = PBXGroup;
 			children = (
@@ -1135,6 +1150,7 @@
 		F0F63ABF2154CF7C000D7A15 /* Sports */ = {
 			isa = PBXGroup;
 			children = (
+				F0499A9021C8F1BC004CD78D /* Football */,
 				F059741C21C1FF2800CFD804 /* BasketBall */,
 				F0F63AC02154CF7C000D7A15 /* Views */,
 				F0F63AC62154D222000D7A15 /* SYSportViewController.h */,
@@ -1282,6 +1298,7 @@
 				F0E242C4216EFB26008CB6D8 /* SYMoreVCData.plist in Resources */,
 				F09A6646216CA1E700C3C20A /* SYCategoryViewController.xib in Resources */,
 				9F767B61218F1262002865EA /* SYDataAnalysisCell.xib in Resources */,
+				F0499A9521C8F1D9004CD78D /* SYFootballScoreSetViewController.xib in Resources */,
 				9F1500D32157435700696F7C /* SYGameListCell.xib in Resources */,
 				F03B91C81F55025A0033A3B5 /* SYWebViewController.xib in Resources */,
 				F0681D3B2194203800071B23 /* SYAddNewRecommendView.xib in Resources */,
@@ -1384,6 +1401,7 @@
 				F03B91131F54FDC60033A3B5 /* SYTabBarViewController.m in Sources */,
 				F03B91891F54FDD00033A3B5 /* NSObject+MJClass.m in Sources */,
 				F03B91A21F54FDD00033A3B5 /* UIColor+SYExtension.m in Sources */,
+				F0499A9421C8F1D9004CD78D /* SYFootballScoreSetViewController.m in Sources */,
 				F03FC24D1F5D3ED200DF465B /* MBProgressHUD+Add.m in Sources */,
 				F0F63ACA2154D223000D7A15 /* SYSportViewController.m in Sources */,
 				F03FC2231F5CFFE400DF465B /* MJRefreshComponent.m in Sources */,

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "SYDataProbability.h"
+#import "SYGameResultModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SYDataAnalyzeManager : NSObject
@@ -22,6 +24,8 @@ SYSingleton_interface(SYDataAnalyzeManager)
 - (void)requestResultByDate:(NSDate *)date completion:(void (^)(id result))completion;
 
 - (void)requestResultWithModel:(SYGameListModel *)model completion:(void (^)(NSArray *array))completion;
+
+- (void)copyScoreFrom:(SYGameResultModel *)result toGame:(SYGameListModel *)game;
 @end
 
 NS_ASSUME_NONNULL_END

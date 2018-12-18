@@ -154,41 +154,6 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     return sprotData;
 }
 
-//- (SYHDAType)typeWithKellArray:(NSArray *)kelly_array {
-//    if (((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeHome &&
-//        ((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeDraw &&
-//        ((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeAway) {
-//        return SYHDAType_HDA;
-//    }else if (<#expression#>)
-//}
-
-//- (SYHDAType)HDATypeWithModel:(SYGameListModel *)model {
-//    NSArray *kelly_array = [self gameDataStatisticsWithArray:@[@(model.KellyHome),@(model.KellyDraw),@(model.KellyAway)]];
-//    if (((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeHome &&
-//        ((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeDraw &&
-//        ((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeAway) {
-//        return SYHDAType_HDA;
-//    }else if (((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeHome &&
-//              ((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeDraw &&
-//              ((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeAway){
-//        return SYHDAType_HAD;
-//    }else if (((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeHome &&
-//              ((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeDraw &&
-//              ((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeAway){
-//        return SYHDAType_AHD;
-//    }else if (((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeHome &&
-//              ((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeDraw &&
-//              ((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeAway){
-//        return SYHDAType_ADH;
-//    }else if (((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeHome &&
-//              ((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeDraw &&
-//              ((SYNumberModel *)kelly_array[2]).status == SYGameScoreTypeAway){
-//        return SYHDAType_DHA;
-//    }else{
-//        return SYHDAType_DAH;
-//    }
-//}
-
 - (NSArray *)gameDataStatisticsWithArray:(NSArray *)array {
     NSMutableArray *tempArray = [NSMutableArray array];
     SYNumberModel *home = [SYNumberModel modelWithStatus:SYGameScoreTypeHome num:[array.firstObject doubleValue]];
@@ -206,7 +171,7 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     if (date == nil) {
         date = [NSDate date];
     }
-    
+
     NSString *url = @"http://api.nowscore.com//info/GetSchedule";
     NSDictionary *params = @{@"lang":@"0",@"from":@"2",@"date":[date sy_stringWithFormat:@"yyyy-mm-dd"]};
     
@@ -236,19 +201,42 @@ SYSingleton_implementation(SYDataAnalyzeManager)
         [self.resultSprots setObject:sport forKey:[sport objectForKey:@"sid"]];
     }
     
+    NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
+    
+    NSArray *gameModels = [SYGameResultModel mj_objectArrayWithKeyValuesArray:games];
+    for (SYGameResultModel *model in gameModels) {
+        NSMutableArray *temp = [mutableDict objectForKey:model.sclassID];
+        if (!temp) {
+            temp = [NSMutableArray array];
+            [mutableDict setObject:temp forKey:model.sclassID];
+        }
+        
+        for (NSDictionary *sport in sports) {
+            if ([model.sclassID isEqualToString:[sport objectForKey:@"sid"]]) {
+                model.sortName = [sport objectForKey:@"name"];
+            }
+        }
+        
+        [temp addObject:model];
+    }
+    completion(mutableDict.allValues);
+    
     [self.resultGames setObject:games forKey:[date substringToIndex:8]];
     [self.resultSprots writeToFile:self.resultSportsPath atomically:YES];
     [self.resultGames writeToFile:self.resultGamesPath atomically:YES];
-    
-    completion([SYGameResultModel mj_objectArrayWithKeyValuesArray:games]);
 }
 
-//- (void)requestResultWithModel:(SYGameListModel *)model completion:(void (^)(NSArray *array))completion {
-//    if () {
-//        <#statements#>
-//    }
-//}
+- (void)copyScoreFrom:(SYGameResultModel *)result toGame:(SYGameListModel *)game {
+    game.homeScore = result.hScore;
+    game.awayScore = result.gScore;
+    [self.sportIdToResultSprorId setObject:game.LeagueId forKey:result.sclassID];
+    [self.sportIdToResultSprorId setObject:game.HomeTeamId forKey:result.hTeam];
+    [self.sportIdToResultSprorId setObject:game.AwayTeamId forKey:result.gTeam];
+}
 
+- (NSString *)pathWithName:(NSString *)name {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true).firstObject stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",name]];
+}
 #pragma mark - 懒加载
 - (NSString *)globalPath {
     if (_globalPath == nil) {
@@ -303,5 +291,19 @@ SYSingleton_implementation(SYDataAnalyzeManager)
         }
     }
     return _resultGames;
+}
+
+- (NSMutableDictionary *)sportIdToResultSprorId {
+    if (_sportIdToResultSprorId == nil) {
+        _sportIdToResultSprorId = [[NSMutableDictionary alloc] initWithContentsOfFile:[self pathWithName:@"sportIdToResultSprorId"]];
+    }
+    return _sportIdToResultSprorId;
+}
+
+- (NSMutableDictionary *)gameIdToResultGameName {
+    if (_gameIdToResultGameName == nil) {
+        _gameIdToResultGameName = [[NSMutableDictionary alloc] initWithContentsOfFile:[self pathWithName:@"gameIdToResultGameName"]];
+    }
+    return _gameIdToResultGameName;
 }
 @end

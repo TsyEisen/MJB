@@ -110,4 +110,6 @@
 
 @property (nonatomic, copy) NSString *gHScore;
 
+@property (nonatomic, copy) NSString *sortName;
+
 @end
