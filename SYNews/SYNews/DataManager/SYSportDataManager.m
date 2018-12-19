@@ -314,6 +314,14 @@ SYSingleton_implementation(SYSportDataManager)
     _allGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
 }
 
+- (void)changeScoreWithModels:(NSArray *)models {
+    for (SYGameListModel *model in models) {
+        [self changeScoreModel:model];
+    }
+    
+    [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
+}
+
 - (void)changeScoreModel:(SYGameListModel *)model {
     
     NSDictionary *json = [self.gameJsons objectForKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
@@ -336,8 +344,6 @@ SYSingleton_implementation(SYSportDataManager)
             item.awayScore = model.awayScore;
         }
     }
-    
-    [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
     
     for (SYRecommendModel *recommend in self.recommends) {
         [recommend changeModelInformation:model];

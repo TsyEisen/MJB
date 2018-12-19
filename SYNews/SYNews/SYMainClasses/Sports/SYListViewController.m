@@ -323,7 +323,7 @@
             weakSelf.selectedModel.homeScore = homeScore;
             weakSelf.selectedModel.awayScore = awayScore;
             weakSelf.selectedModel.score = [NSString stringWithFormat:@"%@:%@",homeScore,awayScore];
-            [[SYSportDataManager sharedSYSportDataManager] changeScoreModel:weakSelf.selectedModel];
+            [[SYSportDataManager sharedSYSportDataManager] changeScoreWithModels:@[weakSelf.selectedModel]];
             [weakSelf.tableView reloadData];
         }];
     }

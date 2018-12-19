@@ -173,7 +173,7 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     }
 
     NSString *url = @"http://api.nowscore.com//info/GetSchedule";
-    NSDictionary *params = @{@"lang":@"0",@"from":@"2",@"date":[date sy_stringWithFormat:@"yyyy-mm-dd"]};
+    NSDictionary *params = @{@"lang":@"0",@"from":@"2",@"date":[date sy_stringWithFormat:@"yyyy-MM-dd"]};
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/html", @"text/plain"]];
@@ -198,7 +198,7 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     }
     
     for (NSDictionary *sport in sports) {
-        [self.resultSprots setObject:sport forKey:[sport objectForKey:@"sid"]];
+        [self.resultSprots setObject:sport forKey:[NSString stringWithFormat:@"%@",[sport objectForKey:@"sid"]]];
     }
     
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
@@ -212,8 +212,9 @@ SYSingleton_implementation(SYDataAnalyzeManager)
         }
         
         for (NSDictionary *sport in sports) {
-            if ([model.sclassID isEqualToString:[sport objectForKey:@"sid"]]) {
+            if ([model.sclassID integerValue] == [[sport objectForKey:@"sid"] integerValue]) {
                 model.sortName = [sport objectForKey:@"name"];
+                break;
             }
         }
         
@@ -222,16 +223,22 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     completion(mutableDict.allValues);
     
     [self.resultGames setObject:games forKey:[date substringToIndex:8]];
-    [self.resultSprots writeToFile:self.resultSportsPath atomically:YES];
-    [self.resultGames writeToFile:self.resultGamesPath atomically:YES];
+    
+    BOOL sportstauts = [self.resultSprots writeToFile:self.resultSportsPath atomically:YES];
+    BOOL gamestauts = [self.resultGames writeToFile:self.resultGamesPath atomically:YES];
+    NSLog(@"%d---%d",sportstauts,gamestauts);
 }
 
 - (void)copyScoreFrom:(SYGameResultModel *)result toGame:(SYGameListModel *)game {
     game.homeScore = result.hScore;
     game.awayScore = result.gScore;
+    game.score = [NSString stringWithFormat:@"%@:%@",result.hScore,result.gScore];
     [self.sportIdToResultSprorId setObject:game.LeagueId forKey:result.sclassID];
-    [self.sportIdToResultSprorId setObject:game.HomeTeamId forKey:result.hTeam];
-    [self.sportIdToResultSprorId setObject:game.AwayTeamId forKey:result.gTeam];
+    [self.gameIdToResultGameName setObject:result.hTeam forKey:game.HomeTeamId];
+    [self.gameIdToResultGameName setObject:result.gTeam forKey:game.AwayTeamId];
+    [self.sportIdToResultSprorId writeToFile:[self pathWithName:@"sportIdToResultSprorId"] atomically:YES];
+    [self.gameIdToResultGameName writeToFile:[self pathWithName:@"gameIdToResultGameName"] atomically:YES];
+    [[SYSportDataManager sharedSYSportDataManager] changeScoreWithModels:@[game]];
 }
 
 - (NSString *)pathWithName:(NSString *)name {

@@ -28,6 +28,10 @@
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3T7-5h-VPc">
                             <rect key="frame" x="0.0" y="0.0" width="187.5" height="667"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="n2l-Yt-oRl"/>
+                                <outlet property="delegate" destination="-1" id="BLT-Tv-Jto"/>
+                            </connections>
                         </tableView>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bXN-Ai-R5Y">
                             <rect key="frame" x="187.5" y="0.0" width="187.5" height="667"/>
@@ -39,11 +43,21 @@
                         </tableView>
                     </subviews>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAu-ar-D5G">
+                    <rect key="frame" x="187.5" y="0.0" width="0.5" height="667"/>
+                    <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="0.5" id="sym-gM-vm1"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="JAu-ar-D5G" secondAttribute="bottom" id="4nf-nr-adT"/>
+                <constraint firstItem="JAu-ar-D5G" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5Ed-33-Vpq"/>
                 <constraint firstAttribute="trailing" secondItem="8i9-TJ-drq" secondAttribute="trailing" id="5NZ-FT-TiK"/>
                 <constraint firstItem="8i9-TJ-drq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6KB-AX-BhL"/>
+                <constraint firstItem="JAu-ar-D5G" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Enx-NQ-rJB"/>
                 <constraint firstItem="8i9-TJ-drq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FfW-YI-KoJ"/>
                 <constraint firstAttribute="bottom" secondItem="8i9-TJ-drq" secondAttribute="bottom" id="o6B-xZ-9kU"/>
             </constraints>

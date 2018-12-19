@@ -38,7 +38,8 @@ SYSingleton_interface(SYSportDataManager)
 @property (nonatomic, strong) NSMutableDictionary *replaceNames;
 
 - (void)requestDatasBySYListType:(SYListType)type Completion:(void(^)(NSArray *datas))completion;
-- (void)changeScoreModel:(SYGameListModel *)model;
+//- (void)changeScoreModel:(SYGameListModel *)model;
+- (void)changeScoreWithModels:(NSArray *)models;
 - (void)deleteModel:(SYGameListModel *)model;
 - (void)replaceDataForNewest;
 

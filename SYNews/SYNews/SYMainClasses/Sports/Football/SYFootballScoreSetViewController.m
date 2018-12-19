@@ -8,9 +8,12 @@
 
 #import "SYFootballScoreSetViewController.h"
 #import "SYDatePickerTool.h"
+#import "SYScoreSetCell.h"
 @interface SYFootballScoreSetViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 @property (weak, nonatomic) IBOutlet UITableView *rightTableView;
+@property (nonatomic, strong) NSIndexPath *seletedGame;
+@property (nonatomic, strong) NSIndexPath *seletedResult;
 @property (nonatomic, strong) NSArray *leftArray;
 @property (nonatomic, strong) NSArray *rightArray;
 @property (nonatomic, strong) SYDatePickerTool *datePicker;
@@ -29,6 +32,10 @@
         weakSelf.leftArray = datas;
         [weakSelf reloadData];
     }];
+    
+    self.navigationItem.rightBarButtonItem = self.rightItem;
+    
+    [self requestDataWithDate:[NSDate date]];
 }
 
 - (void)initalTableView:(UITableView *)tableView {
@@ -36,6 +43,7 @@
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.rowHeight = UITableViewAutomaticDimension;
     tableView.estimatedRowHeight = 100;
+    [tableView sy_registerNibWithClass:[SYScoreSetCell class]];
 }
 
 - (void)datePick {
@@ -61,6 +69,18 @@
 }
 #pragma mark - tableView DataSource
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (tableView == self.leftTableView) {
+        NSArray *array = self.leftArray[section];
+        SYGameListModel *model = array.firstObject;
+        return model.SortName;
+    }else {
+        NSArray *array = self.rightArray[section];
+        SYGameResultModel *model = array.firstObject;
+        return model.sortName;
+    }
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (tableView == self.leftTableView) {
         return self.leftArray.count;
@@ -80,16 +100,44 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([UITableViewCell class])];
+    SYScoreSetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SYScoreSetCell class])];
+    if (tableView == self.leftTableView) {
+        NSArray *array = self.leftArray[indexPath.section];
+        cell.model = array[indexPath.row];
+        cell.accessoryType = self.seletedGame == indexPath ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    }else {
+        NSArray *array = self.rightArray[indexPath.section];
+        cell.model = array[indexPath.row];
+        cell.accessoryType = self.seletedResult == indexPath ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%zd",indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (tableView == self.leftTableView) {
+        self.seletedGame = indexPath;
+    }else {
+        self.seletedResult = indexPath;
+    }
+    
+    [self reloadData];
+    if (self.seletedGame && self.seletedResult) {
+        
+        NSArray *games = self.leftArray[self.seletedGame.section];
+        SYGameListModel *game = games[self.seletedGame.row];
+        
+        NSArray *results = self.rightArray[self.seletedResult.section];
+        SYGameResultModel *result = results[self.seletedResult.row];
+        
+        [[SYDataAnalyzeManager sharedSYDataAnalyzeManager] copyScoreFrom:result toGame:game];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.seletedGame = nil;
+            self.seletedResult = nil;
+            [self reloadData];
+        });
+    }
+    
 }
 
 - (SYDatePickerTool *)datePicker {
