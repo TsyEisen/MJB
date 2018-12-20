@@ -18,12 +18,17 @@ SYSingleton_interface(SYDataAnalyzeManager)
 @property (nonatomic, strong) SYSportDataProbability *global;
 @property (nonatomic, strong) NSArray *sports;
 
+//自动赋值
+@property (nonatomic, strong) NSMutableDictionary *sportIdToResultSprorId;
+@property (nonatomic, strong) NSMutableDictionary *gameIdToResultGameName;
+
 - (void)calculatorDatas;
 
 
 - (void)requestResultByDate:(NSDate *)date completion:(void (^)(id result))completion;
 
-- (void)requestResultWithModel:(SYGameListModel *)model completion:(void (^)(NSArray *array))completion;
+//- (void)requestResultWithModel:(SYGameListModel *)model completion:(void (^)(NSArray *array))completion;
+- (void)AIScoreMatch;
 
 - (void)copyScoreFrom:(SYGameResultModel *)result toGame:(SYGameListModel *)game;
 @end

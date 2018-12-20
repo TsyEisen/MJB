@@ -18,7 +18,8 @@ typedef NS_ENUM(NSUInteger, SYHDAType) {
 };
 
 @interface SYSportDataProbability : NSObject
-@property (nonatomic, assign) NSInteger sportId;
+//@property (nonatomic, assign) NSInteger sportId;
+@property (nonatomic, copy) NSString *SortName;
 @property (nonatomic, strong) NSArray *kellys;
 @end
 

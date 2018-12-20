@@ -12,28 +12,40 @@
 @interface SYFootballScoreSetViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 @property (weak, nonatomic) IBOutlet UITableView *rightTableView;
+@property (weak, nonatomic) IBOutlet UIButton *AIBtn;
 @property (nonatomic, strong) NSIndexPath *seletedGame;
 @property (nonatomic, strong) NSIndexPath *seletedResult;
 @property (nonatomic, strong) NSArray *leftArray;
 @property (nonatomic, strong) NSArray *rightArray;
 @property (nonatomic, strong) SYDatePickerTool *datePicker;
 @property (nonatomic, strong) UIBarButtonItem *rightItem;
+@property (nonatomic, strong) UIBarButtonItem *rightItem2;
 @end
 
 @implementation SYFootballScoreSetViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.AIBtn.layer.cornerRadius = 25;
+    self.AIBtn.layer.borderColor = [UIColor blackColor].CGColor;
+    self.AIBtn.layer.borderWidth = 0.5;
     [self initalTableView:self.leftTableView];
     [self initalTableView:self.rightTableView];
     
     __weak typeof(self) weakSelf = self;
     [[SYSportDataManager sharedSYSportDataManager] requestDatasBySYListType:SYListTypeNoScore Completion:^(NSArray *datas) {
-        weakSelf.leftArray = datas;
+        
+        NSMutableArray *tempArray = [NSMutableArray array];
+        for (NSArray *games in datas) {
+            NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:YES];
+            [tempArray addObject:[[games sortedArrayUsingDescriptors:@[timeSD]] mutableCopy]];
+        }
+        
+        weakSelf.leftArray = tempArray;
         [weakSelf reloadData];
     }];
     
-    self.navigationItem.rightBarButtonItem = self.rightItem;
+    self.navigationItem.rightBarButtonItems = @[self.rightItem2,self.rightItem];
     
     [self requestDataWithDate:[NSDate date]];
 }
@@ -50,6 +62,70 @@
     [self.datePicker show];
 }
 
+- (IBAction)AIAction {
+    self.AIBtn.selected = !self.AIBtn.selected;
+    if (self.AIBtn.selected) {
+        self.AIBtn.backgroundColor = [UIColor redColor];
+        [self.AIBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    }else {
+        self.AIBtn.backgroundColor = [UIColor clearColor];
+        [self.AIBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
+    
+    [self AIAnalize];
+}
+
+- (void)AIAnalize {
+    for (NSArray *games in self.leftArray) {
+        SYGameListModel *model = games.firstObject;
+        NSString *sclassID = [[SYDataAnalyzeManager sharedSYDataAnalyzeManager].sportIdToResultSprorId objectForKey:model.LeagueId];
+        if (sclassID == nil) {
+            continue;
+        }
+        NSArray *resultArray = nil;
+        for (NSArray *results in self.rightArray) {
+            SYGameResultModel *result = results.firstObject;
+            if ([sclassID isEqualToString:result.sclassID]) {
+                resultArray = results;
+                break;
+            }
+        }
+        if (resultArray) {
+            for (SYGameListModel *game in games) {
+                if (game.score.length > 0) {
+                    continue;
+                }
+                NSString *homeName = [[SYDataAnalyzeManager sharedSYDataAnalyzeManager].gameIdToResultGameName objectForKey:[game.HomeTeam stringByAppendingString:game.HomeTeamId]];
+                NSString *awayName = [[SYDataAnalyzeManager sharedSYDataAnalyzeManager].gameIdToResultGameName objectForKey:[game.AwayTeam stringByAppendingString:game.AwayTeamId]];
+                if (homeName == nil || awayName == nil) {
+                    continue;
+                }
+                for (SYGameResultModel *result in resultArray) {
+                    if ([result.hTeam isEqualToString:homeName] && [result.gTeam isEqualToString:awayName]) {
+                        game.homeScore = result.hScore;
+                        game.awayScore = result.gScore;
+                        game.score = [NSString stringWithFormat:@"%@:%@",result.hScore,result.gScore];
+                    }
+                }
+            }
+        }
+    }
+    [self reloadData];
+}
+
+- (void)saveScores {
+    NSMutableArray *tempArray = [NSMutableArray array];
+    for (NSArray *games in self.leftArray) {
+        for (SYGameListModel *model in games) {
+            if (model.score.length > 0) {
+                [tempArray addObject:model];
+            }
+        }
+    }
+    [[SYSportDataManager sharedSYSportDataManager] changeScoreWithModels:tempArray];
+    [MBProgressHUD showSuccess:@"存储完毕" toView:nil];
+}
+
 #pragma mark - 网络请求
 - (void)requestDataWithDate:(NSDate *)date {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -58,6 +134,9 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (result) {
             weakSelf.rightArray = result;
+            if (weakSelf.AIBtn.selected) {
+                [weakSelf AIAnalize];
+            }
             [weakSelf reloadData];
         }
     }];
@@ -66,6 +145,10 @@
 - (void)reloadData {
     [self.rightTableView reloadData];
     [self.leftTableView reloadData];
+    
+    if (self.rightTableView.contentOffset.y > 0) {
+        [self.rightTableView setContentOffset:CGPointZero animated:YES];
+    }
 }
 #pragma mark - tableView DataSource
 
@@ -151,9 +234,17 @@
     return _datePicker;
 }
 
+- (UIBarButtonItem *)rightItem2 {
+    if (_rightItem2 == nil) {
+        _rightItem2 = [[UIBarButtonItem alloc] initWithTitle:@"日期" style:UIBarButtonItemStyleDone target:self action:@selector(datePick)];
+        _rightItem2.tintColor = [UIColor whiteColor];
+    }
+    return _rightItem2;
+}
+
 - (UIBarButtonItem *)rightItem {
     if (_rightItem == nil) {
-        _rightItem = [[UIBarButtonItem alloc] initWithTitle:@"日期" style:UIBarButtonItemStyleDone target:self action:@selector(datePick)];
+        _rightItem = [[UIBarButtonItem alloc] initWithTitle:@"存储" style:UIBarButtonItemStyleDone target:self action:@selector(saveScores)];
         _rightItem.tintColor = [UIColor whiteColor];
     }
     return _rightItem;

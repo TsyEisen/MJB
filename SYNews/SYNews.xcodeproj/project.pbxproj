@@ -138,7 +138,6 @@
 		F0499A9521C8F1D9004CD78D /* SYFootballScoreSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0499A9321C8F1D9004CD78D /* SYFootballScoreSetViewController.xib */; };
 		F0499A9A21C9E2D8004CD78D /* SYScoreSetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0499A9821C9E2D8004CD78D /* SYScoreSetCell.m */; };
 		F0499A9B21C9E2D8004CD78D /* SYScoreSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0499A9921C9E2D8004CD78D /* SYScoreSetCell.xib */; };
-		F059741821C10FBD00CFD804 /* 20181212.plist in Resources */ = {isa = PBXBuildFile; fileRef = F059741721C10FBC00CFD804 /* 20181212.plist */; };
 		F059741B21C1F60100CFD804 /* SYNBADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F059741A21C1F60100CFD804 /* SYNBADataManager.m */; };
 		F059741F21C1FF4E00CFD804 /* SYBasketBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F059741E21C1FF4E00CFD804 /* SYBasketBallViewController.m */; };
 		F059742821C273E600CFD804 /* SYResultSportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F059742721C273E600CFD804 /* SYResultSportModel.m */; };
@@ -456,7 +455,6 @@
 		F0499A9721C9E2D8004CD78D /* SYScoreSetCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYScoreSetCell.h; sourceTree = "<group>"; };
 		F0499A9821C9E2D8004CD78D /* SYScoreSetCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYScoreSetCell.m; sourceTree = "<group>"; };
 		F0499A9921C9E2D8004CD78D /* SYScoreSetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SYScoreSetCell.xib; sourceTree = "<group>"; };
-		F059741721C10FBC00CFD804 /* 20181212.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181212.plist; sourceTree = "<group>"; };
 		F059741921C1F60100CFD804 /* SYNBADataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYNBADataManager.h; sourceTree = "<group>"; };
 		F059741A21C1F60100CFD804 /* SYNBADataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYNBADataManager.m; sourceTree = "<group>"; };
 		F059741D21C1FF4E00CFD804 /* SYBasketBallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYBasketBallViewController.h; sourceTree = "<group>"; };
@@ -1158,7 +1156,6 @@
 		F0E242DA21703AB6008CB6D8 /* lastData */ = {
 			isa = PBXGroup;
 			children = (
-				F059741721C10FBC00CFD804 /* 20181212.plist */,
 			);
 			path = lastData;
 			sourceTree = "<group>";
@@ -1329,7 +1326,6 @@
 				F03B91DF1F5557F70033A3B5 /* SYHomeNewsCell.xib in Resources */,
 				F0F63B1721550422000D7A15 /* SYGameDataViewController.xib in Resources */,
 				F068019A215E22910032C4DA /* SYCompareViewController.xib in Resources */,
-				F059741821C10FBD00CFD804 /* 20181212.plist in Resources */,
 				F09A664B216CA2EA00C3C20A /* SYCategoryCell.xib in Resources */,
 				F03B91B81F54FEE60033A3B5 /* SYDiscoverViewController.xib in Resources */,
 				F03B91C21F54FF0F0033A3B5 /* SYMineViewController.xib in Resources */,

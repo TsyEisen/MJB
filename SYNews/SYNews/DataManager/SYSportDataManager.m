@@ -52,8 +52,8 @@ SYSingleton_implementation(SYSportDataManager)
                     NSArray *array = (NSArray *)result;
                     if (array.count > 0) {
                         for (NSDictionary *gameJson in array) {
-                            [self.currentGameJsons setValue:gameJson forKey:[NSString stringWithFormat:@"%@",[gameJson objectForKey:@"EventId"]]];
-                            [self.gameJsons setValue:gameJson forKey:[NSString stringWithFormat:@"%@",[gameJson objectForKey:@"EventId"]]];
+                            [self.currentGameJsons setValue:gameJson forKey:[NSString stringWithFormat:@"%@#%@",[gameJson objectForKey:@"EventId"],[gameJson objectForKey:@"MatchTime"]]];
+                            [self.gameJsons setValue:gameJson forKey:[NSString stringWithFormat:@"%@#%@",[gameJson objectForKey:@"EventId"],[gameJson objectForKey:@"MatchTime"]]];
                         }
                         [self.categaryCache setValue:[SYGameListModel mj_objectArrayWithKeyValuesArray:array] forKey:model.Id.stringValue];
                     }
@@ -69,7 +69,22 @@ SYSingleton_implementation(SYSportDataManager)
             [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
             _allGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
             
+            /******************/
             
+//            NSMutableDictionary *temp = [NSMutableDictionary dictionary];
+//            for (SYGameListModel *model in _allGames) {
+//                if (![temp objectForKey:model.SortName]) {
+//                    [temp setObject:model.LeagueId forKey:model.SortName];
+//                }else {
+//                    NSString *leagueId = [temp objectForKey:model.SortName];
+//                    if (![leagueId isEqualToString:model.LeagueId]) {
+//                        NSLog(@"不一致--%@---%@---%@",model.LeagueId,model.SortName,leagueId);
+//                    }
+//                }
+//            }
+//            NSLog(@"%@",temp);
+            
+            /*****************/
             
             NSArray *tempArray = [_categaryCache allValues];
             for (NSArray *arr in tempArray) {
@@ -162,10 +177,10 @@ SYSingleton_implementation(SYSportDataManager)
             NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
             for (SYGameListModel *model in self.allGames) {
                 if (model.score.length > 0) {
-                    NSMutableArray *temp = [mutableDict objectForKey:model.LeagueId];
+                    NSMutableArray *temp = [mutableDict objectForKey:model.SortName];
                     if (!temp) {
                         temp = [NSMutableArray array];
-                        [mutableDict setObject:temp forKey:model.LeagueId];
+                        [mutableDict setObject:temp forKey:model.SortName];
                     }
                     [temp addObject:model];
                 }
@@ -196,10 +211,10 @@ SYSingleton_implementation(SYSportDataManager)
             NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
             for (SYGameListModel *model in self.allGames) {
                 if (model.score.length == 0 && model.dateSeconds + 7200 < [[NSDate date] timeIntervalSince1970]) {
-                    NSMutableArray *temp = [mutableDict objectForKey:model.LeagueId];
+                    NSMutableArray *temp = [mutableDict objectForKey:model.SortName];
                     if (!temp) {
                         temp = [NSMutableArray array];
-                        [mutableDict setObject:temp forKey:model.LeagueId];
+                        [mutableDict setObject:temp forKey:model.SortName];
                     }
                     [temp addObject:model];
                 }
@@ -225,10 +240,10 @@ SYSingleton_implementation(SYSportDataManager)
             NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
             for (SYGameListModel *model in self.allGames) {
                 if (model.score.length > 0 && [self highQualityGame:model]) {
-                    NSMutableArray *temp = [mutableDict objectForKey:model.LeagueId];
+                    NSMutableArray *temp = [mutableDict objectForKey:model.SortName];
                     if (!temp) {
                         temp = [NSMutableArray array];
-                        [mutableDict setObject:temp forKey:model.LeagueId];
+                        [mutableDict setObject:temp forKey:model.SortName];
                     }
                     [temp addObject:model];
                 }
@@ -309,12 +324,17 @@ SYSingleton_implementation(SYSportDataManager)
 }
 
 - (void)deleteModel:(SYGameListModel *)model {
-    [self.gameJsons removeObjectForKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
+    [self.gameJsons removeObjectForKey:[NSString stringWithFormat:@"%ld#%@",(long)model.EventId,model.MatchTime]];
     [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
     _allGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
 }
 
 - (void)changeScoreWithModels:(NSArray *)models {
+    
+    if (models.count == 0) {
+        return;
+    }
+    
     for (SYGameListModel *model in models) {
         [self changeScoreModel:model];
     }
@@ -324,7 +344,7 @@ SYSingleton_implementation(SYSportDataManager)
 
 - (void)changeScoreModel:(SYGameListModel *)model {
     
-    NSDictionary *json = [self.gameJsons objectForKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
+    NSDictionary *json = [self.gameJsons objectForKey:[NSString stringWithFormat:@"%ld#%@",(long)model.EventId,model.MatchTime]];
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
    if (json) {
        [dict addEntriesFromDictionary:json]; 
@@ -335,7 +355,7 @@ SYSingleton_implementation(SYSportDataManager)
        dict = model.mj_keyValues;
    }
     
-    [self.gameJsons setObject:dict forKey:[NSString stringWithFormat:@"%ld",(long)model.EventId]];
+    [self.gameJsons setObject:dict forKey:[NSString stringWithFormat:@"%ld#%@",(long)model.EventId,model.MatchTime]];
     
     for (SYGameListModel *item in _allGames) {
         if (item.EventId == model.EventId) {
@@ -458,6 +478,11 @@ SYSingleton_implementation(SYSportDataManager)
 - (NSMutableDictionary *)gameJsons {
     if (_gameJsons == nil) {
         _gameJsons = [[NSMutableDictionary alloc] initWithContentsOfFile:[self dataPathWithFileName:gamesJsonPath]];
+        NSMutableDictionary *temp = [NSMutableDictionary dictionary];
+        for (NSDictionary *dict in _gameJsons.allValues) {
+            [temp setObject:dict forKey:[NSString stringWithFormat:@"%@#%@",[dict objectForKey:@"EventId"],[dict objectForKey:@"MatchTime"]]];
+        }
+        _gameJsons = temp;
         if (_gameJsons == nil) {
             _gameJsons = [[NSMutableDictionary alloc] init];
         }
@@ -474,7 +499,7 @@ SYSingleton_implementation(SYSportDataManager)
 
 - (NSArray *)allGames {
     if (_allGames == nil) {
-        _allGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];;
+        _allGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
     }
     return _allGames;
 }
@@ -581,7 +606,7 @@ SYSingleton_implementation(SYSportDataManager)
         
         SYSportDataProbability *probability = nil;
         for (SYSportDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports) {
-            if (pro.sportId == ((SYGameListModel *)models.firstObject).LeagueId.integerValue) {
+            if ([pro.SortName isEqualToString:((SYGameListModel *)models.firstObject).SortName]) {
                 probability = pro;
                 break;
             }
@@ -590,7 +615,9 @@ SYSingleton_implementation(SYSportDataManager)
         if (probability == nil) {
             return models;
         }
+        
         for (SYGameListModel *model in models) {
+            
             SYHDAType type = [self HDATypeWithModel:model];
             for (SYDataProbability *pro in probability.kellys) {
                 if (pro.type == type) {
@@ -608,12 +635,13 @@ SYSingleton_implementation(SYSportDataManager)
 
         return models;
     }else {
-        SYSportDataProbability *probability = nil;
-        
+    
         for (SYGameListModel *model in models) {
             
+            SYSportDataProbability *probability = nil;
+            
             for (SYSportDataProbability *pro in [SYDataAnalyzeManager sharedSYDataAnalyzeManager].sports) {
-                if (pro.sportId == model.LeagueId.integerValue) {
+                if ([pro.SortName isEqualToString:model.SortName]) {
                     probability = pro;
                     break;
                 }

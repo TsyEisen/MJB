@@ -19,9 +19,6 @@
 
 @property (nonatomic, strong) NSMutableDictionary *resultSprots;
 @property (nonatomic, strong) NSMutableDictionary *resultGames;
-
-@property (nonatomic, strong) NSMutableDictionary *sportIdToResultSprorId;
-@property (nonatomic, strong) NSMutableDictionary *gameIdToResultGameName;
 @end
 
 @implementation SYDataAnalyzeManager
@@ -141,6 +138,7 @@ SYSingleton_implementation(SYDataAnalyzeManager)
         }
     }
     
+    
     NSMutableArray *tempArray = [NSMutableArray array];
     [tempArray addObject:[SYDataProbability modelWithType:SYHDAType_HDA home:HDA_H draw:HDA_D away:HDA_A total:HDA]];
     [tempArray addObject:[SYDataProbability modelWithType:SYHDAType_HAD home:HAD_H draw:HAD_D away:HAD_A total:HAD]];
@@ -149,8 +147,9 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     [tempArray addObject:[SYDataProbability modelWithType:SYHDAType_DHA home:DHA_H draw:DHA_D away:DHA_A total:DHA]];
     [tempArray addObject:[SYDataProbability modelWithType:SYHDAType_DAH home:DAH_H draw:DAH_D away:DAH_A total:DAH]];
     SYSportDataProbability *sprotData = [SYSportDataProbability new];
-    sprotData.sportId = ((SYGameListModel *)datas.firstObject).LeagueId.integerValue;
+    sprotData.SortName = ((SYGameListModel *)datas.firstObject).SortName;
     sprotData.kellys = tempArray;
+    
     return sprotData;
 }
 
@@ -197,7 +196,11 @@ SYSingleton_implementation(SYDataAnalyzeManager)
         return;
     }
     
+    NSMutableArray *tempArray = [NSMutableArray array];
     for (NSDictionary *sport in sports) {
+        if ([[sport objectForKey:@"ifDisp"] integerValue] == 1) {
+            [tempArray addObject:[NSString stringWithFormat:@"%@",[sport objectForKey:@"sid"]]];
+        }
         [self.resultSprots setObject:sport forKey:[NSString stringWithFormat:@"%@",[sport objectForKey:@"sid"]]];
     }
     
@@ -205,6 +208,11 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     
     NSArray *gameModels = [SYGameResultModel mj_objectArrayWithKeyValuesArray:games];
     for (SYGameResultModel *model in gameModels) {
+        
+        if (![tempArray containsObject:model.sclassID]) {
+            continue;
+        }
+        
         NSMutableArray *temp = [mutableDict objectForKey:model.sclassID];
         if (!temp) {
             temp = [NSMutableArray array];
@@ -234,11 +242,10 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     game.awayScore = result.gScore;
     game.score = [NSString stringWithFormat:@"%@:%@",result.hScore,result.gScore];
     [self.sportIdToResultSprorId setObject:game.LeagueId forKey:result.sclassID];
-    [self.gameIdToResultGameName setObject:result.hTeam forKey:game.HomeTeamId];
-    [self.gameIdToResultGameName setObject:result.gTeam forKey:game.AwayTeamId];
+    [self.gameIdToResultGameName setObject:result.hTeam forKey:[game.HomeTeam stringByAppendingString:game.HomeTeamId]];
+    [self.gameIdToResultGameName setObject:result.gTeam forKey:[game.AwayTeam stringByAppendingString:game.AwayTeamId]];
     [self.sportIdToResultSprorId writeToFile:[self pathWithName:@"sportIdToResultSprorId"] atomically:YES];
     [self.gameIdToResultGameName writeToFile:[self pathWithName:@"gameIdToResultGameName"] atomically:YES];
-    [[SYSportDataManager sharedSYSportDataManager] changeScoreWithModels:@[game]];
 }
 
 - (NSString *)pathWithName:(NSString *)name {

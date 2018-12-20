@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SYFootballScoreSetViewController">
             <connections>
+                <outlet property="AIBtn" destination="sth-cG-IpA" id="fIw-zG-lFJ"/>
                 <outlet property="leftTableView" destination="3T7-5h-VPc" id="p0T-dJ-jWR"/>
                 <outlet property="rightTableView" destination="bXN-Ai-R5Y" id="6bz-IW-2ar"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -50,9 +51,23 @@
                         <constraint firstAttribute="width" constant="0.5" id="sym-gM-vm1"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sth-cG-IpA">
+                    <rect key="frame" x="275" y="567" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="VOJ-LH-Fan"/>
+                        <constraint firstAttribute="height" constant="50" id="uv7-P9-bje"/>
+                    </constraints>
+                    <state key="normal" title="AI">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="AIAction" destination="-1" eventType="touchUpInside" id="8s9-zt-3MM"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="sth-cG-IpA" secondAttribute="trailing" constant="50" id="16U-ne-DHk"/>
                 <constraint firstAttribute="bottom" secondItem="JAu-ar-D5G" secondAttribute="bottom" id="4nf-nr-adT"/>
                 <constraint firstItem="JAu-ar-D5G" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5Ed-33-Vpq"/>
                 <constraint firstAttribute="trailing" secondItem="8i9-TJ-drq" secondAttribute="trailing" id="5NZ-FT-TiK"/>
@@ -60,6 +75,7 @@
                 <constraint firstItem="JAu-ar-D5G" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Enx-NQ-rJB"/>
                 <constraint firstItem="8i9-TJ-drq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FfW-YI-KoJ"/>
                 <constraint firstAttribute="bottom" secondItem="8i9-TJ-drq" secondAttribute="bottom" id="o6B-xZ-9kU"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="sth-cG-IpA" secondAttribute="bottom" constant="50" id="viA-2x-awZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="138.40000000000001" y="154.27286356821591"/>
