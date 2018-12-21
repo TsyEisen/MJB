@@ -79,13 +79,11 @@
     for (NSArray *games in self.leftArray) {
         SYGameListModel *model = games.firstObject;
         NSString *sclassID = [[SYDataAnalyzeManager sharedSYDataAnalyzeManager].sportIdToResultSprorId objectForKey:model.LeagueId];
-        if (sclassID == nil) {
-            continue;
-        }
+    
         NSArray *resultArray = nil;
         for (NSArray *results in self.rightArray) {
             SYGameResultModel *result = results.firstObject;
-            if ([sclassID isEqualToString:result.sclassID]) {
+            if ([sclassID isEqualToString:result.sclassID] || [model.SortName isEqualToString:result.sortName]) {
                 resultArray = results;
                 break;
             }
@@ -97,11 +95,12 @@
                 }
                 NSString *homeName = [[SYDataAnalyzeManager sharedSYDataAnalyzeManager].gameIdToResultGameName objectForKey:[game.HomeTeam stringByAppendingString:game.HomeTeamId]];
                 NSString *awayName = [[SYDataAnalyzeManager sharedSYDataAnalyzeManager].gameIdToResultGameName objectForKey:[game.AwayTeam stringByAppendingString:game.AwayTeamId]];
-                if (homeName == nil || awayName == nil) {
-                    continue;
-                }
+                
                 for (SYGameResultModel *result in resultArray) {
-                    if ([result.hTeam isEqualToString:homeName] && [result.gTeam isEqualToString:awayName]) {
+                    BOOL homeStatus = [result.hTeam isEqualToString:homeName] || [result.hTeam isEqualToString:game.HomeTeam];
+                    BOOL awayStatus = [result.gTeam isEqualToString:awayName] || [result.gTeam isEqualToString:game.AwayTeam];
+                    NSString *gameTime = [[game.MatchTime componentsSeparatedByString:@"T"].firstObject stringByReplacingOccurrencesOfString:@"-" withString:@""];
+                    if ([result.time hasPrefix:gameTime] && (homeStatus || awayStatus)) {
                         game.homeScore = result.hScore;
                         game.awayScore = result.gScore;
                         game.score = [NSString stringWithFormat:@"%@:%@",result.hScore,result.gScore];
@@ -146,9 +145,11 @@
     [self.rightTableView reloadData];
     [self.leftTableView reloadData];
     
-    if (self.rightTableView.contentOffset.y > 0) {
-        [self.rightTableView setContentOffset:CGPointZero animated:YES];
-    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.rightTableView.contentOffset.y > 0) {
+            [self.rightTableView setContentOffset:CGPointZero animated:YES];
+        }
+    });
 }
 #pragma mark - tableView DataSource
 

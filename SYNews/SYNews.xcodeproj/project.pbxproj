@@ -138,6 +138,7 @@
 		F0499A9521C8F1D9004CD78D /* SYFootballScoreSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0499A9321C8F1D9004CD78D /* SYFootballScoreSetViewController.xib */; };
 		F0499A9A21C9E2D8004CD78D /* SYScoreSetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0499A9821C9E2D8004CD78D /* SYScoreSetCell.m */; };
 		F0499A9B21C9E2D8004CD78D /* SYScoreSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0499A9921C9E2D8004CD78D /* SYScoreSetCell.xib */; };
+		F0499AD021CC7922004CD78D /* NSString+SYCachePath.m in Sources */ = {isa = PBXBuildFile; fileRef = F0499ACF21CC7922004CD78D /* NSString+SYCachePath.m */; };
 		F059741B21C1F60100CFD804 /* SYNBADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F059741A21C1F60100CFD804 /* SYNBADataManager.m */; };
 		F059741F21C1FF4E00CFD804 /* SYBasketBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F059741E21C1FF4E00CFD804 /* SYBasketBallViewController.m */; };
 		F059742821C273E600CFD804 /* SYResultSportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F059742721C273E600CFD804 /* SYResultSportModel.m */; };
@@ -455,6 +456,8 @@
 		F0499A9721C9E2D8004CD78D /* SYScoreSetCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYScoreSetCell.h; sourceTree = "<group>"; };
 		F0499A9821C9E2D8004CD78D /* SYScoreSetCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYScoreSetCell.m; sourceTree = "<group>"; };
 		F0499A9921C9E2D8004CD78D /* SYScoreSetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SYScoreSetCell.xib; sourceTree = "<group>"; };
+		F0499ACE21CC7922004CD78D /* NSString+SYCachePath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SYCachePath.h"; sourceTree = "<group>"; };
+		F0499ACF21CC7922004CD78D /* NSString+SYCachePath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+SYCachePath.m"; sourceTree = "<group>"; };
 		F059741921C1F60100CFD804 /* SYNBADataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYNBADataManager.h; sourceTree = "<group>"; };
 		F059741A21C1F60100CFD804 /* SYNBADataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYNBADataManager.m; sourceTree = "<group>"; };
 		F059741D21C1FF4E00CFD804 /* SYBasketBallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYBasketBallViewController.h; sourceTree = "<group>"; };
@@ -828,6 +831,8 @@
 				F03B91731F54FDD00033A3B5 /* UIColor+SYExtension.m */,
 				F03B91741F54FDD00033A3B5 /* UIView+SYExtension.h */,
 				F03B91751F54FDD00033A3B5 /* UIView+SYExtension.m */,
+				F0499ACE21CC7922004CD78D /* NSString+SYCachePath.h */,
+				F0499ACF21CC7922004CD78D /* NSString+SYCachePath.m */,
 			);
 			path = SYCategory;
 			sourceTree = "<group>";
@@ -1468,6 +1473,7 @@
 				9F42B592218EE187001451A5 /* SYDataAnalysisView.m in Sources */,
 				F03B91BC1F54FEF30033A3B5 /* SYHomeViewController.m in Sources */,
 				F03B918E1F54FDD00033A3B5 /* MKAnnotationView+WebCache.m in Sources */,
+				F0499AD021CC7922004CD78D /* NSString+SYCachePath.m in Sources */,
 				F03B91ED1F5566800033A3B5 /* SYHomeNewsViewController.m in Sources */,
 				F03FC22C1F5CFFE400DF465B /* MJRefreshGifHeader.m in Sources */,
 				F0285F8E21B914F700FB95F6 /* SYDataAnalyzeManager.m in Sources */,

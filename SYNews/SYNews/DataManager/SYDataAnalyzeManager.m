@@ -19,6 +19,8 @@
 
 @property (nonatomic, strong) NSMutableDictionary *resultSprots;
 @property (nonatomic, strong) NSMutableDictionary *resultGames;
+
+@property (nonatomic, strong) NSMutableDictionary *dateResults;
 @end
 
 @implementation SYDataAnalyzeManager
@@ -170,14 +172,32 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     if (date == nil) {
         date = [NSDate date];
     }
+    
+    
+    NSString *dateStr = [date sy_stringWithFormat:@"yyyy-MM-dd"];
+    
+    if (![date sy_isToday]) {
+        NSDictionary *dateResult = [self.dateResults objectForKey:dateStr];
+        if (dateResult) {
+            [self handleData:dateResult completion:completion];
+            return;
+        }
+    }
 
     NSString *url = @"http://api.nowscore.com//info/GetSchedule";
-    NSDictionary *params = @{@"lang":@"0",@"from":@"2",@"date":[date sy_stringWithFormat:@"yyyy-MM-dd"]};
+    NSDictionary *params = @{@"lang":@"0",@"from":@"2",@"date":dateStr};
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/html", @"text/plain"]];
     [manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            if (![date sy_isToday]) {
+                [self.dateResults setObject:responseObject forKey:dateStr];
+                [self.dateResults writeToFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeDateResults] atomically:YES];
+            }else {
+                [self.dateResults removeObjectForKey:dateStr];
+                [self.dateResults writeToFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeDateResults] atomically:YES];
+            }
             [self handleData:responseObject completion:completion];
         }else {
             completion(nil);
@@ -310,6 +330,9 @@ SYSingleton_implementation(SYDataAnalyzeManager)
 - (NSMutableDictionary *)sportIdToResultSprorId {
     if (_sportIdToResultSprorId == nil) {
         _sportIdToResultSprorId = [[NSMutableDictionary alloc] initWithContentsOfFile:[self pathWithName:@"sportIdToResultSprorId"]];
+        if (_sportIdToResultSprorId == nil) {
+            _sportIdToResultSprorId = [NSMutableDictionary dictionary];
+        }
     }
     return _sportIdToResultSprorId;
 }
@@ -317,7 +340,20 @@ SYSingleton_implementation(SYDataAnalyzeManager)
 - (NSMutableDictionary *)gameIdToResultGameName {
     if (_gameIdToResultGameName == nil) {
         _gameIdToResultGameName = [[NSMutableDictionary alloc] initWithContentsOfFile:[self pathWithName:@"gameIdToResultGameName"]];
+        if (_gameIdToResultGameName == nil) {
+            _gameIdToResultGameName = [NSMutableDictionary dictionary];
+        }
     }
     return _gameIdToResultGameName;
+}
+
+- (NSMutableDictionary *)dateResults {
+    if (_dateResults == nil) {
+        _dateResults = [[NSMutableDictionary alloc] initWithContentsOfFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeDateResults]];
+        if (_dateResults == nil) {
+            _dateResults = [NSMutableDictionary dictionary];
+        }
+    }
+    return _dateResults;
 }
 @end
