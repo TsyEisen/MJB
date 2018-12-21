@@ -31,9 +31,22 @@ SYSingleton_implementation(SYSportDataManager)
 /*
  http://api.spdex.com/spdex/match_data/sports?class=-1&jcfrom=1&sports=1,7522&app=z&version=i3.11
  */
+//29021624#2018-12-01T13:00:00
+//- (void)washData {
+//    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"20181221.plist" ofType:nil]];
+//    NSMutableDictionary *temp = [NSMutableDictionary dictionary];
+//    for (NSString *key in dict) {
+//        NSString *month = [key substringWithRange:NSMakeRange(14, 2)];
+//        NSString *date = [key substringWithRange:NSMakeRange(17, 2)];
+//        if ([month isEqualToString:@"12"] && [date integerValue] > 20) {
+//            [temp setObject:dict[key] forKey:key];
+//        }
+//    }
+//    [temp writeToFile:[self dataPathWithFileName:@"test.plist"] atomically:YES];
+//}
 
 - (void)requestAllDatasCompletion:(void (^)(NSArray *))completion {
-   
+//    [self washData];
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_group_t group = dispatch_group_create();
     for (SYSportModel *model in self.sports) {
