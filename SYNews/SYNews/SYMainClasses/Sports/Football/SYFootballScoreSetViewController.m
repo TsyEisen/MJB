@@ -207,9 +207,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (tableView == self.leftTableView) {
-        self.seletedGame = indexPath;
+        if (self.seletedGame == indexPath) {
+            self.seletedGame = nil;
+        }else {
+            self.seletedGame = indexPath;
+        }
     }else {
-        self.seletedResult = indexPath;
+        if (self.seletedResult == indexPath) {
+            self.seletedResult = nil;
+        }else {
+            self.seletedResult = indexPath;
+        }
     }
     
     [self reloadData];
