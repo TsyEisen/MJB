@@ -194,9 +194,6 @@ SYSingleton_implementation(SYDataAnalyzeManager)
             if (![date sy_isToday]) {
                 [self.dateResults setObject:responseObject forKey:dateStr];
                 [self.dateResults writeToFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeDateResults] atomically:YES];
-            }else {
-                [self.dateResults removeObjectForKey:dateStr];
-                [self.dateResults writeToFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeDateResults] atomically:YES];
             }
             [self handleData:responseObject completion:completion];
         }else {

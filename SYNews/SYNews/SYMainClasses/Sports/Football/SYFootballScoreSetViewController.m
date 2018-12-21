@@ -9,6 +9,7 @@
 #import "SYFootballScoreSetViewController.h"
 #import "SYDatePickerTool.h"
 #import "SYScoreSetCell.h"
+
 @interface SYFootballScoreSetViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 @property (weak, nonatomic) IBOutlet UITableView *rightTableView;
@@ -47,7 +48,7 @@
     
     self.navigationItem.rightBarButtonItems = @[self.rightItem2,self.rightItem];
     
-    [self requestDataWithDate:[NSDate date]];
+    [self requestDataWithDate:[[NSDate date] sy_yesterday]];
 }
 
 - (void)initalTableView:(UITableView *)tableView {
