@@ -193,7 +193,8 @@ SYSingleton_implementation(SYDataAnalyzeManager)
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             if (![date sy_isToday]) {
                 [self.dateResults setObject:responseObject forKey:dateStr];
-                [self.dateResults writeToFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeDateResults] atomically:YES];
+                BOOL status = [self.dateResults writeToFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeDateResults] atomically:YES];
+                NSLog(@"保存完毕--%d",status);
             }
             [self handleData:responseObject completion:completion];
         }else {
@@ -258,7 +259,7 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     game.homeScore = result.hScore;
     game.awayScore = result.gScore;
     game.score = [NSString stringWithFormat:@"%@:%@",result.hScore,result.gScore];
-    [self.sportIdToResultSprorId setObject:game.LeagueId forKey:result.sclassID];
+    [self.sportIdToResultSprorId setObject:result.sortName forKey:game.SortName];
     [self.gameIdToResultGameName setObject:result.hTeam forKey:[game.HomeTeam stringByAppendingString:game.HomeTeamId]];
     [self.gameIdToResultGameName setObject:result.gTeam forKey:[game.AwayTeam stringByAppendingString:game.AwayTeamId]];
     [self.sportIdToResultSprorId writeToFile:[self pathWithName:@"sportIdToResultSprorId"] atomically:YES];

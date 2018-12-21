@@ -112,4 +112,5 @@
 
 @property (nonatomic, copy) NSString *sortName;
 
+@property(nonatomic,assign)NSInteger dateSeconds;
 @end

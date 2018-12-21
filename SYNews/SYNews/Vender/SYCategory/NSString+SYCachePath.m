@@ -11,6 +11,7 @@
 @implementation NSString (SYCachePath)
 + (NSString *)sy_locationDocumentsWithType:(SYCachePathType)type {
     NSString *document = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true).firstObject;
-    return [document stringByAppendingString:[NSString stringWithFormat:@"SYCachePathType_%zd_data.plist",type]];
+    NSString *path = [document stringByAppendingPathComponent:[NSString stringWithFormat:@"SYCachePathType_%zd_data.plist",type]];
+    return path;
 }
 @end

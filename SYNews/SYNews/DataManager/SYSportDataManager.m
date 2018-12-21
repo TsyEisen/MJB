@@ -445,11 +445,11 @@ SYSingleton_implementation(SYSportDataManager)
     }
 }
 
-- (void)sy_writeToFile:(id)datas forPath:(NSString *)path{
+- (BOOL)sy_writeToFile:(id)datas forPath:(NSString *)path{
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         [[NSFileManager defaultManager] createFileAtPath:path contents:nil attributes:nil];
     }
-    [datas writeToFile:path atomically:YES];
+    return [datas writeToFile:path atomically:YES];
 }
 
 - (NSString *)dataPathWithFileName:(NSString *)fileName {

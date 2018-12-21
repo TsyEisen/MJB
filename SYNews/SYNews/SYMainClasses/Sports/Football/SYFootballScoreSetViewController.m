@@ -67,24 +67,25 @@
     self.AIBtn.selected = !self.AIBtn.selected;
     if (self.AIBtn.selected) {
         self.AIBtn.backgroundColor = [UIColor redColor];
+        self.AIBtn.layer.borderColor = [UIColor redColor].CGColor;
         [self.AIBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self AIAnalize];
     }else {
         self.AIBtn.backgroundColor = [UIColor clearColor];
+        self.AIBtn.layer.borderColor = [UIColor blackColor].CGColor;
         [self.AIBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
-    
-    [self AIAnalize];
 }
 
 - (void)AIAnalize {
     for (NSArray *games in self.leftArray) {
         SYGameListModel *model = games.firstObject;
-        NSString *sclassID = [[SYDataAnalyzeManager sharedSYDataAnalyzeManager].sportIdToResultSprorId objectForKey:model.LeagueId];
+        NSString *sortName = [[SYDataAnalyzeManager sharedSYDataAnalyzeManager].sportIdToResultSprorId objectForKey:model.SortName];
     
         NSArray *resultArray = nil;
         for (NSArray *results in self.rightArray) {
-            SYGameResultModel *result = results.firstObject;
-            if ([sclassID isEqualToString:result.sclassID] || [model.SortName isEqualToString:result.sortName]) {
+            SYGameResultModel *resultModel = results.firstObject;
+            if ([sortName isEqualToString:resultModel.sortName] || [model.SortName isEqualToString:resultModel.sortName]) {
                 resultArray = results;
                 break;
             }
@@ -100,8 +101,8 @@
                 for (SYGameResultModel *result in resultArray) {
                     BOOL homeStatus = [result.hTeam isEqualToString:homeName] || [result.hTeam isEqualToString:game.HomeTeam];
                     BOOL awayStatus = [result.gTeam isEqualToString:awayName] || [result.gTeam isEqualToString:game.AwayTeam];
-                    NSString *gameTime = [[game.MatchTime componentsSeparatedByString:@"T"].firstObject stringByReplacingOccurrencesOfString:@"-" withString:@""];
-                    if ([result.time hasPrefix:gameTime] && (homeStatus || awayStatus)) {
+//                    NSString *gameTime = [[game.MatchTime componentsSeparatedByString:@"T"].firstObject stringByReplacingOccurrencesOfString:@"-" withString:@""];
+                    if (labs(result.dateSeconds - game.dateSeconds) < 121 && (homeStatus || awayStatus)) {
                         game.homeScore = result.hScore;
                         game.awayScore = result.gScore;
                         game.score = [NSString stringWithFormat:@"%@:%@",result.hScore,result.gScore];
@@ -122,8 +123,14 @@
             }
         }
     }
-    [[SYSportDataManager sharedSYSportDataManager] changeScoreWithModels:tempArray];
-    [MBProgressHUD showSuccess:@"存储完毕" toView:nil];
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [[SYSportDataManager sharedSYSportDataManager] changeScoreWithModels:tempArray];
+        dispatch_async(dispatch_get_main_queue(), ^{
+             [MBProgressHUD showSuccess:@"存储完毕" toView:nil];
+        });
+    });
+    
 }
 
 #pragma mark - 网络请求
@@ -138,6 +145,11 @@
                 [weakSelf AIAnalize];
             }
             [weakSelf reloadData];
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                if (weakSelf.rightTableView.contentOffset.y > 0) {
+//                    [weakSelf.rightTableView setContentOffset:CGPointZero animated:YES];
+//                }
+//            });
         }
     }];
 }
@@ -145,12 +157,6 @@
 - (void)reloadData {
     [self.rightTableView reloadData];
     [self.leftTableView reloadData];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (self.rightTableView.contentOffset.y > 0) {
-            [self.rightTableView setContentOffset:CGPointZero animated:YES];
-        }
-    });
 }
 #pragma mark - tableView DataSource
 
