@@ -159,7 +159,7 @@
 		F0681D36219418A200071B23 /* SYRenameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0681D35219418A200071B23 /* SYRenameView.xib */; };
 		F0681D392194202500071B23 /* SYAddNewRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0681D382194202500071B23 /* SYAddNewRecommendView.m */; };
 		F0681D3B2194203800071B23 /* SYAddNewRecommendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0681D3A2194203800071B23 /* SYAddNewRecommendView.xib */; };
-		F07908A821CCC3B100FDA09C /* 20181221.plist in Resources */ = {isa = PBXBuildFile; fileRef = F07908A721CCC3B100FDA09C /* 20181221.plist */; };
+		F07908AA21D1BFDB00FDA09C /* 20181225.plist in Resources */ = {isa = PBXBuildFile; fileRef = F07908A921D1BFD800FDA09C /* 20181225.plist */; };
 		F09A6645216CA1E700C3C20A /* SYCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6643216CA1E700C3C20A /* SYCategoryViewController.m */; };
 		F09A6646216CA1E700C3C20A /* SYCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09A6644216CA1E700C3C20A /* SYCategoryViewController.xib */; };
 		F09A664A216CA2EA00C3C20A /* SYCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6648216CA2EA00C3C20A /* SYCategoryCell.m */; };
@@ -494,7 +494,7 @@
 		F0681D372194202500071B23 /* SYAddNewRecommendView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYAddNewRecommendView.h; sourceTree = "<group>"; };
 		F0681D382194202500071B23 /* SYAddNewRecommendView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYAddNewRecommendView.m; sourceTree = "<group>"; };
 		F0681D3A2194203800071B23 /* SYAddNewRecommendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SYAddNewRecommendView.xib; sourceTree = "<group>"; };
-		F07908A721CCC3B100FDA09C /* 20181221.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181221.plist; sourceTree = "<group>"; };
+		F07908A921D1BFD800FDA09C /* 20181225.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20181225.plist; sourceTree = "<group>"; };
 		F09A6642216CA1E700C3C20A /* SYCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYCategoryViewController.h; sourceTree = "<group>"; };
 		F09A6643216CA1E700C3C20A /* SYCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYCategoryViewController.m; sourceTree = "<group>"; };
 		F09A6644216CA1E700C3C20A /* SYCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SYCategoryViewController.xib; sourceTree = "<group>"; };
@@ -1163,7 +1163,7 @@
 		F0E242DA21703AB6008CB6D8 /* lastData */ = {
 			isa = PBXGroup;
 			children = (
-				F07908A721CCC3B100FDA09C /* 20181221.plist */,
+				F07908A921D1BFD800FDA09C /* 20181225.plist */,
 			);
 			path = lastData;
 			sourceTree = "<group>";
@@ -1336,7 +1336,7 @@
 				F068019A215E22910032C4DA /* SYCompareViewController.xib in Resources */,
 				F09A664B216CA2EA00C3C20A /* SYCategoryCell.xib in Resources */,
 				F03B91B81F54FEE60033A3B5 /* SYDiscoverViewController.xib in Resources */,
-				F07908A821CCC3B100FDA09C /* 20181221.plist in Resources */,
+				F07908AA21D1BFDB00FDA09C /* 20181225.plist in Resources */,
 				F03B91C21F54FF0F0033A3B5 /* SYMineViewController.xib in Resources */,
 				F068019F215F0D150032C4DA /* SYGameTableTitleCell.xib in Resources */,
 				F03FC2461F5D3CE300DF465B /* SYFeedbackViewController.xib in Resources */,
