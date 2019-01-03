@@ -8,7 +8,7 @@
 
 #import "SYBasketBallViewController.h"
 #import "MJRefresh.h"
-#import "SYGameListCell.h"
+#import "SYBasketballListCell.h"
 #import "SYNBADataManager.h"
 @interface SYBasketBallViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -31,7 +31,7 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.top.equalTo(self.view);
     }];
-    [self.tableView sy_registerNibWithClass:[SYGameListCell class]];
+    [self.tableView sy_registerNibWithClass:[SYBasketballListCell class]];
     [self setupMJRefresh];
     
     self.navigationItem.titleView = self.segment;
@@ -60,7 +60,7 @@
     NSMutableArray *tempArrayAI = [NSMutableArray array];
     for (SYGameListModel *model in self.datas) {
         if (model.dateSeconds <= [[NSDate date] timeIntervalSince1970]) {
-            [tempArrayStart addObject:model];
+            [tempArrayStart insertObject:model atIndex:0];
         }else {
             [tempArrayUnStart addObject:model];
         }
@@ -105,14 +105,18 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SYGameListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SYGameListCell class])];
+    SYBasketballListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SYBasketballListCell class])];
 //    cell.recommend = self.type == SYListTypeNear && self.segment.selectedSegmentIndex == 2;
     cell.model = [self modelFromIndexPath:indexPath];
     return cell;
 }
 
-- (SYGameListModel *)modelFromIndexPath:(NSIndexPath *)indexPath {
-    SYGameListModel *model = nil;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (SYBasketBallModel *)modelFromIndexPath:(NSIndexPath *)indexPath {
+    SYBasketBallModel *model = nil;
     if (self.segment.selectedSegmentIndex == 0) {
         model = self.startDatas[indexPath.row];
     } else if (self.segment.selectedSegmentIndex == 1) {

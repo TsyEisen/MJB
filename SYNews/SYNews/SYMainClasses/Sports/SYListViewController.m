@@ -57,7 +57,6 @@
     [self setupMJRefresh];
     if (self.type == SYListTypeCategory) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshAction) name:@"dataNeedRefresh" object:nil];
-        
     }
     
     if (self.type == SYListTypeNear) {
@@ -117,7 +116,7 @@
     NSMutableArray *tempArrayAI = [NSMutableArray array];
     for (SYGameListModel *model in self.datas) {
         if (model.dateSeconds <= [[NSDate date] timeIntervalSince1970]) {
-            [tempArrayStart addObject:model];
+            [tempArrayStart insertObject:model atIndex:0];
         }else {
             [tempArrayUnStart addObject:model];
         }

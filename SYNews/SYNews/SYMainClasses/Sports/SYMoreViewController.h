@@ -9,5 +9,5 @@
 #import "SYBaseViewController.h"
 
 @interface SYMoreViewController : SYBaseViewController
-
+@property (nonatomic, assign) SYMoreVCType type;
 @end

@@ -27,8 +27,10 @@
 #import "SYCommentRequest.h"
 #import "SYCoder.h"
 #import "SYSportDataManager.h"
+#import "SYNBADataManager.h"
 #import "SYDataAnalyzeManager.h"
 #import "SYGameResultModel.h"
+#import "SYBasketBallModel.h"
 
 #import "NSDate+SYExtension.h"
 #import "NSAttributedString+SYExtension.h"
@@ -38,5 +40,10 @@
 #define DefaultPlaceHolder [UIImage imageNamed:@"placeHolder"]
 
 #define kBaseUrl @"http://api.spdex.com"
+
+typedef NS_ENUM(NSUInteger, SYMoreVCType) {
+    SYMoreVCTypeFootball = 0,
+    SYMoreVCTypeBasketball = 1
+};
 
 #endif /* PrefixHeader_pch */

@@ -33,7 +33,7 @@
                 baseVc = [(SYBaseViewController *)[NSClassFromString(model.className) alloc] initWithNibName:model.className bundle:nil];
             }
             
-            if ([model.className isEqualToString:@"SYListViewController"]) {
+            if ([model.className isEqualToString:@"SYListViewController"] || [model.className isEqualToString:@"SYMoreViewController"]) {
                 [baseVc setValue:@(model.type) forKey:@"type"];
             }
             
@@ -75,8 +75,8 @@
 
 @implementation SYChildVCModel
 
-+ (NSArray *)moreVcModels {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"SYMoreVCData" ofType:@"plist"];
++ (NSArray *)moreVcModelsWithType:(SYMoreVCType)type {
+    NSString *path = [[NSBundle mainBundle] pathForResource:type == SYMoreVCTypeFootball?@"SYMoreVCFootballData":@"SYMoreVCBasketballData" ofType:@"plist"];
     NSArray *array = [NSArray arrayWithContentsOfFile:path];
     return [SYChildVCModel mj_objectArrayWithKeyValuesArray:array];
 }

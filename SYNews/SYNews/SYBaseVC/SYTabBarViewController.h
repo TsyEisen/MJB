@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *imageName;
 @property (nonatomic, copy) NSString *selectedImageName;
 @property (nonatomic, assign) SYListType type;
-+ (NSArray *)moreVcModels;
++ (NSArray *)moreVcModelsWithType:(SYMoreVCType)type;
 + (NSArray *)tabBarVcModels;
 @end
 

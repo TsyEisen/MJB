@@ -259,7 +259,7 @@
                 <outlet property="timeLabel" destination="XJR-kF-12J" id="nEB-Sm-bbt"/>
                 <outlet property="vsLabel" destination="1ww-7A-1R0" id="JKQ-i7-iEQ"/>
             </connections>
-            <point key="canvasLocation" x="107" y="97.5"/>
+            <point key="canvasLocation" x="105.59999999999999" y="96.7016491754123"/>
         </tableViewCell>
     </objects>
 </document>

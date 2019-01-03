@@ -38,25 +38,27 @@
 	</dict>
 	<dict>
 		<key>className</key>
-		<string>SYListViewController</string>
+		<string>SYMoreViewController</string>
 		<key>title</key>
-		<string>历史</string>
+		<string>篮球</string>
 		<key>imageName</key>
 		<string>football2</string>
 		<key>selectedImageName</key>
 		<string>football2</string>
 		<key>type</key>
-		<string>4</string>
+		<string>1</string>
 	</dict>
 	<dict>
 		<key>className</key>
 		<string>SYMoreViewController</string>
 		<key>title</key>
-		<string>更多</string>
+		<string>足球</string>
 		<key>imageName</key>
 		<string>football2</string>
 		<key>selectedImageName</key>
 		<string>football2</string>
+		<key>type</key>
+		<string>0</string>
 	</dict>
 </array>
 </plist>

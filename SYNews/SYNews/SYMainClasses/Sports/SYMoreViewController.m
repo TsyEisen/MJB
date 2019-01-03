@@ -86,7 +86,7 @@
 
 - (NSArray *)datas {
     if (_datas == nil) {
-        _datas = [SYChildVCModel moreVcModels];
+        _datas = [SYChildVCModel moreVcModelsWithType:self.type];
     }
     return _datas;
 }

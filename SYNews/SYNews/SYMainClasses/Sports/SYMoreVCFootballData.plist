@@ -58,6 +58,14 @@
 	</dict>
 	<dict>
 		<key>className</key>
+		<string>SYListViewController</string>
+		<key>title</key>
+		<string>历史</string>
+		<key>type</key>
+		<string>4</string>
+	</dict>
+	<dict>
+		<key>className</key>
 		<string>SYRecommendViewController</string>
 		<key>title</key>
 		<string>推介</string>

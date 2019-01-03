@@ -242,6 +242,7 @@
 - (SYDatePickerTool *)datePicker {
     if (_datePicker == nil) {
         _datePicker = [[SYDatePickerTool alloc] initWithDatePickerMode:UIDatePickerModeDate];
+        _datePicker.maximumDate = [NSDate date];
         __weak typeof(self) weakSelf = self;
         [_datePicker setDoneAction:^(NSDate *date) {
             [weakSelf requestDataWithDate:date];
