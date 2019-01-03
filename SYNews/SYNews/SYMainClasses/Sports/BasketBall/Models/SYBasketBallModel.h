@@ -97,7 +97,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  单笔最大交易额
  */
-@property (nonatomic, copy) NSString *MaxTradedChange;
+@property (nonatomic, assign) CGFloat MaxTradedChange;
 
 @property (nonatomic, copy) NSString *homeScore;
 
