@@ -148,7 +148,7 @@ SYSingleton_implementation(SYNBADataManager)
 //        NSLog(@"成功 %@ %@",[responseObject class],html);
         if (html.length > 0) {
             [self handelResult:html completion:completion];
-            if (![date sy_isToday]) {
+            if (![date sy_isToday] && ![date sy_isYesterday]) {
                 [self.dateResults setObject:html forKey:dateStr];
                 BOOL status = [self.dateResults writeToFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeNBADateResults] atomically:YES];
                 NSLog(@"保存完毕--%d",status);
