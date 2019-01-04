@@ -11,7 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, SYCachePathType) {
-    SYCachePathTypeDateResults = 0
+    SYCachePathTypeDateResults = 0,
+    SYCachePathTypeNBADateResults = 1,
+    SYCachePathTypeNBAGameNameToResultName = 2,
+    SYCachePathTypeNBARank = 3
 };
 
 @interface NSString (SYCachePath)

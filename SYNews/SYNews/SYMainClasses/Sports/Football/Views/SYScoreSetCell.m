@@ -37,6 +37,13 @@
         self.awayLabel.text = item.gTeam;
         self.homeScoreLabel.text = item.hScore;
         self.awayScoreLabel.text = item.gScore;
+    }else if ([model isKindOfClass:[SYBasketBallModel class]]) {
+        SYBasketBallModel *item = (SYBasketBallModel *)model;
+        self.dateLabel.text = item.showTime;
+        self.homeLabel.text = item.HomeTeam;
+        self.awayLabel.text = item.AwayTeam;
+        self.homeScoreLabel.text = item.homeScore;
+        self.awayScoreLabel.text = item.awayScore;
     }
 }
 

@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSMutableDictionary *gameJsons;
 @property (nonatomic, strong) NSMutableDictionary *currentGameJsons;
 @property (nonatomic, strong) NSArray *allGames;
+@property (nonatomic, strong) NSMutableDictionary *dateResults;
+
 @end
 
 @implementation SYNBADataManager
@@ -23,10 +25,29 @@ SYSingleton_implementation(SYNBADataManager)
 - (void)requestDatasByType:(SYNBAListType)type Completion:(void(^)(NSArray *datas))completion {
     if (type == SYNBAListTypeToday) {
         [self requestDataCompletion:completion];
-    }
-    if (type == SYNBAListTypeAll){
+    }else if (type == SYNBAListTypeHistory){
+        NSArray *games = [SYBasketBallModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
+        NSMutableArray *tempArray = [NSMutableArray array];
+        for (SYBasketBallModel *model in games) {
+            if ([[NSDate date] timeIntervalSince1970] - model.dateSeconds > 7200) {
+                [tempArray addObject:model];
+            }
+        }
+        
         NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:NO];
-        NSArray * newgames = [self.allGames sortedArrayUsingDescriptors:@[timeSD]];
+        NSArray * newgames = [tempArray sortedArrayUsingDescriptors:@[timeSD]];
+        completion(newgames);
+    }else if (type == SYNBAListTypeNoScore) {
+        NSArray *games = [SYBasketBallModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
+        NSMutableArray *tempArray = [NSMutableArray array];
+        for (SYBasketBallModel *model in games) {
+            if ([[NSDate date] timeIntervalSince1970] - model.dateSeconds > 7200 && model.homeScore.length == 0) {
+                [tempArray addObject:model];
+            }
+        }
+        
+        NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:NO];
+        NSArray * newgames = [tempArray sortedArrayUsingDescriptors:@[timeSD]];
         completion(newgames);
     }
 }
@@ -46,7 +67,7 @@ SYSingleton_implementation(SYNBADataManager)
                     [self.currentGameJsons setValue:gameJson forKey:[NSString stringWithFormat:@"%@",[gameJson objectForKey:@"EventId"]]];
                     [self.gameJsons setValue:gameJson forKey:[NSString stringWithFormat:@"%@",[gameJson objectForKey:@"EventId"]]];
                 }
-                [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
+                [self save];
                 _allGames = [SYBasketBallModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
                 completion([SYBasketBallModel mj_objectArrayWithKeyValuesArray:array]);
             }else {
@@ -101,13 +122,13 @@ SYSingleton_implementation(SYNBADataManager)
     
     NSString *dateStr = [date sy_stringWithFormat:@"yyyy-MM-dd"];
     
-//    if (![date sy_isToday]) {
-//        NSDictionary *dateResult = [self.dateResults objectForKey:dateStr];
-//        if (dateResult) {
-//            [self handleData:dateResult completion:completion];
-//            return;
-//        }
-//    }
+    if (![date sy_isToday]) {
+        NSString *result = [self.dateResults objectForKey:dateStr];
+        if (result.length > 0) {
+            [self handelResult:result completion:completion];
+            return;
+        }
+    }
     
     NSString *url = @"http://ios.win007.com/phone/LqSchedule.aspx";
     NSDictionary *params = @{
@@ -120,23 +141,22 @@ SYSingleton_implementation(SYNBADataManager)
                              };
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/html", @"text/plain"]];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *html = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
 //        NSLog(@"成功 %@ %@",[responseObject class],html);
-        [self handelResult:html];
-//        if ([responseObject isKindOfClass:[NSDictionary class]]) {
-//            if (![date sy_isToday]) {
-//                [self.dateResults setObject:responseObject forKey:dateStr];
-//                BOOL status = [self.dateResults writeToFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeDateResults] atomically:YES];
-//                NSLog(@"保存完毕--%d",status);
-//            }
-//            [self handleData:responseObject completion:completion];
-//        }else {
-//            completion(nil);
-//        }
+        if (html.length > 0) {
+            [self handelResult:html completion:completion];
+            if (![date sy_isToday]) {
+                [self.dateResults setObject:html forKey:dateStr];
+                BOOL status = [self.dateResults writeToFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeNBADateResults] atomically:YES];
+                NSLog(@"保存完毕--%d",status);
+            }
+        }else {
+            completion(nil);
+        }
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (completion) {
             completion(nil);
@@ -145,8 +165,9 @@ SYSingleton_implementation(SYNBADataManager)
     }];
 }
 
-- (void)handelResult:(NSString *)html {
+- (void)handelResult:(NSString *)html completion:(void (^)(id result))completion{
     NSArray *gamestrings = [html componentsSeparatedByString:@"^#"];
+    NSMutableArray *tempArray = [NSMutableArray array];
     for (NSString *game in gamestrings) {
         //FF0000^20190103080000^-1^^华盛顿奇才^亚特兰大老鹰^114^98^6.5^1.00^0.88^奇才-得分:比尔(24) 篮板:托马斯-布莱恩特(15) 助攻:萨托然斯基(7)<br>老鹰-得分:阿莱克斯.伦(24) 篮板:阿莱克斯.伦(11) 助攻:特雷-杨(9)^^35^29^29^24^24^31^26^14^^^0^5.5^229.5^230.5^0.80^0.86^东11^东12^4^64^53!326126^1
         if ([game hasPrefix:@"76C5F2"]) {
@@ -172,8 +193,27 @@ SYSingleton_implementation(SYNBADataManager)
             NSString *dishTotalScore = second_datas[2];
             NSString *homeGroupLevel = second_datas[6];
             NSString *awayGroupLevel = second_datas[7];
-            NSLog(@"时间:%@\n主队:%@(%@) %@\n客队:%@(%@) %@\n让分:%@\n盘口总分:%@",time,homeName,homeGroupLevel,homeScore,awayName,awayGroupLevel,awayScore,avrLetScore,dishTotalScore);
+//            NSLog(@"时间:%@\n主队:%@(%@) %@\n客队:%@(%@) %@\n让分:%@\n盘口总分:%@",time,homeName,homeGroupLevel,homeScore,awayName,awayGroupLevel,awayScore,avrLetScore,dishTotalScore);
+            
+            SYBasketBallModel *model = [SYBasketBallModel new];
+            
+            NSDate *date = [NSDate sy_dateWithString:time formate:@"yyyyMMddHHmmss"];
+            model.showTime = [date sy_stringWithFormat:@"MM-dd HH:mm"];
+            model.HomeTeam = homeName;
+            model.AwayTeam = awayName;
+            model.homeGroupRank = homeGroupLevel;
+            model.awayGroupRank = awayGroupLevel;
+            model.homeScore = homeScore;
+            model.awayScore = awayScore;
+            model.AsianAvrLet = avrLetScore;
+            model.dishTotalScore = dishTotalScore;
+            model.result = html;
+            model.dateSeconds = [date timeIntervalSince1970];
+            [tempArray addObject:model];
         }
+    }
+    if (completion) {
+        completion(tempArray);
     }
 }
 
@@ -222,16 +262,23 @@ SYSingleton_implementation(SYNBADataManager)
     for (SYBasketBallModel *model in models) {
         [self changeScoreModel:model];
     }
-    
-    [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
 }
 - (void)deleteModel:(SYBasketBallModel *)model {
     
+    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.allGames];
+    for (SYBasketBallModel *item in tempArray) {
+        if ([item.EventId isEqualToString:model.EventId]) {
+            [tempArray removeObject:item];
+            break;
+        }
+    }
+    
+    [self.gameJsons removeObjectForKey:model.EventId];
+    [self save];
 }
 
 - (void)changeScoreModel:(SYBasketBallModel *)model {
     
-    SYBasketBallModel *exitModel = nil;
     for (SYBasketBallModel *item in _allGames) {
         if ([item.EventId isEqualToString:model.EventId]) {
             item.homeScore = model.homeScore;
@@ -241,33 +288,38 @@ SYSingleton_implementation(SYNBADataManager)
             item.homeGroupRank = model.homeGroupRank;
             item.awayGroupRank = model.awayGroupRank;
             item.result = model.result;
-            exitModel = item;
+            
+            if (model.homeGroupRank.length > 0) {
+                [self.ranks setValue:model.homeGroupRank forKey:item.HomeTeam];
+                [self.ranks setValue:model.awayGroupRank forKey:item.AwayTeam];
+            }
+            
             break;
         }
     }
-    if (exitModel) {
-        [self.gameJsons setObject:exitModel.mj_keyValues forKey:model.EventId];
-    }else {
-        [self.gameJsons setObject:model.mj_keyValues forKey:model.EventId];
-    }
-    [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
-    
-    
-//    NSDictionary *json = [self.gameJsons objectForKey:[NSString stringWithFormat:@"%ld#%@",(long)model.EventId,model.MatchTime]];
-//    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-//    if (json) {
-//        [dict addEntriesFromDictionary:json];
-////        [dict setValue:model.score?:@"" forKey:@"score"];
-//        [dict setValue:model.homeScore?:@"" forKey:@"homeScore"];
-//        [dict setValue:model.awayScore?:@"" forKey:@"awayScore"];
+//    if (exitModel) {
+//        [self.gameJsons setObject:exitModel.mj_keyValues forKey:model.EventId];
 //    }else {
-//        dict = model.mj_keyValues;
+//        [self.gameJsons setObject:model.mj_keyValues forKey:model.EventId];
 //    }
-//    
-//    [self.gameJsons setObject:dict forKey:model.EventId];
+
+    NSDictionary *json = [self.gameJsons objectForKey:model.EventId];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    if (json) {
+        [dict addEntriesFromDictionary:json];
+        [dict setValue:model.homeScore forKey:@"homeScore"];
+        [dict setValue:model.awayScore forKey:@"awayScore"];
+        [dict setValue:model.AsianAvrLet forKey:@"AsianAvrLet"];
+        [dict setValue:model.dishTotalScore forKey:@"dishTotalScore"];
+        [dict setValue:model.homeGroupRank forKey:@"homeGroupRank"];
+        [dict setValue:model.awayGroupRank forKey:@"awayGroupRank"];
+        [dict setValue:model.result forKey:@"result"];
+    }else {
+        dict = model.mj_keyValues;
+    }
     
-    
-    
+    [self.gameJsons setObject:dict forKey:model.EventId];
+    [self save];
 //    for (SYRecommendModel *recommend in self.recommends) {
 //        [recommend changeModelInformation:model];
 //    }
@@ -277,7 +329,36 @@ SYSingleton_implementation(SYNBADataManager)
     
 }
 
+- (void)save {
+    [self.ranks writeToFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeNBARank] atomically:YES];
+    [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
+}
+
+- (void)copyScoreFrom:(SYBasketBallModel *)result toGame:(SYBasketBallModel *)game {
+    game.homeScore = result.homeScore;
+    game.awayScore = result.awayScore;
+    game.AsianAvrLet = result.AsianAvrLet;
+    game.dishTotalScore = result.dishTotalScore;
+    game.homeGroupRank = result.homeGroupRank;
+    game.awayGroupRank = result.awayGroupRank;
+    game.result = result.result;
+
+    [self.gameIdToResultGameName setObject:result.HomeTeam forKey:game.HomeTeam];
+    [self.gameIdToResultGameName setObject:result.AwayTeam forKey:game.AwayTeam];
+    [self.gameIdToResultGameName writeToFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeNBAGameNameToResultName] atomically:YES];
+}
+
 #pragma mark - 懒加载
+
+- (NSMutableDictionary *)gameIdToResultGameName {
+    if (_gameIdToResultGameName == nil) {
+        _gameIdToResultGameName = [[NSMutableDictionary alloc] initWithContentsOfFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeNBAGameNameToResultName]];
+        if (_gameIdToResultGameName == nil) {
+            _gameIdToResultGameName = [NSMutableDictionary dictionary];
+        }
+    }
+    return _gameIdToResultGameName;
+}
 
 - (NSMutableDictionary *)currentGameJsons {
     if (_currentGameJsons == nil) {
@@ -288,7 +369,7 @@ SYSingleton_implementation(SYNBADataManager)
 
 - (NSArray *)allGames {
     if (_allGames == nil) {
-        _allGames = [SYBasketBallModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];;
+        _allGames = [SYBasketBallModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
     }
     return _allGames;
 }
@@ -308,5 +389,25 @@ SYSingleton_implementation(SYNBADataManager)
         _timer = [NSTimer scheduledTimerWithTimeInterval:1000 target:self selector:@selector(refreshGameData) userInfo:nil repeats:YES];
     }
     return _timer;
+}
+
+- (NSMutableDictionary *)dateResults {
+    if (_dateResults == nil) {
+        _dateResults = [[NSMutableDictionary alloc] initWithContentsOfFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeNBADateResults]];
+        if (_dateResults == nil) {
+            _dateResults = [NSMutableDictionary dictionary];
+        }
+    }
+    return _dateResults;
+}
+
+- (NSMutableDictionary *)ranks {
+    if (_ranks == nil) {
+        _ranks = [[NSMutableDictionary alloc] initWithContentsOfFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeNBARank]];
+        if (_ranks == nil) {
+            _ranks = [NSMutableDictionary dictionary];
+        }
+    }
+    return _ranks;
 }
 @end

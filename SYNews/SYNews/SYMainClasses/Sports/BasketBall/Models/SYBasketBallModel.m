@@ -15,8 +15,10 @@
 
 - (NSInteger)dateSeconds {
     if (_dateSeconds == 0) {
-        NSDate *date = [NSDate sy_dateWithString:[self.MatchTime stringByReplacingOccurrencesOfString:@"T" withString:@"-"] formate:@"yyyy-MM-dd-HH:mm:ss"];
-        _dateSeconds = [date timeIntervalSince1970];
+        if (self.MatchTime.length > 0) {
+            NSDate *date = [NSDate sy_dateWithString:[self.MatchTime stringByReplacingOccurrencesOfString:@"T" withString:@"-"] formate:@"yyyy-MM-dd-HH:mm:ss"];
+            _dateSeconds = [date timeIntervalSince1970];
+        }
     }
     return _dateSeconds;
 }
@@ -27,5 +29,28 @@
         _updateSeconds = [date timeIntervalSince1970];
     }
     return _updateSeconds;
+}
+
+- (NSString *)showTime {
+    if (_showTime == nil) {
+        if (self.MatchTime.length > 0) {
+            _showTime = [NSDate sy_showMatchTimeWithTime:self.MatchTime];
+        }
+    }
+    return _showTime;
+}
+
+- (NSString *)homeGroupRank {
+    if (_homeGroupRank == nil) {
+        _homeGroupRank = [[SYNBADataManager sharedSYNBADataManager].ranks objectForKey:self.HomeTeam];
+    }
+    return _homeGroupRank;
+}
+
+- (NSString *)awayGroupRank {
+    if (_awayGroupRank == nil) {
+        _awayGroupRank = [[SYNBADataManager sharedSYNBADataManager].ranks objectForKey:self.AwayTeam];
+    }
+    return _awayGroupRank;
 }
 @end

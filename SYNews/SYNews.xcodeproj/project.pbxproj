@@ -99,6 +99,8 @@
 		F03B91EE1F5566800033A3B5 /* SYHomeNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F03B91EC1F5566800033A3B5 /* SYHomeNewsViewController.xib */; };
 		F03B91F21F556BED0033A3B5 /* SYNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03B91F01F556BED0033A3B5 /* SYNewsDetailViewController.m */; };
 		F03B91F31F556BED0033A3B5 /* SYNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F03B91F11F556BED0033A3B5 /* SYNewsDetailViewController.xib */; };
+		F03E7DA321DEFFE200C45D49 /* SYBasketballScoreSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03E7DA121DEFFE200C45D49 /* SYBasketballScoreSetViewController.m */; };
+		F03E7DA421DEFFE200C45D49 /* SYBasketballScoreSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F03E7DA221DEFFE200C45D49 /* SYBasketballScoreSetViewController.xib */; };
 		F03FC1AC1F5CF24D00DF465B /* SYDiscoverNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F03FC1AB1F5CF24D00DF465B /* SYDiscoverNewsModel.m */; };
 		F03FC1B01F5CF3DC00DF465B /* SYDiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F03FC1AE1F5CF3DC00DF465B /* SYDiscoverCell.m */; };
 		F03FC1B11F5CF3DC00DF465B /* SYDiscoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F03FC1AF1F5CF3DC00DF465B /* SYDiscoverCell.xib */; };
@@ -392,6 +394,9 @@
 		F03B91EF1F556BED0033A3B5 /* SYNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNewsDetailViewController.h; sourceTree = "<group>"; };
 		F03B91F01F556BED0033A3B5 /* SYNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNewsDetailViewController.m; sourceTree = "<group>"; };
 		F03B91F11F556BED0033A3B5 /* SYNewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYNewsDetailViewController.xib; sourceTree = "<group>"; };
+		F03E7DA021DEFFE200C45D49 /* SYBasketballScoreSetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYBasketballScoreSetViewController.h; sourceTree = "<group>"; };
+		F03E7DA121DEFFE200C45D49 /* SYBasketballScoreSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYBasketballScoreSetViewController.m; sourceTree = "<group>"; };
+		F03E7DA221DEFFE200C45D49 /* SYBasketballScoreSetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SYBasketballScoreSetViewController.xib; sourceTree = "<group>"; };
 		F03FC1AA1F5CF24D00DF465B /* SYDiscoverNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYDiscoverNewsModel.h; sourceTree = "<group>"; };
 		F03FC1AB1F5CF24D00DF465B /* SYDiscoverNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYDiscoverNewsModel.m; sourceTree = "<group>"; };
 		F03FC1AD1F5CF3DC00DF465B /* SYDiscoverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYDiscoverCell.h; sourceTree = "<group>"; };
@@ -1132,6 +1137,9 @@
 				F059741E21C1FF4E00CFD804 /* SYBasketBallViewController.m */,
 				F09112F921DDF57D002FCBEE /* SYBasketBallListViewController.h */,
 				F09112FA21DDF57D002FCBEE /* SYBasketBallListViewController.m */,
+				F03E7DA021DEFFE200C45D49 /* SYBasketballScoreSetViewController.h */,
+				F03E7DA121DEFFE200C45D49 /* SYBasketballScoreSetViewController.m */,
+				F03E7DA221DEFFE200C45D49 /* SYBasketballScoreSetViewController.xib */,
 			);
 			path = BasketBall;
 			sourceTree = "<group>";
@@ -1360,6 +1368,7 @@
 				F0499A9521C8F1D9004CD78D /* SYFootballScoreSetViewController.xib in Resources */,
 				9F1500D32157435700696F7C /* SYGameListCell.xib in Resources */,
 				F03B91C81F55025A0033A3B5 /* SYWebViewController.xib in Resources */,
+				F03E7DA421DEFFE200C45D49 /* SYBasketballScoreSetViewController.xib in Resources */,
 				F0681D3B2194203800071B23 /* SYAddNewRecommendView.xib in Resources */,
 				F0499A9B21C9E2D8004CD78D /* SYScoreSetCell.xib in Resources */,
 				F03B91021F54FD700033A3B5 /* LaunchScreen.storyboard in Resources */,
@@ -1409,6 +1418,7 @@
 				F03FC2451F5D3CE300DF465B /* SYFeedbackViewController.m in Sources */,
 				F03B918B1F54FDD00033A3B5 /* NSObject+MJKeyValue.m in Sources */,
 				F03FC23B1F5D047B00DF465B /* SYDiscoverDetailCell.m in Sources */,
+				F03E7DA321DEFFE200C45D49 /* SYBasketballScoreSetViewController.m in Sources */,
 				9F767B60218F1262002865EA /* SYDataAnalysisCell.m in Sources */,
 				F0F63B1621550422000D7A15 /* SYGameDataViewController.m in Sources */,
 				F09112FB21DDF57D002FCBEE /* SYBasketBallListViewController.m in Sources */,

@@ -39,7 +39,7 @@
 }
 
 - (void)refreshAction{
-    [[SYNBADataManager sharedSYNBADataManager] requestDatasByType:SYNBAListTypeAll Completion:^(NSArray * _Nonnull datas) {
+    [[SYNBADataManager sharedSYNBADataManager] requestDatasByType:SYNBAListTypeHistory Completion:^(NSArray * _Nonnull datas) {
         [self.tableView.mj_header endRefreshing];
         self.datas = datas;
         [self.tableView reloadData];

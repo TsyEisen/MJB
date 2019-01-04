@@ -38,8 +38,18 @@
     _model = model;
     
     self.timeLabel.text = [NSString stringWithFormat:@"%@\n%@",model.SortName,[NSDate sy_showMatchTimeWithTime:model.MatchTime]];
-    self.homeLabel.text = model.HomeTeam;
-    self.awayLabel.text = model.AwayTeam;
+    if (model.homeGroupRank.length > 0) {
+        self.homeLabel.text = [NSString stringWithFormat:@"%@(%@)",model.HomeTeam,model.homeGroupRank];
+    }else {
+        self.homeLabel.text = model.HomeTeam;
+    }
+    
+    if (model.awayGroupRank.length > 0) {
+        self.awayLabel.text = [NSString stringWithFormat:@"%@(%@)",model.AwayTeam,model.awayGroupRank];
+    }else {
+        self.awayLabel.text = model.AwayTeam;
+    }
+    
 
     self.lastRefreshTimeLabel.text = [NSString stringWithFormat:@"最后刷新时间:%@ 单笔交易最大:%@ %.2f万",[NSDate sy_showMatchTimeWithTime:model.MaxUpdateTime],model.MaxTeamId.integerValue == model.HomeTeamId.integerValue?@"主":@"客",model.MaxTradedChange/10000];
     self.moneyLabel.text = [NSString stringWithFormat:@"%.1f万",model.totalPAmount/10000];
