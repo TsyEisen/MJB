@@ -122,7 +122,7 @@ SYSingleton_implementation(SYNBADataManager)
     
     NSString *dateStr = [date sy_stringWithFormat:@"yyyy-MM-dd"];
     
-    if (![date sy_isToday]) {
+    if (![date sy_isToday] && ![date sy_isYesterday]) {
         NSString *result = [self.dateResults objectForKey:dateStr];
         if (result.length > 0) {
             [self handelResult:result completion:completion];
