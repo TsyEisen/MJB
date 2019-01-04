@@ -65,11 +65,13 @@
     self.scoreHomeLabel.text = model.homeScore;
     self.scoreAwayLabel.text = model.awayScore;
     
-    if (model.AsianAvrLet.length > 0 && model.dishTotalScore.length > 0) {
-        self.avrScoreLabel.text = [NSString stringWithFormat:@"让分  %@   总分  %@",model.AsianAvrLet,model.dishTotalScore];
-    }else {
-        self.avrScoreLabel.text = nil;
-    }
+//    if (model.AsianAvrLet.length > 0 && model.dishTotalScore.length > 0) {
+//
+//    }else {
+//        self.avrScoreLabel.text = nil;
+//    }
+    
+    self.avrScoreLabel.text = [NSString stringWithFormat:@"让分  %@   总分  %@",model.AsianAvrLet.integerValue == 0?@"--":model.AsianAvrLet,model.dishTotalScore?:@"--"];
 }
 
 @end

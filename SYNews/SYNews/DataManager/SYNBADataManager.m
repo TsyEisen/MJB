@@ -207,7 +207,7 @@ SYSingleton_implementation(SYNBADataManager)
             model.awayScore = awayScore;
             model.AsianAvrLet = avrLetScore;
             model.dishTotalScore = dishTotalScore;
-            model.result = html;
+            model.result = game;
             model.dateSeconds = [date timeIntervalSince1970];
             [tempArray addObject:model];
         }
@@ -325,9 +325,11 @@ SYSingleton_implementation(SYNBADataManager)
 //    }
 }
 
-- (void)replaceDataForNewest {
-    
-}
+//- (void)replaceDataForNewest {
+//    for (NSString *html in self.dateResults.allValues) {
+//        
+//    }
+//}
 
 - (void)save {
     [self.ranks writeToFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeNBARank] atomically:YES];
