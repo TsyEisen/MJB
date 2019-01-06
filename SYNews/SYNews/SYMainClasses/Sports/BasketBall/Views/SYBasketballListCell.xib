@@ -38,9 +38,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="圣安东尼圣安东尼" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ee7-EG-vSY">
-                        <rect key="frame" x="60" y="32.5" width="55" height="25"/>
+                        <rect key="frame" x="60" y="32.5" width="60" height="25"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="55" id="0yQ-7x-d5J"/>
+                            <constraint firstAttribute="width" constant="60" id="0yQ-7x-d5J"/>
                             <constraint firstAttribute="height" constant="25" id="qf9-dh-imQ"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -120,10 +120,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="圣安东尼圣安东尼" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xk-5f-Hbq">
-                        <rect key="frame" x="65" y="62.5" width="45" height="25"/>
+                        <rect key="frame" x="60" y="62.5" width="60" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="7oS-Vf-W0G"/>
-                            <constraint firstAttribute="width" constant="45" id="GlC-ky-5yH"/>
+                            <constraint firstAttribute="width" constant="60" id="GlC-ky-5yH"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>

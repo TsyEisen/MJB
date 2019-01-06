@@ -144,7 +144,6 @@
 		F0499AD021CC7922004CD78D /* NSString+SYCachePath.m in Sources */ = {isa = PBXBuildFile; fileRef = F0499ACF21CC7922004CD78D /* NSString+SYCachePath.m */; };
 		F059741B21C1F60100CFD804 /* SYNBADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F059741A21C1F60100CFD804 /* SYNBADataManager.m */; };
 		F059741F21C1FF4E00CFD804 /* SYBasketBallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F059741E21C1FF4E00CFD804 /* SYBasketBallViewController.m */; };
-		F059742821C273E600CFD804 /* SYResultSportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F059742721C273E600CFD804 /* SYResultSportModel.m */; };
 		F059742B21C273F900CFD804 /* SYGameResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F059742921C273F900CFD804 /* SYGameResultModel.m */; };
 		F0680195215E22190032C4DA /* SYGameTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0680194215E22190032C4DA /* SYGameTableCell.m */; };
 		F0680199215E22910032C4DA /* SYCompareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0680197215E22910032C4DA /* SYCompareViewController.m */; };
@@ -474,8 +473,6 @@
 		F059741A21C1F60100CFD804 /* SYNBADataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYNBADataManager.m; sourceTree = "<group>"; };
 		F059741D21C1FF4E00CFD804 /* SYBasketBallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYBasketBallViewController.h; sourceTree = "<group>"; };
 		F059741E21C1FF4E00CFD804 /* SYBasketBallViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYBasketBallViewController.m; sourceTree = "<group>"; };
-		F059742621C273E500CFD804 /* SYResultSportModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYResultSportModel.h; path = "../../../../../../../Documents/Virtual Machines.localized/SYResultSportModel.h"; sourceTree = "<group>"; };
-		F059742721C273E600CFD804 /* SYResultSportModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYResultSportModel.m; path = "../../../../../../../Documents/Virtual Machines.localized/SYResultSportModel.m"; sourceTree = "<group>"; };
 		F059742921C273F900CFD804 /* SYGameResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYGameResultModel.m; sourceTree = "<group>"; };
 		F059742A21C273F900CFD804 /* SYGameResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYGameResultModel.h; sourceTree = "<group>"; };
 		F0680193215E22190032C4DA /* SYGameTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYGameTableCell.h; sourceTree = "<group>"; };
@@ -626,8 +623,6 @@
 				F0285F8A21B905DA00FB95F6 /* SYDataProbability.m */,
 				F0285F8C21B914F700FB95F6 /* SYDataAnalyzeManager.h */,
 				F0285F8D21B914F700FB95F6 /* SYDataAnalyzeManager.m */,
-				F059742621C273E500CFD804 /* SYResultSportModel.h */,
-				F059742721C273E600CFD804 /* SYResultSportModel.m */,
 				F059742A21C273F900CFD804 /* SYGameResultModel.h */,
 				F059742921C273F900CFD804 /* SYGameResultModel.m */,
 			);
@@ -1506,7 +1501,6 @@
 				9F3498A3215631700058B99E /* NSObject+SYExtension.m in Sources */,
 				F03B917C1F54FDD00033A3B5 /* AFURLRequestSerialization.m in Sources */,
 				F03B91E91F555ED90033A3B5 /* SYCarouselView.m in Sources */,
-				F059742821C273E600CFD804 /* SYResultSportModel.m in Sources */,
 				F03B919E1F54FDD00033A3B5 /* UIImageView+WebCache.m in Sources */,
 				F03B91CC1F553D730033A3B5 /* APIRequest.m in Sources */,
 				9F1500D22157435700696F7C /* SYGameListCell.m in Sources */,

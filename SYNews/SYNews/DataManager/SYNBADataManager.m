@@ -170,29 +170,41 @@ SYSingleton_implementation(SYNBADataManager)
     NSMutableArray *tempArray = [NSMutableArray array];
     for (NSString *game in gamestrings) {
         //FF0000^20190103080000^-1^^华盛顿奇才^亚特兰大老鹰^114^98^6.5^1.00^0.88^奇才-得分:比尔(24) 篮板:托马斯-布莱恩特(15) 助攻:萨托然斯基(7)<br>老鹰-得分:阿莱克斯.伦(24) 篮板:阿莱克斯.伦(11) 助攻:特雷-杨(9)^^35^29^29^24^24^31^26^14^^^0^5.5^229.5^230.5^0.80^0.86^东11^东12^4^64^53!326126^1
+        
+        //FF0000^20181228113000^-1^^金州勇士^波特兰开拓者^109^110^8.5^0.98^0.90^勇士-得分:库里(29) 篮板:格林(11) 助攻:杜兰特(11)<br>开拓者-得分:努尔基奇(27) 篮板:阿米奴(12) 助攻:利拉德(5)^^28^27^18^25^25^23^31^27^7^8^0^9.5^225.5^226.5^1.00^0.66^西1^西6^4^46^52!342558^183
+        
         if ([game hasPrefix:@"76C5F2"]) {
 //            NSLog(@"CBA : %@",game);
         }else if ([game hasPrefix:@"FF0000"]) {
             
-            NSArray *datas = [game componentsSeparatedByString:@"^^^"];
-
-            NSString *first = datas.firstObject;
-
-            NSString *second = datas.lastObject;
+            NSArray *datas = [game componentsSeparatedByString:@"^"];
+            NSString *time = datas[1];
+            NSString *homeName = datas[4];
+            NSString *awayName = datas[5];
+            NSString *homeScore = datas[6];
+            NSString *awayScore = datas[7];
+            NSString *avrLetScore = datas[24];
+            NSString *dishTotalScore = datas[25];
+            NSString *homeGroupLevel = datas[29];
+            NSString *awayGroupLevel = datas[30];
             
-            NSArray *first_datas = [first componentsSeparatedByString:@"^^"];
-            NSString *time = [first_datas.firstObject componentsSeparatedByString:@"^"][1];
-            NSArray *first_datas_second = [first_datas[1] componentsSeparatedByString:@"^"];
-            NSString *homeName = first_datas_second[0];
-            NSString *awayName = first_datas_second[1];
-            NSString *homeScore = first_datas_second[2];
-            NSString *awayScore = first_datas_second[3];
-            NSString *avrLetScore = first_datas_second[4];
-            
-            NSArray *second_datas = [second componentsSeparatedByString:@"^"];
-            NSString *dishTotalScore = second_datas[2];
-            NSString *homeGroupLevel = second_datas[6];
-            NSString *awayGroupLevel = second_datas[7];
+//            NSString *first = datas.firstObject;
+//
+//            NSString *second = datas.lastObject;
+//
+//            NSArray *first_datas = [first componentsSeparatedByString:@"^^"];
+//            NSString *time = [first_datas.firstObject componentsSeparatedByString:@"^"][1];
+//            NSArray *first_datas_second = [first_datas[1] componentsSeparatedByString:@"^"];
+//            NSString *homeName = first_datas_second[0];
+//            NSString *awayName = first_datas_second[1];
+//            NSString *homeScore = first_datas_second[2];
+//            NSString *awayScore = first_datas_second[3];
+//            NSString *avrLetScore = first_datas_second[4];
+//
+//            NSArray *second_datas = [second componentsSeparatedByString:@"^"];
+//            NSString *dishTotalScore = second_datas[2];
+//            NSString *homeGroupLevel = second_datas[6];
+//            NSString *awayGroupLevel = second_datas[7];
 //            NSLog(@"时间:%@\n主队:%@(%@) %@\n客队:%@(%@) %@\n让分:%@\n盘口总分:%@",time,homeName,homeGroupLevel,homeScore,awayName,awayGroupLevel,awayScore,avrLetScore,dishTotalScore);
             
             SYBasketBallModel *model = [SYBasketBallModel new];
@@ -289,8 +301,11 @@ SYSingleton_implementation(SYNBADataManager)
             item.awayGroupRank = model.awayGroupRank;
             item.result = model.result;
             
-            if (model.homeGroupRank.length > 0) {
+            if (model.homeGroupRank.length > 0 && ([model.homeGroupRank hasPrefix:@"东"] || [model.homeGroupRank hasPrefix:@"西"])) {
                 [self.ranks setValue:model.homeGroupRank forKey:item.HomeTeam];
+            }
+            
+            if (model.awayGroupRank.length > 0 && ([model.awayGroupRank hasPrefix:@"东"] || [model.awayGroupRank hasPrefix:@"西"])) {
                 [self.ranks setValue:model.awayGroupRank forKey:item.AwayTeam];
             }
             

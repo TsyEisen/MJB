@@ -125,11 +125,11 @@
     if ([date sy_isToday]) {
         return [date sy_stringWithFormat:@"HH:mm"];
     }else if ([date sy_isYesterday]) {
-        return [date sy_stringWithFormat:@"昨天 HH:mm"];
+        return [date sy_stringWithFormat:@"昨天\nHH:mm"];
     }else if ([date sy_isTomorrow]) {
-        return [date sy_stringWithFormat:@"明天 HH:mm"];
+        return [date sy_stringWithFormat:@"明天\nHH:mm"];
     }else {
-        return [date sy_stringWithFormat:@"MM-dd HH:mm"];
+        return [date sy_stringWithFormat:@"MM-dd\nHH:mm"];
     }
 }
 
