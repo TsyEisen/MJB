@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="明天 11:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVf-Bb-VQq">
-                        <rect key="frame" x="5" y="54" width="49" height="12"/>
+                        <rect key="frame" x="10" y="54" width="49" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -175,7 +175,7 @@
                     <constraint firstItem="LXy-6I-k1M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="120" id="kdq-gf-0TR"/>
                     <constraint firstItem="SaP-pw-n61" firstAttribute="centerX" secondItem="nlW-Tg-ozX" secondAttribute="centerX" id="mga-rp-eI9"/>
                     <constraint firstItem="DPI-hU-4Y2" firstAttribute="centerY" secondItem="LXy-6I-k1M" secondAttribute="centerY" id="noE-gL-Wld"/>
-                    <constraint firstItem="qVf-Bb-VQq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="npd-rx-yT3"/>
+                    <constraint firstItem="qVf-Bb-VQq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="npd-rx-yT3"/>
                     <constraint firstItem="trs-qD-R58" firstAttribute="centerX" secondItem="mtG-Fz-pAX" secondAttribute="centerX" id="qtv-cj-RZM"/>
                     <constraint firstAttribute="trailing" secondItem="0c6-XO-oRa" secondAttribute="trailing" id="r6a-n2-vks"/>
                     <constraint firstItem="npn-B1-iJ9" firstAttribute="centerX" secondItem="mtG-Fz-pAX" secondAttribute="centerX" id="tc8-9o-y8Q"/>
@@ -203,7 +203,7 @@
                 <outlet property="ykAwayLabel" destination="trs-qD-R58" id="1JX-YX-26f"/>
                 <outlet property="ykHomeLabel" destination="npn-B1-iJ9" id="Qbk-jD-96y"/>
             </connections>
-            <point key="canvasLocation" x="145.59999999999999" y="169.56521739130437"/>
+            <point key="canvasLocation" x="145.59999999999999" y="169.11544227886057"/>
         </tableViewCell>
     </objects>
 </document>
