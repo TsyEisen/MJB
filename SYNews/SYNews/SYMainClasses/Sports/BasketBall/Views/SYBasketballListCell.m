@@ -51,7 +51,7 @@
     }
     
 
-    self.lastRefreshTimeLabel.text = [NSString stringWithFormat:@"最后刷新时间:%@ 单笔交易最大:%@ %.2f万",[[NSDate sy_showMatchTimeWithTime:model.MaxUpdateTime] stringByReplacingOccurrencesOfString:@"\n" withString:@""],model.MaxTeamId.integerValue == model.HomeTeamId.integerValue?@"主":@"客",model.MaxTradedChange/10000];
+    self.lastRefreshTimeLabel.text = [NSString stringWithFormat:@"最后刷新时间:%@ 单笔交易最大:%@ %.2f万",[[NSDate sy_showMatchTimeWithTime:model.MaxUpdateTime] stringByReplacingOccurrencesOfString:@"\n" withString:@" "],model.MaxTeamId.integerValue == model.HomeTeamId.integerValue?@"主":@"客",model.MaxTradedChange/10000];
     self.moneyLabel.text = [NSString stringWithFormat:@"%.1f万",model.totalPAmount/10000];
     
     self.jyHomeLabel.text = [NSString stringWithFormat:@"%.2f",model.BfAmountHome/model.totalPAmount];

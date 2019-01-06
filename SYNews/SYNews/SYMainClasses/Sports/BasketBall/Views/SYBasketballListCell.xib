@@ -38,7 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="圣安东尼圣安东尼" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ee7-EG-vSY">
-                        <rect key="frame" x="60" y="32.5" width="60" height="25"/>
+                        <rect key="frame" x="50" y="32.5" width="60" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="0yQ-7x-d5J"/>
                             <constraint firstAttribute="height" constant="25" id="qf9-dh-imQ"/>
@@ -120,7 +120,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="圣安东尼圣安东尼" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xk-5f-Hbq">
-                        <rect key="frame" x="60" y="62.5" width="60" height="25"/>
+                        <rect key="frame" x="50" y="62.5" width="60" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="7oS-Vf-W0G"/>
                             <constraint firstAttribute="width" constant="60" id="GlC-ky-5yH"/>
@@ -158,7 +158,7 @@
                     <constraint firstItem="mtG-Fz-pAX" firstAttribute="centerY" secondItem="LXy-6I-k1M" secondAttribute="centerY" id="OGM-jv-etr"/>
                     <constraint firstItem="CoQ-U5-ayI" firstAttribute="centerX" secondItem="LXy-6I-k1M" secondAttribute="centerX" id="P70-2V-4UW"/>
                     <constraint firstItem="YDk-mf-E92" firstAttribute="centerX" secondItem="DPI-hU-4Y2" secondAttribute="centerX" id="PMy-3j-vVd"/>
-                    <constraint firstItem="ee7-EG-vSY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="Pp6-Wg-6ll"/>
+                    <constraint firstItem="ee7-EG-vSY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="Pp6-Wg-6ll"/>
                     <constraint firstItem="1Xk-5f-Hbq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="20" id="UbU-Gc-du9"/>
                     <constraint firstItem="nlW-Tg-ozX" firstAttribute="leading" secondItem="LXy-6I-k1M" secondAttribute="trailing" constant="15" id="Ugz-WO-Hq8"/>
                     <constraint firstItem="swN-4g-mA5" firstAttribute="top" secondItem="wKF-lg-T1Z" secondAttribute="bottom" constant="75.5" id="VpC-se-Cga"/>
