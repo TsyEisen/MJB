@@ -71,13 +71,13 @@
         }
         
         NSInteger resultNum = 0;
-        if (model.BfAmountHome >= model.BfPayoutAway) {
+        if (model.BfAmountHome >= model.BfAmountAway) {
             resultNum += 100;
         }
         if (model.BfIndexHome >= model.BfIndexAway) {
             resultNum += 10;
         }
-        if (model.BfPayoutHome > model.BfIndexAway) {
+        if (model.BfPayoutHome > model.BfPayoutAway) {
             resultNum += 1;
         }
         
