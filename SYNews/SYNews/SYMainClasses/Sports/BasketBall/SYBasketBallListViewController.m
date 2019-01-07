@@ -8,10 +8,14 @@
 
 #import "SYBasketBallListViewController.h"
 #import "SYBasketballListCell.h"
-
+#import "SYSelectBox.h"
+#import "SYBasketballAnalysisView.h"
 @interface SYBasketBallListViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *datas;
+@property (nonatomic, strong) UIBarButtonItem *rightItem;
+@property (nonatomic, strong) SYSelectBox *dataAnalysisbox;
+@property (nonatomic, strong) SYBasketballAnalysisView *dataAnalysis;
 @end
 
 @implementation SYBasketBallListViewController
@@ -33,6 +37,7 @@
 
 - (void)setUpUI {
     [self.view addSubview:self.tableView];
+    self.navigationItem.rightBarButtonItem = self.rightItem;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.top.equalTo(self.view);
     }];
@@ -44,6 +49,10 @@
         self.datas = datas;
         [self.tableView reloadData];
     }];
+}
+
+- (void)dataAction {
+    [self.dataAnalysisbox showDependentOnPoint:CGPointMake(ScreenW - 50, 0)];
 }
 
 #pragma mark - tableView DataSource
@@ -80,6 +89,29 @@
         _tableView.tableFooterView = [UIView new];
     }
     return _tableView;
+}
+
+- (SYSelectBox *)dataAnalysisbox {
+    if (_dataAnalysisbox == nil) {
+        _dataAnalysisbox = [[SYSelectBox alloc] initWithSize:CGSizeMake(ScreenW, 400) direction:SYSelectBoxArrowPositionTopRight andCustomView:self.dataAnalysis];
+    }
+    return _dataAnalysisbox;
+}
+
+- (SYBasketballAnalysisView *)dataAnalysis {
+    if (_dataAnalysis == nil) {
+        _dataAnalysis = [SYBasketballAnalysisView viewFromNib];
+        _dataAnalysis.datas = self.datas;
+    }
+    return _dataAnalysis;
+}
+
+- (UIBarButtonItem *)rightItem {
+    if (_rightItem == nil) {
+        _rightItem = [[UIBarButtonItem alloc] initWithTitle:@"数据" style:UIBarButtonItemStyleDone target:self action:@selector(dataAction)];
+        _rightItem.tintColor = [UIColor whiteColor];
+    }
+    return _rightItem;
 }
 
 @end

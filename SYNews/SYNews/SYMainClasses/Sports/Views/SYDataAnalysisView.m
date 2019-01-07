@@ -49,7 +49,7 @@
     return cell;
 }
 
-
+#pragma mark - 足球计算
 - (void)calculatorData {
     
     NSMutableArray *tempArray = [NSMutableArray array];
@@ -303,6 +303,15 @@
     model.twoStr = total == 0 ? @"0":[NSString stringWithFormat:@"%.2f(%zd)",home*1.0/total,home];
     model.threeStr = total == 0 ? @"0":[NSString stringWithFormat:@"%.2f(%zd)",draw*1.0/total,draw];
     model.fourStr = total == 0 ? @"0":[NSString stringWithFormat:@"%.2f(%zd)",away*1.0/total,away];
+    return model;
+}
+
++ (instancetype)modelWithTitle:(NSString *)title home:(NSInteger)home away:(NSInteger)away {
+    NSInteger total = home + away;
+    SYDataAnalysisModel *model = [SYDataAnalysisModel new];
+    model.oneStr = title;
+    model.twoStr = total == 0 ? @"0":[NSString stringWithFormat:@"%.2f(%zd)",home*1.0/total,home];
+    model.threeStr = total == 0 ? @"0":[NSString stringWithFormat:@"%.2f(%zd)",away*1.0/total,away];
     return model;
 }
 @end

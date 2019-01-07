@@ -188,25 +188,6 @@ SYSingleton_implementation(SYNBADataManager)
             NSString *homeGroupLevel = datas[29];
             NSString *awayGroupLevel = datas[30];
             
-//            NSString *first = datas.firstObject;
-//
-//            NSString *second = datas.lastObject;
-//
-//            NSArray *first_datas = [first componentsSeparatedByString:@"^^"];
-//            NSString *time = [first_datas.firstObject componentsSeparatedByString:@"^"][1];
-//            NSArray *first_datas_second = [first_datas[1] componentsSeparatedByString:@"^"];
-//            NSString *homeName = first_datas_second[0];
-//            NSString *awayName = first_datas_second[1];
-//            NSString *homeScore = first_datas_second[2];
-//            NSString *awayScore = first_datas_second[3];
-//            NSString *avrLetScore = first_datas_second[4];
-//
-//            NSArray *second_datas = [second componentsSeparatedByString:@"^"];
-//            NSString *dishTotalScore = second_datas[2];
-//            NSString *homeGroupLevel = second_datas[6];
-//            NSString *awayGroupLevel = second_datas[7];
-//            NSLog(@"时间:%@\n主队:%@(%@) %@\n客队:%@(%@) %@\n让分:%@\n盘口总分:%@",time,homeName,homeGroupLevel,homeScore,awayName,awayGroupLevel,awayScore,avrLetScore,dishTotalScore);
-            
             SYBasketBallModel *model = [SYBasketBallModel new];
             
             NSDate *date = [NSDate sy_dateWithString:time formate:@"yyyyMMddHHmmss"];
@@ -228,7 +209,7 @@ SYSingleton_implementation(SYNBADataManager)
         completion(tempArray);
     }
 }
-
+#pragma mark - 逻辑事件
 - (void)refreshGameData {
     NSArray *array = [SYBasketBallModel mj_objectArrayWithKeyValuesArray:self.currentGameJsons.allValues];
     BOOL needRefresh = NO;
@@ -254,6 +235,101 @@ SYSingleton_implementation(SYNBADataManager)
     }
 }
 
+- (void)calculatorData {
+    
+    //一种
+    NSInteger ph = 0, gh = 0, yh = 0,pa = 0,ga = 0,ya = 0;
+    NSInteger ph_h = 0, gh_h = 0, yh_h = 0,pa_h = 0,ga_h = 0,ya_h = 0;
+    NSInteger ph_a = 0, gh_a = 0, yh_a = 0,pa_a = 0,ga_a = 0,ya_a = 0;
+    //两种
+    NSInteger ph_gh = 0, ph_yh = 0, ph_ga = 0, ph_ya = 0,pa_gh = 0, pa_yh = 0, pa_ga = 0, pa_ya = 0, gh_yh = 0,gh_ya = 0,ga_yh = 0,ga_ya = 0;
+    NSInteger ph_gh_h = 0, ph_yh_h = 0, ph_ga_h = 0, ph_ya_h = 0,pa_gh_h = 0, pa_yh_h = 0, pa_ga_h = 0, pa_ya_h = 0, gh_yh_h = 0,gh_ya_h = 0,ga_yh_h = 0,ga_ya_h = 0;
+    NSInteger ph_gh_a = 0, ph_yh_a = 0, ph_ga_a = 0, ph_ya_a = 0,pa_gh_a = 0, pa_yh_a = 0, pa_ga_a = 0, pa_ya_a = 0, gh_yh_a = 0,gh_ya_a = 0,ga_yh_a = 0,ga_ya_a = 0;
+    //三种
+    NSInteger ph_gh_yh = 0,ph_gh_ya = 0,ph_ga_yh = 0,ph_ga_ya = 0,pa_gh_yh = 0,pa_gh_ya = 0,pa_ga_yh = 0,pa_ga_ya = 0;
+    NSInteger ph_gh_yh_h = 0,ph_gh_ya_h = 0,ph_ga_yh_h = 0,ph_ga_ya_h = 0,pa_gh_yh_h = 0,pa_gh_ya_h = 0,pa_ga_yh_h = 0,pa_ga_ya_h = 0;
+    NSInteger ph_gh_yh_a = 0,ph_gh_ya_a = 0,ph_ga_yh_a = 0,ph_ga_ya_a = 0,pa_gh_yh_a = 0,pa_gh_ya_a = 0,pa_ga_yh_a = 0,pa_ga_ya_a = 0;
+    
+    for (SYBasketBallModel *model in self.allGames) {
+        
+        if (model.homeScore.length == 0 || model.homeScore.integerValue == 0) {
+            continue;
+        }
+        
+        NSInteger resultNum = 0;
+        if (model.BfAmountHome >= model.BfPayoutAway) {
+            resultNum += 100;
+        }
+        if (model.BfIndexHome >= model.BfIndexAway) {
+            resultNum += 10;
+        }
+        if (model.BfPayoutHome > model.BfIndexAway) {
+            resultNum += 1;
+        }
+        
+        if (resultNum == 111) {
+            ph++,gh++,yh++,ph_gh++,ph_yh++,gh_yh++,ph_gh_yh++;
+            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+                ph_h++,gh_h++,yh_h++,ph_gh_h++,ph_yh_h++,gh_yh_h++,ph_gh_yh_h++;
+            }else {
+                ph_a++,gh_a++,yh_a++,ph_gh_a++,ph_yh_a++,gh_yh_a++,ph_gh_yh_a++;
+            }
+        }else if (resultNum == 110) {
+            ph++,gh++,ya++,ph_gh++,ph_ya++,gh_ya++,ph_gh_ya++;
+            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+                ph_h++,gh_h++,ya_h++,ph_gh_h++,ph_ya_h++,gh_ya_h++,ph_gh_ya_h++;
+            }else {
+                ph_a++,gh_a++,ya_a++,ph_gh_a++,ph_ya_a++,gh_ya_a++,ph_gh_ya_a++;
+            }
+        }else if (resultNum == 101) {
+            ph++,ga++,yh++,ph_ga++,ph_yh++,ga_yh++,ph_ga_yh++;
+            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+                ph_h++,ga_h++,yh_h++,ph_ga_h++,ph_yh_h++,ga_yh_h++,ph_ga_yh_h++;
+            }else {
+                ph_a++,ga_a++,yh_a++,ph_ga_a++,ph_yh_a++,ga_yh_a++,ph_ga_yh_a++;
+            }
+        }else if (resultNum == 100) {
+            ph++,ga++,ya++,ph_ga++,ph_ya++,ga_ya++,ph_ga_ya++;
+            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+                ph_h++,ga_h++,ya_h++,ph_ga_h++,ph_ya_h++,ga_ya_h++,ph_ga_ya_h++;
+            }else {
+                ph_a++,ga_a++,ya_a++,ph_ga_a++,ph_ya_a++,ga_ya_a++,ph_ga_ya_a++;
+            }
+            
+        }else if (resultNum == 11) {
+            pa++,gh++,yh++,pa_gh++,pa_yh++,gh_yh++,pa_gh_yh++;
+            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+                pa_h++,gh_h++,yh_h++,pa_gh_h++,pa_yh_h++,gh_yh_h++,pa_gh_yh_h++;
+            }else {
+                pa_a++,gh_a++,yh_a++,pa_gh_a++,pa_yh_a++,gh_yh_a++,pa_gh_yh_a++;
+            }
+        }else if (resultNum == 10) {
+            pa++,gh++,ya++,pa_gh++,pa_ya++,gh_ya++,pa_gh_ya++;
+            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+                pa_h++,gh_h++,ya_h++,pa_gh_h++,pa_ya_h++,gh_ya_h++,pa_gh_ya_h++;
+            }else {
+                pa_a++,gh_a++,ya_a++,pa_gh_a++,pa_ya_a++,gh_ya_a++,pa_gh_ya_a++;
+            }
+        }else if (resultNum == 1) {
+            pa++,ga++,yh++,pa_ga++,pa_yh++,ga_yh++,pa_ga_yh++;
+            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+                pa_h++,ga_h++,yh_h++,pa_ga_h++,pa_yh_h++,ga_yh_h++,pa_ga_yh_h++;
+            }else {
+                pa_a++,ga_a++,yh_a++,pa_ga_a++,pa_yh_a++,ga_yh_a++,pa_ga_yh_a++;
+            }
+        }else if (resultNum == 0) {
+            pa++,ga++,ya++,pa_ga++,pa_ya++,ga_ya++,pa_ga_ya++;
+            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+                pa_h++,ga_h++,ya_h++,pa_ga_h++,pa_ya_h++,ga_ya_h++,pa_ga_ya_h++;
+            }else {
+                pa_a++,ga_a++,ya_a++,pa_ga_a++,pa_ya_a++,ga_ya_a++,pa_ga_ya_a++;
+            }
+        }
+        
+    }
+}
+
+#pragma mark - 保存数据
 - (void)sy_writeToFile:(id)datas forPath:(NSString *)path{
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         [[NSFileManager defaultManager] createFileAtPath:path contents:nil attributes:nil];
@@ -365,6 +441,56 @@ SYSingleton_implementation(SYNBADataManager)
     [self.gameIdToResultGameName writeToFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeNBAGameNameToResultName] atomically:YES];
 }
 
+- (void)replaceDataForNewest {
+    NSString *todayString = [[NSDate date] sy_stringWithFormat:@"yyyyMMdd"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:[@"NBA-" stringByAppendingString:todayString] ofType:@"plist"];
+    if (path == nil) {
+        return;
+    }
+    
+    NSDate *date = [[NSUserDefaults standardUserDefaults] objectForKey:@"NBAReplaceDataForNewest"];
+    if (date != nil && [date sy_isToday]) {
+        return;
+    }
+    
+    if (path.length > 0) {
+        NSDictionary *json = [NSDictionary dictionaryWithContentsOfFile:path];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            for (NSString *key in json.allKeys) {
+                NSDictionary *newDict = [json objectForKey:key];
+                NSDictionary *oldDict = [self.gameJsons objectForKey:key];
+                if (oldDict) {
+                    SYBasketBallModel *newModel = [SYBasketBallModel mj_objectWithKeyValues:newDict];
+                    SYBasketBallModel *oldModel = [SYBasketBallModel mj_objectWithKeyValues:oldDict];
+                    
+                    if (![newModel.MaxUpdateTime isEqualToString:oldModel.MaxUpdateTime] && newModel.updateSeconds > oldModel.updateSeconds) {
+                        oldModel.BfPayoutHome = newModel.BfPayoutHome;
+                        oldModel.BfPayoutAway = newModel.BfPayoutAway;
+                        oldModel.BfAmountHome = newModel.BfAmountHome;
+                        oldModel.BfAmountAway = newModel.BfAmountAway;
+                        oldModel.BfIndexHome = newModel.BfIndexHome;
+                        oldModel.BfIndexAway = newModel.BfIndexAway;
+                        oldModel.MaxTeamId = newModel.MaxTeamId;
+                        oldModel.MaxUpdateTime = newModel.MaxUpdateTime;
+                        oldModel.MaxTradedChange = newModel.MaxTradedChange;
+                        
+                        [self.gameJsons setObject:[oldModel mj_keyValues] forKey:key];
+                    }
+                }else {
+                    [self.gameJsons setObject:newDict forKey:key];
+                }
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"NBAReplaceDataForNewest"];
+                [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
+                _allGames = [SYBasketBallModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
+                [MBProgressHUD showSuccess:@"篮球更新执行完毕" toView:nil];
+            });
+        });
+        
+    }
+}
+
 #pragma mark - 懒加载
 
 - (NSMutableDictionary *)gameIdToResultGameName {
@@ -427,4 +553,12 @@ SYSingleton_implementation(SYNBADataManager)
     }
     return _ranks;
 }
+@end
+
+@implementation SYNBADataAnalyze
+
+- (NSInteger)totalCount {
+    return self.homeCount + self.awayCount;
+}
+
 @end

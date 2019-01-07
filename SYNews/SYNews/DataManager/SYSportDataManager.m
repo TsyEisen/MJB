@@ -532,7 +532,12 @@ SYSingleton_implementation(SYSportDataManager)
     }
     SYRecommendModel *model = [SYRecommendModel new];
     model.name = name;
-    model.tag = self.recommends.count;
+    if (self.recommends.count > 0) {
+        SYRecommendModel *last = self.recommends.lastObject;
+        model.tag = last.tag + 1;
+    }else {
+        model.tag = 1;
+    }
     [self.recommends addObject:model];
     [self saveRecommends];
 }

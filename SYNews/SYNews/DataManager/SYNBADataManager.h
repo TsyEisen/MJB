@@ -34,4 +34,11 @@ SYSingleton_interface(SYNBADataManager)
 - (void)replaceDataForNewest;
 @end
 
+@interface SYNBADataAnalyze : NSObject
+@property (nonatomic, assign) NSInteger tag;
+@property (nonatomic, assign) NSInteger homeCount;
+@property (nonatomic, assign) NSInteger awayCount;
+@property (nonatomic, assign) NSInteger totalCount;
+@end
+
 NS_ASSUME_NONNULL_END

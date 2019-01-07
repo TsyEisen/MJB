@@ -269,6 +269,7 @@ SYSingleton_implementation(SYDataAnalyzeManager)
 - (NSString *)pathWithName:(NSString *)name {
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true).firstObject stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",name]];
 }
+
 #pragma mark - 懒加载
 - (NSString *)globalPath {
     if (_globalPath == nil) {

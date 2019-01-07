@@ -44,7 +44,6 @@
     self.scrollView.contentSize = CGSizeMake(self.rightTableView.sy_width, 0);
     [self.rightTableView sy_registerCellWithClass:[SYGameTableCell class]];
     [self.leftTabelView sy_registerNibWithClass:[SYGameTableTitleCell class]];
-//    self.navigationItem.rightBarButtonItem = self.rightItem;
     self.leftTabelView.tableFooterView = [UIView new];
     self.navigationItem.titleView = self.segment;
     self.navigationItem.rightBarButtonItem = self.rightItem;

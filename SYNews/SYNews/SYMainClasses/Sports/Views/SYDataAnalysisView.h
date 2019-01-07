@@ -31,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)modelWithTitle:(NSString *)title home:(NSInteger)home draw:(NSInteger)draw away:(NSInteger)away total:(NSInteger)total;
 
 + (instancetype)modelWithOne:(NSString *)one two:(NSString *)two three:(NSString *)three four:(NSString *)four;
+
++ (instancetype)modelWithTitle:(NSString *)title home:(NSInteger)home away:(NSInteger)away;
 @end
 
 
