@@ -139,7 +139,7 @@
                 pa_a++,ga_a++,ya_a++,pa_ga_a++,pa_ya_a++,ga_ya_a++,pa_ga_ya_a++;
             }
         }
-        
+        NSLog(@"%@\n%@--%@:%zd",model.MatchTime,model.HomeTeam,model.AwayTeam,resultNum);
     }
     
     _analysisDatas = [NSMutableArray array];

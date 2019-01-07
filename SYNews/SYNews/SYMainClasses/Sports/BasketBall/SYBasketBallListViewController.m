@@ -52,7 +52,7 @@
 }
 
 - (void)dataAction {
-    [self.dataAnalysisbox showDependentOnPoint:CGPointMake(ScreenW - 20,64)];
+    [self.dataAnalysisbox showDependentOnPoint:CGPointMake(ScreenW - 40,64)];
 }
 
 #pragma mark - tableView DataSource
@@ -93,7 +93,7 @@
 
 - (SYSelectBox *)dataAnalysisbox {
     if (_dataAnalysisbox == nil) {
-        _dataAnalysisbox = [[SYSelectBox alloc] initWithSize:CGSizeMake(ScreenW, 400) direction:SYSelectBoxArrowPositionTopRight andCustomView:self.dataAnalysis];
+        _dataAnalysisbox = [[SYSelectBox alloc] initWithSize:CGSizeMake(ScreenW - 20, 400) direction:SYSelectBoxArrowPositionTopRight andCustomView:self.dataAnalysis];
     }
     return _dataAnalysisbox;
 }

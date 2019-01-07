@@ -10,9 +10,9 @@
 #import "SYBezierModel.h"
 
 #define SYArrowHeight  10
-#define SYArrowWidth   15
+#define SYArrowWidth   16
 #define SYCornerRodius 8
-#define SYArrowBorderMargin 15
+#define SYArrowBorderMargin 16
 #define SelfWidth self.frame.size.width
 #define SelfHeight self.frame.size.height
 
@@ -95,7 +95,7 @@
 - (void)show {
     
     self.frame = [self frameWithArrorPoint:self.arrowPoint];
-    
+    self.contentView.frame = [self contentViewFrame];
     self.customView.frame = self.contentView.bounds;
     [self addSubview:self.contentView];
     [self.contentView addSubview:self.customView];
@@ -193,21 +193,21 @@
             break;
     }
     
-    if (frame.origin.x < 0) {
-        frame = CGRectMake(10, frame.origin.y, frame.size.width + frame.origin.x - 10, frame.size.height);
-    }
-    
-    if (frame.origin.x + frame.size.width > ScreenW) {
-        frame = CGRectMake(frame.origin.x, frame.origin.y, ScreenW - frame.origin.x - 10, frame.size.height);
-    }
-    
-    if (frame.origin.y < 0) {
-        frame = CGRectMake(frame.origin.x, 20, frame.size.width, frame.origin.y + frame.size.height - 20);
-    }
-    
-    if (frame.origin.y + frame.size.height > ScreenH) {
-        frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, ScreenH - frame.origin.y - 10);
-    }
+//    if (frame.origin.x < 0) {
+//        frame = CGRectMake(10, frame.origin.y, frame.size.width + frame.origin.x - 10, frame.size.height);
+//    }
+//    
+//    if (frame.origin.x + frame.size.width > ScreenW) {
+//        frame = CGRectMake(frame.origin.x, frame.origin.y, ScreenW - frame.origin.x - 10, frame.size.height);
+//    }
+//    
+//    if (frame.origin.y < 0) {
+//        frame = CGRectMake(frame.origin.x, 20, frame.size.width, frame.origin.y + frame.size.height - 20);
+//    }
+//    
+//    if (frame.origin.y + frame.size.height > ScreenH) {
+//        frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, ScreenH - frame.origin.y - 10);
+//    }
     
     return frame;
 }
@@ -240,33 +240,37 @@
     return transform;
 }
 
+- (CGRect)contentViewFrame {
+    CGRect rect = CGRectZero;
+    switch (self.arrowPosition) {
+        case SYSelectBoxArrowPositionTopLeft:
+        case SYSelectBoxArrowPositionTopCenter:
+        case SYSelectBoxArrowPositionTopRight:
+            rect = CGRectMake(0, SYArrowHeight, SelfWidth, SelfHeight - SYArrowHeight);
+            break;
+        case SYSelectBoxArrowPositionLeftTop:
+        case SYSelectBoxArrowPositionLeftCenter:
+        case SYSelectBoxArrowPositionLeftBottom:
+            rect = CGRectMake(SYArrowHeight, 0, SelfWidth - SYArrowHeight, SelfHeight);
+            break;
+        case SYSelectBoxArrowPositionBottomLeft:
+        case SYSelectBoxArrowPositionBottomCenter:
+        case SYSelectBoxArrowPositionBottomRight:
+            rect = CGRectMake(0, 0, SelfWidth, SelfHeight - SYArrowHeight);
+            break;
+        case SYSelectBoxArrowPositionRightTop:
+        case SYSelectBoxArrowPositionRightCenter:
+        case SYSelectBoxArrowPositionRightBottom:
+            rect = CGRectMake(0, 0, SelfWidth - SYArrowHeight, SelfHeight);
+            break;
+    }
+    return rect;
+}
+
 #pragma mark - 懒加载
 - (UIView *)contentView {
     if (_contentView == nil) {
-        CGRect rect = CGRectZero;
-        switch (self.arrowPosition) {
-            case SYSelectBoxArrowPositionTopLeft:
-            case SYSelectBoxArrowPositionTopCenter:
-            case SYSelectBoxArrowPositionTopRight:
-                rect = CGRectMake(0, SYArrowHeight, SelfWidth, SelfHeight - SYArrowHeight);
-                break;
-            case SYSelectBoxArrowPositionLeftTop:
-            case SYSelectBoxArrowPositionLeftCenter:
-            case SYSelectBoxArrowPositionLeftBottom:
-                rect = CGRectMake(SYArrowHeight, 0, SelfWidth - SYArrowHeight, SelfHeight);
-                break;
-            case SYSelectBoxArrowPositionBottomLeft:
-            case SYSelectBoxArrowPositionBottomCenter:
-            case SYSelectBoxArrowPositionBottomRight:
-                rect = CGRectMake(0, 0, SelfWidth, SelfHeight - SYArrowHeight);
-                break;
-            case SYSelectBoxArrowPositionRightTop:
-            case SYSelectBoxArrowPositionRightCenter:
-            case SYSelectBoxArrowPositionRightBottom:
-                rect = CGRectMake(0, 0, SelfWidth - SYArrowHeight, SelfHeight);
-                break;
-        }
-        _contentView = [[UIView alloc] initWithFrame:rect];
+        _contentView = [[UIView alloc] initWithFrame:[self contentViewFrame]];
         _contentView.backgroundColor = [UIColor clearColor];
     }
     return _contentView;
