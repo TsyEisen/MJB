@@ -52,7 +52,7 @@
 }
 
 - (void)dataAction {
-    [self.dataAnalysisbox showDependentOnPoint:CGPointMake(ScreenW,64)];
+    [self.dataAnalysisbox showDependentOnPoint:CGPointMake(ScreenW - 20,64)];
 }
 
 #pragma mark - tableView DataSource

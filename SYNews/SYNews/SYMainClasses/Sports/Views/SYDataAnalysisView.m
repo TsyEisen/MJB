@@ -310,8 +310,8 @@
     NSInteger total = home + away;
     SYDataAnalysisModel *model = [SYDataAnalysisModel new];
     model.oneStr = title;
-    model.twoStr = total == 0 ? @"0":[NSString stringWithFormat:@"%.2f(%zd)",home*1.0/total,home];
-    model.threeStr = total == 0 ? @"0":[NSString stringWithFormat:@"%.2f(%zd)",away*1.0/total,away];
+    model.twoStr = total == 0 ? @"0":[NSString stringWithFormat:@"%.2f(%zd/%zd)",home*1.0/total,home,total];
+    model.threeStr = total == 0 ? @"0":[NSString stringWithFormat:@"%.2f(%zd/%zd)",away*1.0/total,away,total];
     return model;
 }
 @end
