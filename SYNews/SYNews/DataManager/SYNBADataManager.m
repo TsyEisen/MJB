@@ -115,6 +115,25 @@ SYSingleton_implementation(SYNBADataManager)
     }];
 }
 
+- (void)requestHistoryWithModel:(SYBasketBallModel *)model completion:(void (^)(id result))completion {
+    NSMutableArray *tempArray = [NSMutableArray array];
+    [tempArray addObject:model];
+    for (SYBasketBallModel *item in self.allGames) {
+        if ([item.EventId isEqualToString:model.EventId]) {
+            continue;
+        }
+        if (item.homeScore.length == 0) {
+            continue;
+        }
+        if ([item.HomeTeam isEqualToString:model.HomeTeam] || [item.AwayTeam isEqualToString:model.AwayTeam] || [item.HomeTeam isEqualToString:model.AwayTeam] || [item.AwayTeam isEqualToString:model.HomeTeam]) {
+            [tempArray addObject:item];
+        }
+    }
+    if (completion) {
+        completion(tempArray);
+    }
+}
+
 - (void)requestResultByDate:(NSDate *)date completion:(void (^)(id result))completion {
     if (date == nil) {
         date = [[NSDate date] sy_yesterday];

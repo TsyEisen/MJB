@@ -70,6 +70,10 @@
             continue;
         }
         
+//        if (fabs((model.BfAmountHome - model.BfAmountAway)/model.totalPAmount)< 0.6) {
+//            continue;
+//        }
+        
         NSInteger resultNum = 0;
         if (model.BfAmountHome >= model.BfAmountAway) {
             resultNum += 100;
@@ -83,63 +87,65 @@
         
         if (resultNum == 111) {
             ph++,gh++,yh++,ph_gh++,ph_yh++,gh_yh++,ph_gh_yh++;
-            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+            if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
                 ph_h++,gh_h++,yh_h++,ph_gh_h++,ph_yh_h++,gh_yh_h++,ph_gh_yh_h++;
             }else {
                 ph_a++,gh_a++,yh_a++,ph_gh_a++,ph_yh_a++,gh_yh_a++,ph_gh_yh_a++;
             }
         }else if (resultNum == 110) {
             ph++,gh++,ya++,ph_gh++,ph_ya++,gh_ya++,ph_gh_ya++;
-            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+            if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
                 ph_h++,gh_h++,ya_h++,ph_gh_h++,ph_ya_h++,gh_ya_h++,ph_gh_ya_h++;
             }else {
                 ph_a++,gh_a++,ya_a++,ph_gh_a++,ph_ya_a++,gh_ya_a++,ph_gh_ya_a++;
             }
         }else if (resultNum == 101) {
             ph++,ga++,yh++,ph_ga++,ph_yh++,ga_yh++,ph_ga_yh++;
-            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+            if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
                 ph_h++,ga_h++,yh_h++,ph_ga_h++,ph_yh_h++,ga_yh_h++,ph_ga_yh_h++;
             }else {
                 ph_a++,ga_a++,yh_a++,ph_ga_a++,ph_yh_a++,ga_yh_a++,ph_ga_yh_a++;
             }
         }else if (resultNum == 100) {
             ph++,ga++,ya++,ph_ga++,ph_ya++,ga_ya++,ph_ga_ya++;
-            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+            if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
                 ph_h++,ga_h++,ya_h++,ph_ga_h++,ph_ya_h++,ga_ya_h++,ph_ga_ya_h++;
+                NSLog(@"主 %@%@--%@--%@%@",model.HomeTeam,model.homeScore,model.AsianAvrLet,model.AwayTeam,model.awayScore);
             }else {
+                NSLog(@"客 %@%@--%@--%@%@",model.HomeTeam,model.homeScore,model.AsianAvrLet,model.AwayTeam,model.awayScore);
                 ph_a++,ga_a++,ya_a++,ph_ga_a++,ph_ya_a++,ga_ya_a++,ph_ga_ya_a++;
             }
             
         }else if (resultNum == 11) {
             pa++,gh++,yh++,pa_gh++,pa_yh++,gh_yh++,pa_gh_yh++;
-            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+            if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
                 pa_h++,gh_h++,yh_h++,pa_gh_h++,pa_yh_h++,gh_yh_h++,pa_gh_yh_h++;
             }else {
                 pa_a++,gh_a++,yh_a++,pa_gh_a++,pa_yh_a++,gh_yh_a++,pa_gh_yh_a++;
             }
         }else if (resultNum == 10) {
             pa++,gh++,ya++,pa_gh++,pa_ya++,gh_ya++,pa_gh_ya++;
-            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+            if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
                 pa_h++,gh_h++,ya_h++,pa_gh_h++,pa_ya_h++,gh_ya_h++,pa_gh_ya_h++;
             }else {
                 pa_a++,gh_a++,ya_a++,pa_gh_a++,pa_ya_a++,gh_ya_a++,pa_gh_ya_a++;
             }
         }else if (resultNum == 1) {
             pa++,ga++,yh++,pa_ga++,pa_yh++,ga_yh++,pa_ga_yh++;
-            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+            if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
                 pa_h++,ga_h++,yh_h++,pa_ga_h++,pa_yh_h++,ga_yh_h++,pa_ga_yh_h++;
             }else {
                 pa_a++,ga_a++,yh_a++,pa_ga_a++,pa_yh_a++,ga_yh_a++,pa_ga_yh_a++;
             }
         }else if (resultNum == 0) {
             pa++,ga++,ya++,pa_ga++,pa_ya++,ga_ya++,pa_ga_ya++;
-            if ((model.homeScore.integerValue + model.AsianAvrLet.floatValue) > model.homeScore.integerValue) {
+            if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
                 pa_h++,ga_h++,ya_h++,pa_ga_h++,pa_ya_h++,ga_ya_h++,pa_ga_ya_h++;
             }else {
                 pa_a++,ga_a++,ya_a++,pa_ga_a++,pa_ya_a++,ga_ya_a++,pa_ga_ya_a++;
             }
         }
-        NSLog(@"%@\n%@--%@:%zd",model.MatchTime,model.HomeTeam,model.AwayTeam,resultNum);
+        
     }
     
     _analysisDatas = [NSMutableArray array];
@@ -147,33 +153,33 @@
     [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交易(客)" home:pa_h away:pa_h]];
     [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概率(主)" home:gh_h away:gh_a]];
     [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概率(客)" home:ga_h away:ga_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"盈亏(主)" home:yh_h away:yh_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"盈亏(客)" home:ya_h away:ya_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"盈亏(主)" home:yh_h away:yh_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"盈亏(客)" home:ya_h away:ya_a]];
     
     [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)概(主)" home:ph_gh_h away:ph_gh_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)盈(主)" home:ph_yh_h away:ph_yh_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)盈(主)" home:ph_yh_h away:ph_yh_a]];
     [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)概(客)" home:ph_ga_h away:ph_ga_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)盈(客)" home:ph_ya_h away:ph_ya_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)盈(客)" home:ph_ya_h away:ph_ya_a]];
     
     [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)概(主)" home:pa_gh_h away:pa_gh_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)盈(主)" home:pa_yh_h away:pa_yh_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)盈(主)" home:pa_yh_h away:pa_yh_a]];
     [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)概(客)" home:pa_ga_h away:pa_ga_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)盈(客)" home:pa_ya_h away:pa_ya_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)盈(客)" home:pa_ya_h away:pa_ya_a]];
     
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概(主)盈(主)" home:gh_yh_h away:gh_yh_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概(客)盈(主)" home:ga_yh_h away:ga_yh_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概(主)盈(客)" home:gh_ya_h away:gh_ya_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概(客)盈(客)" home:ga_ya_h away:ga_ya_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概(主)盈(主)" home:gh_yh_h away:gh_yh_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概(客)盈(主)" home:ga_yh_h away:ga_yh_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概(主)盈(客)" home:gh_ya_h away:gh_ya_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概(客)盈(客)" home:ga_ya_h away:ga_ya_a]];
     
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)概(主)盈(主)" home:ph_gh_yh_h away:ph_gh_yh_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)概(主)盈(客)" home:ph_gh_ya_h away:ph_gh_ya_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)概(客)盈(主)" home:ph_ga_yh_h away:ph_ga_yh_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)概(客)盈(客)" home:ph_ga_ya_h away:ph_ga_ya_a]];
-    
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)概(主)盈(主)" home:pa_gh_yh_h away:pa_gh_yh_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)概(主)盈(客)" home:pa_gh_ya_h away:pa_gh_ya_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)概(客)盈(主)" home:pa_ga_yh_h away:pa_ga_yh_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)概(客)盈(客)" home:pa_ga_ya_h away:pa_ga_ya_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)概(主)盈(主)" home:ph_gh_yh_h away:ph_gh_yh_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)概(主)盈(客)" home:ph_gh_ya_h away:ph_gh_ya_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)概(客)盈(主)" home:ph_ga_yh_h away:ph_ga_yh_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)概(客)盈(客)" home:ph_ga_ya_h away:ph_ga_ya_a]];
+//    
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)概(主)盈(主)" home:pa_gh_yh_h away:pa_gh_yh_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)概(主)盈(客)" home:pa_gh_ya_h away:pa_gh_ya_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)概(客)盈(主)" home:pa_ga_yh_h away:pa_ga_yh_a]];
+//    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)概(客)盈(客)" home:pa_ga_ya_h away:pa_ga_ya_a]];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];

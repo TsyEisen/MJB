@@ -44,11 +44,19 @@
 }
 
 - (void)refreshAction{
-    [[SYNBADataManager sharedSYNBADataManager] requestDatasByType:SYNBAListTypeHistory Completion:^(NSArray * _Nonnull datas) {
-        [self.tableView.mj_header endRefreshing];
-        self.datas = datas;
-        [self.tableView reloadData];
-    }];
+    if (self.model) {
+        [[SYNBADataManager sharedSYNBADataManager] requestHistoryWithModel:self.model completion:^(id  _Nonnull result) {
+            [self.tableView.mj_header endRefreshing];
+            self.datas = result;
+            [self.tableView reloadData];
+        }];
+    }else {
+        [[SYNBADataManager sharedSYNBADataManager] requestDatasByType:SYNBAListTypeHistory Completion:^(NSArray * _Nonnull datas) {
+            [self.tableView.mj_header endRefreshing];
+            self.datas = datas;
+            [self.tableView reloadData];
+        }];
+    }
 }
 
 - (void)dataAction {
@@ -93,7 +101,7 @@
 
 - (SYSelectBox *)dataAnalysisbox {
     if (_dataAnalysisbox == nil) {
-        _dataAnalysisbox = [[SYSelectBox alloc] initWithSize:CGSizeMake(ScreenW - 20, 400) direction:SYSelectBoxArrowPositionTopRight andCustomView:self.dataAnalysis];
+        _dataAnalysisbox = [[SYSelectBox alloc] initWithSize:CGSizeMake(ScreenW - 20, 180) direction:SYSelectBoxArrowPositionTopRight andCustomView:self.dataAnalysis];
     }
     return _dataAnalysisbox;
 }

@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SYBasketBallListViewController : SYBaseViewController
-
+@property (nonatomic, strong) SYBasketBallModel *model;
 @end
 
 NS_ASSUME_NONNULL_END

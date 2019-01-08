@@ -10,6 +10,8 @@
 #import "MJRefresh.h"
 #import "SYBasketballListCell.h"
 #import "SYNBADataManager.h"
+#import "SYBasketBallListViewController.h"
+
 @interface SYBasketBallViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UISegmentedControl *segment;
@@ -113,6 +115,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    SYBasketBallListViewController *list = [SYBasketBallListViewController new];
+    list.hidesBottomBarWhenPushed = YES;
+    list.title = @"历史赛程";
+    list.model = [self modelFromIndexPath:indexPath];
+    [self.navigationController pushViewController:list animated:YES];
 }
 
 - (SYBasketBallModel *)modelFromIndexPath:(NSIndexPath *)indexPath {
