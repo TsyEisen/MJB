@@ -64,6 +64,10 @@
     NSInteger ph_gh_yh_h = 0,ph_gh_ya_h = 0,ph_ga_yh_h = 0,ph_ga_ya_h = 0,pa_gh_yh_h = 0,pa_gh_ya_h = 0,pa_ga_yh_h = 0,pa_ga_ya_h = 0;
     NSInteger ph_gh_yh_a = 0,ph_gh_ya_a = 0,ph_ga_yh_a = 0,ph_ga_ya_a = 0,pa_gh_yh_a = 0,pa_gh_ya_a = 0,pa_ga_yh_a = 0,pa_ga_ya_a = 0;
     
+    //不让
+    NSInteger ph_h_no = 0, gh_h_no = 0,pa_h_no = 0,ga_h_no = 0,ph_a_no = 0, gh_a_no = 0,pa_a_no = 0,ga_a_no = 0;
+    NSInteger ph_gh_h_no = 0, ph_ga_h_no = 0,pa_gh_h_no = 0, pa_ga_h_no = 0,ph_gh_a_no = 0, ph_ga_a_no = 0,pa_gh_a_no = 0, pa_ga_a_no = 0;
+    
     for (SYBasketBallModel *model in self.datas) {
         
         if (model.homeScore.length == 0 || model.homeScore.integerValue == 0) {
@@ -75,14 +79,44 @@
 //        }
         
         NSInteger resultNum = 0;
+        NSInteger resultNum_no = 0;
         if (model.BfAmountHome >= model.BfAmountAway) {
             resultNum += 100;
+            resultNum_no += 10;
         }
         if (model.BfIndexHome >= model.BfIndexAway) {
             resultNum += 10;
+            resultNum_no += 1;
         }
         if (model.BfPayoutHome > model.BfPayoutAway) {
             resultNum += 1;
+        }
+        
+        
+        if (resultNum_no == 11) {
+            if (model.homeScore.integerValue > model.awayScore.integerValue) {
+                ph_h_no++,gh_h_no++,ph_gh_h_no++;
+            }else {
+                ph_a_no++,gh_a_no++,ph_gh_a_no++;
+            }
+        }else if (resultNum_no == 10){
+            if (model.homeScore.integerValue > model.awayScore.integerValue) {
+                ph_h_no++,ga_h_no++,ph_ga_h_no++;
+            }else {
+                ph_a_no++,ga_a_no++,ph_ga_a_no++;
+            }
+        }else if (resultNum_no == 1){
+            if (model.homeScore.integerValue > model.awayScore.integerValue) {
+                pa_h_no++,gh_h_no++,pa_gh_h_no++;
+            }else {
+                pa_a_no++,gh_a_no++,pa_gh_a_no++;
+            }
+        }else {
+            if (model.homeScore.integerValue > model.awayScore.integerValue) {
+                pa_h_no++,ga_h_no++,pa_ga_h_no++;
+            }else {
+                pa_a_no++,ga_a_no++,pa_ga_a_no++;
+            }
         }
         
         if (resultNum == 111) {
@@ -92,6 +126,7 @@
             }else {
                 ph_a++,gh_a++,yh_a++,ph_gh_a++,ph_yh_a++,gh_yh_a++,ph_gh_yh_a++;
             }
+            
         }else if (resultNum == 110) {
             ph++,gh++,ya++,ph_gh++,ph_ya++,gh_ya++,ph_gh_ya++;
             if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
@@ -99,6 +134,7 @@
             }else {
                 ph_a++,gh_a++,ya_a++,ph_gh_a++,ph_ya_a++,gh_ya_a++,ph_gh_ya_a++;
             }
+            
         }else if (resultNum == 101) {
             ph++,ga++,yh++,ph_ga++,ph_yh++,ga_yh++,ph_ga_yh++;
             if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
@@ -165,6 +201,21 @@
 //    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)盈(主)" home:pa_yh_h away:pa_yh_a]];
     [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)概(客)" home:pa_ga_h away:pa_ga_a]];
 //    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)盈(客)" home:pa_ya_h away:pa_ya_a]];
+    
+    SYDataAnalysisModel *title = [SYDataAnalysisModel new];
+    title.oneStr = @"****";
+    title.twoStr = @"****";
+    title.threeStr = @"****";
+    [_analysisDatas addObject:title];
+    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交易(主)" home:ph_h_no away:ph_a_no]];
+    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交易(客)" home:pa_h_no away:pa_h_no]];
+    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概率(主)" home:gh_h_no away:gh_a_no]];
+    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概率(客)" home:ga_h_no away:ga_a_no]];
+    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)概(主)" home:ph_gh_h_no away:ph_gh_a_no]];
+    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)概(客)" home:ph_ga_h_no away:ph_ga_a_no]];
+    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)概(主)" home:pa_gh_h_no away:pa_gh_a_no]];
+    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(客)概(客)" home:pa_ga_h_no away:pa_ga_a_no]];
+    
     
 //    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概(主)盈(主)" home:gh_yh_h away:gh_yh_a]];
 //    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概(客)盈(主)" home:ga_yh_h away:ga_yh_a]];

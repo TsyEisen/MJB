@@ -28,7 +28,6 @@ SYSingleton_interface(SYDataAnalyzeManager)
 - (void)requestResultByDate:(NSDate *)date completion:(void (^)(id result))completion;
 
 //- (void)requestResultWithModel:(SYGameListModel *)model completion:(void (^)(NSArray *array))completion;
-- (void)AIScoreMatch;
 
 - (void)copyScoreFrom:(SYGameResultModel *)result toGame:(SYGameListModel *)game;
 @end

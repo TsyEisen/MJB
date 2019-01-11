@@ -176,7 +176,7 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     
     NSString *dateStr = [date sy_stringWithFormat:@"yyyy-MM-dd"];
     
-    if (![date sy_isToday]) {
+    if (![date sy_isToday] && ![date sy_isYesterday]) {
         NSDictionary *dateResult = [self.dateResults objectForKey:dateStr];
         if (dateResult) {
             [self handleData:dateResult completion:completion];
@@ -191,7 +191,7 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromArray:@[@"text/html", @"text/plain"]];
     [manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            if (![date sy_isToday]) {
+            if (![date sy_isToday] && ![date sy_isYesterday]) {
                 [self.dateResults setObject:responseObject forKey:dateStr];
                 BOOL status = [self.dateResults writeToFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeDateResults] atomically:YES];
                 NSLog(@"保存完毕--%d",status);
@@ -216,7 +216,7 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     
     NSMutableArray *tempArray = [NSMutableArray array];
     for (NSDictionary *sport in sports) {
-        if ([[sport objectForKey:@"ifDisp"] integerValue] == 1) {
+        if ([[sport objectForKey:@"ifDisp"] integerValue] == 1||[[sport objectForKey:@"isWfc"] integerValue] == 1||[[sport objectForKey:@"isJc"] integerValue] == 1 ||[[sport objectForKey:@"isGoalC"] integerValue] == 1) {
             [tempArray addObject:[NSString stringWithFormat:@"%@",[sport objectForKey:@"sid"]]];
         }
         [self.resultSprots setObject:sport forKey:[NSString stringWithFormat:@"%@",[sport objectForKey:@"sid"]]];
