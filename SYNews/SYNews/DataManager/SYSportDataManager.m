@@ -247,7 +247,7 @@ SYSingleton_implementation(SYSportDataManager)
                 return obj1.count < obj2.count;
             }];
             
-            completion(array);
+            completion([NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:array]]);
             
         }else if (type == SYListTypeCompare_HighQuality) {
             NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];

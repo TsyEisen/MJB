@@ -186,7 +186,7 @@
     
     _analysisDatas = [NSMutableArray array];
     [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交易(主)" home:ph_h away:ph_a]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交易(客)" home:pa_h away:pa_h]];
+    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交易(客)" home:pa_h away:pa_a]];
     [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概率(主)" home:gh_h away:gh_a]];
     [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概率(客)" home:ga_h away:ga_a]];
 //    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"盈亏(主)" home:yh_h away:yh_a]];
@@ -208,7 +208,7 @@
     title.threeStr = @"****";
     [_analysisDatas addObject:title];
     [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交易(主)" home:ph_h_no away:ph_a_no]];
-    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交易(客)" home:pa_h_no away:pa_h_no]];
+    [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交易(客)" home:pa_h_no away:pa_a_no]];
     [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概率(主)" home:gh_h_no away:gh_a_no]];
     [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"概率(客)" home:ga_h_no away:ga_a_no]];
     [_analysisDatas addObject:[SYDataAnalysisModel modelWithTitle:@"交(主)概(主)" home:ph_gh_h_no away:ph_gh_a_no]];

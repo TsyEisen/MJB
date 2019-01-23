@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UIBarButtonItem *rightItem;
 @property (nonatomic, strong) SYSelectBox *dataAnalysisbox;
 @property (nonatomic, strong) SYBasketballAnalysisView *dataAnalysis;
+@property (nonatomic, strong) NSArray *analysisArray;
 @end
 
 @implementation SYBasketBallListViewController
@@ -45,15 +46,24 @@
 
 - (void)refreshAction{
     if (self.model) {
-        [[SYNBADataManager sharedSYNBADataManager] requestHistoryWithModel:self.model completion:^(id  _Nonnull result) {
+//        [[SYNBADataManager sharedSYNBADataManager] requestHistoryWithModel:self.model completion:^(id  _Nonnull result) {
+//            [self.tableView.mj_header endRefreshing];
+//            self.datas = result;
+//            [self.tableView reloadData];
+//        }];
+        
+        [[SYNBADataManager sharedSYNBADataManager] requestHistoryWithModel:self.model completion:^(NSArray * _Nonnull result, NSArray * _Nonnull groups) {
             [self.tableView.mj_header endRefreshing];
-            self.datas = result;
+            self.datas = groups;
+            self.analysisArray = result;
             [self.tableView reloadData];
         }];
+        
     }else {
         [[SYNBADataManager sharedSYNBADataManager] requestDatasByType:SYNBAListTypeHistory Completion:^(NSArray * _Nonnull datas) {
             [self.tableView.mj_header endRefreshing];
             self.datas = datas;
+            self.analysisArray = datas;
             [self.tableView reloadData];
         }];
     }
@@ -66,22 +76,63 @@
 #pragma mark - tableView DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    if (self.model) {
+        return 1+self.datas.count;
+    }else {
+        return 1;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.datas.count;
+    if (self.model) {
+        if (section == 0) {
+            return 1;
+        }else {
+            NSArray *array = self.datas[section - 1];
+            return array.count;
+        }
+    }else {
+        return self.datas.count;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     SYBasketballListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SYBasketballListCell class])];
-    //    cell.recommend = self.type == SYListTypeNear && self.segment.selectedSegmentIndex == 2;
-    cell.model = self.datas[indexPath.row];
+    cell.currentGame = self.model;
+    cell.model = [self modelWithIndexPath:indexPath];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"正赛";
+    }else if (section == 1) {
+        return @"交战历史";
+    }else if (section == 2) {
+        return @"间接对战";
+    }else if (section == 3){
+        return @"主队历史";
+    }else {
+        return @"客队历史";
+    }
+}
+
+- (SYBasketBallModel *)modelWithIndexPath:(NSIndexPath *)indexPath {
+    if (self.model) {
+        if (indexPath.section == 0) {
+            return self.model;
+        }else {
+            NSArray *array = self.datas[indexPath.section - 1];
+            return array[indexPath.row];
+        }
+    }else {
+        return self.datas[indexPath.row];
+    }
 }
 
 #pragma mark - 懒加载
@@ -101,7 +152,7 @@
 
 - (SYSelectBox *)dataAnalysisbox {
     if (_dataAnalysisbox == nil) {
-        _dataAnalysisbox = [[SYSelectBox alloc] initWithSize:CGSizeMake(ScreenW - 20, 180) direction:SYSelectBoxArrowPositionTopRight andCustomView:self.dataAnalysis];
+        _dataAnalysisbox = [[SYSelectBox alloc] initWithSize:CGSizeMake(ScreenW - 20, 280) direction:SYSelectBoxArrowPositionTopRight andCustomView:self.dataAnalysis];
     }
     return _dataAnalysisbox;
 }
@@ -109,7 +160,7 @@
 - (SYBasketballAnalysisView *)dataAnalysis {
     if (_dataAnalysis == nil) {
         _dataAnalysis = [SYBasketballAnalysisView viewFromNib];
-        _dataAnalysis.datas = self.datas;
+        _dataAnalysis.datas = self.analysisArray;
     }
     return _dataAnalysis;
 }

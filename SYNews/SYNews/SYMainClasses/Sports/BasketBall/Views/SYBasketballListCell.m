@@ -36,6 +36,25 @@
 
 - (void)setModel:(SYBasketBallModel *)model {
     _model = model;
+    //
+    if (self.currentGame) {
+        
+        if ([self.currentGame.HomeTeam isEqualToString:model.HomeTeam]) {
+            self.homeLabel.textColor = [UIColor appMainColor];
+        }else if ([self.currentGame.AwayTeam isEqualToString:model.HomeTeam]) {
+            self.homeLabel.textColor = [UIColor sy_colorWithRGB:0x3CB371];
+        }else {
+            self.homeLabel.textColor = [UIColor sy_colorWithRGB:0x333333];
+        }
+        
+        if ([self.currentGame.HomeTeam isEqualToString:model.AwayTeam]) {
+            self.awayLabel.textColor = [UIColor appMainColor];
+        }else if ([self.currentGame.AwayTeam isEqualToString:model.AwayTeam]) {
+            self.awayLabel.textColor = [UIColor sy_colorWithRGB:0x3CB371];
+        }else {
+            self.awayLabel.textColor = [UIColor sy_colorWithRGB:0x333333];
+        }
+    }
     
     self.timeLabel.text = [NSString stringWithFormat:@"%@\n%@",model.SortName,[NSDate sy_showMatchTimeWithTime:model.MatchTime]];
     if (model.homeGroupRank.length > 0) {

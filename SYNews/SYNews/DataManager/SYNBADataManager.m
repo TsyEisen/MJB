@@ -115,9 +115,15 @@ SYSingleton_implementation(SYNBADataManager)
     }];
 }
 
-- (void)requestHistoryWithModel:(SYBasketBallModel *)model completion:(void (^)(id result))completion {
+- (void)requestHistoryWithModel:(SYBasketBallModel *)model completion:(nonnull void (^)(NSArray * _Nonnull, NSArray * _Nonnull))completion {
     NSMutableArray *tempArray = [NSMutableArray array];
     [tempArray addObject:model];
+    
+    NSMutableArray *history = [NSMutableArray array];
+    NSMutableArray *thirds = [NSMutableArray array];
+    NSMutableArray *homes = [NSMutableArray array];
+    NSMutableArray *aways = [NSMutableArray array];
+    
     for (SYBasketBallModel *item in self.allGames) {
         if ([item.EventId isEqualToString:model.EventId]) {
             continue;
@@ -128,9 +134,48 @@ SYSingleton_implementation(SYNBADataManager)
         if ([item.HomeTeam isEqualToString:model.HomeTeam] || [item.AwayTeam isEqualToString:model.AwayTeam] || [item.HomeTeam isEqualToString:model.AwayTeam] || [item.AwayTeam isEqualToString:model.HomeTeam]) {
             [tempArray addObject:item];
         }
+        
+        if ([model.HomeTeam isEqualToString:item.HomeTeam]) {
+            if ([model.AwayTeam isEqualToString:item.AwayTeam]) {
+                [history addObject:item];
+            }else {
+                [homes addObject:item];
+            }
+            continue;
+        }else if ([model.HomeTeam isEqualToString:item.AwayTeam]) {
+            if ([model.AwayTeam isEqualToString:item.HomeTeam]) {
+                [history addObject:item];
+            }else {
+                [homes addObject:item];
+            }
+            continue;
+        }else if ([model.AwayTeam isEqualToString:item.HomeTeam]) {
+            [aways addObject:item];
+            continue;
+        }else if ([model.AwayTeam isEqualToString:item.AwayTeam]) {
+            [aways addObject:item];
+            continue;
+        }
     }
+    
+    for (SYBasketBallModel *homeModel in homes) {
+        NSString *homeOpponent = [homeModel.HomeTeam isEqualToString:model.HomeTeam] ? homeModel.AwayTeam : homeModel.HomeTeam;
+        for (SYBasketBallModel *awayModel in aways) {
+            NSString *awayOpponent = [awayModel.HomeTeam isEqualToString:model.AwayTeam] ? awayModel.AwayTeam : awayModel.HomeTeam;
+            if ([homeOpponent isEqualToString:awayOpponent]) {
+                if (![thirds containsObject:homeModel]) {
+                    [thirds addObject:homeModel];
+                }
+                if (![thirds containsObject:awayModel]) {
+                    [thirds addObject:awayModel];
+                }
+                break;
+            }
+        }
+    }
+    
     if (completion) {
-        completion(tempArray);
+        completion(tempArray,@[history,thirds,homes,aways]);
     }
 }
 

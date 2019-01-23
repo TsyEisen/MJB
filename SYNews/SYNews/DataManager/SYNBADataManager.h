@@ -29,7 +29,7 @@ SYSingleton_interface(SYNBADataManager)
 
 - (void)requestResultByDate:(NSDate *)date completion:(void (^)(id result))completion;
 
-- (void)requestHistoryWithModel:(SYBasketBallModel *)model completion:(void (^)(id result))completion;
+- (void)requestHistoryWithModel:(SYBasketBallModel *)model completion:(void (^)(NSArray *result,NSArray *groups))completion;
 
 - (void)copyScoreFrom:(SYBasketBallModel *)result toGame:(SYBasketBallModel *)game;
 - (void)changeScoreWithModels:(NSArray *)models;

@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SYBasketballListCell : UITableViewCell
 @property (nonatomic, strong) SYBasketBallModel *model;
+@property (nonatomic, strong) SYBasketBallModel *currentGame;
 @end
 
 NS_ASSUME_NONNULL_END
