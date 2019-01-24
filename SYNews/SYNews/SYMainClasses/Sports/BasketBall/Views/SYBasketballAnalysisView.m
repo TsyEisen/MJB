@@ -68,7 +68,17 @@
     NSInteger ph_h_no = 0, gh_h_no = 0,pa_h_no = 0,ga_h_no = 0,ph_a_no = 0, gh_a_no = 0,pa_a_no = 0,ga_a_no = 0;
     NSInteger ph_gh_h_no = 0, ph_ga_h_no = 0,pa_gh_h_no = 0, pa_ga_h_no = 0,ph_gh_a_no = 0, ph_ga_a_no = 0,pa_gh_a_no = 0, pa_ga_a_no = 0;
     
+    NSMutableDictionary *datesTempDict = [NSMutableDictionary dictionary];
+    
     for (SYBasketBallModel *model in self.datas) {
+        
+        NSString *dateStrKey = [model.MatchTime componentsSeparatedByString:@"T"].firstObject;
+        NSMutableArray *dataTemp = [datesTempDict objectForKey:dateStrKey];
+        if (dataTemp == nil) {
+            dataTemp = [NSMutableArray array];
+        }
+        [dataTemp addObject:model];
+        [datesTempDict setObject:dataTemp forKey:dateStrKey];
         
         if (model.homeScore.length == 0 || model.homeScore.integerValue == 0) {
             continue;
@@ -235,5 +245,61 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
+    
+    [self calculatorDataByDateWithDatas:datesTempDict];
 }
+
+- (void)calculatorDataByDateWithDatas:(NSDictionary *)dict {
+    
+    NSInteger rangfen = 0;
+    NSInteger total = 0;
+    
+    for (NSString *key in dict) {
+        
+        NSInteger redCount_home = 0;
+        NSInteger normalRedCount_home = 0;
+        
+        NSInteger redCount_away = 0;
+        NSInteger normalRedCount_away = 0;
+        
+        NSArray *array = dict[key];
+        for (SYBasketBallModel *model in array) {
+            total++;
+            if (model.BfAmountHome > model.BfAmountAway && model.BfIndexHome > model.BfIndexAway) {
+                
+                if (model.AsianAvrLet.floatValue >= 0) {
+                    rangfen++;
+                }
+                
+                //主
+                if (model.homeScore.integerValue > model.awayScore.integerValue) {
+                    normalRedCount_home++;
+                    if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
+                        redCount_home++;
+                    }
+                }
+            }
+            
+            if (model.BfAmountHome < model.BfAmountAway && model.BfIndexHome < model.BfIndexAway) {
+                //客
+                
+                if (model.AsianAvrLet.floatValue < 0) {
+                    rangfen++;
+                }
+                
+                if (model.homeScore.integerValue < model.awayScore.integerValue) {
+                    normalRedCount_away++;
+                    if (model.homeScore.integerValue < model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
+                        redCount_away++;
+                    }
+                }
+            }
+            
+        }
+        
+        NSLog(@"%@:(%zd(主%zd客%zd)/%zd(主%zd客%zd)/%zd)",key,redCount_away + redCount_home,redCount_home,redCount_away,normalRedCount_home + normalRedCount_away,normalRedCount_home,normalRedCount_away,array.count);
+    }
+    NSLog(@"让分统计:%zd--%zd",rangfen,total);
+}
+
 @end

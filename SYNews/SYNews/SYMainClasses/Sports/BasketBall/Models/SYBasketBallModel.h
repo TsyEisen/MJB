@@ -124,6 +124,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger updateSeconds;
 
 @property (nonatomic, copy) NSString *showTime;
+
 @end
 
 NS_ASSUME_NONNULL_END
