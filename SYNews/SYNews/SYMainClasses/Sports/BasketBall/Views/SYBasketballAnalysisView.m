@@ -156,9 +156,9 @@
             ph++,ga++,ya++,ph_ga++,ph_ya++,ga_ya++,ph_ga_ya++;
             if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
                 ph_h++,ga_h++,ya_h++,ph_ga_h++,ph_ya_h++,ga_ya_h++,ph_ga_ya_h++;
-                NSLog(@"主 %@%@--%@--%@%@",model.HomeTeam,model.homeScore,model.AsianAvrLet,model.AwayTeam,model.awayScore);
+//                NSLog(@"主 %@%@--%@--%@%@",model.HomeTeam,model.homeScore,model.AsianAvrLet,model.AwayTeam,model.awayScore);
             }else {
-                NSLog(@"客 %@%@--%@--%@%@",model.HomeTeam,model.homeScore,model.AsianAvrLet,model.AwayTeam,model.awayScore);
+//                NSLog(@"客 %@%@--%@--%@%@",model.HomeTeam,model.homeScore,model.AsianAvrLet,model.AwayTeam,model.awayScore);
                 ph_a++,ga_a++,ya_a++,ph_ga_a++,ph_ya_a++,ga_ya_a++,ph_ga_ya_a++;
             }
             
@@ -254,7 +254,11 @@
     NSInteger rangfen = 0;
     NSInteger total = 0;
     
-    for (NSString *key in dict) {
+    NSDate *date = [NSDate sy_dateWithString:@"20181213010101" formate:@"yyyyMMddHHmmss"];
+    
+    do {
+        NSString *dateKey = [date sy_stringWithFormat:@"yyyy-MM-dd"];
+        NSArray *array = dict[dateKey];
         
         NSInteger redCount_home = 0;
         NSInteger normalRedCount_home = 0;
@@ -262,7 +266,11 @@
         NSInteger redCount_away = 0;
         NSInteger normalRedCount_away = 0;
         
-        NSArray *array = dict[key];
+        if (array == nil) {
+            date = [date sy_tomorrow];
+            continue;
+        }
+        
         for (SYBasketBallModel *model in array) {
             total++;
             if (model.BfAmountHome > model.BfAmountAway && model.BfIndexHome > model.BfIndexAway) {
@@ -297,8 +305,22 @@
             
         }
         
-        NSLog(@"%@:(%zd(主%zd客%zd)/%zd(主%zd客%zd)/%zd)",key,redCount_away + redCount_home,redCount_home,redCount_away,normalRedCount_home + normalRedCount_away,normalRedCount_home,normalRedCount_away,array.count);
-    }
+        NSLog(@"%@--%zd(主%zd客%zd)%@/%zd(主%zd客%zd)%@/%zd",
+              dateKey,
+              redCount_away + redCount_home,
+              redCount_home,
+              redCount_away,
+              redCount_away + redCount_home > array.count * 0.5 ? @"红":@"黑",
+              normalRedCount_home + normalRedCount_away,
+              normalRedCount_home,
+              normalRedCount_away,
+              normalRedCount_home + normalRedCount_away > array.count * 0.5 ? @"红":@"黑",
+              array.count);
+        
+        date = [date sy_tomorrow];
+        
+    } while (![date sy_isTomorrow]);
+
     NSLog(@"让分统计:%zd--%zd",rangfen,total);
 }
 

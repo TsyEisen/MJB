@@ -7788,29 +7788,29 @@
 		<key>AwayTeamId</key>
 		<integer>6480414</integer>
 		<key>BfAmountAway</key>
-		<real>28625.560000000001</real>
+		<real>234596.28</real>
 		<key>BfAmountDraw</key>
-		<real>20246.75</real>
+		<real>203515.29999999999</real>
 		<key>BfAmountHome</key>
-		<real>222374.56</real>
+		<real>1131286.75</real>
 		<key>BfIndexAway</key>
-		<real>22.959299999999999</real>
+		<real>30.150200000000002</real>
 		<key>BfIndexDraw</key>
-		<real>13.464399999999999</real>
+		<real>20.6754</real>
 		<key>BfIndexHome</key>
-		<real>63.576300000000003</real>
+		<real>49.174399999999999</real>
 		<key>BfOddsAway</key>
-		<real>5.0999999999999996</real>
+		<real>4.7999999999999998</real>
 		<key>BfOddsDraw</key>
-		<real>4.2000000000000002</real>
+		<real>3.8500000000000001</real>
 		<key>BfOddsHome</key>
-		<real>1.79</real>
+		<real>1.8700000000000001</real>
 		<key>BfPayoutAway</key>
-		<real>-46.777799999999999</real>
+		<real>-22.197600000000001</real>
 		<key>BfPayoutDraw</key>
-		<real>-68.7881</real>
+		<real>-46.647199999999998</real>
 		<key>BfPayoutHome</key>
-		<real>47.3765</real>
+		<real>26.894400000000001</real>
 		<key>Classifnication</key>
 		<integer>1</integer>
 		<key>EventId</key>
@@ -7824,23 +7824,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>14.725099999999999</real>
+		<real>30.985800000000001</real>
 		<key>KellyDraw</key>
-		<real>15.792400000000001</real>
+		<real>25.178799999999999</real>
 		<key>KellyHome</key>
-		<real>3.8151999999999999</real>
+		<real>10.7883</real>
 		<key>LeagueId</key>
 		<integer>787</integer>
 		<key>MatchTime</key>
 		<string>2019-01-22T16:50:00</string>
 		<key>MaxLastOdds</key>
-		<real>1.79</real>
+		<real>1.6599999999999999</real>
 		<key>MaxTeamId</key>
 		<integer>8586946</integer>
 		<key>MaxTradedChange</key>
-		<real>29417.570000000007</real>
+		<real>115401.58999999997</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T07:56:42</string>
+		<string>2019-01-22T15:50:34</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -7851,6 +7851,237 @@
 		<string>澳超</string>
 		<key>UnusualHot</key>
 		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29062916#2019-01-23T14:35:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>+0.25</string>
+		<key>AwayTeam</key>
+		<string>悉尼FC</string>
+		<key>AwayTeamId</key>
+		<integer>1205122</integer>
+		<key>BfAmountAway</key>
+		<real>497148.15999999997</real>
+		<key>BfAmountDraw</key>
+		<real>101300.47</real>
+		<key>BfAmountHome</key>
+		<real>167709.76000000001</real>
+		<key>BfIndexAway</key>
+		<real>56.811300000000003</real>
+		<key>BfIndexDraw</key>
+		<real>18.065300000000001</real>
+		<key>BfIndexHome</key>
+		<real>25.1234</real>
+		<key>BfOddsAway</key>
+		<real>2.3399999999999999</real>
+		<key>BfOddsDraw</key>
+		<real>3.75</real>
+		<key>BfOddsHome</key>
+		<real>3.2999999999999998</real>
+		<key>BfPayoutAway</key>
+		<real>55.253599999999999</real>
+		<key>BfPayoutDraw</key>
+		<real>-50.6312</real>
+		<key>BfPayoutHome</key>
+		<real>-31.3429</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29062916</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>惠灵顿</string>
+		<key>HomeTeamId</key>
+		<integer>2469649</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>6.3277999999999999</real>
+		<key>KellyDraw</key>
+		<real>8.3086000000000002</real>
+		<key>KellyHome</key>
+		<real>12.2995</real>
+		<key>LeagueId</key>
+		<integer>787</integer>
+		<key>MatchTime</key>
+		<string>2019-01-23T14:35:00</string>
+		<key>MaxLastOdds</key>
+		<real>2.3399999999999999</real>
+		<key>MaxTeamId</key>
+		<integer>1205122</integer>
+		<key>MaxTradedChange</key>
+		<real>72905.009999999951</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T14:32:32</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>澳超</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29062917#2019-01-23T16:50:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-1</string>
+		<key>AwayTeam</key>
+		<string>中央海岸水手</string>
+		<key>AwayTeamId</key>
+		<integer>1205126</integer>
+		<key>BfAmountAway</key>
+		<real>110287.78</real>
+		<key>BfAmountDraw</key>
+		<real>106279.44</real>
+		<key>BfAmountHome</key>
+		<real>761925.17000000004</real>
+		<key>BfIndexAway</key>
+		<real>30.8508</real>
+		<key>BfIndexDraw</key>
+		<real>20.798300000000001</real>
+		<key>BfIndexHome</key>
+		<real>48.350999999999999</real>
+		<key>BfOddsAway</key>
+		<real>6.5999999999999996</real>
+		<key>BfOddsDraw</key>
+		<real>4.9000000000000004</real>
+		<key>BfOddsHome</key>
+		<real>1.5600000000000001</real>
+		<key>BfPayoutAway</key>
+		<real>-23.059699999999999</real>
+		<key>BfPayoutDraw</key>
+		<real>-48.130200000000002</real>
+		<key>BfPayoutHome</key>
+		<real>20.585000000000001</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29062917</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>纽卡斯尔喷气机</string>
+		<key>HomeTeamId</key>
+		<integer>2580566</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>26.440999999999999</real>
+		<key>KellyDraw</key>
+		<real>12.052899999999999</real>
+		<key>KellyHome</key>
+		<real>3.6080999999999999</real>
+		<key>LeagueId</key>
+		<integer>787</integer>
+		<key>MatchTime</key>
+		<string>2019-01-23T16:50:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.54</real>
+		<key>MaxTeamId</key>
+		<integer>2580566</integer>
+		<key>MaxTradedChange</key>
+		<real>190448.76000000001</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T15:51:38</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>澳超</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29062918#2019-01-23T19:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-0.25</string>
+		<key>AwayTeam</key>
+		<string>阿德莱德联</string>
+		<key>AwayTeamId</key>
+		<integer>571273</integer>
+		<key>BfAmountAway</key>
+		<real>613600.06000000006</real>
+		<key>BfAmountDraw</key>
+		<real>409326.45000000001</real>
+		<key>BfAmountHome</key>
+		<real>2165922.3500000001</real>
+		<key>BfIndexAway</key>
+		<real>26.291699999999999</real>
+		<key>BfIndexDraw</key>
+		<real>18.1127</real>
+		<key>BfIndexHome</key>
+		<real>55.595500000000001</real>
+		<key>BfOddsAway</key>
+		<real>3.5</real>
+		<key>BfOddsDraw</key>
+		<real>3.75</real>
+		<key>BfOddsHome</key>
+		<real>2.2000000000000002</real>
+		<key>BfPayoutAway</key>
+		<real>-30.368099999999998</real>
+		<key>BfPayoutDraw</key>
+		<real>-52.029600000000002</real>
+		<key>BfPayoutHome</key>
+		<real>47.241100000000003</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29062918</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>珀斯光荣</string>
+		<key>HomeTeamId</key>
+		<integer>370132</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>15.286300000000001</real>
+		<key>KellyDraw</key>
+		<real>10.3863</real>
+		<key>KellyHome</key>
+		<real>8.9930000000000003</real>
+		<key>LeagueId</key>
+		<integer>787</integer>
+		<key>MatchTime</key>
+		<string>2019-01-23T19:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>2.1600000000000001</real>
+		<key>MaxTeamId</key>
+		<integer>370132</integer>
+		<key>MaxTradedChange</key>
+		<real>200526.08000000002</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T17:42:21</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>澳超</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
 		<key>UnusualIndex</key>
 		<integer>0</integer>
 		<key>UnusualPayout</key>
@@ -10546,6 +10777,468 @@
 		<string>英冠</string>
 		<key>UnusualHot</key>
 		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29066339#2019-01-24T03:45:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-0.25</string>
+		<key>AwayTeam</key>
+		<string>利文斯顿</string>
+		<key>AwayTeamId</key>
+		<integer>57423</integer>
+		<key>BfAmountAway</key>
+		<real>24107.049999999999</real>
+		<key>BfAmountDraw</key>
+		<real>60795.260000000002</real>
+		<key>BfAmountHome</key>
+		<real>177253.95999999999</real>
+		<key>BfIndexAway</key>
+		<real>14.743</real>
+		<key>BfIndexDraw</key>
+		<real>27.536799999999999</real>
+		<key>BfIndexHome</key>
+		<real>57.720199999999998</real>
+		<key>BfOddsAway</key>
+		<real>4.4000000000000004</real>
+		<key>BfOddsDraw</key>
+		<real>3.1499999999999999</real>
+		<key>BfOddsHome</key>
+		<real>2.2000000000000002</real>
+		<key>BfPayoutAway</key>
+		<real>-61.118299999999998</real>
+		<key>BfPayoutDraw</key>
+		<real>-27.376999999999999</real>
+		<key>BfPayoutHome</key>
+		<real>52.2258</real>
+		<key>Classifnication</key>
+		<integer>2</integer>
+		<key>EventId</key>
+		<integer>29066339</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>圣约翰斯通</string>
+		<key>HomeTeamId</key>
+		<integer>57425</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>20.579599999999999</real>
+		<key>KellyDraw</key>
+		<real>2.7294999999999998</real>
+		<key>KellyHome</key>
+		<real>2.8222</real>
+		<key>LeagueId</key>
+		<integer>33</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T03:45:00</string>
+		<key>MaxLastOdds</key>
+		<real>3.0499999999999998</real>
+		<key>MaxTeamId</key>
+		<integer>58805</integer>
+		<key>MaxTradedChange</key>
+		<real>16183.73</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T00:21:34</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>苏超</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29066340#2019-01-24T03:45:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>+0.25</string>
+		<key>AwayTeam</key>
+		<string>希伯尼安</string>
+		<key>AwayTeamId</key>
+		<integer>9166</integer>
+		<key>BfAmountAway</key>
+		<real>239585.26999999999</real>
+		<key>BfAmountDraw</key>
+		<real>122880.97</real>
+		<key>BfAmountHome</key>
+		<real>54449.629999999997</real>
+		<key>BfIndexAway</key>
+		<real>48.343499999999999</real>
+		<key>BfIndexDraw</key>
+		<real>35.7866</real>
+		<key>BfIndexHome</key>
+		<real>15.8698</real>
+		<key>BfOddsAway</key>
+		<real>2.4199999999999999</real>
+		<key>BfOddsDraw</key>
+		<real>3.4500000000000002</real>
+		<key>BfOddsHome</key>
+		<real>3.3500000000000001</real>
+		<key>BfPayoutAway</key>
+		<real>37.463799999999999</real>
+		<key>BfPayoutDraw</key>
+		<real>1.7585</real>
+		<key>BfPayoutHome</key>
+		<real>-54.874499999999998</real>
+		<key>Classifnication</key>
+		<integer>2</integer>
+		<key>EventId</key>
+		<integer>29066340</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>马瑟韦尔</string>
+		<key>HomeTeamId</key>
+		<integer>10707</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>3.8557999999999999</real>
+		<key>KellyDraw</key>
+		<real>6.0193000000000003</real>
+		<key>KellyHome</key>
+		<real>5.4916999999999998</real>
+		<key>LeagueId</key>
+		<integer>33</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T03:45:00</string>
+		<key>MaxLastOdds</key>
+		<real>2.4199999999999999</real>
+		<key>MaxTeamId</key>
+		<integer>9166</integer>
+		<key>MaxTradedChange</key>
+		<real>24166.579999999987</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T03:17:59</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>苏超</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29066341#2019-01-24T03:45:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-1.25</string>
+		<key>AwayTeam</key>
+		<string>邓迪FC</string>
+		<key>AwayTeamId</key>
+		<integer>13133</integer>
+		<key>BfAmountAway</key>
+		<real>29485.66</real>
+		<key>BfAmountDraw</key>
+		<real>65115.260000000002</real>
+		<key>BfAmountHome</key>
+		<real>485756.90999999997</real>
+		<key>BfIndexAway</key>
+		<real>20.6281</real>
+		<key>BfIndexDraw</key>
+		<real>25.7669</real>
+		<key>BfIndexHome</key>
+		<real>53.6051</real>
+		<key>BfOddsAway</key>
+		<real>9</real>
+		<key>BfOddsDraw</key>
+		<real>5.2999999999999998</real>
+		<key>BfOddsHome</key>
+		<real>1.4299999999999999</real>
+		<key>BfPayoutAway</key>
+		<real>-53.561199999999999</real>
+		<key>BfPayoutDraw</key>
+		<real>-41.9925</real>
+		<key>BfPayoutHome</key>
+		<real>20.6782</real>
+		<key>Classifnication</key>
+		<integer>2</integer>
+		<key>EventId</key>
+		<integer>29066341</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>哈茨</string>
+		<key>HomeTeamId</key>
+		<integer>47993</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>29.4437</real>
+		<key>KellyDraw</key>
+		<real>19.670999999999999</real>
+		<key>KellyHome</key>
+		<real>1.7896000000000001</real>
+		<key>LeagueId</key>
+		<integer>33</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T03:45:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.4399999999999999</real>
+		<key>MaxTeamId</key>
+		<integer>47993</integer>
+		<key>MaxTradedChange</key>
+		<real>29261.540000000008</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T01:34:10</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>苏超</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29066343#2019-01-24T03:45:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>+1</string>
+		<key>AwayTeam</key>
+		<string>阿伯丁</string>
+		<key>AwayTeamId</key>
+		<integer>1189</integer>
+		<key>BfAmountAway</key>
+		<real>550285.77000000002</real>
+		<key>BfAmountDraw</key>
+		<real>86713</real>
+		<key>BfAmountHome</key>
+		<real>33187.300000000003</real>
+		<key>BfIndexAway</key>
+		<real>60.3005</real>
+		<key>BfIndexDraw</key>
+		<real>23.816099999999999</real>
+		<key>BfIndexHome</key>
+		<real>15.8834</real>
+		<key>BfOddsAway</key>
+		<real>1.6299999999999999</real>
+		<key>BfOddsDraw</key>
+		<real>4.2000000000000002</real>
+		<key>BfOddsHome</key>
+		<real>6.7999999999999998</real>
+		<key>BfPayoutAway</key>
+		<real>33.953600000000002</real>
+		<key>BfPayoutDraw</key>
+		<real>-47.094099999999997</real>
+		<key>BfPayoutHome</key>
+		<real>-64.715999999999994</real>
+		<key>Classifnication</key>
+		<integer>2</integer>
+		<key>EventId</key>
+		<integer>29066343</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>汉密尔顿</string>
+		<key>HomeTeamId</key>
+		<integer>203716</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>2.3176999999999999</real>
+		<key>KellyDraw</key>
+		<real>7.2556000000000003</real>
+		<key>KellyHome</key>
+		<real>20.2166</real>
+		<key>LeagueId</key>
+		<integer>33</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T03:45:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.6699999999999999</real>
+		<key>MaxTeamId</key>
+		<integer>1189</integer>
+		<key>MaxTradedChange</key>
+		<real>33638.75</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T02:40:04</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>苏超</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29066344#2019-01-24T03:45:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-2.25</string>
+		<key>AwayTeam</key>
+		<string>圣米伦</string>
+		<key>AwayTeamId</key>
+		<integer>674748</integer>
+		<key>BfAmountAway</key>
+		<real>24115.57</real>
+		<key>BfAmountDraw</key>
+		<real>77356.25</real>
+		<key>BfAmountHome</key>
+		<real>3081663.6200000001</real>
+		<key>BfIndexAway</key>
+		<real>19.976800000000001</real>
+		<key>BfIndexDraw</key>
+		<real>17.115300000000001</real>
+		<key>BfIndexHome</key>
+		<real>62.907899999999998</real>
+		<key>BfOddsAway</key>
+		<real>50</real>
+		<key>BfOddsDraw</key>
+		<real>12</real>
+		<key>BfOddsHome</key>
+		<real>1.1100000000000001</real>
+		<key>BfPayoutAway</key>
+		<real>-65.692499999999995</real>
+		<key>BfPayoutDraw</key>
+		<real>-70.606700000000004</real>
+		<key>BfPayoutHome</key>
+		<real>8.0359999999999996</real>
+		<key>Classifnication</key>
+		<integer>2</integer>
+		<key>EventId</key>
+		<integer>29066344</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>凯尔特人</string>
+		<key>HomeTeamId</key>
+		<integer>55223</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>312.24939999999998</real>
+		<key>KellyDraw</key>
+		<real>109.8083</real>
+		<key>KellyHome</key>
+		<real>0.73140000000000005</real>
+		<key>LeagueId</key>
+		<integer>33</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T03:45:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.1200000000000001</real>
+		<key>MaxTeamId</key>
+		<integer>55223</integer>
+		<key>MaxTradedChange</key>
+		<real>253333.87</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T06:41:23</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>苏超</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29066345#2019-01-24T03:45:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>+1</string>
+		<key>AwayTeam</key>
+		<string>格拉斯哥流浪者</string>
+		<key>AwayTeamId</key>
+		<integer>56085</integer>
+		<key>BfAmountAway</key>
+		<real>691032.96999999997</real>
+		<key>BfAmountDraw</key>
+		<real>109298.78999999999</real>
+		<key>BfAmountHome</key>
+		<real>149823.60000000001</real>
+		<key>BfIndexAway</key>
+		<real>46.0914</real>
+		<key>BfIndexDraw</key>
+		<real>18.315899999999999</real>
+		<key>BfIndexHome</key>
+		<real>35.592700000000001</real>
+		<key>BfOddsAway</key>
+		<real>1.6399999999999999</real>
+		<key>BfOddsDraw</key>
+		<real>4.4000000000000004</real>
+		<key>BfOddsHome</key>
+		<real>6</real>
+		<key>BfPayoutAway</key>
+		<real>22.281300000000002</real>
+		<key>BfPayoutDraw</key>
+		<real>-51.407699999999998</real>
+		<key>BfPayoutHome</key>
+		<real>-5.5719000000000003</real>
+		<key>Classifnication</key>
+		<integer>2</integer>
+		<key>EventId</key>
+		<integer>29066345</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>基尔马诺克</string>
+		<key>HomeTeamId</key>
+		<integer>56086</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>1.9601999999999999</real>
+		<key>KellyDraw</key>
+		<real>10.1936</real>
+		<key>KellyHome</key>
+		<real>25.395099999999999</real>
+		<key>LeagueId</key>
+		<integer>33</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T03:45:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.6499999999999999</real>
+		<key>MaxTeamId</key>
+		<integer>56085</integer>
+		<key>MaxTradedChange</key>
+		<real>37509.080000000075</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T03:39:25</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>苏超</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
 		<key>UnusualIndex</key>
 		<integer>0</integer>
 		<key>UnusualPayout</key>
@@ -21170,6 +21863,237 @@
 		<real>0.0</real>
 		<key>SortName</key>
 		<string>法乙</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29074146#2019-01-25T03:45:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>0</string>
+		<key>AwayTeam</key>
+		<string>奥斯坦德</string>
+		<key>AwayTeamId</key>
+		<integer>13053079</integer>
+		<key>BfAmountAway</key>
+		<real>41.049999999999997</real>
+		<key>BfAmountDraw</key>
+		<real>41.060000000000002</real>
+		<key>BfAmountHome</key>
+		<real>0.0</real>
+		<key>BfIndexAway</key>
+		<real>59.453600000000002</real>
+		<key>BfIndexDraw</key>
+		<real>40.546399999999998</real>
+		<key>BfIndexHome</key>
+		<real>0.0</real>
+		<key>BfOddsAway</key>
+		<real>6.5999999999999996</real>
+		<key>BfOddsDraw</key>
+		<real>4.5</real>
+		<key>BfOddsHome</key>
+		<real>0.0</real>
+		<key>BfPayoutAway</key>
+		<real>230.02799999999999</real>
+		<key>BfPayoutDraw</key>
+		<real>125.06999999999999</real>
+		<key>BfPayoutHome</key>
+		<real>0.0</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29074146</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>根特</string>
+		<key>HomeTeamId</key>
+		<integer>350594</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>17.336099999999998</real>
+		<key>KellyDraw</key>
+		<real>12.9932</real>
+		<key>KellyHome</key>
+		<real>0.0</real>
+		<key>LeagueId</key>
+		<integer>180</integer>
+		<key>MatchTime</key>
+		<string>2019-01-25T03:45:00</string>
+		<key>MaxLastOdds</key>
+		<real>4.5</real>
+		<key>MaxTeamId</key>
+		<integer>58805</integer>
+		<key>MaxTradedChange</key>
+		<real>41.07</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T10:32:03</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>比利时杯</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>1</integer>
+	</dict>
+	<key>29074314#2019-01-24T03:45:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>+2.75</string>
+		<key>AwayTeam</key>
+		<string>曼彻斯特城</string>
+		<key>AwayTeamId</key>
+		<integer>47999</integer>
+		<key>BfAmountAway</key>
+		<real>17671369.100000001</real>
+		<key>BfAmountDraw</key>
+		<real>488329.10999999999</real>
+		<key>BfAmountHome</key>
+		<real>332112.64000000001</real>
+		<key>BfIndexAway</key>
+		<real>58.110799999999998</real>
+		<key>BfIndexDraw</key>
+		<real>17.187200000000001</real>
+		<key>BfIndexHome</key>
+		<real>24.702000000000002</real>
+		<key>BfOddsAway</key>
+		<real>1.1200000000000001</real>
+		<key>BfOddsDraw</key>
+		<real>13.5</real>
+		<key>BfOddsHome</key>
+		<real>38</real>
+		<key>BfPayoutAway</key>
+		<real>9.3186</real>
+		<key>BfPayoutDraw</key>
+		<real>-67.667299999999997</real>
+		<key>BfPayoutHome</key>
+		<real>-53.530500000000004</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29074314</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>伯顿</string>
+		<key>HomeTeamId</key>
+		<integer>205084</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>1.9802</real>
+		<key>KellyDraw</key>
+		<real>114.8284</real>
+		<key>KellyHome</key>
+		<real>585.51689999999996</real>
+		<key>LeagueId</key>
+		<integer>556</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T03:45:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.1299999999999999</real>
+		<key>MaxTeamId</key>
+		<integer>47999</integer>
+		<key>MaxTradedChange</key>
+		<real>1327936.2200000007</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T02:50:24</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>英联杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29074316#2019-01-25T03:45:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-0.75</string>
+		<key>AwayTeam</key>
+		<string>托特纳姆热刺</string>
+		<key>AwayTeamId</key>
+		<integer>48224</integer>
+		<key>BfAmountAway</key>
+		<real>230613.67000000001</real>
+		<key>BfAmountDraw</key>
+		<real>232875.17999999999</real>
+		<key>BfAmountHome</key>
+		<real>1453867.8</real>
+		<key>BfIndexAway</key>
+		<real>29.119399999999999</real>
+		<key>BfIndexDraw</key>
+		<real>20.335100000000001</real>
+		<key>BfIndexHome</key>
+		<real>50.5456</real>
+		<key>BfOddsAway</key>
+		<real>6</real>
+		<key>BfOddsDraw</key>
+		<real>4.0999999999999996</real>
+		<key>BfOddsHome</key>
+		<real>1.7</real>
+		<key>BfPayoutAway</key>
+		<real>-26.228999999999999</real>
+		<key>BfPayoutDraw</key>
+		<real>-48.4831</real>
+		<key>BfPayoutHome</key>
+		<real>28.052199999999999</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29074316</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>切尔西</string>
+		<key>HomeTeamId</key>
+		<integer>55190</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>26.736000000000001</real>
+		<key>KellyDraw</key>
+		<real>10.188000000000001</real>
+		<key>KellyHome</key>
+		<real>2.4106000000000001</real>
+		<key>LeagueId</key>
+		<integer>556</integer>
+		<key>MatchTime</key>
+		<string>2019-01-25T03:45:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.71</real>
+		<key>MaxTeamId</key>
+		<integer>55190</integer>
+		<key>MaxTradedChange</key>
+		<real>75127.959999999963</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T08:24:48</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>英联杯</string>
 		<key>UnusualHot</key>
 		<integer>0</integer>
 		<key>UnusualIndex</key>
@@ -31966,29 +32890,29 @@
 		<key>AwayTeamId</key>
 		<integer>44795</integer>
 		<key>BfAmountAway</key>
-		<real>29527.77</real>
+		<real>412886.58000000002</real>
 		<key>BfAmountDraw</key>
-		<real>9408.1700000000001</real>
+		<real>488941.54999999999</real>
 		<key>BfAmountHome</key>
-		<real>21103.529999999999</real>
+		<real>3902441.7999999998</real>
 		<key>BfIndexAway</key>
-		<real>62.798000000000002</real>
+		<real>16.407399999999999</real>
 		<key>BfIndexDraw</key>
-		<real>16.327999999999999</real>
+		<real>15.9411</real>
 		<key>BfIndexHome</key>
-		<real>20.873999999999999</real>
+		<real>67.651499999999999</real>
 		<key>BfOddsAway</key>
-		<real>4.2999999999999998</real>
+		<real>5</real>
 		<key>BfOddsDraw</key>
-		<real>3.5</real>
+		<real>3.75</real>
 		<key>BfOddsHome</key>
-		<real>2.0800000000000001</real>
+		<real>1.8799999999999999</real>
 		<key>BfPayoutAway</key>
-		<real>115.6262</real>
+		<real>-61.056899999999999</real>
 		<key>BfPayoutDraw</key>
-		<real>-43.935499999999998</real>
+		<real>-62.163699999999999</real>
 		<key>BfPayoutHome</key>
-		<real>-28.3262</real>
+		<real>60.570999999999998</real>
 		<key>Classifnication</key>
 		<integer>3</integer>
 		<key>EventId</key>
@@ -32002,23 +32926,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>27.7728</real>
+		<real>13.086399999999999</real>
 		<key>KellyDraw</key>
-		<real>3.5674000000000001</real>
+		<real>7.0727000000000002</real>
 		<key>KellyHome</key>
-		<real>11.519</real>
+		<real>4.9877000000000002</real>
 		<key>LeagueId</key>
 		<integer>27</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T04:00:00</string>
 		<key>MaxLastOdds</key>
-		<real>4</real>
+		<real>1.95</real>
 		<key>MaxTeamId</key>
-		<integer>44795</integer>
+		<integer>361706</integer>
 		<key>MaxTradedChange</key>
-		<real>4842.3999999999978</real>
+		<real>433644.29999999993</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T07:41:43</string>
+		<string>2019-01-23T03:09:28</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -32034,38 +32958,115 @@
 		<key>UnusualPayout</key>
 		<integer>1</integer>
 	</dict>
+	<key>29082857#2019-01-24T01:30:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>0</string>
+		<key>AwayTeam</key>
+		<string>南特</string>
+		<key>AwayTeamId</key>
+		<integer>10774</integer>
+		<key>BfAmountAway</key>
+		<real>40.960000000000001</real>
+		<key>BfAmountDraw</key>
+		<real>0.0</real>
+		<key>BfAmountHome</key>
+		<real>0.0</real>
+		<key>BfIndexAway</key>
+		<real>100</real>
+		<key>BfIndexDraw</key>
+		<real>0.0</real>
+		<key>BfIndexHome</key>
+		<real>0.0</real>
+		<key>BfOddsAway</key>
+		<real>1.49</real>
+		<key>BfOddsDraw</key>
+		<real>0.0</real>
+		<key>BfOddsHome</key>
+		<real>0.0</real>
+		<key>BfPayoutAway</key>
+		<real>49</real>
+		<key>BfPayoutDraw</key>
+		<real>0.0</real>
+		<key>BfPayoutHome</key>
+		<real>0.0</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29082857</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>安坦迪</string>
+		<key>HomeTeamId</key>
+		<integer>1376066</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>3.9807000000000001</real>
+		<key>KellyDraw</key>
+		<real>0.0</real>
+		<key>KellyHome</key>
+		<real>0.0</real>
+		<key>LeagueId</key>
+		<integer>27</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T01:30:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.49</real>
+		<key>MaxTeamId</key>
+		<integer>10774</integer>
+		<key>MaxTradedChange</key>
+		<real>0.12999999999999545</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T20:00:42</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>法杯</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>1</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
 	<key>29082858#2019-01-23T01:30:00</key>
 	<dict>
 		<key>AsianAvrLet</key>
-		<string>+0.25</string>
+		<string>+0.5</string>
 		<key>AwayTeam</key>
 		<string>甘冈</string>
 		<key>AwayTeamId</key>
 		<integer>44801</integer>
 		<key>BfAmountAway</key>
-		<real>82711.410000000003</real>
+		<real>540832.71999999997</real>
 		<key>BfAmountDraw</key>
-		<real>8718.5699999999997</real>
+		<real>112911.67</real>
 		<key>BfAmountHome</key>
-		<real>403.06999999999999</real>
+		<real>35772.18</real>
 		<key>BfIndexAway</key>
-		<real>86.624099999999999</real>
+		<real>69.632900000000006</real>
 		<key>BfIndexDraw</key>
-		<real>12.762700000000001</real>
+		<real>22.0427</real>
 		<key>BfIndexHome</key>
-		<real>0.61329999999999996</real>
+		<real>8.3244000000000007</real>
 		<key>BfOddsAway</key>
-		<real>2.4199999999999999</real>
+		<real>2.1200000000000001</real>
 		<key>BfOddsDraw</key>
-		<real>3.3500000000000001</real>
+		<real>3.3999999999999999</real>
 		<key>BfOddsHome</key>
-		<real>3.5</real>
+		<real>4.2000000000000002</real>
 		<key>BfPayoutAway</key>
-		<real>116.6561</real>
+		<real>75.1892</real>
 		<key>BfPayoutDraw</key>
-		<real>-68.0792</real>
+		<real>-44.5428</real>
 		<key>BfPayoutHome</key>
-		<real>-98.466099999999997</real>
+		<real>-79.056600000000003</real>
 		<key>Classifnication</key>
 		<integer>3</integer>
 		<key>EventId</key>
@@ -32079,23 +33080,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>3.0966</real>
+		<real>3.2366999999999999</real>
 		<key>KellyDraw</key>
-		<real>3.8508</real>
+		<real>8.4435000000000002</real>
 		<key>KellyHome</key>
-		<real>7.9469000000000003</real>
+		<real>10.465400000000001</real>
 		<key>LeagueId</key>
 		<integer>27</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T01:30:00</string>
 		<key>MaxLastOdds</key>
-		<real>2.3999999999999999</real>
+		<real>2.2599999999999998</real>
 		<key>MaxTeamId</key>
 		<integer>44801</integer>
 		<key>MaxTradedChange</key>
-		<real>9612.9099999999962</real>
+		<real>22848.329999999987</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T05:43:28</string>
+		<string>2019-01-22T21:46:36</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -32107,7 +33108,7 @@
 		<key>UnusualHot</key>
 		<integer>0</integer>
 		<key>UnusualIndex</key>
-		<integer>1</integer>
+		<integer>0</integer>
 		<key>UnusualPayout</key>
 		<integer>1</integer>
 	</dict>
@@ -32120,29 +33121,29 @@
 		<key>AwayTeamId</key>
 		<integer>298233</integer>
 		<key>BfAmountAway</key>
-		<real>766.63999999999999</real>
+		<real>86302.520000000004</real>
 		<key>BfAmountDraw</key>
-		<real>4728.0500000000002</real>
+		<real>47403.660000000003</real>
 		<key>BfAmountHome</key>
-		<real>269.11000000000001</real>
+		<real>43516.089999999997</real>
 		<key>BfIndexAway</key>
-		<real>12.9579</real>
+		<real>47.061399999999999</real>
 		<key>BfIndexDraw</key>
-		<real>83.283199999999994</real>
+		<real>29.547899999999998</real>
 		<key>BfIndexHome</key>
-		<real>3.7587999999999999</real>
+		<real>23.390699999999999</real>
 		<key>BfOddsAway</key>
-		<real>3.1000000000000001</real>
+		<real>2.7999999999999998</real>
 		<key>BfOddsDraw</key>
 		<real>3.2999999999999998</real>
 		<key>BfOddsHome</key>
-		<real>2.7000000000000002</real>
+		<real>2.9399999999999999</real>
 		<key>BfPayoutAway</key>
-		<real>-56.942399999999999</real>
+		<real>41.8127</real>
 		<key>BfPayoutDraw</key>
-		<real>176.7396</real>
+		<real>-10.9617</real>
 		<key>BfPayoutHome</key>
-		<real>-87.509799999999998</real>
+		<real>-29.515699999999999</real>
 		<key>Classifnication</key>
 		<integer>3</integer>
 		<key>EventId</key>
@@ -32156,23 +33157,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>7.6201999999999996</real>
+		<real>6.7171000000000003</real>
 		<key>KellyDraw</key>
-		<real>5.9935999999999998</real>
+		<real>6.3933999999999997</real>
 		<key>KellyHome</key>
-		<real>5.9478</real>
+		<real>10.946899999999999</real>
 		<key>LeagueId</key>
 		<integer>27</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T01:30:00</string>
 		<key>MaxLastOdds</key>
-		<real>3.3999999999999999</real>
+		<real>2.8199999999999998</real>
 		<key>MaxTeamId</key>
-		<integer>58805</integer>
+		<integer>298233</integer>
 		<key>MaxTradedChange</key>
-		<real>3481.4000000000001</real>
+		<real>35641.170000000006</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T04:42:00</string>
+		<string>2019-01-23T01:15:42</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -32184,9 +33185,9 @@
 		<key>UnusualHot</key>
 		<integer>0</integer>
 		<key>UnusualIndex</key>
-		<integer>1</integer>
+		<integer>0</integer>
 		<key>UnusualPayout</key>
-		<integer>1</integer>
+		<integer>0</integer>
 	</dict>
 	<key>29082861#2019-01-23T01:30:00</key>
 	<dict>
@@ -32197,29 +33198,29 @@
 		<key>AwayTeamId</key>
 		<integer>1355041</integer>
 		<key>BfAmountAway</key>
-		<real>0.0</real>
+		<real>7796.5500000000002</real>
 		<key>BfAmountDraw</key>
-		<real>0.0</real>
+		<real>7352.9300000000003</real>
 		<key>BfAmountHome</key>
-		<real>0.0</real>
+		<real>6968.4200000000001</real>
 		<key>BfIndexAway</key>
-		<real>0.0</real>
+		<real>31.463899999999999</real>
 		<key>BfIndexDraw</key>
-		<real>0.0</real>
+		<real>35.096800000000002</real>
 		<key>BfIndexHome</key>
-		<real>0.0</real>
+		<real>33.439399999999999</real>
 		<key>BfOddsAway</key>
-		<real>0.0</real>
+		<real>2.7000000000000002</real>
 		<key>BfOddsDraw</key>
-		<real>0.0</real>
+		<real>3.2000000000000002</real>
 		<key>BfOddsHome</key>
-		<real>0.0</real>
+		<real>3.1000000000000001</real>
 		<key>BfPayoutAway</key>
-		<real>0.0</real>
+		<real>-5.5674999999999999</real>
 		<key>BfPayoutDraw</key>
-		<real>0.0</real>
+		<real>5.3360000000000003</real>
 		<key>BfPayoutHome</key>
-		<real>0.0</real>
+		<real>0.36170000000000002</real>
 		<key>Classifnication</key>
 		<integer>3</integer>
 		<key>EventId</key>
@@ -32233,23 +33234,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>0.0</real>
+		<real>6.9109999999999996</real>
 		<key>KellyDraw</key>
-		<real>0.0</real>
+		<real>2.6345000000000001</real>
 		<key>KellyHome</key>
-		<real>0.0</real>
+		<real>46.445900000000002</real>
 		<key>LeagueId</key>
 		<integer>27</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T01:30:00</string>
 		<key>MaxLastOdds</key>
-		<real>0.0</real>
+		<real>3.1000000000000001</real>
 		<key>MaxTeamId</key>
-		<integer>0</integer>
+		<integer>58805</integer>
 		<key>MaxTradedChange</key>
-		<real>0.0</real>
+		<real>2797.5999999999999</real>
 		<key>MaxUpdateTime</key>
-		<string>0001-01-01T00:00:00</string>
+		<string>2019-01-22T23:18:34</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -32268,35 +33269,35 @@
 	<key>29082862#2019-01-23T01:30:00</key>
 	<dict>
 		<key>AsianAvrLet</key>
-		<string>0</string>
+		<string>-0.5</string>
 		<key>AwayTeam</key>
 		<string>莱塞比耶 </string>
 		<key>AwayTeamId</key>
 		<integer>4421448</integer>
 		<key>BfAmountAway</key>
-		<real>40.450000000000003</real>
+		<real>3609.8200000000002</real>
 		<key>BfAmountDraw</key>
-		<real>0.0</real>
+		<real>4363.2799999999997</real>
 		<key>BfAmountHome</key>
-		<real>1032.5</real>
+		<real>25965.919999999998</real>
 		<key>BfIndexAway</key>
-		<real>9.4171999999999993</real>
+		<real>20.259799999999998</real>
 		<key>BfIndexDraw</key>
-		<real>0.0</real>
+		<real>18.261600000000001</real>
 		<key>BfIndexHome</key>
-		<real>90.582800000000006</real>
+		<real>61.4786</real>
 		<key>BfOddsAway</key>
-		<real>4.7999999999999998</real>
+		<real>4.7000000000000002</real>
 		<key>BfOddsDraw</key>
-		<real>0.0</real>
+		<real>3.5</real>
 		<key>BfOddsHome</key>
-		<real>1.9399999999999999</real>
+		<real>2</real>
 		<key>BfPayoutAway</key>
-		<real>-81.9041</real>
+		<real>-49.691099999999999</real>
 		<key>BfPayoutDraw</key>
-		<real>0.0</real>
+		<real>-54.653199999999998</real>
 		<key>BfPayoutHome</key>
-		<real>74.060599999999994</real>
+		<real>52.662700000000001</real>
 		<key>Classifnication</key>
 		<integer>3</integer>
 		<key>EventId</key>
@@ -32310,23 +33311,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>13.1511</real>
+		<real>35.0824</real>
 		<key>KellyDraw</key>
-		<real>0.0</real>
+		<real>5.8038999999999996</real>
 		<key>KellyHome</key>
-		<real>2.7970000000000002</real>
+		<real>4.4250999999999996</real>
 		<key>LeagueId</key>
 		<integer>27</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T01:30:00</string>
 		<key>MaxLastOdds</key>
-		<real>1.73</real>
+		<real>1.99</real>
 		<key>MaxTeamId</key>
 		<integer>19932524</integer>
 		<key>MaxTradedChange</key>
-		<real>523.73000000000002</real>
+		<real>5327.1200000000008</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T06:01:53</string>
+		<string>2019-01-23T00:18:24</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -32336,11 +33337,11 @@
 		<key>SortName</key>
 		<string>法杯</string>
 		<key>UnusualHot</key>
-		<integer>1</integer>
+		<integer>0</integer>
 		<key>UnusualIndex</key>
-		<integer>1</integer>
+		<integer>0</integer>
 		<key>UnusualPayout</key>
-		<integer>1</integer>
+		<integer>0</integer>
 	</dict>
 	<key>29082897#2019-01-23T03:45:00</key>
 	<dict>
@@ -32351,29 +33352,29 @@
 		<key>AwayTeamId</key>
 		<integer>3396710</integer>
 		<key>BfAmountAway</key>
-		<real>4735.3199999999997</real>
+		<real>140249.85999999999</real>
 		<key>BfAmountDraw</key>
-		<real>8851.2600000000002</real>
+		<real>144804.78</real>
 		<key>BfAmountHome</key>
-		<real>5612.71</real>
+		<real>118755.61</real>
 		<key>BfIndexAway</key>
-		<real>24.454499999999999</real>
+		<real>32.534100000000002</real>
 		<key>BfIndexDraw</key>
-		<real>50.655900000000003</real>
+		<real>40.6282</real>
 		<key>BfIndexHome</key>
-		<real>24.889600000000002</real>
+		<real>26.837700000000002</real>
 		<key>BfOddsAway</key>
-		<real>3.1499999999999999</real>
+		<real>2.7599999999999998</real>
 		<key>BfOddsDraw</key>
-		<real>3.4500000000000002</real>
+		<real>3.5499999999999998</real>
 		<key>BfOddsHome</key>
-		<real>2.6600000000000001</real>
+		<real>2.7999999999999998</real>
 		<key>BfPayoutAway</key>
-		<real>-23.878599999999999</real>
+		<real>-0.89280000000000004</real>
 		<key>BfPayoutDraw</key>
-		<real>57.680799999999998</real>
+		<real>23.7637</real>
 		<key>BfPayoutHome</key>
-		<real>-22.524100000000001</real>
+		<real>-18.245699999999999</real>
 		<key>Classifnication</key>
 		<integer>1</integer>
 		<key>EventId</key>
@@ -32387,23 +33388,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>5.1977000000000002</real>
+		<real>4.5667</real>
 		<key>KellyDraw</key>
-		<real>6.1223999999999998</real>
+		<real>12.1793</real>
 		<key>KellyHome</key>
-		<real>3.2995999999999999</real>
+		<real>7.9988999999999999</real>
 		<key>LeagueId</key>
 		<integer>503</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T03:45:00</string>
 		<key>MaxLastOdds</key>
-		<real>3.4500000000000002</real>
+		<real>3.5</real>
 		<key>MaxTeamId</key>
 		<integer>58805</integer>
 		<key>MaxTradedChange</key>
-		<real>1739.3499999999999</real>
+		<real>22387.049999999996</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-21T20:30:54</string>
+		<string>2019-01-22T23:27:03</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -32413,7 +33414,7 @@
 		<key>SortName</key>
 		<string>英甲</string>
 		<key>UnusualHot</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>UnusualIndex</key>
 		<integer>0</integer>
 		<key>UnusualPayout</key>
@@ -32428,29 +33429,29 @@
 		<key>AwayTeamId</key>
 		<integer>55213</integer>
 		<key>BfAmountAway</key>
-		<real>3037.4000000000001</real>
+		<real>319475.79999999999</real>
 		<key>BfAmountDraw</key>
-		<real>13769.040000000001</real>
+		<real>149221.29000000001</real>
 		<key>BfAmountHome</key>
-		<real>11980.59</real>
+		<real>343067.73999999999</real>
 		<key>BfIndexAway</key>
-		<real>10.5756</real>
+		<real>41.600999999999999</real>
 		<key>BfIndexDraw</key>
-		<real>57.448700000000002</real>
+		<real>24.253900000000002</real>
 		<key>BfIndexHome</key>
-		<real>31.9757</real>
+		<real>34.145200000000003</real>
 		<key>BfOddsAway</key>
-		<real>3.1499999999999999</real>
+		<real>3</real>
 		<key>BfOddsDraw</key>
-		<real>3.75</real>
+		<real>3.9500000000000002</real>
 		<key>BfOddsHome</key>
-		<real>2.3999999999999999</real>
+		<real>2.3599999999999999</real>
 		<key>BfPayoutAway</key>
-		<real>-66.740799999999993</real>
+		<real>22.359000000000002</real>
 		<key>BfPayoutDraw</key>
-		<real>80.670000000000002</real>
+		<real>-28.6633</real>
 		<key>BfPayoutHome</key>
-		<real>0.56010000000000004</real>
+		<real>0.42949999999999999</real>
 		<key>Classifnication</key>
 		<integer>1</integer>
 		<key>EventId</key>
@@ -32464,23 +33465,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>7.6186999999999996</real>
+		<real>4.5555000000000003</real>
 		<key>KellyDraw</key>
-		<real>13.470700000000001</real>
+		<real>9.7052999999999994</real>
 		<key>KellyHome</key>
-		<real>6.4987000000000004</real>
+		<real>4.8262999999999998</real>
 		<key>LeagueId</key>
 		<integer>503</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T03:45:00</string>
 		<key>MaxLastOdds</key>
-		<real>3.75</real>
+		<real>3.2000000000000002</real>
 		<key>MaxTeamId</key>
-		<integer>58805</integer>
+		<integer>55213</integer>
 		<key>MaxTradedChange</key>
-		<real>3481.3899999999999</real>
+		<real>46320.540000000008</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T04:38:58</string>
+		<string>2019-01-23T03:13:00</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -32490,44 +33491,44 @@
 		<key>SortName</key>
 		<string>英甲</string>
 		<key>UnusualHot</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>UnusualIndex</key>
 		<integer>0</integer>
 		<key>UnusualPayout</key>
-		<integer>1</integer>
+		<integer>0</integer>
 	</dict>
 	<key>29082912#2019-01-23T03:45:00</key>
 	<dict>
 		<key>AsianAvrLet</key>
-		<string>-0.5</string>
+		<string>-1</string>
 		<key>AwayTeam</key>
 		<string>格里姆斯比</string>
 		<key>AwayTeamId</key>
 		<integer>48001</integer>
 		<key>BfAmountAway</key>
-		<real>1061.3099999999999</real>
+		<real>37384.330000000002</real>
 		<key>BfAmountDraw</key>
-		<real>438.44</real>
+		<real>41135.699999999997</real>
 		<key>BfAmountHome</key>
-		<real>8059.1400000000003</real>
+		<real>260528.76000000001</real>
 		<key>BfIndexAway</key>
-		<real>24.3855</real>
+		<real>28.2834</real>
 		<key>BfIndexDraw</key>
-		<real>7.6510999999999996</real>
+		<real>21.206299999999999</real>
 		<key>BfIndexHome</key>
-		<real>67.963499999999996</real>
+		<real>50.510300000000001</real>
 		<key>BfOddsAway</key>
-		<real>5.2999999999999998</real>
+		<real>6.7999999999999998</real>
 		<key>BfOddsDraw</key>
-		<real>3.9500000000000002</real>
+		<real>4.7999999999999998</real>
 		<key>BfOddsHome</key>
-		<real>1.8999999999999999</real>
+		<real>1.5700000000000001</real>
 		<key>BfPayoutAway</key>
-		<real>-43.029899999999998</real>
+		<real>-29.622800000000002</real>
 		<key>BfPayoutDraw</key>
-		<real>-82.125500000000002</real>
+		<real>-47.232799999999997</real>
 		<key>BfPayoutHome</key>
-		<real>58.777999999999999</real>
+		<real>25.684100000000001</real>
 		<key>Classifnication</key>
 		<integer>1</integer>
 		<key>EventId</key>
@@ -32541,23 +33542,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>13.3001</real>
+		<real>34.277299999999997</real>
 		<key>KellyDraw</key>
-		<real>9.7495999999999992</real>
+		<real>23.183199999999999</real>
 		<key>KellyHome</key>
-		<real>3.8252999999999999</real>
+		<real>3.5329000000000002</real>
 		<key>LeagueId</key>
 		<integer>506</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T03:45:00</string>
 		<key>MaxLastOdds</key>
-		<real>1.9099999999999999</real>
+		<real>1.6000000000000001</real>
 		<key>MaxTeamId</key>
 		<integer>36033</integer>
 		<key>MaxTradedChange</key>
-		<real>4063.1700000000001</real>
+		<real>13319.119999999995</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-21T22:14:58</string>
+		<string>2019-01-23T02:43:45</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -32576,35 +33577,35 @@
 	<key>29082913#2019-01-23T03:45:00</key>
 	<dict>
 		<key>AsianAvrLet</key>
-		<string>+0.5</string>
+		<string>+0.25</string>
 		<key>AwayTeam</key>
 		<string>林肯城</string>
 		<key>AwayTeamId</key>
 		<integer>148737</integer>
 		<key>BfAmountAway</key>
-		<real>23153.57</real>
+		<real>400449.63</real>
 		<key>BfAmountDraw</key>
-		<real>1739.78</real>
+		<real>113819.87</real>
 		<key>BfAmountHome</key>
-		<real>2282.2600000000002</real>
+		<real>97283.5</real>
 		<key>BfIndexAway</key>
-		<real>76.119799999999998</real>
+		<real>54.963900000000002</real>
 		<key>BfIndexDraw</key>
-		<real>9.6763999999999992</real>
+		<real>23.0931</real>
 		<key>BfIndexHome</key>
-		<real>14.203799999999999</real>
+		<real>21.943000000000001</real>
 		<key>BfOddsAway</key>
-		<real>2.1000000000000001</real>
+		<real>2.3799999999999999</real>
 		<key>BfOddsDraw</key>
-		<real>3.7000000000000002</real>
+		<real>3.3500000000000001</real>
 		<key>BfOddsHome</key>
-		<real>3.8999999999999999</real>
+		<real>3.6499999999999999</real>
 		<key>BfPayoutAway</key>
-		<real>79.963700000000003</real>
+		<real>49.067399999999999</real>
 		<key>BfPayoutDraw</key>
-		<real>-77.122799999999998</real>
+		<real>-37.369199999999999</real>
 		<key>BfPayoutHome</key>
-		<real>-66.419300000000007</real>
+		<real>-40.488399999999999</real>
 		<key>Classifnication</key>
 		<integer>1</integer>
 		<key>EventId</key>
@@ -32618,23 +33619,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>6.7545000000000002</real>
+		<real>7.9939</real>
 		<key>KellyDraw</key>
-		<real>10.3911</real>
+		<real>11.5976</real>
 		<key>KellyHome</key>
-		<real>10.029400000000001</real>
+		<real>6.4492000000000003</real>
 		<key>LeagueId</key>
 		<integer>506</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T03:45:00</string>
 		<key>MaxLastOdds</key>
-		<real>2.1000000000000001</real>
+		<real>2.2799999999999998</real>
 		<key>MaxTeamId</key>
 		<integer>148737</integer>
 		<key>MaxTradedChange</key>
-		<real>6735.5299999999988</real>
+		<real>40485.679999999993</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T08:49:39</string>
+		<string>2019-01-23T03:01:47</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -32646,9 +33647,9 @@
 		<key>UnusualHot</key>
 		<integer>0</integer>
 		<key>UnusualIndex</key>
-		<integer>1</integer>
+		<integer>0</integer>
 		<key>UnusualPayout</key>
-		<integer>1</integer>
+		<integer>0</integer>
 	</dict>
 	<key>29082955#2019-01-23T03:45:00</key>
 	<dict>
@@ -32659,29 +33660,29 @@
 		<key>AwayTeamId</key>
 		<integer>11186</integer>
 		<key>BfAmountAway</key>
-		<real>435.25</real>
+		<real>18345.619999999999</real>
 		<key>BfAmountDraw</key>
-		<real>321.61000000000001</real>
+		<real>30303.169999999998</real>
 		<key>BfAmountHome</key>
-		<real>414.69999999999999</real>
+		<real>107920.99000000001</real>
 		<key>BfIndexAway</key>
-		<real>46.099200000000003</real>
+		<real>17.946999999999999</real>
 		<key>BfIndexDraw</key>
-		<real>35.0002</real>
+		<real>30.708600000000001</real>
 		<key>BfIndexHome</key>
-		<real>18.900600000000001</real>
+		<real>51.3444</real>
 		<key>BfOddsAway</key>
-		<real>4.4000000000000004</real>
-		<key>BfOddsDraw</key>
 		<real>4.0999999999999996</real>
+		<key>BfOddsDraw</key>
+		<real>4.2000000000000002</real>
 		<key>BfOddsHome</key>
-		<real>1.8300000000000001</real>
+		<real>1.95</real>
 		<key>BfPayoutAway</key>
-		<real>59.740699999999997</real>
+		<real>-52.711399999999998</real>
 		<key>BfPayoutDraw</key>
-		<real>21.280200000000001</real>
+		<real>-19.085999999999999</real>
 		<key>BfPayoutHome</key>
-		<real>-34.5075</real>
+		<real>35.287300000000002</real>
 		<key>Classifnication</key>
 		<integer>3</integer>
 		<key>EventId</key>
@@ -32695,23 +33696,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>6.4539999999999997</real>
+		<real>5.0259</real>
 		<key>KellyDraw</key>
-		<real>14.763299999999999</real>
+		<real>17.667100000000001</real>
 		<key>KellyHome</key>
-		<real>4.6905999999999999</real>
+		<real>5.3852000000000002</real>
 		<key>LeagueId</key>
 		<integer>24</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T03:45:00</string>
 		<key>MaxLastOdds</key>
-		<real>4.2999999999999998</real>
+		<real>1.99</real>
 		<key>MaxTeamId</key>
-		<integer>11186</integer>
+		<integer>3631356</integer>
 		<key>MaxTradedChange</key>
-		<real>285.65000000000003</real>
+		<real>11719.790000000001</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T05:10:12</string>
+		<string>2019-01-22T18:39:36</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -32721,7 +33722,7 @@
 		<key>SortName</key>
 		<string>荷杯</string>
 		<key>UnusualHot</key>
-		<integer>1</integer>
+		<integer>0</integer>
 		<key>UnusualIndex</key>
 		<integer>0</integer>
 		<key>UnusualPayout</key>
@@ -32730,35 +33731,35 @@
 	<key>29082974#2019-01-23T03:45:00</key>
 	<dict>
 		<key>AsianAvrLet</key>
-		<string>+0.25</string>
+		<string>0</string>
 		<key>AwayTeam</key>
 		<string>波尔图</string>
 		<key>AwayTeamId</key>
 		<integer>48785</integer>
 		<key>BfAmountAway</key>
-		<real>5802.6999999999998</real>
+		<real>156102.39000000001</real>
 		<key>BfAmountDraw</key>
-		<real>1317.73</real>
+		<real>133065.95000000001</real>
 		<key>BfAmountHome</key>
-		<real>1723.95</real>
+		<real>114468.78999999999</real>
 		<key>BfIndexAway</key>
-		<real>58.163200000000003</real>
+		<real>35.070300000000003</real>
 		<key>BfIndexDraw</key>
-		<real>18.1557</real>
+		<real>35.343299999999999</real>
 		<key>BfIndexHome</key>
-		<real>23.6812</real>
+		<real>29.586400000000001</real>
 		<key>BfOddsAway</key>
-		<real>2.5600000000000001</real>
+		<real>2.8399999999999999</real>
 		<key>BfOddsDraw</key>
-		<real>3.2999999999999998</real>
+		<real>3.1499999999999999</real>
 		<key>BfOddsHome</key>
-		<real>3.2999999999999998</real>
+		<real>2.98</real>
 		<key>BfPayoutAway</key>
-		<real>59.4938</real>
+		<real>4.7065000000000001</real>
 		<key>BfPayoutDraw</key>
-		<real>-50.213900000000002</real>
+		<real>5.5217999999999998</real>
 		<key>BfPayoutHome</key>
-		<real>-35.061900000000001</real>
+		<real>-11.6663</real>
 		<key>Classifnication</key>
 		<integer>1</integer>
 		<key>EventId</key>
@@ -32772,23 +33773,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>4.4397000000000002</real>
+		<real>6.7553000000000001</real>
 		<key>KellyDraw</key>
-		<real>5.8329000000000004</real>
+		<real>4.9450000000000003</real>
 		<key>KellyHome</key>
-		<real>6.3635000000000002</real>
+		<real>10.4839</real>
 		<key>LeagueId</key>
 		<integer>591</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T03:45:00</string>
 		<key>MaxLastOdds</key>
-		<real>2.5</real>
+		<real>3.2000000000000002</real>
 		<key>MaxTeamId</key>
-		<integer>48785</integer>
+		<integer>58805</integer>
 		<key>MaxTradedChange</key>
-		<real>2449.6200000000003</real>
+		<real>15335.790000000001</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T06:23:23</string>
+		<string>2019-01-23T00:20:30</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -32807,35 +33808,35 @@
 	<key>29082981#2019-01-23T07:30:00</key>
 	<dict>
 		<key>AsianAvrLet</key>
-		<string>0</string>
+		<string>-0.75</string>
 		<key>AwayTeam</key>
 		<string>亚松森国民</string>
 		<key>AwayTeamId</key>
 		<integer>1370433</integer>
 		<key>BfAmountAway</key>
-		<real>62.759999999999998</real>
+		<real>8671.6000000000004</real>
 		<key>BfAmountDraw</key>
-		<real>0.0</real>
+		<real>9254.0900000000001</real>
 		<key>BfAmountHome</key>
-		<real>0.0</real>
+		<real>31208.09</real>
 		<key>BfIndexAway</key>
-		<real>100</real>
+		<real>34.097200000000001</real>
 		<key>BfIndexDraw</key>
-		<real>0.0</real>
+		<real>23.238099999999999</real>
 		<key>BfIndexHome</key>
-		<real>0.0</real>
+		<real>42.6646</real>
 		<key>BfOddsAway</key>
-		<real>4.9000000000000004</real>
+		<real>5.2999999999999998</real>
 		<key>BfOddsDraw</key>
-		<real>0.0</real>
+		<real>3.3999999999999999</real>
 		<key>BfOddsHome</key>
-		<real>0.0</real>
+		<real>1.8999999999999999</real>
 		<key>BfPayoutAway</key>
-		<real>390</real>
+		<real>-3.8936999999999999</real>
 		<key>BfPayoutDraw</key>
-		<real>0.0</real>
+		<real>-34.500999999999998</real>
 		<key>BfPayoutHome</key>
-		<real>0.0</real>
+		<real>20.2544</real>
 		<key>Classifnication</key>
 		<integer>2</integer>
 		<key>EventId</key>
@@ -32849,23 +33850,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>0.0</real>
+		<real>77.150800000000004</real>
 		<key>KellyDraw</key>
-		<real>0.0</real>
+		<real>9.1006999999999998</real>
 		<key>KellyHome</key>
-		<real>0.0</real>
+		<real>3.4195000000000002</real>
 		<key>LeagueId</key>
 		<integer>79</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T07:30:00</string>
 		<key>MaxLastOdds</key>
-		<real>4.9000000000000004</real>
+		<real>1.8899999999999999</real>
 		<key>MaxTeamId</key>
-		<integer>1370433</integer>
+		<integer>10778437</integer>
 		<key>MaxTradedChange</key>
-		<real>62.759999999999998</real>
+		<real>3486.5499999999993</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T06:46:06</string>
+		<string>2019-01-23T07:19:32</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -32877,9 +33878,9 @@
 		<key>UnusualHot</key>
 		<integer>0</integer>
 		<key>UnusualIndex</key>
-		<integer>1</integer>
+		<integer>0</integer>
 		<key>UnusualPayout</key>
-		<integer>1</integer>
+		<integer>0</integer>
 	</dict>
 	<key>29083520#2019-01-18T01:30:00</key>
 	<dict>
@@ -33035,6 +34036,1007 @@
 		<key>UnusualPayout</key>
 		<integer>1</integer>
 	</dict>
+	<key>29084290#2019-01-24T01:30:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>+0.5</string>
+		<key>AwayTeam</key>
+		<string>奥尔良</string>
+		<key>AwayTeamId</key>
+		<integer>2225922</integer>
+		<key>BfAmountAway</key>
+		<real>68863.399999999994</real>
+		<key>BfAmountDraw</key>
+		<real>222932.94</real>
+		<key>BfAmountHome</key>
+		<real>9143.6100000000006</real>
+		<key>BfIndexAway</key>
+		<real>14.151999999999999</real>
+		<key>BfIndexDraw</key>
+		<real>81.029499999999999</real>
+		<key>BfIndexHome</key>
+		<real>4.8185000000000002</real>
+		<key>BfOddsAway</key>
+		<real>1.8999999999999999</real>
+		<key>BfOddsDraw</key>
+		<real>3.5499999999999998</real>
+		<key>BfOddsHome</key>
+		<real>4.9000000000000004</real>
+		<key>BfPayoutAway</key>
+		<real>-55.397500000000001</real>
+		<key>BfPayoutDraw</key>
+		<real>155.3785</real>
+		<key>BfPayoutHome</key>
+		<real>-84.813699999999997</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29084290</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>伯吉拉克</string>
+		<key>HomeTeamId</key>
+		<integer>12168097</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>5.2214</real>
+		<key>KellyDraw</key>
+		<real>4.9192999999999998</real>
+		<key>KellyHome</key>
+		<real>26.963200000000001</real>
+		<key>LeagueId</key>
+		<integer>27</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T01:30:00</string>
+		<key>MaxLastOdds</key>
+		<real>3.3500000000000001</real>
+		<key>MaxTeamId</key>
+		<integer>58805</integer>
+		<key>MaxTradedChange</key>
+		<real>190306.34</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T00:30:01</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>法杯</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>1</integer>
+		<key>UnusualPayout</key>
+		<integer>1</integer>
+	</dict>
+	<key>29084291#2019-01-24T01:30:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>0</string>
+		<key>AwayTeam</key>
+		<string>卡昂</string>
+		<key>AwayTeamId</key>
+		<integer>310510</integer>
+		<key>BfAmountAway</key>
+		<real>85547.559999999998</real>
+		<key>BfAmountDraw</key>
+		<real>1809.03</real>
+		<key>BfAmountHome</key>
+		<real>2014.05</real>
+		<key>BfIndexAway</key>
+		<real>76.271199999999993</real>
+		<key>BfIndexDraw</key>
+		<real>8.4465000000000003</real>
+		<key>BfIndexHome</key>
+		<real>15.282299999999999</real>
+		<key>BfOddsAway</key>
+		<real>1.27</real>
+		<key>BfOddsDraw</key>
+		<real>8.5999999999999996</real>
+		<key>BfOddsHome</key>
+		<real>9.1999999999999993</real>
+		<key>BfPayoutAway</key>
+		<real>24.7897</real>
+		<key>BfPayoutDraw</key>
+		<real>-86.180400000000006</real>
+		<key>BfPayoutHome</key>
+		<real>-74.996200000000002</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29084291</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>域尼查迪隆</string>
+		<key>HomeTeamId</key>
+		<integer>2740558</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>2.2088999999999999</real>
+		<key>KellyDraw</key>
+		<real>22.6205</real>
+		<key>KellyHome</key>
+		<real>32.796500000000002</real>
+		<key>LeagueId</key>
+		<integer>27</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T01:30:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.3300000000000001</real>
+		<key>MaxTeamId</key>
+		<integer>310510</integer>
+		<key>MaxTradedChange</key>
+		<real>13122.52</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T19:32:56</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>法杯</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>1</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29084292#2019-01-24T01:30:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>0</string>
+		<key>AwayTeam</key>
+		<string>雷恩</string>
+		<key>AwayTeamId</key>
+		<integer>44799</integer>
+		<key>BfAmountAway</key>
+		<real>32741.860000000001</real>
+		<key>BfAmountDraw</key>
+		<real>6093.9899999999998</real>
+		<key>BfAmountHome</key>
+		<real>5099.4399999999996</real>
+		<key>BfIndexAway</key>
+		<real>33.823999999999998</real>
+		<key>BfIndexDraw</key>
+		<real>24.049499999999998</real>
+		<key>BfIndexHome</key>
+		<real>42.1265</real>
+		<key>BfOddsAway</key>
+		<real>1.4099999999999999</real>
+		<key>BfOddsDraw</key>
+		<real>5.0999999999999996</real>
+		<key>BfOddsHome</key>
+		<real>10</real>
+		<key>BfPayoutAway</key>
+		<real>4.4972000000000003</real>
+		<key>BfPayoutDraw</key>
+		<real>-25.700600000000001</real>
+		<key>BfPayoutHome</key>
+		<real>30.146999999999998</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29084292</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>圣派维</string>
+		<key>HomeTeamId</key>
+		<integer>1355048</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>6.9203999999999999</real>
+		<key>KellyDraw</key>
+		<real>19.3127</real>
+		<key>KellyHome</key>
+		<real>109.2243</real>
+		<key>LeagueId</key>
+		<integer>27</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T01:30:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.47</real>
+		<key>MaxTeamId</key>
+		<integer>44799</integer>
+		<key>MaxTradedChange</key>
+		<real>7009.1799999999994</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T16:35:08</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>法杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29084293#2019-01-24T01:30:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>0</string>
+		<key>AwayTeam</key>
+		<string>克鲁瓦</string>
+		<key>AwayTeamId</key>
+		<integer>9036173</integer>
+		<key>BfAmountAway</key>
+		<real>3751.7199999999998</real>
+		<key>BfAmountDraw</key>
+		<real>5422.0200000000004</real>
+		<key>BfAmountHome</key>
+		<real>40237.25</real>
+		<key>BfIndexAway</key>
+		<real>15.508900000000001</real>
+		<key>BfIndexDraw</key>
+		<real>16.265899999999998</real>
+		<key>BfIndexHome</key>
+		<real>68.225200000000001</real>
+		<key>BfOddsAway</key>
+		<real>4.2999999999999998</real>
+		<key>BfOddsDraw</key>
+		<real>3.6000000000000001</real>
+		<key>BfOddsHome</key>
+		<real>2.04</real>
+		<key>BfPayoutAway</key>
+		<real>-63.557899999999997</real>
+		<key>BfPayoutDraw</key>
+		<real>-61.7791</real>
+		<key>BfPayoutHome</key>
+		<real>60.3123</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29084293</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>马里尼亚纳</string>
+		<key>HomeTeamId</key>
+		<integer>19932552</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>40.063200000000002</real>
+		<key>KellyDraw</key>
+		<real>6.1283000000000003</real>
+		<key>KellyHome</key>
+		<real>6.5662000000000003</real>
+		<key>LeagueId</key>
+		<integer>27</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T01:30:00</string>
+		<key>MaxLastOdds</key>
+		<real>2.0800000000000001</real>
+		<key>MaxTeamId</key>
+		<integer>19932552</integer>
+		<key>MaxTradedChange</key>
+		<real>7312.2999999999993</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T21:15:56</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>法杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>1</integer>
+	</dict>
+	<key>29084294#2019-01-24T01:30:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-1</string>
+		<key>AwayTeam</key>
+		<string>第戎</string>
+		<key>AwayTeamId</key>
+		<integer>305995</integer>
+		<key>BfAmountAway</key>
+		<real>62181.75</real>
+		<key>BfAmountDraw</key>
+		<real>161800.09</real>
+		<key>BfAmountHome</key>
+		<real>1883094.49</real>
+		<key>BfIndexAway</key>
+		<real>11.323600000000001</real>
+		<key>BfIndexDraw</key>
+		<real>18.6111</real>
+		<key>BfIndexHome</key>
+		<real>70.065299999999993</real>
+		<key>BfOddsAway</key>
+		<real>7.2000000000000002</real>
+		<key>BfOddsDraw</key>
+		<real>4.5999999999999996</real>
+		<key>BfOddsHome</key>
+		<real>1.5700000000000001</real>
+		<key>BfPayoutAway</key>
+		<real>-77.980099999999993</real>
+		<key>BfPayoutDraw</key>
+		<real>-63.808700000000002</real>
+		<key>BfPayoutHome</key>
+		<real>36.249600000000001</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29084294</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>圣埃蒂安</string>
+		<key>HomeTeamId</key>
+		<integer>309689</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>34.162100000000002</real>
+		<key>KellyDraw</key>
+		<real>12.030200000000001</real>
+		<key>KellyHome</key>
+		<real>4.8301999999999996</real>
+		<key>LeagueId</key>
+		<integer>27</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T01:30:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.5</real>
+		<key>MaxTeamId</key>
+		<integer>309689</integer>
+		<key>MaxTradedChange</key>
+		<real>198221.72000000003</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T00:30:33</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>法杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>1</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29084335#2019-01-23T09:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-0.5</string>
+		<key>AwayTeam</key>
+		<string>华雷斯</string>
+		<key>AwayTeamId</key>
+		<integer>10002706</integer>
+		<key>BfAmountAway</key>
+		<real>2382.25</real>
+		<key>BfAmountDraw</key>
+		<real>2195.1799999999998</real>
+		<key>BfAmountHome</key>
+		<real>9887.8400000000001</real>
+		<key>BfIndexAway</key>
+		<real>25.4983</real>
+		<key>BfIndexDraw</key>
+		<real>19.459499999999998</real>
+		<key>BfIndexHome</key>
+		<real>55.042200000000001</real>
+		<key>BfOddsAway</key>
+		<real>3.8999999999999999</real>
+		<key>BfOddsDraw</key>
+		<real>3.5</real>
+		<key>BfOddsHome</key>
+		<real>2.2400000000000002</real>
+		<key>BfPayoutAway</key>
+		<real>-31.732399999999998</real>
+		<key>BfPayoutDraw</key>
+		<real>-47.900399999999998</real>
+		<key>BfPayoutHome</key>
+		<real>47.366399999999999</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29084335</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>普埃布拉</string>
+		<key>HomeTeamId</key>
+		<integer>328956</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>19.239599999999999</real>
+		<key>KellyDraw</key>
+		<real>5.9581</real>
+		<key>KellyHome</key>
+		<real>8.1094000000000008</real>
+		<key>LeagueId</key>
+		<integer>557</integer>
+		<key>MatchTime</key>
+		<string>2019-01-23T09:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>2.1600000000000001</real>
+		<key>MaxTeamId</key>
+		<integer>328956</integer>
+		<key>MaxTradedChange</key>
+		<real>6276.4699999999993</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T08:58:06</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>墨西哥杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29084336#2019-01-23T09:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>0</string>
+		<key>AwayTeam</key>
+		<string>索诺拉</string>
+		<key>AwayTeamId</key>
+		<integer>9988723</integer>
+		<key>BfAmountAway</key>
+		<real>2261.3000000000002</real>
+		<key>BfAmountDraw</key>
+		<real>1195.04</real>
+		<key>BfAmountHome</key>
+		<real>5161.3500000000004</real>
+		<key>BfIndexAway</key>
+		<real>26.4162</real>
+		<key>BfIndexDraw</key>
+		<real>18.078499999999998</real>
+		<key>BfIndexHome</key>
+		<real>55.505299999999998</real>
+		<key>BfOddsAway</key>
+		<real>2.8599999999999999</real>
+		<key>BfOddsDraw</key>
+		<real>3.5499999999999998</real>
+		<key>BfOddsHome</key>
+		<real>2.7599999999999998</real>
+		<key>BfPayoutAway</key>
+		<real>-26.904</real>
+		<key>BfPayoutDraw</key>
+		<real>-49.975200000000001</real>
+		<key>BfPayoutHome</key>
+		<real>53.5886</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29084336</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>塔帕丘拉</string>
+		<key>HomeTeamId</key>
+		<integer>9988646</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>12.6112</real>
+		<key>KellyDraw</key>
+		<real>7.7175000000000002</real>
+		<key>KellyHome</key>
+		<real>13.7788</real>
+		<key>LeagueId</key>
+		<integer>557</integer>
+		<key>MatchTime</key>
+		<string>2019-01-23T09:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>2.54</real>
+		<key>MaxTeamId</key>
+		<integer>9988646</integer>
+		<key>MaxTradedChange</key>
+		<real>2479.7399999999998</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T06:55:11</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>墨西哥杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29084337#2019-01-23T11:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-1</string>
+		<key>AwayTeam</key>
+		<string>瓜达拉哈拉大学</string>
+		<key>AwayTeamId</key>
+		<integer>6533140</integer>
+		<key>BfAmountAway</key>
+		<real>1111.3900000000001</real>
+		<key>BfAmountDraw</key>
+		<real>3558.9699999999998</real>
+		<key>BfAmountHome</key>
+		<real>12290.110000000001</real>
+		<key>BfIndexAway</key>
+		<real>17.670100000000001</real>
+		<key>BfIndexDraw</key>
+		<real>36.934699999999999</real>
+		<key>BfIndexHome</key>
+		<real>45.395299999999999</real>
+		<key>BfOddsAway</key>
+		<real>8.1999999999999993</real>
+		<key>BfOddsDraw</key>
+		<real>4.5</real>
+		<key>BfOddsHome</key>
+		<real>1.5700000000000001</real>
+		<key>BfPayoutAway</key>
+		<real>-55.179499999999997</real>
+		<key>BfPayoutDraw</key>
+		<real>-6.3144</real>
+		<key>BfPayoutHome</key>
+		<real>15.146100000000001</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29084337</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>阿特拉斯</string>
+		<key>HomeTeamId</key>
+		<integer>328950</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>43.576099999999997</real>
+		<key>KellyDraw</key>
+		<real>18.851900000000001</real>
+		<key>KellyHome</key>
+		<real>7.9065000000000003</real>
+		<key>LeagueId</key>
+		<integer>557</integer>
+		<key>MatchTime</key>
+		<string>2019-01-23T11:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>4.5</real>
+		<key>MaxTeamId</key>
+		<integer>58805</integer>
+		<key>MaxTradedChange</key>
+		<real>1846.6900000000001</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T10:46:51</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>墨西哥杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29084338#2019-01-23T11:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>+0.25</string>
+		<key>AwayTeam</key>
+		<string>普埃布拉大学</string>
+		<key>AwayTeamId</key>
+		<integer>6138085</integer>
+		<key>BfAmountAway</key>
+		<real>5748.4200000000001</real>
+		<key>BfAmountDraw</key>
+		<real>3243.8200000000002</real>
+		<key>BfAmountHome</key>
+		<real>5013.3000000000002</real>
+		<key>BfIndexAway</key>
+		<real>35.605200000000004</real>
+		<key>BfIndexDraw</key>
+		<real>26.822600000000001</real>
+		<key>BfIndexHome</key>
+		<real>37.572200000000002</real>
+		<key>BfOddsAway</key>
+		<real>2.2599999999999998</real>
+		<key>BfOddsDraw</key>
+		<real>3.5499999999999998</real>
+		<key>BfOddsHome</key>
+		<real>3.7999999999999998</real>
+		<key>BfPayoutAway</key>
+		<real>4.5006000000000004</real>
+		<key>BfPayoutDraw</key>
+		<real>-21.2761</real>
+		<key>BfPayoutHome</key>
+		<real>10.273899999999999</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29084338</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>韦拉克鲁斯</string>
+		<key>HomeTeamId</key>
+		<integer>328922</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>9.3150999999999993</real>
+		<key>KellyDraw</key>
+		<real>11.0183</real>
+		<key>KellyHome</key>
+		<real>24.692799999999998</real>
+		<key>LeagueId</key>
+		<integer>557</integer>
+		<key>MatchTime</key>
+		<string>2019-01-23T11:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>2.9199999999999999</real>
+		<key>MaxTeamId</key>
+		<integer>328922</integer>
+		<key>MaxTradedChange</key>
+		<real>2369.04</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T06:55:38</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>墨西哥杯</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29084347#2019-01-24T01:30:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-0.25</string>
+		<key>AwayTeam</key>
+		<string>威廉二世</string>
+		<key>AwayTeamId</key>
+		<integer>48455</integer>
+		<key>BfAmountAway</key>
+		<real>79151.539999999994</real>
+		<key>BfAmountDraw</key>
+		<real>77512.600000000006</real>
+		<key>BfAmountHome</key>
+		<real>158458.5</real>
+		<key>BfIndexAway</key>
+		<real>28.4514</real>
+		<key>BfIndexDraw</key>
+		<real>31.207999999999998</real>
+		<key>BfIndexHome</key>
+		<real>40.340499999999999</real>
+		<key>BfOddsAway</key>
+		<real>3.5499999999999998</real>
+		<key>BfOddsDraw</key>
+		<real>3.6499999999999999</real>
+		<key>BfOddsHome</key>
+		<real>2.2599999999999998</real>
+		<key>BfPayoutAway</key>
+		<real>-18.237500000000001</real>
+		<key>BfPayoutDraw</key>
+		<real>-10.3157</real>
+		<key>BfPayoutHome</key>
+		<real>15.929</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29084347</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>特温特</string>
+		<key>HomeTeamId</key>
+		<integer>48446</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>15.0022</real>
+		<key>KellyDraw</key>
+		<real>7.9443999999999999</real>
+		<key>KellyHome</key>
+		<real>5.9333999999999998</real>
+		<key>LeagueId</key>
+		<integer>24</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T01:30:00</string>
+		<key>MaxLastOdds</key>
+		<real>2.2599999999999998</real>
+		<key>MaxTeamId</key>
+		<integer>48446</integer>
+		<key>MaxTradedChange</key>
+		<real>29574.949999999997</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T01:18:19</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>荷杯</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29084348#2019-01-24T03:45:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-2</string>
+		<key>AwayTeam</key>
+		<string>福图纳锡塔德</string>
+		<key>AwayTeamId</key>
+		<integer>49058</integer>
+		<key>BfAmountAway</key>
+		<real>11614.309999999999</real>
+		<key>BfAmountDraw</key>
+		<real>19679.970000000001</real>
+		<key>BfAmountHome</key>
+		<real>235113.25</real>
+		<key>BfIndexAway</key>
+		<real>28.354700000000001</real>
+		<key>BfIndexDraw</key>
+		<real>26.0913</real>
+		<key>BfIndexHome</key>
+		<real>45.554000000000002</real>
+		<key>BfOddsAway</key>
+		<real>16.5</real>
+		<key>BfOddsDraw</key>
+		<real>8.5999999999999996</real>
+		<key>BfOddsHome</key>
+		<real>1.22</real>
+		<key>BfPayoutAway</key>
+		<real>-32.737000000000002</real>
+		<key>BfPayoutDraw</key>
+		<real>-38.106099999999998</real>
+		<key>BfPayoutHome</key>
+		<real>8.0633999999999997</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29084348</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>费耶诺德</string>
+		<key>HomeTeamId</key>
+		<integer>55264</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>108.3524</real>
+		<key>KellyDraw</key>
+		<real>14.8032</real>
+		<key>KellyHome</key>
+		<real>3.9803999999999999</real>
+		<key>LeagueId</key>
+		<integer>24</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T03:45:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.23</real>
+		<key>MaxTeamId</key>
+		<integer>55264</integer>
+		<key>MaxTradedChange</key>
+		<real>59309.859999999986</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T03:41:52</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>荷杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29084354#2019-01-24T03:45:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-0.25</string>
+		<key>AwayTeam</key>
+		<string>里斯本竞技</string>
+		<key>AwayTeamId</key>
+		<integer>2506293</integer>
+		<key>BfAmountAway</key>
+		<real>84502.080000000002</real>
+		<key>BfAmountDraw</key>
+		<real>127959.28999999999</real>
+		<key>BfAmountHome</key>
+		<real>217799.91</real>
+		<key>BfIndexAway</key>
+		<real>22.246099999999998</real>
+		<key>BfIndexDraw</key>
+		<real>36.3459</real>
+		<key>BfIndexHome</key>
+		<real>41.408099999999997</real>
+		<key>BfOddsAway</key>
+		<real>3.3500000000000001</real>
+		<key>BfOddsDraw</key>
+		<real>3.6000000000000001</real>
+		<key>BfOddsHome</key>
+		<real>2.3799999999999999</real>
+		<key>BfPayoutAway</key>
+		<real>-35.134999999999998</real>
+		<key>BfPayoutDraw</key>
+		<real>5.9771000000000001</real>
+		<key>BfPayoutHome</key>
+		<real>20.737400000000001</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29084354</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>布拉加</string>
+		<key>HomeTeamId</key>
+		<integer>48799</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>17.605699999999999</real>
+		<key>KellyDraw</key>
+		<real>4.0370999999999997</real>
+		<key>KellyHome</key>
+		<real>7.6825000000000001</real>
+		<key>LeagueId</key>
+		<integer>591</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T03:45:00</string>
+		<key>MaxLastOdds</key>
+		<real>2.3199999999999998</real>
+		<key>MaxTeamId</key>
+		<integer>48799</integer>
+		<key>MaxTradedChange</key>
+		<real>33556.559999999998</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T03:05:36</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>葡联杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29084442#2019-01-24T07:30:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-0.75</string>
+		<key>AwayTeam</key>
+		<string>皇家加西拉索</string>
+		<key>AwayTeamId</key>
+		<integer>6204632</integer>
+		<key>BfAmountAway</key>
+		<real>6364.8599999999997</real>
+		<key>BfAmountDraw</key>
+		<real>17354.869999999999</real>
+		<key>BfAmountHome</key>
+		<real>43690.25</real>
+		<key>BfIndexAway</key>
+		<real>23.093399999999999</real>
+		<key>BfIndexDraw</key>
+		<real>36.653100000000002</real>
+		<key>BfIndexHome</key>
+		<real>40.253500000000003</real>
+		<key>BfOddsAway</key>
+		<real>6.2000000000000002</real>
+		<key>BfOddsDraw</key>
+		<real>3.7999999999999998</real>
+		<key>BfOddsHome</key>
+		<real>1.74</real>
+		<key>BfPayoutAway</key>
+		<real>-36.927300000000002</real>
+		<key>BfPayoutDraw</key>
+		<real>0.1071</real>
+		<key>BfPayoutHome</key>
+		<real>9.9404000000000003</real>
+		<key>Classifnication</key>
+		<integer>2</integer>
+		<key>EventId</key>
+		<integer>29084442</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>拉瓜伊拉</string>
+		<key>HomeTeamId</key>
+		<integer>7658015</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>85.620900000000006</real>
+		<key>KellyDraw</key>
+		<real>10.7729</real>
+		<key>KellyHome</key>
+		<real>4.0849000000000002</real>
+		<key>LeagueId</key>
+		<integer>79</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T07:30:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.73</real>
+		<key>MaxTeamId</key>
+		<integer>7658015</integer>
+		<key>MaxTradedChange</key>
+		<real>7148.6100000000006</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T07:24:18</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>南解杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
 	<key>29084689#2019-01-23T03:55:00</key>
 	<dict>
 		<key>AsianAvrLet</key>
@@ -33044,29 +35046,29 @@
 		<key>AwayTeamId</key>
 		<integer>44790</integer>
 		<key>BfAmountAway</key>
-		<real>9347.6499999999996</real>
+		<real>205830.59</real>
 		<key>BfAmountDraw</key>
-		<real>97.290000000000006</real>
+		<real>10081.99</real>
 		<key>BfAmountHome</key>
-		<real>51.979999999999997</real>
+		<real>3764.0900000000001</real>
 		<key>BfIndexAway</key>
-		<real>92.201700000000002</real>
+		<real>69.533299999999997</real>
 		<key>BfIndexDraw</key>
-		<real>3.9824999999999999</real>
+		<real>17.723700000000001</real>
 		<key>BfIndexHome</key>
-		<real>3.8157999999999999</real>
+		<real>12.743</real>
 		<key>BfOddsAway</key>
-		<real>1.3</real>
+		<real>1.22</real>
 		<key>BfOddsDraw</key>
-		<real>5.2999999999999998</real>
+		<real>8</real>
 		<key>BfOddsHome</key>
-		<real>9.5999999999999996</real>
+		<real>19</real>
 		<key>BfPayoutAway</key>
-		<real>27.724799999999998</real>
+		<real>21.742899999999999</real>
 		<key>BfPayoutDraw</key>
-		<real>-94.483099999999993</real>
+		<real>-68.968299999999999</real>
 		<key>BfPayoutHome</key>
-		<real>-94.714100000000002</real>
+		<real>-77.688800000000001</real>
 		<key>Classifnication</key>
 		<integer>3</integer>
 		<key>EventId</key>
@@ -33080,15 +35082,92 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>5.7126000000000001</real>
+		<real>3.6417000000000002</real>
 		<key>KellyDraw</key>
-		<real>28.107900000000001</real>
+		<real>41.677399999999999</real>
 		<key>KellyHome</key>
-		<real>58.406999999999996</real>
+		<real>222.42930000000001</real>
 		<key>LeagueId</key>
 		<integer>27</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T03:55:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.3100000000000001</real>
+		<key>MaxTeamId</key>
+		<integer>44790</integer>
+		<key>MaxTradedChange</key>
+		<real>23796.399999999994</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T01:33:37</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>法杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29084689#2019-01-23T04:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>0</string>
+		<key>AwayTeam</key>
+		<string>里尔</string>
+		<key>AwayTeamId</key>
+		<integer>44790</integer>
+		<key>BfAmountAway</key>
+		<real>14549.24</real>
+		<key>BfAmountDraw</key>
+		<real>97.129999999999995</real>
+		<key>BfAmountHome</key>
+		<real>51.890000000000001</real>
+		<key>BfIndexAway</key>
+		<real>94.897800000000004</real>
+		<key>BfIndexDraw</key>
+		<real>2.6055999999999999</real>
+		<key>BfIndexHome</key>
+		<real>2.4965999999999999</real>
+		<key>BfOddsAway</key>
+		<real>1.29</real>
+		<key>BfOddsDraw</key>
+		<real>5.2999999999999998</real>
+		<key>BfOddsHome</key>
+		<real>9.5999999999999996</real>
+		<key>BfPayoutAway</key>
+		<real>29.622299999999999</real>
+		<key>BfPayoutDraw</key>
+		<real>-96.441000000000003</real>
+		<key>BfPayoutHome</key>
+		<real>-96.590000000000003</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29084689</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>席特</string>
+		<key>HomeTeamId</key>
+		<integer>1205099</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>2.1171000000000002</real>
+		<key>KellyDraw</key>
+		<real>25.196300000000001</real>
+		<key>KellyHome</key>
+		<real>54.463999999999999</real>
+		<key>LeagueId</key>
+		<integer>27</integer>
+		<key>MatchTime</key>
+		<string>2019-01-23T04:00:00</string>
 		<key>MaxLastOdds</key>
 		<real>1.29</real>
 		<key>MaxTeamId</key>
@@ -33728,6 +35807,622 @@
 		<key>UnusualPayout</key>
 		<integer>0</integer>
 	</dict>
+	<key>29085523#2019-01-24T09:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>+0.5</string>
+		<key>AwayTeam</key>
+		<string>蓝十字</string>
+		<key>AwayTeamId</key>
+		<integer>328204</integer>
+		<key>BfAmountAway</key>
+		<real>1974.6900000000001</real>
+		<key>BfAmountDraw</key>
+		<real>1030.21</real>
+		<key>BfAmountHome</key>
+		<real>1365.29</real>
+		<key>BfIndexAway</key>
+		<real>29.394600000000001</real>
+		<key>BfIndexDraw</key>
+		<real>25.812100000000001</real>
+		<key>BfIndexHome</key>
+		<real>44.793300000000002</real>
+		<key>BfOddsAway</key>
+		<real>2.0800000000000001</real>
+		<key>BfOddsDraw</key>
+		<real>3.5</real>
+		<key>BfOddsHome</key>
+		<real>4.7000000000000002</real>
+		<key>BfPayoutAway</key>
+		<real>-8.1583000000000006</real>
+		<key>BfPayoutDraw</key>
+		<real>-19.351199999999999</real>
+		<key>BfPayoutHome</key>
+		<real>39.954300000000003</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29085523</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>瓦哈卡</string>
+		<key>HomeTeamId</key>
+		<integer>9988722</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>5.0183999999999997</real>
+		<key>KellyDraw</key>
+		<real>9.4883000000000006</real>
+		<key>KellyHome</key>
+		<real>36.272599999999997</real>
+		<key>LeagueId</key>
+		<integer>557</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T09:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>4.4000000000000004</real>
+		<key>MaxTeamId</key>
+		<integer>9988722</integer>
+		<key>MaxTradedChange</key>
+		<real>744.60000000000002</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T03:29:08</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>墨西哥杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29085524#2019-01-24T09:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>0</string>
+		<key>AwayTeam</key>
+		<string>克雷塔罗</string>
+		<key>AwayTeamId</key>
+		<integer>328926</integer>
+		<key>BfAmountAway</key>
+		<real>1720.9200000000001</real>
+		<key>BfAmountDraw</key>
+		<real>965.05999999999995</real>
+		<key>BfAmountHome</key>
+		<real>210.59999999999999</real>
+		<key>BfIndexAway</key>
+		<real>54.911499999999997</real>
+		<key>BfIndexDraw</key>
+		<real>38.485300000000002</real>
+		<key>BfIndexHome</key>
+		<real>6.6032999999999999</real>
+		<key>BfOddsAway</key>
+		<real>2.8799999999999999</real>
+		<key>BfOddsDraw</key>
+		<real>3.4500000000000002</real>
+		<key>BfOddsHome</key>
+		<real>2.7000000000000002</real>
+		<key>BfPayoutAway</key>
+		<real>66.6614</real>
+		<key>BfPayoutDraw</key>
+		<real>16.8064</real>
+		<key>BfPayoutHome</key>
+		<real>-79.958399999999997</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29085524</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>萨卡特佩克</string>
+		<key>HomeTeamId</key>
+		<integer>7444597</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>5.8185000000000002</real>
+		<key>KellyDraw</key>
+		<real>7.8204000000000002</real>
+		<key>KellyHome</key>
+		<real>9.3813999999999993</real>
+		<key>LeagueId</key>
+		<integer>557</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T09:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>2.7400000000000002</real>
+		<key>MaxTeamId</key>
+		<integer>328926</integer>
+		<key>MaxTradedChange</key>
+		<real>798.52999999999997</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T00:44:11</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>墨西哥杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>1</integer>
+	</dict>
+	<key>29085525#2019-01-24T11:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-1.5</string>
+		<key>AwayTeam</key>
+		<string>圣路易斯</string>
+		<key>AwayTeamId</key>
+		<integer>328915</integer>
+		<key>BfAmountAway</key>
+		<real>1100.4200000000001</real>
+		<key>BfAmountDraw</key>
+		<real>959.84000000000003</real>
+		<key>BfAmountHome</key>
+		<real>18155.490000000002</real>
+		<key>BfIndexAway</key>
+		<real>32.155500000000004</real>
+		<key>BfIndexDraw</key>
+		<real>13.7225</real>
+		<key>BfIndexHome</key>
+		<real>54.121899999999997</real>
+		<key>BfOddsAway</key>
+		<real>12.5</real>
+		<key>BfOddsDraw</key>
+		<real>6.2000000000000002</real>
+		<key>BfOddsHome</key>
+		<real>1.3200000000000001</real>
+		<key>BfPayoutAway</key>
+		<real>-30.504899999999999</real>
+		<key>BfPayoutDraw</key>
+		<real>-70.342699999999994</real>
+		<key>BfPayoutHome</key>
+		<real>16.969000000000001</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29085525</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>墨西哥美洲</string>
+		<key>HomeTeamId</key>
+		<integer>328952</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>76.008300000000006</real>
+		<key>KellyDraw</key>
+		<real>27.999300000000002</real>
+		<key>KellyHome</key>
+		<real>3.1638000000000002</real>
+		<key>LeagueId</key>
+		<integer>557</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T11:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.29</real>
+		<key>MaxTeamId</key>
+		<integer>328952</integer>
+		<key>MaxTradedChange</key>
+		<real>6332.1999999999989</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T10:22:08</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>墨西哥杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29085526#2019-01-24T11:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-1</string>
+		<key>AwayTeam</key>
+		<string>塔毛利帕斯大学</string>
+		<key>AwayTeamId</key>
+		<integer>6535216</integer>
+		<key>BfAmountAway</key>
+		<real>1181.97</real>
+		<key>BfAmountDraw</key>
+		<real>854.57000000000005</real>
+		<key>BfAmountHome</key>
+		<real>6458.0600000000004</real>
+		<key>BfIndexAway</key>
+		<real>32.832299999999996</real>
+		<key>BfIndexDraw</key>
+		<real>17.172999999999998</real>
+		<key>BfIndexHome</key>
+		<real>49.994799999999998</real>
+		<key>BfOddsAway</key>
+		<real>5.7999999999999998</real>
+		<key>BfOddsDraw</key>
+		<real>4.0999999999999996</real>
+		<key>BfOddsHome</key>
+		<real>1.6399999999999999</real>
+		<key>BfPayoutAway</key>
+		<real>-17.133400000000002</real>
+		<key>BfPayoutDraw</key>
+		<real>-56.656599999999997</real>
+		<key>BfPayoutHome</key>
+		<real>26.183900000000001</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29085526</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>莫雷利亚</string>
+		<key>HomeTeamId</key>
+		<integer>343015</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>42.733699999999999</real>
+		<key>KellyDraw</key>
+		<real>11.4572</real>
+		<key>KellyHome</key>
+		<real>5.1215000000000002</real>
+		<key>LeagueId</key>
+		<integer>557</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T11:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.6399999999999999</real>
+		<key>MaxTeamId</key>
+		<integer>343015</integer>
+		<key>MaxTradedChange</key>
+		<real>1569.0100000000002</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T10:58:49</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>墨西哥杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29085527#2019-01-24T11:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-0.75</string>
+		<key>AwayTeam</key>
+		<string>蒂华纳</string>
+		<key>AwayTeamId</key>
+		<integer>5687741</integer>
+		<key>BfAmountAway</key>
+		<real>3374.0500000000002</real>
+		<key>BfAmountDraw</key>
+		<real>6419.2799999999997</real>
+		<key>BfAmountHome</key>
+		<real>24082.189999999999</real>
+		<key>BfIndexAway</key>
+		<real>19.032800000000002</real>
+		<key>BfIndexDraw</key>
+		<real>30.148900000000001</real>
+		<key>BfIndexHome</key>
+		<real>50.818300000000001</real>
+		<key>BfOddsAway</key>
+		<real>5.5999999999999996</real>
+		<key>BfOddsDraw</key>
+		<real>4.5</real>
+		<key>BfOddsHome</key>
+		<real>1.6699999999999999</real>
+		<key>BfPayoutAway</key>
+		<real>-51.008899999999997</real>
+		<key>BfPayoutDraw</key>
+		<real>-22.395700000000001</real>
+		<key>BfPayoutHome</key>
+		<real>30.808199999999999</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29085527</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>帕丘卡</string>
+		<key>HomeTeamId</key>
+		<integer>328954</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>43.736800000000002</real>
+		<key>KellyDraw</key>
+		<real>21.196400000000001</real>
+		<key>KellyHome</key>
+		<real>12.3908</real>
+		<key>LeagueId</key>
+		<integer>557</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T11:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.78</real>
+		<key>MaxTeamId</key>
+		<integer>328954</integer>
+		<key>MaxTradedChange</key>
+		<real>3501.8900000000003</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T10:31:48</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>墨西哥杯</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29085533#2019-01-25T01:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>0</string>
+		<key>AwayTeam</key>
+		<string>诺西格兰德</string>
+		<key>AwayTeamId</key>
+		<integer>21930991</integer>
+		<key>BfAmountAway</key>
+		<real>62.909999999999997</real>
+		<key>BfAmountDraw</key>
+		<real>89.650000000000006</real>
+		<key>BfAmountHome</key>
+		<real>5456.8599999999997</real>
+		<key>BfIndexAway</key>
+		<real>4.3829000000000002</real>
+		<key>BfIndexDraw</key>
+		<real>4.4123000000000001</real>
+		<key>BfIndexHome</key>
+		<real>91.204800000000006</real>
+		<key>BfOddsAway</key>
+		<real>6.2000000000000002</real>
+		<key>BfOddsDraw</key>
+		<real>4.7999999999999998</real>
+		<key>BfOddsHome</key>
+		<real>1.55</real>
+		<key>BfPayoutAway</key>
+		<real>-92.744399999999999</real>
+		<key>BfPayoutDraw</key>
+		<real>-92.695499999999996</real>
+		<key>BfPayoutHome</key>
+		<real>50.987299999999998</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29085533</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>巴斯蒂亚</string>
+		<key>HomeTeamId</key>
+		<integer>7534982</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>20.48</real>
+		<key>KellyDraw</key>
+		<real>10.242100000000001</real>
+		<key>KellyHome</key>
+		<real>2.8633999999999999</real>
+		<key>LeagueId</key>
+		<integer>27</integer>
+		<key>MatchTime</key>
+		<string>2019-01-25T01:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.6899999999999999</real>
+		<key>MaxTeamId</key>
+		<integer>7534982</integer>
+		<key>MaxTradedChange</key>
+		<real>271.92999999999938</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T21:29:39</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>法杯</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>1</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29085534#2019-01-25T01:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>0</string>
+		<key>AwayTeam</key>
+		<string>勒阿弗尔</string>
+		<key>AwayTeamId</key>
+		<integer>70446</integer>
+		<key>BfAmountAway</key>
+		<real>10426.969999999999</real>
+		<key>BfAmountDraw</key>
+		<real>127.28</real>
+		<key>BfAmountHome</key>
+		<real>98.340000000000003</real>
+		<key>BfIndexAway</key>
+		<real>92.433300000000003</real>
+		<key>BfIndexDraw</key>
+		<real>3.6396000000000002</real>
+		<key>BfIndexHome</key>
+		<real>3.9270999999999998</real>
+		<key>BfOddsAway</key>
+		<real>1.5</real>
+		<key>BfOddsDraw</key>
+		<real>5.5999999999999996</real>
+		<key>BfOddsHome</key>
+		<real>6.5999999999999996</real>
+		<key>BfPayoutAway</key>
+		<real>47.4422</real>
+		<key>BfPayoutDraw</key>
+		<real>-94.194400000000002</real>
+		<key>BfPayoutHome</key>
+		<real>-93.735900000000001</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29085534</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>维特</string>
+		<key>HomeTeamId</key>
+		<integer>1355050</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>1.8328</real>
+		<key>KellyDraw</key>
+		<real>12.560499999999999</real>
+		<key>KellyHome</key>
+		<real>17.849699999999999</real>
+		<key>LeagueId</key>
+		<integer>27</integer>
+		<key>MatchTime</key>
+		<string>2019-01-25T01:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.52</real>
+		<key>MaxTeamId</key>
+		<integer>70446</integer>
+		<key>MaxTradedChange</key>
+		<real>4727.2700000000004</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T06:25:40</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>法杯</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>1</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29085535#2019-01-25T04:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>+0.75</string>
+		<key>AwayTeam</key>
+		<string>里昂</string>
+		<key>AwayTeamId</key>
+		<integer>55271</integer>
+		<key>BfAmountAway</key>
+		<real>24017.68</real>
+		<key>BfAmountDraw</key>
+		<real>6999.1400000000003</real>
+		<key>BfAmountHome</key>
+		<real>8188.6099999999997</real>
+		<key>BfIndexAway</key>
+		<real>36.750700000000002</real>
+		<key>BfIndexDraw</key>
+		<real>23.6206</real>
+		<key>BfIndexHome</key>
+		<real>39.628700000000002</real>
+		<key>BfOddsAway</key>
+		<real>1.77</real>
+		<key>BfOddsDraw</key>
+		<real>3.9500000000000002</real>
+		<key>BfOddsHome</key>
+		<real>5.9000000000000004</real>
+		<key>BfPayoutAway</key>
+		<real>9.9091000000000005</real>
+		<key>BfPayoutDraw</key>
+		<real>-29.358499999999999</real>
+		<key>BfPayoutHome</key>
+		<real>18.516100000000002</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29085535</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>亚眠</string>
+		<key>HomeTeamId</key>
+		<integer>70467</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>2.7475000000000001</real>
+		<key>KellyDraw</key>
+		<real>7.6292999999999997</real>
+		<key>KellyHome</key>
+		<real>16.8293</real>
+		<key>LeagueId</key>
+		<integer>27</integer>
+		<key>MatchTime</key>
+		<string>2019-01-25T04:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.77</real>
+		<key>MaxTeamId</key>
+		<integer>55271</integer>
+		<key>MaxTradedChange</key>
+		<real>4269.7099999999991</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T06:28:40</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>法杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
 	<key>29085613#2019-01-21T05:00:00</key>
 	<dict>
 		<key>AsianAvrLet</key>
@@ -33804,6 +36499,545 @@
 		<integer>0</integer>
 		<key>UnusualPayout</key>
 		<integer>1</integer>
+	</dict>
+	<key>29085763#2019-01-24T05:15:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>+0.5</string>
+		<key>AwayTeam</key>
+		<string>科林蒂安</string>
+		<key>AwayTeamId</key>
+		<integer>198136</integer>
+		<key>BfAmountAway</key>
+		<real>136610.19</real>
+		<key>BfAmountDraw</key>
+		<real>48838.82</real>
+		<key>BfAmountHome</key>
+		<real>39418.860000000001</real>
+		<key>BfIndexAway</key>
+		<real>43.305599999999998</real>
+		<key>BfIndexDraw</key>
+		<real>27.412099999999999</real>
+		<key>BfIndexHome</key>
+		<real>29.282299999999999</real>
+		<key>BfOddsAway</key>
+		<real>2.02</real>
+		<key>BfOddsDraw</key>
+		<real>3.3999999999999999</real>
+		<key>BfOddsHome</key>
+		<real>5.0999999999999996</real>
+		<key>BfPayoutAway</key>
+		<real>22.036300000000001</real>
+		<key>BfPayoutDraw</key>
+		<real>-22.751999999999999</real>
+		<key>BfPayoutHome</key>
+		<real>-17.4816</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29085763</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>巴西瓜拉尼</string>
+		<key>HomeTeamId</key>
+		<integer>5310337</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>4.9949000000000003</real>
+		<key>KellyDraw</key>
+		<real>13.0154</real>
+		<key>KellyHome</key>
+		<real>21.140899999999998</real>
+		<key>LeagueId</key>
+		<integer>615</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T05:15:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.8799999999999999</real>
+		<key>MaxTeamId</key>
+		<integer>198136</integer>
+		<key>MaxTradedChange</key>
+		<real>10039.430000000002</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-22T22:37:18</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>圣保罗锦</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29085764#2019-01-24T05:15:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-0.25</string>
+		<key>AwayTeam</key>
+		<string>巴甘蒂诺</string>
+		<key>AwayTeamId</key>
+		<integer>4701919</integer>
+		<key>BfAmountAway</key>
+		<real>768.53999999999996</real>
+		<key>BfAmountDraw</key>
+		<real>2689.21</real>
+		<key>BfAmountHome</key>
+		<real>43671.5</real>
+		<key>BfIndexAway</key>
+		<real>2.4843000000000002</real>
+		<key>BfIndexDraw</key>
+		<real>7.1210000000000004</real>
+		<key>BfIndexHome</key>
+		<real>90.3947</real>
+		<key>BfOddsAway</key>
+		<real>3.8500000000000001</real>
+		<key>BfOddsDraw</key>
+		<real>3.0499999999999998</real>
+		<key>BfOddsHome</key>
+		<real>2.3199999999999998</real>
+		<key>BfPayoutAway</key>
+		<real>-93.786699999999996</real>
+		<key>BfPayoutDraw</key>
+		<real>-82.189599999999999</real>
+		<key>BfPayoutHome</key>
+		<real>126.08620000000001</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29085764</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>欧斯特</string>
+		<key>HomeTeamId</key>
+		<integer>3618374</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>33.027099999999997</real>
+		<key>KellyDraw</key>
+		<real>5.3624999999999998</real>
+		<key>KellyHome</key>
+		<real>8.1763999999999992</real>
+		<key>LeagueId</key>
+		<integer>615</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T05:15:00</string>
+		<key>MaxLastOdds</key>
+		<real>2.3999999999999999</real>
+		<key>MaxTeamId</key>
+		<integer>3618374</integer>
+		<key>MaxTradedChange</key>
+		<real>11093.689999999999</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T02:13:56</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>圣保罗锦</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>1</integer>
+		<key>UnusualPayout</key>
+		<integer>1</integer>
+	</dict>
+	<key>29085766#2019-01-24T07:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-1.5</string>
+		<key>AwayTeam</key>
+		<string>博塔弗戈SP</string>
+		<key>AwayTeamId</key>
+		<integer>4435648</integer>
+		<key>BfAmountAway</key>
+		<real>4608.6700000000001</real>
+		<key>BfAmountDraw</key>
+		<real>7116.4700000000003</real>
+		<key>BfAmountHome</key>
+		<real>121724.08</real>
+		<key>BfIndexAway</key>
+		<real>23.614799999999999</real>
+		<key>BfIndexDraw</key>
+		<real>14.400499999999999</real>
+		<key>BfIndexHome</key>
+		<real>61.984699999999997</real>
+		<key>BfOddsAway</key>
+		<real>14</real>
+		<key>BfOddsDraw</key>
+		<real>5.2999999999999998</real>
+		<key>BfOddsHome</key>
+		<real>1.3500000000000001</real>
+		<key>BfPayoutAway</key>
+		<real>-53.220300000000002</real>
+		<key>BfPayoutDraw</key>
+		<real>-71.473299999999995</real>
+		<key>BfPayoutHome</key>
+		<real>22.788699999999999</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29085766</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>帕尔梅拉斯</string>
+		<key>HomeTeamId</key>
+		<integer>189952</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>129.7826</real>
+		<key>KellyDraw</key>
+		<real>10.219900000000001</real>
+		<key>KellyHome</key>
+		<real>3.0352999999999999</real>
+		<key>LeagueId</key>
+		<integer>615</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T07:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.3600000000000001</real>
+		<key>MaxTeamId</key>
+		<integer>189952</integer>
+		<key>MaxTradedChange</key>
+		<real>5626.5999999999985</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T05:31:18</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>圣保罗锦</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29085769#2019-01-24T03:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>+0.25</string>
+		<key>AwayTeam</key>
+		<string>庞特普雷塔</string>
+		<key>AwayTeamId</key>
+		<integer>204603</integer>
+		<key>BfAmountAway</key>
+		<real>1025.1700000000001</real>
+		<key>BfAmountDraw</key>
+		<real>7792.1099999999997</real>
+		<key>BfAmountHome</key>
+		<real>861.64999999999998</real>
+		<key>BfIndexAway</key>
+		<real>9.1274999999999995</real>
+		<key>BfIndexDraw</key>
+		<real>80.728399999999993</real>
+		<key>BfIndexHome</key>
+		<real>10.1441</real>
+		<key>BfOddsAway</key>
+		<real>2.7000000000000002</real>
+		<key>BfOddsDraw</key>
+		<real>3</real>
+		<key>BfOddsHome</key>
+		<real>3.3999999999999999</real>
+		<key>BfPayoutAway</key>
+		<real>-72.604100000000003</real>
+		<key>BfPayoutDraw</key>
+		<real>142.3032</real>
+		<key>BfPayoutHome</key>
+		<real>-69.553100000000001</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29085769</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>阿拉拉夸拉铁路</string>
+		<key>HomeTeamId</key>
+		<integer>6987860</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>6.4093</real>
+		<key>KellyDraw</key>
+		<real>6.3571999999999997</real>
+		<key>KellyHome</key>
+		<real>10.967499999999999</real>
+		<key>LeagueId</key>
+		<integer>615</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T03:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>3</real>
+		<key>MaxTeamId</key>
+		<integer>58805</integer>
+		<key>MaxTradedChange</key>
+		<real>1918.8699999999999</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T00:16:07</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>圣保罗锦</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>1</integer>
+		<key>UnusualPayout</key>
+		<integer>1</integer>
+	</dict>
+	<key>29086161#2019-01-24T02:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-0.25</string>
+		<key>AwayTeam</key>
+		<string>昂热</string>
+		<key>AwayTeamId</key>
+		<integer>473963</integer>
+		<key>BfAmountAway</key>
+		<real>184323.12</real>
+		<key>BfAmountDraw</key>
+		<real>355582.84000000003</real>
+		<key>BfAmountHome</key>
+		<real>849902.30000000005</real>
+		<key>BfIndexAway</key>
+		<real>18.218499999999999</real>
+		<key>BfIndexDraw</key>
+		<real>30.742799999999999</real>
+		<key>BfIndexHome</key>
+		<real>51.038699999999999</real>
+		<key>BfOddsAway</key>
+		<real>3.8500000000000001</real>
+		<key>BfOddsDraw</key>
+		<real>3.25</real>
+		<key>BfOddsHome</key>
+		<real>2.3199999999999998</real>
+		<key>BfPayoutAway</key>
+		<real>-49.549599999999998</real>
+		<key>BfPayoutDraw</key>
+		<real>-14.8673</real>
+		<key>BfPayoutHome</key>
+		<real>41.335900000000002</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29086161</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>尼姆</string>
+		<key>HomeTeamId</key>
+		<integer>77586</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>7.1265000000000001</real>
+		<key>KellyDraw</key>
+		<real>4.1553000000000004</real>
+		<key>KellyHome</key>
+		<real>3.4508999999999999</real>
+		<key>LeagueId</key>
+		<integer>318</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T02:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>3.25</real>
+		<key>MaxTeamId</key>
+		<integer>58805</integer>
+		<key>MaxTradedChange</key>
+		<real>79344.059999999998</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T00:20:43</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>法甲</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29086467#2019-01-24T04:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-2.75</string>
+		<key>AwayTeam</key>
+		<string>斯特拉斯堡</string>
+		<key>AwayTeamId</key>
+		<integer>51404</integer>
+		<key>BfAmountAway</key>
+		<real>100.42</real>
+		<key>BfAmountDraw</key>
+		<real>324.95999999999998</real>
+		<key>BfAmountHome</key>
+		<real>111461.49000000001</real>
+		<key>BfIndexAway</key>
+		<real>2.0703</real>
+		<key>BfIndexDraw</key>
+		<real>3.1122000000000001</real>
+		<key>BfIndexHome</key>
+		<real>94.817499999999995</real>
+		<key>BfOddsAway</key>
+		<real>28</real>
+		<key>BfOddsDraw</key>
+		<real>12.5</real>
+		<key>BfOddsHome</key>
+		<real>1.1200000000000001</real>
+		<key>BfPayoutAway</key>
+		<real>-97.540099999999995</real>
+		<key>BfPayoutDraw</key>
+		<real>-96.302300000000002</real>
+		<key>BfPayoutHome</key>
+		<real>12.657</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29086467</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>巴黎圣日尔曼</string>
+		<key>HomeTeamId</key>
+		<integer>489720</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>241.46680000000001</real>
+		<key>KellyDraw</key>
+		<real>109.5215</real>
+		<key>KellyHome</key>
+		<real>0.94510000000000005</real>
+		<key>LeagueId</key>
+		<integer>27</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T04:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.1299999999999999</real>
+		<key>MaxTeamId</key>
+		<integer>489720</integer>
+		<key>MaxTradedChange</key>
+		<real>60943.290000000001</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T01:12:14</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>法杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>1</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29086467#2019-01-24T04:05:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-3</string>
+		<key>AwayTeam</key>
+		<string>斯特拉斯堡</string>
+		<key>AwayTeamId</key>
+		<integer>51404</integer>
+		<key>BfAmountAway</key>
+		<real>22547.990000000002</real>
+		<key>BfAmountDraw</key>
+		<real>33674.75</real>
+		<key>BfAmountHome</key>
+		<real>2549125.5099999998</real>
+		<key>BfIndexAway</key>
+		<real>15.5395</real>
+		<key>BfIndexDraw</key>
+		<real>11.5467</real>
+		<key>BfIndexHome</key>
+		<real>72.913700000000006</real>
+		<key>BfOddsAway</key>
+		<real>32</real>
+		<key>BfOddsDraw</key>
+		<real>16.5</real>
+		<key>BfOddsHome</key>
+		<real>1.0900000000000001</real>
+		<key>BfPayoutAway</key>
+		<real>-76.569000000000003</real>
+		<key>BfPayoutDraw</key>
+		<real>-82.589500000000001</real>
+		<key>BfPayoutHome</key>
+		<real>9.9417000000000009</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29086467</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>巴黎圣日尔曼</string>
+		<key>HomeTeamId</key>
+		<integer>489720</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>239.04159999999999</real>
+		<key>KellyDraw</key>
+		<real>118.7538</real>
+		<key>KellyHome</key>
+		<real>1.1595</real>
+		<key>LeagueId</key>
+		<integer>27</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T04:05:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.1599999999999999</real>
+		<key>MaxTeamId</key>
+		<integer>489720</integer>
+		<key>MaxTradedChange</key>
+		<real>518617.41999999993</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T03:23:17</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>法杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>1</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
 	</dict>
 	<key>29087056#2019-01-20T07:00:00</key>
 	<dict>
@@ -34276,29 +37510,29 @@
 		<key>AwayTeamId</key>
 		<integer>51307</integer>
 		<key>BfAmountAway</key>
-		<real>9070.3400000000001</real>
+		<real>89106.169999999998</real>
 		<key>BfAmountDraw</key>
-		<real>5439.4499999999998</real>
+		<real>277021.96999999997</real>
 		<key>BfAmountHome</key>
-		<real>74966.070000000007</real>
+		<real>4672449.3600000003</real>
 		<key>BfIndexAway</key>
-		<real>51.580599999999997</real>
+		<real>16.755299999999998</real>
 		<key>BfIndexDraw</key>
-		<real>11.001300000000001</real>
+		<real>16.241399999999999</real>
 		<key>BfIndexHome</key>
-		<real>37.418100000000003</real>
+		<real>67.003299999999996</real>
 		<key>BfOddsAway</key>
 		<real>16.5</real>
 		<key>BfOddsDraw</key>
-		<real>5.4000000000000004</real>
+		<real>5.0999999999999996</real>
 		<key>BfOddsHome</key>
-		<real>1.3</real>
+		<real>1.3400000000000001</real>
 		<key>BfPayoutAway</key>
-		<real>54.220399999999998</real>
+		<real>-69.360799999999998</real>
 		<key>BfPayoutDraw</key>
-		<real>-67.107200000000006</real>
+		<real>-70.3005</real>
 		<key>BfPayoutHome</key>
-		<real>11.875999999999999</real>
+		<real>22.524000000000001</real>
 		<key>Classifnication</key>
 		<integer>0</integer>
 		<key>EventId</key>
@@ -34312,23 +37546,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>97.704800000000006</real>
+		<real>139.7492</real>
 		<key>KellyDraw</key>
-		<real>34.344999999999999</real>
+		<real>21.3202</real>
 		<key>KellyHome</key>
-		<real>2.4211</real>
+		<real>3.5369999999999999</real>
 		<key>LeagueId</key>
 		<integer>232</integer>
 		<key>MatchTime</key>
 		<string>2019-01-22T21:00:00</string>
 		<key>MaxLastOdds</key>
-		<real>1.3400000000000001</real>
+		<real>1.3300000000000001</real>
 		<key>MaxTeamId</key>
 		<integer>47965</integer>
 		<key>MaxTradedChange</key>
-		<real>9802.0600000000049</real>
+		<real>222415.27000000002</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T06:37:56</string>
+		<string>2019-01-22T20:34:25</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -34353,29 +37587,29 @@
 		<key>AwayTeamId</key>
 		<integer>53446</integer>
 		<key>BfAmountAway</key>
-		<real>2043.6900000000001</real>
+		<real>441178.78000000003</real>
 		<key>BfAmountDraw</key>
-		<real>9605.6700000000001</real>
+		<real>226911.26000000001</real>
 		<key>BfAmountHome</key>
-		<real>27510.860000000001</real>
+		<real>679780.42000000004</real>
 		<key>BfIndexAway</key>
-		<real>7.1207000000000003</real>
+		<real>42.271999999999998</real>
 		<key>BfIndexDraw</key>
-		<real>30.5717</real>
+		<real>18.231100000000001</real>
 		<key>BfIndexHome</key>
-		<real>62.307600000000001</real>
+		<real>39.496899999999997</real>
 		<key>BfOddsAway</key>
 		<real>3.8500000000000001</real>
 		<key>BfOddsDraw</key>
-		<real>3.25</real>
+		<real>3.2000000000000002</real>
 		<key>BfOddsHome</key>
-		<real>2.2799999999999998</real>
+		<real>2.3399999999999999</real>
 		<key>BfPayoutAway</key>
-		<real>-81.307599999999994</real>
+		<real>26.6372</real>
 		<key>BfPayoutDraw</key>
-		<real>-19.7469</real>
+		<real>-45.383699999999997</real>
 		<key>BfPayoutHome</key>
-		<real>63.562199999999997</real>
+		<real>18.323799999999999</real>
 		<key>Classifnication</key>
 		<integer>0</integer>
 		<key>EventId</key>
@@ -34389,23 +37623,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>11.554399999999999</real>
+		<real>40.366</real>
 		<key>KellyDraw</key>
-		<real>17.377099999999999</real>
+		<real>9.6591000000000005</real>
 		<key>KellyHome</key>
-		<real>3.399</real>
+		<real>7.6618000000000004</real>
 		<key>LeagueId</key>
 		<integer>232</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T00:00:00</string>
 		<key>MaxLastOdds</key>
-		<real>3.2999999999999998</real>
+		<real>2.3799999999999999</real>
 		<key>MaxTeamId</key>
-		<integer>58805</integer>
+		<integer>53447</integer>
 		<key>MaxTradedChange</key>
-		<real>2922.3199999999997</real>
+		<real>38621.76999999996</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T06:52:00</string>
+		<string>2019-01-22T23:31:31</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -34419,7 +37653,7 @@
 		<key>UnusualIndex</key>
 		<integer>0</integer>
 		<key>UnusualPayout</key>
-		<integer>1</integer>
+		<integer>0</integer>
 	</dict>
 	<key>29087129#2019-01-20T22:00:00</key>
 	<dict>
@@ -34652,6 +37886,83 @@
 		<key>UnusualPayout</key>
 		<integer>0</integer>
 	</dict>
+	<key>29087840#2019-01-24T04:30:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-0.25</string>
+		<key>AwayTeam</key>
+		<string>巴塞罗那</string>
+		<key>AwayTeamId</key>
+		<integer>55270</integer>
+		<key>BfAmountAway</key>
+		<real>5395757.8799999999</real>
+		<key>BfAmountDraw</key>
+		<real>1230755.79</real>
+		<key>BfAmountHome</key>
+		<real>6430031.8700000001</real>
+		<key>BfIndexAway</key>
+		<real>39.6937</real>
+		<key>BfIndexDraw</key>
+		<real>12.7721</real>
+		<key>BfIndexHome</key>
+		<real>47.534199999999998</real>
+		<key>BfOddsAway</key>
+		<real>3.3999999999999999</real>
+		<key>BfOddsDraw</key>
+		<real>3.6499999999999999</real>
+		<key>BfOddsHome</key>
+		<real>2.2999999999999998</real>
+		<key>BfPayoutAway</key>
+		<real>8.3134999999999994</real>
+		<key>BfPayoutDraw</key>
+		<real>-65.148200000000003</real>
+		<key>BfPayoutHome</key>
+		<real>29.707999999999998</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29087840</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>塞维利亚</string>
+		<key>HomeTeamId</key>
+		<integer>44508</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>12.597799999999999</real>
+		<key>KellyDraw</key>
+		<real>6.9076000000000004</real>
+		<key>KellyHome</key>
+		<real>4.5720999999999998</real>
+		<key>LeagueId</key>
+		<integer>555</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T04:30:00</string>
+		<key>MaxLastOdds</key>
+		<real>2.6400000000000001</real>
+		<key>MaxTeamId</key>
+		<integer>44508</integer>
+		<key>MaxTradedChange</key>
+		<real>759391.66000000015</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T03:17:57</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>国王杯</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
 	<key>29087843#2019-01-23T04:30:00</key>
 	<dict>
 		<key>AsianAvrLet</key>
@@ -34661,29 +37972,29 @@
 		<key>AwayTeamId</key>
 		<integer>66183</integer>
 		<key>BfAmountAway</key>
-		<real>11952.969999999999</real>
+		<real>781280.44999999995</real>
 		<key>BfAmountDraw</key>
-		<real>59894.25</real>
+		<real>900431.43999999994</real>
 		<key>BfAmountHome</key>
-		<real>61542.910000000003</real>
+		<real>2755809.52</real>
 		<key>BfIndexAway</key>
-		<real>9.8530999999999995</real>
+		<real>21.6706</real>
 		<key>BfIndexDraw</key>
-		<real>47.154899999999998</real>
+		<real>22.794</real>
 		<key>BfIndexHome</key>
-		<real>42.991999999999997</real>
+		<real>55.535400000000003</real>
 		<key>BfOddsAway</key>
 		<real>3.25</real>
 		<key>BfOddsDraw</key>
-		<real>3.1499999999999999</real>
+		<real>3.0499999999999998</real>
 		<key>BfOddsHome</key>
-		<real>2.7000000000000002</real>
+		<real>2.7200000000000002</real>
 		<key>BfPayoutAway</key>
-		<real>-70.828599999999994</real>
+		<real>-39.044699999999999</real>
 		<key>BfPayoutDraw</key>
-		<real>39.6081</real>
+		<real>-35.884799999999998</real>
 		<key>BfPayoutHome</key>
-		<real>27.283300000000001</real>
+		<real>56.210599999999999</real>
 		<key>Classifnication</key>
 		<integer>1</integer>
 		<key>EventId</key>
@@ -34697,23 +38008,177 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>4.7500999999999998</real>
+		<real>15.844900000000001</real>
 		<key>KellyDraw</key>
-		<real>3.6191</real>
+		<real>5.5186999999999999</real>
 		<key>KellyHome</key>
-		<real>3.3193000000000001</real>
+		<real>12.2044</real>
 		<key>LeagueId</key>
 		<integer>555</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T04:30:00</string>
 		<key>MaxLastOdds</key>
-		<real>2.7599999999999998</real>
+		<real>2.3599999999999999</real>
 		<key>MaxTeamId</key>
 		<integer>248010</integer>
 		<key>MaxTradedChange</key>
-		<real>48567.790000000001</real>
+		<real>302057.84999999998</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T06:05:23</string>
+		<string>2019-01-23T03:22:31</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>国王杯</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29087857#2019-01-25T04:30:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-1.5</string>
+		<key>AwayTeam</key>
+		<string>赫罗纳</string>
+		<key>AwayTeamId</key>
+		<integer>968185</integer>
+		<key>BfAmountAway</key>
+		<real>3091.5500000000002</real>
+		<key>BfAmountDraw</key>
+		<real>4321.8400000000001</real>
+		<key>BfAmountHome</key>
+		<real>42623.879999999997</real>
+		<key>BfIndexAway</key>
+		<real>26.215299999999999</real>
+		<key>BfIndexDraw</key>
+		<real>21.8522</real>
+		<key>BfIndexHome</key>
+		<real>51.932600000000001</real>
+		<key>BfOddsAway</key>
+		<real>9.1999999999999993</real>
+		<key>BfOddsDraw</key>
+		<real>5.7000000000000002</real>
+		<key>BfOddsHome</key>
+		<real>1.3799999999999999</real>
+		<key>BfPayoutAway</key>
+		<real>-40.430599999999998</real>
+		<key>BfPayoutDraw</key>
+		<real>-50.344999999999999</real>
+		<key>BfPayoutHome</key>
+		<real>18.007400000000001</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29087857</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>皇家马德里</string>
+		<key>HomeTeamId</key>
+		<integer>2426</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>25.944400000000002</real>
+		<key>KellyDraw</key>
+		<real>13.254200000000001</real>
+		<key>KellyHome</key>
+		<real>1.4354</real>
+		<key>LeagueId</key>
+		<integer>555</integer>
+		<key>MatchTime</key>
+		<string>2019-01-25T04:30:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.3799999999999999</real>
+		<key>MaxTeamId</key>
+		<integer>2426</integer>
+		<key>MaxTradedChange</key>
+		<real>7879.8899999999994</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T06:34:38</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>国王杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29087860#2019-01-25T02:30:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-0.25</string>
+		<key>AwayTeam</key>
+		<string>皇家贝蒂斯</string>
+		<key>AwayTeamId</key>
+		<integer>44507</integer>
+		<key>BfAmountAway</key>
+		<real>13786.879999999999</real>
+		<key>BfAmountDraw</key>
+		<real>7724.1700000000001</real>
+		<key>BfAmountHome</key>
+		<real>13854.74</real>
+		<key>BfIndexAway</key>
+		<real>42.233899999999998</real>
+		<key>BfIndexDraw</key>
+		<real>25.315100000000001</real>
+		<key>BfIndexHome</key>
+		<real>32.450899999999997</real>
+		<key>BfOddsAway</key>
+		<real>3.2000000000000002</real>
+		<key>BfOddsDraw</key>
+		<real>3.5</real>
+		<key>BfOddsHome</key>
+		<real>2.52</real>
+		<key>BfPayoutAway</key>
+		<real>26.926100000000002</real>
+		<key>BfPayoutDraw</key>
+		<real>-23.920200000000001</real>
+		<key>BfPayoutHome</key>
+		<real>-2.4748999999999999</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29087860</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>西班牙人</string>
+		<key>HomeTeamId</key>
+		<integer>59044</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>4.7956000000000003</real>
+		<key>KellyDraw</key>
+		<real>4.29</real>
+		<key>KellyHome</key>
+		<real>2.5291999999999999</real>
+		<key>LeagueId</key>
+		<integer>555</integer>
+		<key>MatchTime</key>
+		<string>2019-01-25T02:30:00</string>
+		<key>MaxLastOdds</key>
+		<real>2.48</real>
+		<key>MaxTeamId</key>
+		<integer>59044</integer>
+		<key>MaxTradedChange</key>
+		<real>4489.1100000000006</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T04:44:30</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -34960,38 +38425,192 @@
 		<key>UnusualPayout</key>
 		<integer>0</integer>
 	</dict>
+	<key>29089225#2019-01-24T07:30:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-1.5</string>
+		<key>AwayTeam</key>
+		<string>捍卫者竞技</string>
+		<key>AwayTeamId</key>
+		<integer>1222679</integer>
+		<key>BfAmountAway</key>
+		<real>6161.9700000000003</real>
+		<key>BfAmountDraw</key>
+		<real>10040.08</real>
+		<key>BfAmountHome</key>
+		<real>266308.15999999997</real>
+		<key>BfIndexAway</key>
+		<real>23.497399999999999</real>
+		<key>BfIndexDraw</key>
+		<real>13.941800000000001</real>
+		<key>BfIndexHome</key>
+		<real>62.560899999999997</real>
+		<key>BfOddsAway</key>
+		<real>24</real>
+		<key>BfOddsDraw</key>
+		<real>8.4000000000000004</real>
+		<key>BfOddsHome</key>
+		<real>1.1899999999999999</real>
+		<key>BfPayoutAway</key>
+		<real>-56.761000000000003</real>
+		<key>BfPayoutDraw</key>
+		<real>-74.344899999999996</real>
+		<key>BfPayoutHome</key>
+		<real>15.122299999999999</real>
+		<key>Classifnication</key>
+		<integer>2</integer>
+		<key>EventId</key>
+		<integer>29089225</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>玻利瓦尔</string>
+		<key>HomeTeamId</key>
+		<integer>329419</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>560.5711</real>
+		<key>KellyDraw</key>
+		<real>63.9664</real>
+		<key>KellyHome</key>
+		<real>3.1381000000000001</real>
+		<key>LeagueId</key>
+		<integer>79</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T07:30:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.22</real>
+		<key>MaxTeamId</key>
+		<integer>329419</integer>
+		<key>MaxTradedChange</key>
+		<real>42077.899999999994</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T07:19:56</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>南解杯</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29089263#2019-01-25T03:45:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-2.5</string>
+		<key>AwayTeam</key>
+		<string>海伦芬</string>
+		<key>AwayTeamId</key>
+		<integer>3630179</integer>
+		<key>BfAmountAway</key>
+		<real>1274.75</real>
+		<key>BfAmountDraw</key>
+		<real>534.64999999999998</real>
+		<key>BfAmountHome</key>
+		<real>30245.349999999999</real>
+		<key>BfIndexAway</key>
+		<real>38.639000000000003</real>
+		<key>BfIndexDraw</key>
+		<real>8.6936</real>
+		<key>BfIndexHome</key>
+		<real>52.667299999999997</real>
+		<key>BfOddsAway</key>
+		<real>23</real>
+		<key>BfOddsDraw</key>
+		<real>11</real>
+		<key>BfOddsHome</key>
+		<real>1.1499999999999999</real>
+		<key>BfPayoutAway</key>
+		<real>-20.972899999999999</real>
+		<key>BfPayoutDraw</key>
+		<real>-82.219200000000001</real>
+		<key>BfPayoutHome</key>
+		<real>7.7187000000000001</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29089263</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>阿贾克斯</string>
+		<key>HomeTeamId</key>
+		<integer>2685</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>105.14960000000001</real>
+		<key>KellyDraw</key>
+		<real>68.919700000000006</real>
+		<key>KellyHome</key>
+		<real>1.3248</real>
+		<key>LeagueId</key>
+		<integer>24</integer>
+		<key>MatchTime</key>
+		<string>2019-01-25T03:45:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.1499999999999999</real>
+		<key>MaxTeamId</key>
+		<integer>2685</integer>
+		<key>MaxTradedChange</key>
+		<real>12541.150000000001</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T06:35:19</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>荷杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
 	<key>29090486#2019-01-23T03:45:00</key>
 	<dict>
 		<key>AsianAvrLet</key>
-		<string>-0.25</string>
+		<string>0</string>
 		<key>AwayTeam</key>
 		<string>牛津联队</string>
 		<key>AwayTeamId</key>
 		<integer>256171</integer>
 		<key>BfAmountAway</key>
-		<real>1901.1199999999999</real>
+		<real>87737.809999999998</real>
 		<key>BfAmountDraw</key>
-		<real>266.04000000000002</real>
+		<real>14468.77</real>
 		<key>BfAmountHome</key>
-		<real>927.04999999999995</real>
+		<real>24808.279999999999</real>
 		<key>BfIndexAway</key>
-		<real>60.994900000000001</real>
+		<real>65.850800000000007</real>
 		<key>BfIndexDraw</key>
-		<real>11.843299999999999</real>
+		<real>15.8086</real>
 		<key>BfIndexHome</key>
-		<real>27.161799999999999</real>
+		<real>18.340599999999998</real>
 		<key>BfOddsAway</key>
-		<real>2.7599999999999998</real>
+		<real>2.6800000000000002</real>
 		<key>BfOddsDraw</key>
-		<real>3.8999999999999999</real>
+		<real>3.9500000000000002</real>
 		<key>BfOddsHome</key>
-		<real>2.54</real>
+		<real>2.7000000000000002</real>
 		<key>BfPayoutAway</key>
-		<real>74.664100000000005</real>
+		<real>84.620999999999995</real>
 		<key>BfPayoutDraw</key>
-		<real>-66.086399999999998</real>
+		<real>-55.678600000000003</real>
 		<key>BfPayoutHome</key>
-		<real>-22.219899999999999</real>
+		<real>-48.579799999999999</real>
 		<key>Classifnication</key>
 		<integer>1</integer>
 		<key>EventId</key>
@@ -35005,23 +38624,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>7.0815999999999999</real>
+		<real>7.141</real>
 		<key>KellyDraw</key>
-		<real>10.663600000000001</real>
+		<real>23.547599999999999</real>
 		<key>KellyHome</key>
-		<real>11.1571</real>
+		<real>6.0644999999999998</real>
 		<key>LeagueId</key>
 		<integer>518</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T03:45:00</string>
 		<key>MaxLastOdds</key>
-		<real>2.8999999999999999</real>
+		<real>2.6200000000000001</real>
 		<key>MaxTeamId</key>
 		<integer>256171</integer>
 		<key>MaxTradedChange</key>
-		<real>576.59000000000003</real>
+		<real>26989.190000000002</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T05:43:02</string>
+		<string>2019-01-23T02:52:43</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -35040,35 +38659,35 @@
 	<key>29090487#2019-01-23T03:45:00</key>
 	<dict>
 		<key>AsianAvrLet</key>
-		<string>-0.75</string>
+		<string>-0.5</string>
 		<key>AwayTeam</key>
 		<string>维尔港</string>
 		<key>AwayTeamId</key>
 		<integer>256373</integer>
 		<key>BfAmountAway</key>
-		<real>606.04999999999995</real>
+		<real>26503.889999999999</real>
 		<key>BfAmountDraw</key>
-		<real>229.47</real>
+		<real>19105.700000000001</real>
 		<key>BfAmountHome</key>
-		<real>2768.9000000000001</real>
+		<real>141537.89000000001</real>
 		<key>BfIndexAway</key>
-		<real>33.049900000000001</real>
+		<real>25.4787</real>
 		<key>BfIndexDraw</key>
-		<real>8.5700000000000003</real>
+		<real>13.8085</real>
 		<key>BfIndexHome</key>
-		<real>58.380099999999999</real>
+		<real>60.712899999999998</real>
 		<key>BfOddsAway</key>
-		<real>4.7999999999999998</real>
+		<real>4.4000000000000004</real>
 		<key>BfOddsDraw</key>
-		<real>3.2999999999999998</real>
+		<real>3.4500000000000002</real>
 		<key>BfOddsHome</key>
-		<real>1.96</real>
+		<real>2.02</real>
 		<key>BfPayoutAway</key>
-		<real>-13.5031</real>
+		<real>-34.934600000000003</real>
 		<key>BfPayoutDraw</key>
-		<real>-77.5715</real>
+		<real>-64.736999999999995</real>
 		<key>BfPayoutHome</key>
-		<real>52.789700000000003</real>
+		<real>55.043700000000001</real>
 		<key>Classifnication</key>
 		<integer>1</integer>
 		<key>EventId</key>
@@ -35082,23 +38701,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>84.224100000000007</real>
+		<real>63.893599999999999</real>
 		<key>KellyDraw</key>
-		<real>13.5869</real>
+		<real>14.0382</real>
 		<key>KellyHome</key>
-		<real>11.2134</real>
+		<real>7.0762</real>
 		<key>LeagueId</key>
 		<integer>518</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T03:45:00</string>
 		<key>MaxLastOdds</key>
-		<real>2.02</real>
+		<real>2.04</real>
 		<key>MaxTeamId</key>
 		<integer>69821</integer>
 		<key>MaxTradedChange</key>
-		<real>848.63999999999987</real>
+		<real>8715.9500000000007</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T06:54:53</string>
+		<string>2019-01-23T00:36:23</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -35117,35 +38736,35 @@
 	<key>29090488#2019-01-23T03:00:00</key>
 	<dict>
 		<key>AsianAvrLet</key>
-		<string>-0.25</string>
+		<string>0</string>
 		<key>AwayTeam</key>
 		<string>彼得堡联</string>
 		<key>AwayTeamId</key>
 		<integer>18563</integer>
 		<key>BfAmountAway</key>
-		<real>6884.2299999999996</real>
+		<real>343858.53000000003</real>
 		<key>BfAmountDraw</key>
-		<real>912.07000000000005</real>
+		<real>88588.869999999995</real>
 		<key>BfAmountHome</key>
-		<real>4708.2299999999996</real>
+		<real>152630.12</real>
 		<key>BfIndexAway</key>
-		<real>61.696199999999997</real>
+		<real>51.410600000000002</real>
 		<key>BfIndexDraw</key>
-		<real>9.0523000000000007</real>
+		<real>20.9419</real>
 		<key>BfIndexHome</key>
-		<real>29.2516</real>
+		<real>27.647500000000001</real>
 		<key>BfOddsAway</key>
-		<real>3.25</real>
-		<key>BfOddsDraw</key>
-		<real>3.7000000000000002</real>
-		<key>BfOddsHome</key>
 		<real>2.3799999999999999</real>
+		<key>BfOddsDraw</key>
+		<real>3.7999999999999998</real>
+		<key>BfOddsHome</key>
+		<real>3.1499999999999999</real>
 		<key>BfPayoutAway</key>
-		<real>85.551900000000003</real>
+		<real>42.449199999999998</real>
 		<key>BfPayoutDraw</key>
-		<real>-72.775199999999998</real>
+		<real>-41.973999999999997</real>
 		<key>BfPayoutHome</key>
-		<real>-12.025499999999999</real>
+		<real>-23.393899999999999</real>
 		<key>Classifnication</key>
 		<integer>1</integer>
 		<key>EventId</key>
@@ -35159,23 +38778,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>40.611800000000002</real>
+		<real>5.5591999999999997</real>
 		<key>KellyDraw</key>
-		<real>12.099600000000001</real>
+		<real>15.0419</real>
 		<key>KellyHome</key>
-		<real>16.921700000000001</real>
+		<real>9.0490999999999993</real>
 		<key>LeagueId</key>
 		<integer>518</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T03:00:00</string>
 		<key>MaxLastOdds</key>
-		<real>2.3599999999999999</real>
+		<real>2.3999999999999999</real>
 		<key>MaxTeamId</key>
-		<integer>58344</integer>
+		<integer>18563</integer>
 		<key>MaxTradedChange</key>
-		<real>1127.9499999999998</real>
+		<real>21627.620000000054</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-22T08:08:43</string>
+		<string>2019-01-23T02:54:08</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -35189,40 +38808,40 @@
 		<key>UnusualIndex</key>
 		<integer>0</integer>
 		<key>UnusualPayout</key>
-		<integer>1</integer>
+		<integer>0</integer>
 	</dict>
 	<key>29090489#2019-01-23T03:45:00</key>
 	<dict>
 		<key>AsianAvrLet</key>
-		<string>-0.75</string>
+		<string>-1.25</string>
 		<key>AwayTeam</key>
 		<string>曼城 U21</string>
 		<key>AwayTeamId</key>
 		<integer>6584787</integer>
 		<key>BfAmountAway</key>
-		<real>333.13</real>
+		<real>22958.349999999999</real>
 		<key>BfAmountDraw</key>
-		<real>489.97000000000003</real>
+		<real>10717.639999999999</real>
 		<key>BfAmountHome</key>
-		<real>97780.460000000006</real>
+		<real>380167.01000000001</real>
 		<key>BfIndexAway</key>
-		<real>1.056</real>
+		<real>21.893599999999999</real>
 		<key>BfIndexDraw</key>
-		<real>1.2351000000000001</real>
+		<real>7.4005999999999998</real>
 		<key>BfIndexHome</key>
-		<real>97.7089</real>
+		<real>70.705799999999996</real>
 		<key>BfOddsAway</key>
-		<real>5.7999999999999998</real>
+		<real>8.1999999999999993</real>
 		<key>BfOddsDraw</key>
-		<real>4.5</real>
+		<real>6.2000000000000002</real>
 		<key>BfOddsHome</key>
-		<real>1.6599999999999999</real>
+		<real>1.4199999999999999</real>
 		<key>BfPayoutAway</key>
-		<real>-98.152900000000002</real>
+		<real>-57.253399999999999</real>
 		<key>BfPayoutDraw</key>
-		<real>-97.839799999999997</real>
+		<real>-85.550600000000003</real>
 		<key>BfPayoutHome</key>
-		<real>70.9011</real>
+		<real>38.050699999999999</real>
 		<key>Classifnication</key>
 		<integer>1</integer>
 		<key>EventId</key>
@@ -35236,23 +38855,23 @@
 		<key>IsTutorial</key>
 		<false/>
 		<key>KellyAway</key>
-		<real>115.1289</real>
+		<real>84.411100000000005</real>
 		<key>KellyDraw</key>
-		<real>29.2653</real>
+		<real>31.211600000000001</real>
 		<key>KellyHome</key>
-		<real>18.114599999999999</real>
+		<real>1.5674999999999999</real>
 		<key>LeagueId</key>
 		<integer>518</integer>
 		<key>MatchTime</key>
 		<string>2019-01-23T03:45:00</string>
 		<key>MaxLastOdds</key>
-		<real>1.73</real>
+		<real>1.4199999999999999</real>
 		<key>MaxTeamId</key>
 		<integer>62783</integer>
 		<key>MaxTradedChange</key>
-		<real>26414.840000000004</real>
+		<real>37636.669999999984</real>
 		<key>MaxUpdateTime</key>
-		<string>2019-01-21T17:57:18</string>
+		<string>2019-01-23T03:41:47</string>
 		<key>MediaIndexAway</key>
 		<real>0.0</real>
 		<key>MediaIndexDraw</key>
@@ -35261,6 +38880,545 @@
 		<real>0.0</real>
 		<key>SortName</key>
 		<string>英锦赛</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>1</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29091345#2019-01-24T08:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-1</string>
+		<key>AwayTeam</key>
+		<string>圣菲联合</string>
+		<key>AwayTeamId</key>
+		<integer>194516</integer>
+		<key>BfAmountAway</key>
+		<real>6750</real>
+		<key>BfAmountDraw</key>
+		<real>11653.129999999999</real>
+		<key>BfAmountHome</key>
+		<real>53287.040000000001</real>
+		<key>BfIndexAway</key>
+		<real>28.314900000000002</real>
+		<key>BfIndexDraw</key>
+		<real>24.9314</real>
+		<key>BfIndexHome</key>
+		<real>46.753799999999998</real>
+		<key>BfOddsAway</key>
+		<real>8.4000000000000004</real>
+		<key>BfOddsDraw</key>
+		<real>4.0999999999999996</real>
+		<key>BfOddsHome</key>
+		<real>1.5800000000000001</real>
+		<key>BfPayoutAway</key>
+		<real>-26.510999999999999</real>
+		<key>BfPayoutDraw</key>
+		<real>-35.2926</real>
+		<key>BfPayoutHome</key>
+		<real>21.345600000000001</real>
+		<key>Classifnication</key>
+		<integer>3</integer>
+		<key>EventId</key>
+		<integer>29091345</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>河床</string>
+		<key>HomeTeamId</key>
+		<integer>194515</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>26.029199999999999</real>
+		<key>KellyDraw</key>
+		<real>12.497199999999999</real>
+		<key>KellyHome</key>
+		<real>1.4399999999999999</real>
+		<key>LeagueId</key>
+		<integer>129</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T08:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.6100000000000001</real>
+		<key>MaxTeamId</key>
+		<integer>194515</integer>
+		<key>MaxTradedChange</key>
+		<real>8084.0900000000038</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T06:25:46</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>阿甲</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29092198#2019-01-24T21:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>+1.5</string>
+		<key>AwayTeam</key>
+		<string>日本</string>
+		<key>AwayTeamId</key>
+		<integer>29636</integer>
+		<key>BfAmountAway</key>
+		<real>65679.800000000003</real>
+		<key>BfAmountDraw</key>
+		<real>8832.2399999999998</real>
+		<key>BfAmountHome</key>
+		<real>5402.9099999999999</real>
+		<key>BfIndexAway</key>
+		<real>38.677999999999997</real>
+		<key>BfIndexDraw</key>
+		<real>21.214099999999998</real>
+		<key>BfIndexHome</key>
+		<real>40.107799999999997</real>
+		<key>BfOddsAway</key>
+		<real>1.3400000000000001</real>
+		<key>BfOddsDraw</key>
+		<real>5.4000000000000004</real>
+		<key>BfOddsHome</key>
+		<real>14.5</real>
+		<key>BfPayoutAway</key>
+		<real>8.5054999999999996</real>
+		<key>BfPayoutDraw</key>
+		<real>-40.486800000000002</real>
+		<key>BfPayoutHome</key>
+		<real>12.5166</real>
+		<key>Classifnication</key>
+		<integer>0</integer>
+		<key>EventId</key>
+		<integer>29092198</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>越南</string>
+		<key>HomeTeamId</key>
+		<integer>833281</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>2.5282</real>
+		<key>KellyDraw</key>
+		<real>18.614000000000001</real>
+		<key>KellyHome</key>
+		<real>187.8715</real>
+		<key>LeagueId</key>
+		<integer>232</integer>
+		<key>MatchTime</key>
+		<string>2019-01-24T21:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.3200000000000001</real>
+		<key>MaxTeamId</key>
+		<integer>29636</integer>
+		<key>MaxTradedChange</key>
+		<real>11817.970000000001</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T06:27:22</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>亚洲杯</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>0</integer>
+		<key>UnusualPayout</key>
+		<integer>0</integer>
+	</dict>
+	<key>29092511#2019-01-25T00:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>+1.25</string>
+		<key>AwayTeam</key>
+		<string>伊朗 </string>
+		<key>AwayTeamId</key>
+		<integer>47966</integer>
+		<key>BfAmountAway</key>
+		<real>7635.46</real>
+		<key>BfAmountDraw</key>
+		<real>1725.6199999999999</real>
+		<key>BfAmountHome</key>
+		<real>8459.8099999999995</real>
+		<key>BfIndexAway</key>
+		<real>7.6184000000000003</real>
+		<key>BfIndexDraw</key>
+		<real>6.0644</real>
+		<key>BfIndexHome</key>
+		<real>86.3172</real>
+		<key>BfOddsAway</key>
+		<real>1.4299999999999999</real>
+		<key>BfOddsDraw</key>
+		<real>4.2000000000000002</real>
+		<key>BfOddsHome</key>
+		<real>15.5</real>
+		<key>BfPayoutAway</key>
+		<real>-39.116399999999999</real>
+		<key>BfPayoutDraw</key>
+		<real>-51.535200000000003</real>
+		<key>BfPayoutHome</key>
+		<real>589.82000000000005</real>
+		<key>Classifnication</key>
+		<integer>0</integer>
+		<key>EventId</key>
+		<integer>29092511</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>中国</string>
+		<key>HomeTeamId</key>
+		<integer>51089</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>3.6017999999999999</real>
+		<key>KellyDraw</key>
+		<real>15.8864</real>
+		<key>KellyHome</key>
+		<real>114.6249</real>
+		<key>LeagueId</key>
+		<integer>232</integer>
+		<key>MatchTime</key>
+		<string>2019-01-25T00:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>14.5</real>
+		<key>MaxTeamId</key>
+		<integer>51089</integer>
+		<key>MaxTradedChange</key>
+		<real>2679.7599999999998</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T09:41:45</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>亚洲杯</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>1</integer>
+		<key>UnusualPayout</key>
+		<integer>1</integer>
+	</dict>
+	<key>29094544#2019-01-25T07:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>0</string>
+		<key>AwayTeam</key>
+		<string>圣保罗</string>
+		<key>AwayTeamId</key>
+		<integer>198126</integer>
+		<key>BfAmountAway</key>
+		<real>15863.629999999999</real>
+		<key>BfAmountDraw</key>
+		<real>210.25999999999999</real>
+		<key>BfAmountHome</key>
+		<real>0.0</real>
+		<key>BfIndexAway</key>
+		<real>97.226900000000001</real>
+		<key>BfIndexDraw</key>
+		<real>2.7730999999999999</real>
+		<key>BfIndexHome</key>
+		<real>0.0</real>
+		<key>BfOddsAway</key>
+		<real>1.9099999999999999</real>
+		<key>BfOddsDraw</key>
+		<real>4.2999999999999998</real>
+		<key>BfOddsHome</key>
+		<real>0.0</real>
+		<key>BfPayoutAway</key>
+		<real>83.523499999999999</real>
+		<key>BfPayoutDraw</key>
+		<real>-94.765600000000006</real>
+		<key>BfPayoutHome</key>
+		<real>0.0</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29094544</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>新奥里藏蒂诺</string>
+		<key>HomeTeamId</key>
+		<integer>9173038</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>4.3474000000000004</real>
+		<key>KellyDraw</key>
+		<real>8.6556999999999995</real>
+		<key>KellyHome</key>
+		<real>0.0</real>
+		<key>LeagueId</key>
+		<integer>615</integer>
+		<key>MatchTime</key>
+		<string>2019-01-25T07:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>1.8400000000000001</real>
+		<key>MaxTeamId</key>
+		<integer>198126</integer>
+		<key>MaxTradedChange</key>
+		<real>12551.639999999999</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T09:40:30</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>圣保罗锦</string>
+		<key>UnusualHot</key>
+		<integer>0</integer>
+		<key>UnusualIndex</key>
+		<integer>1</integer>
+		<key>UnusualPayout</key>
+		<integer>1</integer>
+	</dict>
+	<key>29094578#2019-01-25T05:15:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>+0.5</string>
+		<key>AwayTeam</key>
+		<string>桑托斯</string>
+		<key>AwayTeamId</key>
+		<integer>198127</integer>
+		<key>BfAmountAway</key>
+		<real>15188.99</real>
+		<key>BfAmountDraw</key>
+		<real>101.75</real>
+		<key>BfAmountHome</key>
+		<real>74.489999999999995</real>
+		<key>BfIndexAway</key>
+		<real>98.1601</real>
+		<key>BfIndexDraw</key>
+		<real>1.0192000000000001</real>
+		<key>BfIndexHome</key>
+		<real>0.8206</real>
+		<key>BfOddsAway</key>
+		<real>1.97</real>
+		<key>BfOddsDraw</key>
+		<real>3.2999999999999998</real>
+		<key>BfOddsHome</key>
+		<real>4.7999999999999998</real>
+		<key>BfPayoutAway</key>
+		<real>104.14</real>
+		<key>BfPayoutDraw</key>
+		<real>-97.880300000000005</real>
+		<key>BfPayoutHome</key>
+		<real>-98.293400000000005</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29094578</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>圣本图</string>
+		<key>HomeTeamId</key>
+		<integer>1362124</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>3.1233</real>
+		<key>KellyDraw</key>
+		<real>6.0289999999999999</real>
+		<key>KellyHome</key>
+		<real>39.506799999999998</real>
+		<key>LeagueId</key>
+		<integer>615</integer>
+		<key>MatchTime</key>
+		<string>2019-01-25T05:15:00</string>
+		<key>MaxLastOdds</key>
+		<real>2.0800000000000001</real>
+		<key>MaxTeamId</key>
+		<integer>198127</integer>
+		<key>MaxTradedChange</key>
+		<real>4091.0600000000004</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-23T17:39:46</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>圣保罗锦</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>1</integer>
+		<key>UnusualPayout</key>
+		<integer>1</integer>
+	</dict>
+	<key>29094587#2019-01-25T07:00:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-0.25</string>
+		<key>AwayTeam</key>
+		<string>伊图阿诺</string>
+		<key>AwayTeamId</key>
+		<integer>1040280</integer>
+		<key>BfAmountAway</key>
+		<real>48.100000000000001</real>
+		<key>BfAmountDraw</key>
+		<real>47.009999999999998</real>
+		<key>BfAmountHome</key>
+		<real>341.61000000000001</real>
+		<key>BfIndexAway</key>
+		<real>16.047799999999999</real>
+		<key>BfIndexDraw</key>
+		<real>13.5589</real>
+		<key>BfIndexHome</key>
+		<real>70.393299999999996</real>
+		<key>BfOddsAway</key>
+		<real>3.4500000000000002</real>
+		<key>BfOddsDraw</key>
+		<real>3.0499999999999998</real>
+		<key>BfOddsHome</key>
+		<real>2.1000000000000001</real>
+		<key>BfPayoutAway</key>
+		<real>-61.142299999999999</real>
+		<key>BfPayoutDraw</key>
+		<real>-67.168800000000005</real>
+		<key>BfPayoutHome</key>
+		<real>70.448899999999995</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29094587</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>圣卡埃塔诺</string>
+		<key>HomeTeamId</key>
+		<integer>198130</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>11.084899999999999</real>
+		<key>KellyDraw</key>
+		<real>6.5209999999999999</real>
+		<key>KellyHome</key>
+		<real>5.1920999999999999</real>
+		<key>LeagueId</key>
+		<integer>615</integer>
+		<key>MatchTime</key>
+		<string>2019-01-25T07:00:00</string>
+		<key>MaxLastOdds</key>
+		<real>2.1000000000000001</real>
+		<key>MaxTeamId</key>
+		<integer>198130</integer>
+		<key>MaxTradedChange</key>
+		<real>227.47999999999999</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T09:40:18</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>圣保罗锦</string>
+		<key>UnusualHot</key>
+		<integer>1</integer>
+		<key>UnusualIndex</key>
+		<integer>1</integer>
+		<key>UnusualPayout</key>
+		<integer>1</integer>
+	</dict>
+	<key>29094588#2019-01-25T03:30:00</key>
+	<dict>
+		<key>AsianAvrLet</key>
+		<string>-0.25</string>
+		<key>AwayTeam</key>
+		<string>巴西红牛</string>
+		<key>AwayTeamId</key>
+		<integer>6987866</integer>
+		<key>BfAmountAway</key>
+		<real>3053.96</real>
+		<key>BfAmountDraw</key>
+		<real>0.0</real>
+		<key>BfAmountHome</key>
+		<real>219.68000000000001</real>
+		<key>BfIndexAway</key>
+		<real>93.921000000000006</real>
+		<key>BfIndexDraw</key>
+		<real>0.0</real>
+		<key>BfIndexHome</key>
+		<real>6.0789999999999997</real>
+		<key>BfOddsAway</key>
+		<real>3.1499999999999999</real>
+		<key>BfOddsDraw</key>
+		<real>0.0</real>
+		<key>BfOddsHome</key>
+		<real>3</real>
+		<key>BfPayoutAway</key>
+		<real>210.6576</real>
+		<key>BfPayoutDraw</key>
+		<real>0.0</real>
+		<key>BfPayoutHome</key>
+		<real>-79.892700000000005</real>
+		<key>Classifnication</key>
+		<integer>1</integer>
+		<key>EventId</key>
+		<integer>29094588</integer>
+		<key>EventTypeId</key>
+		<integer>1</integer>
+		<key>HomeTeam</key>
+		<string>米拉索尔</string>
+		<key>HomeTeamId</key>
+		<integer>2760854</integer>
+		<key>IsTutorial</key>
+		<false/>
+		<key>KellyAway</key>
+		<real>8.3193999999999999</real>
+		<key>KellyDraw</key>
+		<real>0.0</real>
+		<key>KellyHome</key>
+		<real>6.8009000000000004</real>
+		<key>LeagueId</key>
+		<integer>615</integer>
+		<key>MatchTime</key>
+		<string>2019-01-25T03:30:00</string>
+		<key>MaxLastOdds</key>
+		<real>3.3500000000000001</real>
+		<key>MaxTeamId</key>
+		<integer>6987866</integer>
+		<key>MaxTradedChange</key>
+		<real>2805.8899999999999</real>
+		<key>MaxUpdateTime</key>
+		<string>2019-01-24T01:37:22</string>
+		<key>MediaIndexAway</key>
+		<real>0.0</real>
+		<key>MediaIndexDraw</key>
+		<real>0.0</real>
+		<key>MediaIndexHome</key>
+		<real>0.0</real>
+		<key>SortName</key>
+		<string>圣保罗锦</string>
 		<key>UnusualHot</key>
 		<integer>0</integer>
 		<key>UnusualIndex</key>
