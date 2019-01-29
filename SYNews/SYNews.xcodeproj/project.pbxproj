@@ -183,8 +183,14 @@
 		F09A6660216DFFA000C3C20A /* SYRecommendPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A665F216DFFA000C3C20A /* SYRecommendPicker.m */; };
 		F09A6663216E193C00C3C20A /* SYRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6662216E193C00C3C20A /* SYRecommendViewController.m */; };
 		F09A6669216E208300C3C20A /* SYMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F09A6668216E208300C3C20A /* SYMoreViewController.m */; };
-		F09D4B1121F9D264002812FA /* NBA-20190124.plist in Resources */ = {isa = PBXBuildFile; fileRef = F09D4B0F21F9D261002812FA /* NBA-20190124.plist */; };
-		F09D4B1221F9D264002812FA /* 20190124.plist in Resources */ = {isa = PBXBuildFile; fileRef = F09D4B1021F9D264002812FA /* 20190124.plist */; };
+		F0AED8DC21FE9F3B00D656FA /* SYDateAnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AED8DA21FE9F3B00D656FA /* SYDateAnalysisViewController.m */; };
+		F0AED8E121FEB32300D656FA /* SYDateAnalysisCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AED8DF21FEB32300D656FA /* SYDateAnalysisCell.m */; };
+		F0AED8E221FEB32300D656FA /* SYDateAnalysisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AED8E021FEB32300D656FA /* SYDateAnalysisCell.xib */; };
+		F0AED8E522007DA600D656FA /* NBA-20190129.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0AED8E322007DA600D656FA /* NBA-20190129.plist */; };
+		F0AED8E622007DA600D656FA /* 20190129.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0AED8E422007DA600D656FA /* 20190129.plist */; };
+		F0AED8EF2200860600D656FA /* SYGameTeamAnalysisCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AED8ED2200860600D656FA /* SYGameTeamAnalysisCell.m */; };
+		F0AED8F02200860600D656FA /* SYGameTeamAnalysisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AED8EE2200860600D656FA /* SYGameTeamAnalysisCell.xib */; };
+		F0AED8F322008C0A00D656FA /* SYGameTeamAnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AED8F222008C0A00D656FA /* SYGameTeamAnalysisViewController.m */; };
 		F0E242D7216F6360008CB6D8 /* ERSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E242D6216F6360008CB6D8 /* ERSwitchView.m */; };
 		F0E4E74C2179B7C8007C7FAB /* SYNormalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E4E74B2179B7C5007C7FAB /* SYNormalListViewController.m */; };
 		F0F63ACD2154D375000D7A15 /* APIRequest+Sports.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63ACC2154D375000D7A15 /* APIRequest+Sports.m */; };
@@ -540,8 +546,18 @@
 		F09A6662216E193C00C3C20A /* SYRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYRecommendViewController.m; sourceTree = "<group>"; };
 		F09A6667216E208300C3C20A /* SYMoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYMoreViewController.h; sourceTree = "<group>"; };
 		F09A6668216E208300C3C20A /* SYMoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYMoreViewController.m; sourceTree = "<group>"; };
-		F09D4B0F21F9D261002812FA /* NBA-20190124.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NBA-20190124.plist"; sourceTree = "<group>"; };
-		F09D4B1021F9D264002812FA /* 20190124.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20190124.plist; sourceTree = "<group>"; };
+		F0AED8D921FE9F3B00D656FA /* SYDateAnalysisViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYDateAnalysisViewController.h; sourceTree = "<group>"; };
+		F0AED8DA21FE9F3B00D656FA /* SYDateAnalysisViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYDateAnalysisViewController.m; sourceTree = "<group>"; };
+		F0AED8DE21FEB32300D656FA /* SYDateAnalysisCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYDateAnalysisCell.h; sourceTree = "<group>"; };
+		F0AED8DF21FEB32300D656FA /* SYDateAnalysisCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYDateAnalysisCell.m; sourceTree = "<group>"; };
+		F0AED8E021FEB32300D656FA /* SYDateAnalysisCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SYDateAnalysisCell.xib; sourceTree = "<group>"; };
+		F0AED8E322007DA600D656FA /* NBA-20190129.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NBA-20190129.plist"; sourceTree = "<group>"; };
+		F0AED8E422007DA600D656FA /* 20190129.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20190129.plist; sourceTree = "<group>"; };
+		F0AED8EC2200860600D656FA /* SYGameTeamAnalysisCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYGameTeamAnalysisCell.h; sourceTree = "<group>"; };
+		F0AED8ED2200860600D656FA /* SYGameTeamAnalysisCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYGameTeamAnalysisCell.m; sourceTree = "<group>"; };
+		F0AED8EE2200860600D656FA /* SYGameTeamAnalysisCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SYGameTeamAnalysisCell.xib; sourceTree = "<group>"; };
+		F0AED8F122008C0A00D656FA /* SYGameTeamAnalysisViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYGameTeamAnalysisViewController.h; sourceTree = "<group>"; };
+		F0AED8F222008C0A00D656FA /* SYGameTeamAnalysisViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYGameTeamAnalysisViewController.m; sourceTree = "<group>"; };
 		F0E242D5216F6360008CB6D8 /* ERSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSwitchView.h; sourceTree = "<group>"; };
 		F0E242D6216F6360008CB6D8 /* ERSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSwitchView.m; sourceTree = "<group>"; };
 		F0E4E74A2179B7C5007C7FAB /* SYNormalListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYNormalListViewController.h; sourceTree = "<group>"; };
@@ -1136,6 +1152,10 @@
 				F03E7DA021DEFFE200C45D49 /* SYBasketballScoreSetViewController.h */,
 				F03E7DA121DEFFE200C45D49 /* SYBasketballScoreSetViewController.m */,
 				F03E7DA221DEFFE200C45D49 /* SYBasketballScoreSetViewController.xib */,
+				F0AED8D921FE9F3B00D656FA /* SYDateAnalysisViewController.h */,
+				F0AED8DA21FE9F3B00D656FA /* SYDateAnalysisViewController.m */,
+				F0AED8F122008C0A00D656FA /* SYGameTeamAnalysisViewController.h */,
+				F0AED8F222008C0A00D656FA /* SYGameTeamAnalysisViewController.m */,
 			);
 			path = BasketBall;
 			sourceTree = "<group>";
@@ -1183,6 +1203,12 @@
 				F03E7DBA21E3593F00C45D49 /* SYTableThreeTextCell.h */,
 				F03E7DBB21E3593F00C45D49 /* SYTableThreeTextCell.m */,
 				F03E7DBC21E3593F00C45D49 /* SYTableThreeTextCell.xib */,
+				F0AED8DE21FEB32300D656FA /* SYDateAnalysisCell.h */,
+				F0AED8DF21FEB32300D656FA /* SYDateAnalysisCell.m */,
+				F0AED8E021FEB32300D656FA /* SYDateAnalysisCell.xib */,
+				F0AED8EC2200860600D656FA /* SYGameTeamAnalysisCell.h */,
+				F0AED8ED2200860600D656FA /* SYGameTeamAnalysisCell.m */,
+				F0AED8EE2200860600D656FA /* SYGameTeamAnalysisCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1209,8 +1235,8 @@
 		F0E242DA21703AB6008CB6D8 /* lastData */ = {
 			isa = PBXGroup;
 			children = (
-				F09D4B1021F9D264002812FA /* 20190124.plist */,
-				F09D4B0F21F9D261002812FA /* NBA-20190124.plist */,
+				F0AED8E422007DA600D656FA /* 20190129.plist */,
+				F0AED8E322007DA600D656FA /* NBA-20190129.plist */,
 			);
 			path = lastData;
 			sourceTree = "<group>";
@@ -1353,6 +1379,7 @@
 				F03FC24E1F5D3ED200DF465B /* MBProgressHUD.bundle in Resources */,
 				F03B91BD1F54FEF30033A3B5 /* SYHomeViewController.xib in Resources */,
 				F03FC22F1F5CFFE400DF465B /* MJRefresh.bundle in Resources */,
+				F0AED8F02200860600D656FA /* SYGameTeamAnalysisCell.xib in Resources */,
 				F03B91F31F556BED0033A3B5 /* SYNewsDetailViewController.xib in Resources */,
 				F09A665A216DFC3100C3C20A /* Recommend.plist in Resources */,
 				F03FC1B11F5CF3DC00DF465B /* SYDiscoverCell.xib in Resources */,
@@ -1369,21 +1396,22 @@
 				F03B91021F54FD700033A3B5 /* LaunchScreen.storyboard in Resources */,
 				F0681D36219418A200071B23 /* SYRenameView.xib in Resources */,
 				F03B90FF1F54FD700033A3B5 /* Assets.xcassets in Resources */,
+				F0AED8E622007DA600D656FA /* 20190129.plist in Resources */,
 				F091130221DDF749002FCBEE /* SYBasketballListCell.xib in Resources */,
 				F06801A4215F1EAD0032C4DA /* SYGameDetailView.xib in Resources */,
 				F03FC2541F5D425B00DF465B /* SYAboutUsViewController.xib in Resources */,
 				F03FC2411F5D05D100DF465B /* SYDiscoverDetailViewController.xib in Resources */,
+				F0AED8E522007DA600D656FA /* NBA-20190129.plist in Resources */,
 				F03B91141F54FDC60033A3B5 /* SYViewControllerData.plist in Resources */,
 				F03B91DF1F5557F70033A3B5 /* SYHomeNewsCell.xib in Resources */,
 				F03E7DBE21E3593F00C45D49 /* SYTableThreeTextCell.xib in Resources */,
-				F09D4B1221F9D264002812FA /* 20190124.plist in Resources */,
 				F09112F721DDF2BF002FCBEE /* SYMoreVCBasketballData.plist in Resources */,
-				F09D4B1121F9D264002812FA /* NBA-20190124.plist in Resources */,
 				F068019A215E22910032C4DA /* SYCompareViewController.xib in Resources */,
 				F09A664B216CA2EA00C3C20A /* SYCategoryCell.xib in Resources */,
 				F03B91B81F54FEE60033A3B5 /* SYDiscoverViewController.xib in Resources */,
 				F03B91C21F54FF0F0033A3B5 /* SYMineViewController.xib in Resources */,
 				F068019F215F0D150032C4DA /* SYGameTableTitleCell.xib in Resources */,
+				F0AED8E221FEB32300D656FA /* SYDateAnalysisCell.xib in Resources */,
 				F03FC2461F5D3CE300DF465B /* SYFeedbackViewController.xib in Resources */,
 				F03FC23C1F5D047B00DF465B /* SYDiscoverDetailCell.xib in Resources */,
 				F03E7DB921E356CB00C45D49 /* SYBasketballAnalysisView.xib in Resources */,
@@ -1403,6 +1431,7 @@
 				F03FC2241F5CFFE400DF465B /* MJRefreshFooter.m in Sources */,
 				F03B917B1F54FDD00033A3B5 /* AFSecurityPolicy.m in Sources */,
 				F03FC2221F5CFFE400DF465B /* MJRefreshBackFooter.m in Sources */,
+				F0AED8DC21FE9F3B00D656FA /* SYDateAnalysisViewController.m in Sources */,
 				F03B91B71F54FEE60033A3B5 /* SYDiscoverViewController.m in Sources */,
 				F0285F8B21B905DB00FB95F6 /* SYDataProbability.m in Sources */,
 				F03FC24F1F5D3ED200DF465B /* MBProgressHUD.m in Sources */,
@@ -1494,6 +1523,7 @@
 				F03B91A31F54FDD00033A3B5 /* UIView+SYExtension.m in Sources */,
 				F03FC2371F5D042B00DF465B /* SYDiscoverDetailModel.m in Sources */,
 				F06801AE215F21970032C4DA /* SYSelectTable.m in Sources */,
+				F0AED8E121FEB32300D656FA /* SYDateAnalysisCell.m in Sources */,
 				9F1500CE21573F8B00696F7C /* SYListViewController.m in Sources */,
 				F03B91971F54FDD00033A3B5 /* SDWebImageManager.m in Sources */,
 				F03FC2401F5D05D100DF465B /* SYDiscoverDetailViewController.m in Sources */,
@@ -1519,6 +1549,7 @@
 				F03FC2531F5D425B00DF465B /* SYAboutUsViewController.m in Sources */,
 				F03FC2281F5CFFE400DF465B /* MJRefreshAutoStateFooter.m in Sources */,
 				F03B91921F54FDD00033A3B5 /* SDImageCacheConfig.m in Sources */,
+				F0AED8EF2200860600D656FA /* SYGameTeamAnalysisCell.m in Sources */,
 				F0680195215E22190032C4DA /* SYGameTableCell.m in Sources */,
 				F09A6653216CAC4B00C3C20A /* SYDatePickerTool.m in Sources */,
 				F03FC22D1F5CFFE400DF465B /* MJRefreshNormalHeader.m in Sources */,
@@ -1546,6 +1577,7 @@
 				9F34988B21562F6D0058B99E /* MASCompositeConstraint.m in Sources */,
 				F03B91F21F556BED0033A3B5 /* SYNewsDetailViewController.m in Sources */,
 				F03B91851F54FDD00033A3B5 /* MJFoundation.m in Sources */,
+				F0AED8F322008C0A00D656FA /* SYGameTeamAnalysisViewController.m in Sources */,
 				F03FC2301F5CFFE400DF465B /* MJRefreshConst.m in Sources */,
 				F06801AD215F21970032C4DA /* SYSelectBox.m in Sources */,
 			);

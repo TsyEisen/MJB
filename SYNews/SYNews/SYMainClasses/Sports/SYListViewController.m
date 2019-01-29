@@ -22,6 +22,7 @@
 //@property (nonatomic, strong) SYRenameView *renameView;
 @property (nonatomic, strong) UISegmentedControl *segment;
 @property (nonatomic, strong) UIBarButtonItem *rightItem;
+@property (nonatomic, strong) UIBarButtonItem *leftItem;
 
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) NSArray *datas;
@@ -30,6 +31,7 @@
 @property (nonatomic, strong) NSArray *unStartDatas;
 @property (nonatomic, strong) NSArray *recommend_AI;
 @property (nonatomic, assign) BOOL exit;
+@property (nonatomic, assign) BOOL isWatching;
 
 @end
 
@@ -64,6 +66,7 @@
     }
     if (self.type == SYListTypeCategory) {
         self.navigationItem.rightBarButtonItem = self.rightItem;
+        self.navigationItem.leftBarButtonItem = self.leftItem;
     }
 }
 
@@ -86,6 +89,23 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.top.equalTo(self.view);
     }];
+}
+
+- (void)watchRefresh {
+    self.isWatching = !self.isWatching;
+    if (self.isWatching) {
+        [self.leftItem setTitle:@"监控中"];
+        [[SYSportDataManager sharedSYSportDataManager].timer fire];
+        [[SYNBADataManager sharedSYNBADataManager].timer fire];
+    }else {
+        [self.leftItem setTitle:@"监控"];
+        
+        [[SYSportDataManager sharedSYSportDataManager].timer invalidate];
+        [[SYNBADataManager sharedSYNBADataManager].timer invalidate];
+        
+        [SYSportDataManager sharedSYSportDataManager].timer = nil;
+        [SYNBADataManager sharedSYNBADataManager].timer = nil;
+    }
 }
 
 - (void)refreshAction {
@@ -386,6 +406,14 @@
         _rightItem.tintColor = [UIColor whiteColor];
     }
     return _rightItem;
+}
+
+- (UIBarButtonItem *)leftItem {
+    if (_leftItem == nil) {
+        _leftItem = [[UIBarButtonItem alloc] initWithTitle:@"监控" style:UIBarButtonItemStyleDone target:self action:@selector(watchRefresh)];
+        _leftItem.tintColor = [UIColor whiteColor];
+    }
+    return _leftItem;
 }
 
 @end

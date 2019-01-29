@@ -14,5 +14,17 @@
 		<key>title</key>
 		<string>历史</string>
 	</dict>
+	<dict>
+		<key>className</key>
+		<string>SYDateAnalysisViewController</string>
+		<key>title</key>
+		<string>每日红黑</string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>SYGameTeamAnalysisViewController</string>
+		<key>title</key>
+		<string>球队分析</string>
+	</dict>
 </array>
 </plist>
