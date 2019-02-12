@@ -8,6 +8,7 @@
 
 #import "SYNBADataManager.h"
 #import "NSDate+SYExtension.h"
+#import "SYGameTeamAnalysisCell.h"
 
 #define gamesJsonPath @"nbaGamesJsonPath.plist"
 
@@ -42,6 +43,18 @@ SYSingleton_implementation(SYNBADataManager)
         NSMutableArray *tempArray = [NSMutableArray array];
         for (SYBasketBallModel *model in games) {
             if ([[NSDate date] timeIntervalSince1970] - model.dateSeconds > 7200 && model.homeScore.length == 0) {
+                [tempArray addObject:model];
+            }
+        }
+        
+        NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:NO];
+        NSArray * newgames = [tempArray sortedArrayUsingDescriptors:@[timeSD]];
+        completion(newgames);
+    }else if (type == SYNBAListTypeHasScore) {
+        NSArray *games = [SYBasketBallModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
+        NSMutableArray *tempArray = [NSMutableArray array];
+        for (SYBasketBallModel *model in games) {
+            if (model.homeScore.length > 0) {
                 [tempArray addObject:model];
             }
         }
@@ -174,8 +187,27 @@ SYSingleton_implementation(SYNBADataManager)
         }
     }
     
+    SYGameTeamModel *homeTeam,*awayTeam;
+    
+    for (SYGameTeamModel *team in self.gamePush) {
+        if ([team.name isEqualToString:model.HomeTeam]) {
+            homeTeam = team;
+        }
+        if ([team.name isEqualToString:model.AwayTeam]) {
+            awayTeam = team;
+        }
+        
+        if (homeTeam != nil && awayTeam != nil) {
+            break;
+        }
+    }
+    
     if (completion) {
-        completion(tempArray,@[history,thirds,homes,aways]);
+        if (homeTeam && awayTeam) {
+            completion(tempArray,@[@[homeTeam,awayTeam],history,thirds,homes,aways]);
+        }else {
+            completion(tempArray,@[history,thirds,homes,aways]);
+        }
     }
 }
 
@@ -413,13 +445,16 @@ SYSingleton_implementation(SYNBADataManager)
 
 - (void)replaceDataForNewest {
     NSString *todayString = [[NSDate date] sy_stringWithFormat:@"yyyyMMdd"];
-    NSString *path = [[NSBundle mainBundle] pathForResource:[@"NBA-" stringByAppendingString:todayString] ofType:@"plist"];
-    if (path == nil) {
-        return;
-    }
     
     NSDate *date = [[NSUserDefaults standardUserDefaults] objectForKey:@"NBAReplaceDataForNewest"];
     if (date != nil && [date sy_isToday]) {
+        return;
+    }
+    
+    [self gamePushAnalysis];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:[@"NBA-" stringByAppendingString:todayString] ofType:@"plist"];
+    if (path == nil) {
         return;
     }
     
@@ -459,6 +494,160 @@ SYSingleton_implementation(SYNBADataManager)
         });
         
     }
+}
+
+#pragma mark - 球队推荐分析
+- (void)gamePushAnalysis {
+//
+//    [[SYNBADataManager sharedSYNBADataManager] requestDatasByType:SYNBAListTypeHasScore Completion:^(NSArray * _Nonnull datas) {
+//        [self handelResult:datas];
+//    }];
+//}
+//
+//- (void)handelResult:(NSArray *)datas {
+//    if (datas.count == 0) {
+//        return;
+//    }
+    
+    NSMutableDictionary *datesTempDict = [NSMutableDictionary dictionary];
+    
+    for (SYBasketBallModel *model in self.allGames) {
+        if (model.homeScore.length == 0) {
+            continue;
+        }
+        NSMutableArray *homeDataTemp = [datesTempDict objectForKey:model.HomeTeam];
+        if (homeDataTemp == nil) {
+            homeDataTemp = [NSMutableArray array];
+        }
+        [homeDataTemp addObject:model];
+        [datesTempDict setObject:homeDataTemp forKey:model.HomeTeam];
+        
+        NSMutableArray *awayDataTemp = [datesTempDict objectForKey:model.AwayTeam];
+        if (awayDataTemp == nil) {
+            awayDataTemp = [NSMutableArray array];
+        }
+        [awayDataTemp addObject:model];
+        [datesTempDict setObject:awayDataTemp forKey:model.AwayTeam];
+    }
+    
+    NSMutableArray *tempArray = [NSMutableArray array];
+    NSMutableArray *tempDictArray = [NSMutableArray array];
+    
+    for (int i = 1; i < 31; i++) {
+        NSString *rankkey = nil;
+        if (i < 16) {
+            rankkey = [NSString stringWithFormat:@"东%d",i];
+        }else {
+            rankkey = [NSString stringWithFormat:@"西%d",i-15];
+        }
+        
+        for (NSString *key in [SYNBADataManager sharedSYNBADataManager].ranks) {
+            if([[SYNBADataManager sharedSYNBADataManager].ranks[key] isEqualToString:rankkey]) {
+                NSArray *array = [datesTempDict objectForKey:key];
+                
+                NSInteger homeCount = 0;
+                NSInteger home_push = 0;
+                NSInteger home_push_red = 0;
+                NSInteger home_push_normal_red = 0;
+                
+                NSInteger home_unpush = 0;
+                NSInteger home_unpush_red = 0;
+                NSInteger home_unpush_normal_red = 0;
+                
+                NSInteger awayCount = 0;
+                NSInteger away_push = 0;
+                NSInteger away_push_red = 0;
+                NSInteger away_push_normal_red = 0;
+                
+                NSInteger away_unpush = 0;
+                NSInteger away_unpush_red = 0;
+                NSInteger away_unpush_normal_red = 0;
+                
+                for (SYBasketBallModel *model in array) {
+                    BOOL isHome = [model.HomeTeam isEqualToString:key];
+                    if (isHome) {
+                        homeCount++;
+                        
+                        if (model.BfAmountHome > model.BfAmountAway && model.BfIndexHome > model.BfIndexAway) {
+                            home_push++;
+                            //主
+                            if (model.homeScore.integerValue > model.awayScore.integerValue) {
+                                home_push_normal_red++;
+                            }
+                            
+                            if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
+                                home_push_red++;
+                            }
+                            
+                        }else {
+                            home_unpush++;
+                            if (model.homeScore.integerValue > model.awayScore.integerValue) {
+                                home_unpush_normal_red++;
+                            }
+                            
+                            if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
+                                home_unpush_red++;
+                            }
+                        }
+                        
+                    }else {
+                        awayCount++;
+                        
+                        if (model.BfAmountHome < model.BfAmountAway && model.BfIndexHome < model.BfIndexAway) {
+                            //客
+                            away_push++;
+                            if (model.homeScore.integerValue < model.awayScore.integerValue) {
+                                away_push_normal_red++;
+                            }
+                            
+                            if (model.homeScore.integerValue < model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
+                                away_push_red++;
+                            }
+                            
+                        }else {
+                            away_unpush++;
+                            if (model.homeScore.integerValue < model.awayScore.integerValue) {
+                                away_unpush_normal_red++;
+                            }
+                            
+                            if (model.homeScore.integerValue < model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
+                                away_unpush_red++;
+                            }
+                        }
+                        
+                    }
+                }
+                
+                SYGameTeamModel *pushModel = [SYGameTeamModel new];
+                
+                pushModel.homeCount = homeCount;
+                pushModel.awayCount = awayCount;
+                
+                pushModel.homePush = home_push;
+                pushModel.awayPush = away_push;
+                pushModel.homePush_red = home_push_red;
+                pushModel.awayPush_red = away_push_red;
+                pushModel.homePush_normal_red = home_push_normal_red;
+                pushModel.awayPush_normal_red = away_push_normal_red;
+                
+                pushModel.homeUnPush = home_unpush;
+                pushModel.awayUnPush = away_unpush;
+                pushModel.homeUnPush_red = home_unpush_red;
+                pushModel.awayUnPush_red = away_unpush_red;
+                pushModel.homeUnPush_normal_red = home_unpush_normal_red;
+                pushModel.awayUnPush_normal_red = away_unpush_normal_red;
+                
+                pushModel.name = key;
+                pushModel.rank = rankkey;
+                
+                [tempArray addObject:pushModel];
+                [tempDictArray addObject:[pushModel mj_keyValues]];
+            }
+        }
+    }
+    
+    self.gamePush = tempArray;
+    [tempDictArray writeToFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeNBAGamePush] atomically:YES];
 }
 
 #pragma mark - 懒加载
@@ -523,6 +712,15 @@ SYSingleton_implementation(SYNBADataManager)
     }
     return _ranks;
 }
+
+- (NSArray *)gamePush {
+    if (_gamePush == nil) {
+        NSArray *array = [[NSArray alloc] initWithContentsOfFile:[NSString sy_locationDocumentsWithType:SYCachePathTypeNBAGamePush]];
+        _gamePush = [SYGameTeamModel mj_objectArrayWithKeyValuesArray:array];
+    }
+    return _gamePush;
+}
+
 @end
 
 @implementation SYNBADataAnalyze

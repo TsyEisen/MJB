@@ -10,6 +10,7 @@
 #import "SYBasketballListCell.h"
 #import "SYSelectBox.h"
 #import "SYBasketballAnalysisView.h"
+#import "SYGameTeamAnalysisCell.h"
 @interface SYBasketBallListViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *datas;
@@ -25,6 +26,7 @@
     [super viewDidLoad];
     [self setUpUI];
     [self.tableView sy_registerNibWithClass:[SYBasketballListCell class]];
+    [self.tableView sy_registerNibWithClass:[SYGameTeamAnalysisCell class]];
     [self setupMJRefresh];
 }
 
@@ -97,32 +99,50 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    SYBasketballListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SYBasketballListCell class])];
-    cell.currentGame = self.model;
-    cell.model = [self modelWithIndexPath:indexPath];
-    return cell;
+    id model = [self modelWithIndexPath:indexPath];
+    if ([model isKindOfClass:[SYBasketBallModel class]]) {
+        SYBasketballListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SYBasketballListCell class])];
+        cell.currentGame = self.model;
+        cell.model = model;
+        return cell;
+    }else {
+        SYGameTeamAnalysisCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SYGameTeamAnalysisCell class])];
+        cell.model = model;
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.model == nil && indexPath.section != 1) {
+        SYBasketBallListViewController *list = [SYBasketBallListViewController new];
+        list.hidesBottomBarWhenPushed = YES;
+        list.title = @"历史赛程";
+        list.model = [self modelWithIndexPath:indexPath];
+        [self.navigationController pushViewController:list animated:YES];
+    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (self.model == nil) {
+        return nil;
+    }
     if (section == 0) {
-        return @"正赛";
+       return @"正赛";
     }else if (section == 1) {
-        return @"交战历史";
+        return @"历史推荐";
     }else if (section == 2) {
+        return @"交战历史";
+    }else if (section == 3) {
         return @"间接对战";
-    }else if (section == 3){
+    }else if (section == 4){
         return @"主队历史";
     }else {
         return @"客队历史";
     }
 }
 
-- (SYBasketBallModel *)modelWithIndexPath:(NSIndexPath *)indexPath {
+- (id)modelWithIndexPath:(NSIndexPath *)indexPath {
     if (self.model) {
         if (indexPath.section == 0) {
             return self.model;

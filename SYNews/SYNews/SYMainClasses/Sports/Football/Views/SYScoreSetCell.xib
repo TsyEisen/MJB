@@ -19,23 +19,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="292" height="53.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10-10" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXp-6U-NOe">
-                        <rect key="frame" x="10" y="21" width="30" height="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00-00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXp-6U-NOe">
+                        <rect key="frame" x="10" y="21" width="35" height="12"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="Uld-Lj-eCc"/>
+                            <constraint firstAttribute="width" constant="35" id="Uld-Lj-eCc"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10-10" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqq-rp-8sJ">
-                        <rect key="frame" x="50" y="10" width="29.5" height="12"/>
+                        <rect key="frame" x="55" y="10" width="29.5" height="12"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10-10" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2l-Mk-p5p">
-                        <rect key="frame" x="50" y="32" width="29.5" height="12"/>
+                        <rect key="frame" x="55" y="32" width="29.5" height="12"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -85,7 +85,7 @@
                 <outlet property="homeLabel" destination="iqq-rp-8sJ" id="YNf-GH-nwk"/>
                 <outlet property="homeScoreLabel" destination="Iuv-25-Af5" id="KuV-id-due"/>
             </connections>
-            <point key="canvasLocation" x="115.2" y="156.07196401799101"/>
+            <point key="canvasLocation" x="115.2" y="155.62218890554723"/>
         </tableViewCell>
     </objects>
 </document>

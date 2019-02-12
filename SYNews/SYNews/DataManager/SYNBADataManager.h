@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSUInteger, SYNBAListType) {
     SYNBAListTypeToday,
     SYNBAListTypeHistory,
-    SYNBAListTypeNoScore
+    SYNBAListTypeNoScore,
+    SYNBAListTypeHasScore
 };
 
 @interface SYNBADataManager : NSObject
@@ -22,8 +23,10 @@ SYSingleton_interface(SYNBADataManager)
 @property (nonatomic, strong) NSTimer *timer;
 
 @property (nonatomic, strong) NSMutableDictionary *gameIdToResultGameName;
-
+//排名
 @property (nonatomic, strong) NSMutableDictionary *ranks;
+//球队推荐分析
+@property (nonatomic, strong) NSArray *gamePush;
 
 - (void)requestDatasByType:(SYNBAListType)type Completion:(void(^)(NSArray *datas))completion;
 

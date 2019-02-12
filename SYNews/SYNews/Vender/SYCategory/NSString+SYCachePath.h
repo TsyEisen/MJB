@@ -14,7 +14,8 @@ typedef NS_ENUM(NSUInteger, SYCachePathType) {
     SYCachePathTypeDateResults = 0,
     SYCachePathTypeNBADateResults = 1,
     SYCachePathTypeNBAGameNameToResultName = 2,
-    SYCachePathTypeNBARank = 3
+    SYCachePathTypeNBARank = 3,
+    SYCachePathTypeNBAGamePush = 4
 };
 
 @interface NSString (SYCachePath)

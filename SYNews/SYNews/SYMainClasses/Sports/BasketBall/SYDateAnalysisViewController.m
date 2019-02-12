@@ -101,9 +101,10 @@
                 //主
                 if (model.homeScore.integerValue > model.awayScore.integerValue) {
                     normalRedCount_home++;
-                    if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
-                        redCount_home++;
-                    }
+                }
+                
+                if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
+                    redCount_home++;
                 }
             }
             
@@ -117,9 +118,10 @@
                 
                 if (model.homeScore.integerValue < model.awayScore.integerValue) {
                     normalRedCount_away++;
-                    if (model.homeScore.integerValue < model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
-                        redCount_away++;
-                    }
+                }
+                
+                if (model.homeScore.integerValue < model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
+                    redCount_away++;
                 }
             }
             

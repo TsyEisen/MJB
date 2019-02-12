@@ -30,44 +30,75 @@
 
 - (void)setModel:(SYGameTeamModel *)model {
     _model = model;
-    self.timeLabel.text = model.name;
+    self.timeLabel.text = [model.name stringByAppendingFormat:@"(%@)",model.rank];
     
-    if (model.homePush == 0) {
-        _top1.text = @"0/0";
+    if (model.homeCount == 0) {
+        _top1.text = @"0/0/0";
     }else {
-        _top1.text = [NSString stringWithFormat:@"主: %zd/%zd\n(%.2f)",model.homePush_red,model.homePush,model.homePush_red * 1.0/model.homePush];
+        
+        if (model.homePush == 0) {
+            _top1.text = [NSString stringWithFormat:@"主: %zd/%zd/%zd\n0",model.homePush_red,model.homePush,model.homeCount];
+        }else {
+            _top1.text = [NSString stringWithFormat:@"主: %zd/%zd/%zd\n(%.2f)",model.homePush_red,model.homePush,model.homeCount,model.homePush_red * 1.0/model.homePush];
+        }
+        
     }
     
-    if (model.homePush + model.awayPush == 0) {
+    if (model.homeUnPush == 0) {
         _top2.text = @"0/0";
     }else {
-        _top2.text = [NSString stringWithFormat:@"总: %zd/%zd\n(%.2f)",model.homePush_red + model.awayPush_red,model.homePush + model.awayPush,(model.homePush_red + model.awayPush_red) * 1.0/(model.homePush + model.awayPush)];
+        _top2.text = [NSString stringWithFormat:@"非: %zd/%zd\n(%.2f)",model.homeUnPush_red,model.homeUnPush,model.homeUnPush_red * 1.0/model.homeUnPush];
     }
     
-    if (model.homePush == 0) {
-        _top3.text = @"0/0";
+    if (model.homeCount == 0) {
+        _top3.text = @"0/0/0";
     }else {
-        _top3.text = [NSString stringWithFormat:@"主: %zd/%zd\n(%.2f)",model.homePush_normal_red,model.homePush,model.homePush_normal_red * 1.0/model.homePush];
+        
+        if (model.homePush == 0) {
+            _top3.text = [NSString stringWithFormat:@"主: %zd/%zd/%zd\n0",model.homePush_normal_red,model.homePush,model.homeCount];
+        }else {
+            _top3.text = [NSString stringWithFormat:@"主: %zd/%zd/%zd\n(%.2f)",model.homePush_normal_red,model.homePush,model.homeCount,model.homePush_normal_red * 1.0/model.homePush];
+        }
     }
     
-    if (model.homePush + model.awayPush == 0) {
+    if (model.homeUnPush == 0) {
         _top4.text = @"0/0";
     }else {
-        _top4.text = [NSString stringWithFormat:@"总: %zd/%zd\n(%.2f)",model.homePush_normal_red + model.awayPush_normal_red,model.homePush + model.awayPush,(model.homePush_normal_red + model.awayPush_normal_red) * 1.0/(model.homePush + model.awayPush)];
+        _top4.text = [NSString stringWithFormat:@"非: %zd/%zd\n(%.2f)",model.homeUnPush_normal_red,model.homeUnPush,model.homeUnPush_normal_red * 1.0/model.homeUnPush];
     }
     
-    if (model.awayPush == 0) {
-        _middle1.text = @"0/0";
+    if (model.awayCount == 0) {
+        _middle1.text = @"0/0/0";
     }else {
-        _middle1.text = [NSString stringWithFormat:@"客: %zd/%zd\n(%.2f)",model.awayPush_red,model.awayPush,model.awayPush_red * 1.0/model.awayPush];
+        if (model.awayPush == 0) {
+            _middle1.text = [NSString stringWithFormat:@"客: %zd/%zd/%zd\n0",model.awayPush_red,model.awayPush,model.awayCount];
+        }else {
+            _middle1.text = [NSString stringWithFormat:@"客: %zd/%zd/%zd\n(%.2f)",model.awayPush_red,model.awayPush,model.awayCount,model.awayPush_red * 1.0/model.awayPush];
+        }
     }
     
-    if (model.awayPush == 0) {
-        _middle3.text = @"0/0";
+    if (model.awayUnPush == 0) {
+        _middle2.text = @"0/0";
     }else {
-        _middle3.text = [NSString stringWithFormat:@"客: %zd/%zd\n(%.2f)",model.awayPush_normal_red,model.awayPush,model.awayPush_normal_red * 1.0/model.awayPush];
+        _middle2.text = [NSString stringWithFormat:@"非: %zd/%zd\n(%.2f)",model.awayUnPush_red,model.awayUnPush,model.awayUnPush_red * 1.0/model.awayUnPush];
     }
     
+    
+    if (model.awayCount == 0) {
+        _middle3.text = @"0/0/0";
+    }else {
+        if (model.awayPush == 0) {
+            _middle3.text = [NSString stringWithFormat:@"客: %zd/%zd/%zd\n0",model.awayPush_normal_red,model.awayPush,model.awayCount];
+        }else {
+            _middle3.text = [NSString stringWithFormat:@"客: %zd/%zd/%zd\n(%.2f)",model.awayPush_normal_red,model.awayPush,model.awayCount,model.awayPush_normal_red * 1.0/model.awayPush];
+        }
+    }
+    
+    if (model.awayUnPush == 0) {
+        _middle4.text = @"0/0";
+    }else {
+        _middle4.text = [NSString stringWithFormat:@"非: %zd/%zd\n(%.2f)",model.awayUnPush_normal_red,model.awayUnPush,model.awayUnPush_normal_red * 1.0/model.awayUnPush];
+    }
 }
 @end
 

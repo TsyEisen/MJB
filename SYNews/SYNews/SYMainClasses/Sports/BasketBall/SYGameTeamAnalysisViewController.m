@@ -41,7 +41,7 @@
 
 - (void)refreshAction {
     
-    [[SYNBADataManager sharedSYNBADataManager] requestDatasByType:SYNBAListTypeHistory Completion:^(NSArray * _Nonnull datas) {
+    [[SYNBADataManager sharedSYNBADataManager] requestDatasByType:SYNBAListTypeHasScore Completion:^(NSArray * _Nonnull datas) {
         [self.tableView.mj_header endRefreshing];
         [self handelResult:datas];
     }];
@@ -83,57 +83,102 @@
         for (NSString *key in [SYNBADataManager sharedSYNBADataManager].ranks) {
             if([[SYNBADataManager sharedSYNBADataManager].ranks[key] isEqualToString:rankkey]) {
                 NSArray *array = [datesTempDict objectForKey:key];
-                NSInteger push_home = 0;
-                NSInteger push_away = 0;
                 
-                NSInteger redCount_home = 0;
-                NSInteger normalRedCount_home = 0;
+                NSInteger homeCount = 0;
+                NSInteger home_push = 0;
+                NSInteger home_push_red = 0;
+                NSInteger home_push_normal_red = 0;
                 
-                NSInteger redCount_away = 0;
-                NSInteger normalRedCount_away = 0;
+                NSInteger home_unpush = 0;
+                NSInteger home_unpush_red = 0;
+                NSInteger home_unpush_normal_red = 0;
+                
+                NSInteger awayCount = 0;
+                NSInteger away_push = 0;
+                NSInteger away_push_red = 0;
+                NSInteger away_push_normal_red = 0;
+                
+                NSInteger away_unpush = 0;
+                NSInteger away_unpush_red = 0;
+                NSInteger away_unpush_normal_red = 0;
                 
                 for (SYBasketBallModel *model in array) {
-                    if (model.BfAmountHome > model.BfAmountAway && model.BfIndexHome > model.BfIndexAway) {
+                    BOOL isHome = [model.HomeTeam isEqualToString:key];
+                    if (isHome) {
+                        homeCount++;
                         
-                        //                if (model.AsianAvrLet.floatValue >= 0) {
-                        //                    rangfen++;
-                        //                }
-                        push_home++;
-                        //主
-                        if (model.homeScore.integerValue > model.awayScore.integerValue) {
-                            normalRedCount_home++;
+                        if (model.BfAmountHome > model.BfAmountAway && model.BfIndexHome > model.BfIndexAway) {
+                            home_push++;
+                            //主
+                            if (model.homeScore.integerValue > model.awayScore.integerValue) {
+                                home_push_normal_red++;
+                            }
+                            
                             if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
-                                redCount_home++;
+                                home_push_red++;
+                            }
+                            
+                        }else {
+                            home_unpush++;
+                            if (model.homeScore.integerValue > model.awayScore.integerValue) {
+                                home_unpush_normal_red++;
+                            }
+                            
+                            if (model.homeScore.integerValue > model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
+                                home_unpush_red++;
                             }
                         }
-                    }
-                    
-                    if (model.BfAmountHome < model.BfAmountAway && model.BfIndexHome < model.BfIndexAway) {
-                        //客
                         
-                        //                if (model.AsianAvrLet.floatValue < 0) {
-                        //                    rangfen++;
-                        //                }
-                        push_away++;
+                    }else {
+                        awayCount++;
                         
-                        if (model.homeScore.integerValue < model.awayScore.integerValue) {
-                            normalRedCount_away++;
+                        if (model.BfAmountHome < model.BfAmountAway && model.BfIndexHome < model.BfIndexAway) {
+                            //客
+                            away_push++;
+                            if (model.homeScore.integerValue < model.awayScore.integerValue) {
+                                away_push_normal_red++;
+                            }
+                            
                             if (model.homeScore.integerValue < model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
-                                redCount_away++;
+                                away_push_red++;
+                            }
+                            
+                        }else {
+                            away_unpush++;
+                            if (model.homeScore.integerValue < model.awayScore.integerValue) {
+                                away_unpush_normal_red++;
+                            }
+                            
+                            if (model.homeScore.integerValue < model.awayScore.integerValue + model.AsianAvrLet.floatValue) {
+                                away_unpush_red++;
                             }
                         }
+                        
                     }
-                    
                 }
                 
                 SYGameTeamModel *pushModel = [SYGameTeamModel new];
-                pushModel.homePush_red = redCount_home;
-                pushModel.awayPush_red = redCount_away;
-                pushModel.homePush_normal_red = normalRedCount_home;
-                pushModel.awayPush_normal_red = normalRedCount_away;
-                pushModel.homePush = push_home;
-                pushModel.awayPush = push_away;
-                pushModel.name = [NSString stringWithFormat:@"%@(%@)",key,rankkey];
+                
+                pushModel.homeCount = homeCount;
+                pushModel.awayCount = awayCount;
+                
+                pushModel.homePush = home_push;
+                pushModel.awayPush = away_push;
+                pushModel.homePush_red = home_push_red;
+                pushModel.awayPush_red = away_push_red;
+                pushModel.homePush_normal_red = home_push_normal_red;
+                pushModel.awayPush_normal_red = away_push_normal_red;
+                
+                pushModel.homeUnPush = home_unpush;
+                pushModel.awayUnPush = away_unpush;
+                pushModel.homeUnPush_red = home_unpush_red;
+                pushModel.awayUnPush_red = away_unpush_red;
+                pushModel.homeUnPush_normal_red = home_unpush_normal_red;
+                pushModel.awayUnPush_normal_red = away_unpush_normal_red;
+                
+                pushModel.name = key;
+                pushModel.rank = rankkey;
+                
                 [tempArray addObject:pushModel];
             }
         }
