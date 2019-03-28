@@ -186,11 +186,11 @@
 		F0AED8DC21FE9F3B00D656FA /* SYDateAnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AED8DA21FE9F3B00D656FA /* SYDateAnalysisViewController.m */; };
 		F0AED8E121FEB32300D656FA /* SYDateAnalysisCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AED8DF21FEB32300D656FA /* SYDateAnalysisCell.m */; };
 		F0AED8E221FEB32300D656FA /* SYDateAnalysisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AED8E021FEB32300D656FA /* SYDateAnalysisCell.xib */; };
-		F0AED8E522007DA600D656FA /* NBA-20190129.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0AED8E322007DA600D656FA /* NBA-20190129.plist */; };
-		F0AED8E622007DA600D656FA /* 20190129.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0AED8E422007DA600D656FA /* 20190129.plist */; };
 		F0AED8EF2200860600D656FA /* SYGameTeamAnalysisCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AED8ED2200860600D656FA /* SYGameTeamAnalysisCell.m */; };
 		F0AED8F02200860600D656FA /* SYGameTeamAnalysisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AED8EE2200860600D656FA /* SYGameTeamAnalysisCell.xib */; };
 		F0AED8F322008C0A00D656FA /* SYGameTeamAnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AED8F222008C0A00D656FA /* SYGameTeamAnalysisViewController.m */; };
+		F0DF2F40224CD12700FBFEBA /* NBA-20190328.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0DF2F3E224CD12500FBFEBA /* NBA-20190328.plist */; };
+		F0DF2F41224CD12700FBFEBA /* 20190328.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0DF2F3F224CD12700FBFEBA /* 20190328.plist */; };
 		F0E242D7216F6360008CB6D8 /* ERSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E242D6216F6360008CB6D8 /* ERSwitchView.m */; };
 		F0E4E74C2179B7C8007C7FAB /* SYNormalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E4E74B2179B7C5007C7FAB /* SYNormalListViewController.m */; };
 		F0F63ACD2154D375000D7A15 /* APIRequest+Sports.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63ACC2154D375000D7A15 /* APIRequest+Sports.m */; };
@@ -551,13 +551,13 @@
 		F0AED8DE21FEB32300D656FA /* SYDateAnalysisCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYDateAnalysisCell.h; sourceTree = "<group>"; };
 		F0AED8DF21FEB32300D656FA /* SYDateAnalysisCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYDateAnalysisCell.m; sourceTree = "<group>"; };
 		F0AED8E021FEB32300D656FA /* SYDateAnalysisCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SYDateAnalysisCell.xib; sourceTree = "<group>"; };
-		F0AED8E322007DA600D656FA /* NBA-20190129.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NBA-20190129.plist"; sourceTree = "<group>"; };
-		F0AED8E422007DA600D656FA /* 20190129.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20190129.plist; sourceTree = "<group>"; };
 		F0AED8EC2200860600D656FA /* SYGameTeamAnalysisCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYGameTeamAnalysisCell.h; sourceTree = "<group>"; };
 		F0AED8ED2200860600D656FA /* SYGameTeamAnalysisCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYGameTeamAnalysisCell.m; sourceTree = "<group>"; };
 		F0AED8EE2200860600D656FA /* SYGameTeamAnalysisCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SYGameTeamAnalysisCell.xib; sourceTree = "<group>"; };
 		F0AED8F122008C0A00D656FA /* SYGameTeamAnalysisViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYGameTeamAnalysisViewController.h; sourceTree = "<group>"; };
 		F0AED8F222008C0A00D656FA /* SYGameTeamAnalysisViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYGameTeamAnalysisViewController.m; sourceTree = "<group>"; };
+		F0DF2F3E224CD12500FBFEBA /* NBA-20190328.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NBA-20190328.plist"; sourceTree = "<group>"; };
+		F0DF2F3F224CD12700FBFEBA /* 20190328.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20190328.plist; sourceTree = "<group>"; };
 		F0E242D5216F6360008CB6D8 /* ERSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSwitchView.h; sourceTree = "<group>"; };
 		F0E242D6216F6360008CB6D8 /* ERSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSwitchView.m; sourceTree = "<group>"; };
 		F0E4E74A2179B7C5007C7FAB /* SYNormalListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYNormalListViewController.h; sourceTree = "<group>"; };
@@ -1235,8 +1235,8 @@
 		F0E242DA21703AB6008CB6D8 /* lastData */ = {
 			isa = PBXGroup;
 			children = (
-				F0AED8E422007DA600D656FA /* 20190129.plist */,
-				F0AED8E322007DA600D656FA /* NBA-20190129.plist */,
+				F0DF2F3F224CD12700FBFEBA /* 20190328.plist */,
+				F0DF2F3E224CD12500FBFEBA /* NBA-20190328.plist */,
 			);
 			path = lastData;
 			sourceTree = "<group>";
@@ -1346,9 +1346,9 @@
 				TargetAttributes = {
 					F03B90EE1F54FD6F0033A3B5 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5Z3XUN2VRQ;
+						DevelopmentTeam = ADKAJ28U88;
 						LastSwiftMigration = 1000;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1379,10 +1379,12 @@
 				F03FC24E1F5D3ED200DF465B /* MBProgressHUD.bundle in Resources */,
 				F03B91BD1F54FEF30033A3B5 /* SYHomeViewController.xib in Resources */,
 				F03FC22F1F5CFFE400DF465B /* MJRefresh.bundle in Resources */,
+				F0DF2F40224CD12700FBFEBA /* NBA-20190328.plist in Resources */,
 				F0AED8F02200860600D656FA /* SYGameTeamAnalysisCell.xib in Resources */,
 				F03B91F31F556BED0033A3B5 /* SYNewsDetailViewController.xib in Resources */,
 				F09A665A216DFC3100C3C20A /* Recommend.plist in Resources */,
 				F03FC1B11F5CF3DC00DF465B /* SYDiscoverCell.xib in Resources */,
+				F0DF2F41224CD12700FBFEBA /* 20190328.plist in Resources */,
 				9F42B594218EE198001451A5 /* SYDataAnalysisView.xib in Resources */,
 				F09112F821DDF2BF002FCBEE /* SYMoreVCFootballData.plist in Resources */,
 				F09A6646216CA1E700C3C20A /* SYCategoryViewController.xib in Resources */,
@@ -1396,12 +1398,10 @@
 				F03B91021F54FD700033A3B5 /* LaunchScreen.storyboard in Resources */,
 				F0681D36219418A200071B23 /* SYRenameView.xib in Resources */,
 				F03B90FF1F54FD700033A3B5 /* Assets.xcassets in Resources */,
-				F0AED8E622007DA600D656FA /* 20190129.plist in Resources */,
 				F091130221DDF749002FCBEE /* SYBasketballListCell.xib in Resources */,
 				F06801A4215F1EAD0032C4DA /* SYGameDetailView.xib in Resources */,
 				F03FC2541F5D425B00DF465B /* SYAboutUsViewController.xib in Resources */,
 				F03FC2411F5D05D100DF465B /* SYDiscoverDetailViewController.xib in Resources */,
-				F0AED8E522007DA600D656FA /* NBA-20190129.plist in Resources */,
 				F03B91141F54FDC60033A3B5 /* SYViewControllerData.plist in Resources */,
 				F03B91DF1F5557F70033A3B5 /* SYHomeNewsCell.xib in Resources */,
 				F03E7DBE21E3593F00C45D49 /* SYTableThreeTextCell.xib in Resources */,
@@ -1692,7 +1692,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 5Z3XUN2VRQ;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = ADKAJ28U88;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1703,8 +1704,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = sy.team.sports;
+				PRODUCT_BUNDLE_IDENTIFIER = sy.team.sport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = test_dev;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
@@ -1715,7 +1717,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 5Z3XUN2VRQ;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1726,8 +1729,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = sy.team.sports;
+				PRODUCT_BUNDLE_IDENTIFIER = sy.team.sport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
