@@ -60,6 +60,16 @@
     return _AwayTeam;
 }
 
+- (NSString *)SortName {
+    if ([_SortName isEqualToString:@"日联杯"]) {
+        return @"日职";
+    }else if ([_SortName isEqualToString:@"J2联赛"]) {
+        return @"日乙";
+    }else {
+        return _SortName;
+    }
+}
+
 @end
 
 @implementation SYNumberModel

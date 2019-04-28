@@ -81,6 +81,11 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     NSInteger DHA_H = 0,DHA_D = 0,DHA_A = 0;
     NSInteger DAH_H = 0,DAH_D = 0,DAH_A = 0;
     
+    NSMutableArray *homeKellyScore = [NSMutableArray array];
+    NSMutableArray *awayKellyScore = [NSMutableArray array];
+    NSMutableArray *drawKellyScore = [NSMutableArray array];
+    NSMutableArray *allKellyScore = [NSMutableArray array];
+    
     for (SYGameListModel *model in datas) {
         
 //        NSArray *pay_array = [self gameDataStatisticsWithArray:@[@(model.BfAmountHome/model.totalPAmount),@(model.BfAmountDraw/model.totalPAmount),@(model.BfAmountAway/model.totalPAmount)]];
@@ -91,9 +96,20 @@ SYSingleton_implementation(SYDataAnalyzeManager)
         
         if ([model.homeScore integerValue] == [model.awayScore integerValue]) {
             type = SYGameScoreTypeDraw;
+            
+            [drawKellyScore addObject:@(model.KellyDraw)];
+            [allKellyScore addObject:@(model.KellyDraw)];
         }else if ([model.homeScore integerValue] < [model.awayScore integerValue]) {
             type = SYGameScoreTypeAway;
+            
+            [awayKellyScore addObject:@(model.KellyAway)];
+            [allKellyScore addObject:@(model.KellyAway)];
+        }else {
+            
+            [homeKellyScore addObject:@(model.KellyHome)];
+            [allKellyScore addObject:@(model.KellyHome)];
         }
+        
         
         if (((SYNumberModel *)kelly_array[0]).status == SYGameScoreTypeHome &&
             ((SYNumberModel *)kelly_array[1]).status == SYGameScoreTypeDraw &&
@@ -151,6 +167,10 @@ SYSingleton_implementation(SYDataAnalyzeManager)
     SYSportDataProbability *sprotData = [SYSportDataProbability new];
     sprotData.SortName = ((SYGameListModel *)datas.firstObject).SortName;
     sprotData.kellys = tempArray;
+    sprotData.homeRedKellyScore = homeKellyScore;
+    sprotData.awayRedKellyScore = awayKellyScore;
+    sprotData.drawRedKellyScore = drawKellyScore;
+    sprotData.allRedKellyScore = allKellyScore;
     
     return sprotData;
 }

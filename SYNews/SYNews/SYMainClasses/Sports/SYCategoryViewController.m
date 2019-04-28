@@ -63,7 +63,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (![self.title isEqualToString:@"历史回顾"]) {
+    if (![self.title isEqualToString:@"历史（分组）"]) {
         SYCompareViewController *vc = [[SYCompareViewController alloc] initWithNibName:NSStringFromClass([SYCompareViewController class]) bundle:nil];
         vc.datas = self.datas[indexPath.item];
         vc.hidesBottomBarWhenPushed = YES;

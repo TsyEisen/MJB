@@ -61,7 +61,7 @@
         for (SYBasketBallModel *result in self.rightArray) {
             BOOL homeStatus = [result.HomeTeam isEqualToString:homeName] || [result.HomeTeam isEqualToString:game.HomeTeam];
             BOOL awayStatus = [result.AwayTeam isEqualToString:awayName] || [result.AwayTeam isEqualToString:game.AwayTeam];
-            if (labs(result.dateSeconds - game.dateSeconds) < 3600 && (homeStatus || awayStatus)) {
+            if (labs(result.dateSeconds - game.dateSeconds) < 36000 && (homeStatus || awayStatus)) {
                 [[SYNBADataManager sharedSYNBADataManager] copyScoreFrom:result toGame:game];
             }
         }

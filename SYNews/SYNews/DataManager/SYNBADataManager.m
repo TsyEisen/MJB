@@ -171,6 +171,8 @@ SYSingleton_implementation(SYNBADataManager)
         }
     }
     
+    
+    
     for (SYBasketBallModel *homeModel in homes) {
         NSString *homeOpponent = [homeModel.HomeTeam isEqualToString:model.HomeTeam] ? homeModel.AwayTeam : homeModel.HomeTeam;
         for (SYBasketBallModel *awayModel in aways) {
@@ -202,11 +204,14 @@ SYSingleton_implementation(SYNBADataManager)
         }
     }
     
+    NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:NO];
+    NSArray * history_Sorted = [history sortedArrayUsingDescriptors:@[timeSD]];
+    
     if (completion) {
         if (homeTeam && awayTeam) {
-            completion(tempArray,@[@[homeTeam,awayTeam],history,thirds,homes,aways]);
+            completion(tempArray,@[@[homeTeam,awayTeam],history_Sorted,thirds,homes,aways]);
         }else {
-            completion(tempArray,@[history,thirds,homes,aways]);
+            completion(tempArray,@[history_Sorted,thirds,homes,aways]);
         }
     }
 }
@@ -326,7 +331,7 @@ SYSingleton_implementation(SYNBADataManager)
     
     if (needRefresh) {
         [self requestDatasByType:SYNBAListTypeToday Completion:^(NSArray * _Nonnull datas) {
-            NSLog(@"刷新一次");
+            NSLog(@"B刷新一次 %@",[[NSDate date] sy_stringWithFormat:@"yyyy-MM-dd HH:mm:ss"]);
         }];
     }
 }

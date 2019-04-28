@@ -126,6 +126,7 @@
         if (self.type == SYListTypeNear) {
             [self segmentChange];
         }
+        
         [self.tableView reloadData];
     }];
 }

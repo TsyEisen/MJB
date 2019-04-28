@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "SYTabBarViewController.h"
 #import "SYDataAnalyzeManager.h"
+#import <CoreTelephony/CoreTelephonyDefines.h>
+#import <dlfcn.h>
+#import "UIDevice+IdentifierAddition.h"
+
 @interface AppDelegate ()
 
 @end
@@ -32,10 +36,15 @@
             [[SYNBADataManager sharedSYNBADataManager] replaceDataForNewest];
         });
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [[SYSportDataManager sharedSYSportDataManager] replaceDataForNewest];
         });
     }
+
+//    [[SYSportDataManager sharedSYSportDataManager] washData];
+    NSString *imei = [[UIDevice currentDevice] uniqueDeviceIdentifier];
+    NSLog(@"imei---%@",imei);
+    
     
     return YES;
 }

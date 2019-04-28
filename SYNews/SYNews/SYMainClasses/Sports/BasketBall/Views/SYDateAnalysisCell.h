@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger homePush_normal_red;
 @property (nonatomic, assign) NSInteger awayPush_normal_red;
 @property (nonatomic, assign) NSInteger total;
+@property (nonatomic, assign) NSInteger single_score;
+@property (nonatomic, assign) NSInteger double_score;
 @end
 
 

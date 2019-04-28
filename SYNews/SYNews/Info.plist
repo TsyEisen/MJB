@@ -22,6 +22,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -41,5 +43,20 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    <key>PayloadOrganization</key>
+    <string>udid</string>
+    <key>PayloadDisplayName</key>
+    <string>Get Your UDID</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadUUID</key>
+    <string>9CF421B3-9853-9999-BC8A-982CBD3C907C</string>
+    <key>PayloadIdentifier</key>
+    <string>udid</string>
+    <key>PayloadDescription</key>
+    <string>Install this temporary profile to find and display your current device's UDID. It is automatically removed from device right after you get your UDID.</string>
+    <key>PayloadType</key>
+    <string>Profile Service</string>
+    
 </dict>
 </plist>

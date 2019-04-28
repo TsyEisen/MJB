@@ -21,6 +21,9 @@
 @property (nonatomic, strong) SYDatePickerTool *datePicker;
 @property (nonatomic, strong) UIBarButtonItem *rightItem;
 @property (nonatomic, strong) UIBarButtonItem *rightItem2;
+
+@property (nonatomic, strong) NSArray *rightTitles;
+@property (nonatomic, strong) NSArray *leftTitles;
 @end
 
 @implementation SYFootballScoreSetViewController
@@ -37,11 +40,15 @@
     [[SYSportDataManager sharedSYSportDataManager] requestDatasBySYListType:SYListTypeNoScore Completion:^(NSArray *datas) {
         
         NSMutableArray *tempArray = [NSMutableArray array];
+        NSMutableArray *titles = [NSMutableArray array];
         for (NSArray *games in datas) {
             NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:YES];
             [tempArray addObject:[[games sortedArrayUsingDescriptors:@[timeSD]] mutableCopy]];
+            SYGameListModel *model = games.firstObject;
+            [titles addObject:[model.SortName substringToIndex:2]];
         }
         
+        weakSelf.leftTitles = titles;
         weakSelf.leftArray = tempArray;
         [weakSelf reloadData];
     }];
@@ -102,7 +109,7 @@
                     BOOL homeStatus = [result.hTeam isEqualToString:homeName] || [result.hTeam isEqualToString:game.HomeTeam];
                     BOOL awayStatus = [result.gTeam isEqualToString:awayName] || [result.gTeam isEqualToString:game.AwayTeam];
 //                    NSString *gameTime = [[game.MatchTime componentsSeparatedByString:@"T"].firstObject stringByReplacingOccurrencesOfString:@"-" withString:@""];
-                    if (labs(result.dateSeconds - game.dateSeconds) < 121 && (homeStatus || awayStatus)) {
+                    if (labs(result.dateSeconds - game.dateSeconds) < 43200 && (homeStatus || awayStatus)) {
                         game.homeScore = result.hScore;
                         game.awayScore = result.gScore;
                         game.score = [NSString stringWithFormat:@"%@:%@",result.hScore,result.gScore];
@@ -141,11 +148,19 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (result) {
             weakSelf.rightArray = result;
-//            if (weakSelf.AIBtn.selected) {
-//
-//            }
+
+            NSMutableArray *tempArray = [NSMutableArray array];
+            
+            for (NSArray *games in weakSelf.rightArray) {
+                SYGameResultModel *model = games.firstObject;
+                [tempArray addObject:[model.sortName substringToIndex:2]];
+            }
+            weakSelf.rightTitles = tempArray;
+            
             [weakSelf AIAnalize];
             [weakSelf reloadData];
+            
+            
 //            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //                if (weakSelf.rightTableView.contentOffset.y > 0) {
 //                    [weakSelf.rightTableView setContentOffset:CGPointZero animated:YES];
@@ -203,6 +218,15 @@
         cell.accessoryType = self.seletedResult == indexPath ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     }
     return cell;
+}
+
+- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    if (self.rightTableView == tableView) {
+        return self.rightTitles;
+    }else {
+        return self.leftTitles;
+    }
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

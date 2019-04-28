@@ -6,7 +6,7 @@
 		<key>className</key>
 		<string>SYCategoryViewController</string>
 		<key>title</key>
-		<string>赛程对比</string>
+		<string>赛程对比（分组）</string>
 		<key>type</key>
 		<string>5</string>
 	</dict>
@@ -14,17 +14,9 @@
 		<key>className</key>
 		<string>SYCategoryViewController</string>
 		<key>title</key>
-		<string>赛程优质数据</string>
+		<string>赛程优质数据对比（分组）</string>
 		<key>type</key>
 		<string>8</string>
-	</dict>
-	<dict>
-		<key>className</key>
-		<string>SYCategoryViewController</string>
-		<key>title</key>
-		<string>历史回顾</string>
-		<key>type</key>
-		<string>5</string>
 	</dict>
 	<dict>
 		<key>className</key>
@@ -38,9 +30,25 @@
 		<key>className</key>
 		<string>SYCompareViewController</string>
 		<key>title</key>
-		<string>全部优质数据</string>
+		<string>全部优质数据对比</string>
 		<key>type</key>
 		<string>9</string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>SYListViewController</string>
+		<key>title</key>
+		<string>历史</string>
+		<key>type</key>
+		<string>4</string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>SYCategoryViewController</string>
+		<key>title</key>
+		<string>历史（分组）</string>
+		<key>type</key>
+		<string>5</string>
 	</dict>
 	<dict>
 		<key>className</key>
@@ -55,14 +63,6 @@
 		<string>SYFootballScoreSetViewController</string>
 		<key>title</key>
 		<string>比分对比录入</string>
-	</dict>
-	<dict>
-		<key>className</key>
-		<string>SYListViewController</string>
-		<key>title</key>
-		<string>历史</string>
-		<key>type</key>
-		<string>4</string>
 	</dict>
 	<dict>
 		<key>className</key>

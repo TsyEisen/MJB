@@ -91,12 +91,18 @@
             continue;
         }
         
+        NSInteger single_score = 0; NSInteger double_score = 0;
+        
         for (SYBasketBallModel *model in array) {
+            
+            if ((model.homeScore.integerValue + model.awayScore.integerValue)%2 == 0) {
+                double_score++;
+            }else {
+                single_score++;
+            }
+            
             if (model.BfAmountHome > model.BfAmountAway && model.BfIndexHome > model.BfIndexAway) {
                 
-//                if (model.AsianAvrLet.floatValue >= 0) {
-//                    rangfen++;
-//                }
                 push_home++;
                 //主
                 if (model.homeScore.integerValue > model.awayScore.integerValue) {
@@ -148,6 +154,7 @@
 //              normalRedCount_away,
 //              normalRedCount_home + normalRedCount_away > array.count * 0.5 ? @"红":@"黑",
 //              array.count);
+        NSLog(@"单%zd 双%zd %@",single_score,double_score,single_score > double_score ? @"单":@"双");
         date = [date sy_tomorrow];
     } while (![date sy_isTomorrow]);
     

@@ -111,6 +111,7 @@
             NSArray *array = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.jsons.allValues];
             NSSortDescriptor *contidion = [NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:YES];
             array = [array sortedArrayUsingDescriptors:@[contidion]];
+            [[SYSportDataManager sharedSYSportDataManager] bindProbabilityWithModels:array sameSport:NO];
             _list = [NSMutableArray arrayWithArray:array];
         }else {
             _list = [NSMutableArray array];

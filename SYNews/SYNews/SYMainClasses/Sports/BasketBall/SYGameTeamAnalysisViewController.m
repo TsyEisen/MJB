@@ -72,6 +72,7 @@
     
     NSMutableArray *tempArray = [NSMutableArray array];
     
+    NSInteger total_single_score = 0; NSInteger total_double_score = 0;
     for (int i = 1; i < 31; i++) {
         NSString *rankkey = nil;
         if (i < 16) {
@@ -79,6 +80,9 @@
         }else {
             rankkey = [NSString stringWithFormat:@"西%d",i-15];
         }
+        
+        NSInteger single_score = 0; NSInteger double_score = 0;
+        NSInteger team_single_score = 0; NSInteger team_double_score = 0;
         
         for (NSString *key in [SYNBADataManager sharedSYNBADataManager].ranks) {
             if([[SYNBADataManager sharedSYNBADataManager].ranks[key] isEqualToString:rankkey]) {
@@ -103,10 +107,25 @@
                 NSInteger away_unpush_normal_red = 0;
                 
                 for (SYBasketBallModel *model in array) {
+                    
+                    if ((model.homeScore.integerValue+model.awayScore.integerValue)%2 == 0) {
+                        double_score++;
+                        total_double_score++;
+                    }else {
+                        single_score++;
+                        total_single_score++;
+                    }
+                    
                     BOOL isHome = [model.HomeTeam isEqualToString:key];
                     if (isHome) {
-                        homeCount++;
+                        //单双
+                        if (model.homeScore.integerValue%2 == 0) {
+                            team_double_score++;
+                        }else {
+                            team_single_score++;
+                        }
                         
+                        homeCount++;
                         if (model.BfAmountHome > model.BfAmountAway && model.BfIndexHome > model.BfIndexAway) {
                             home_push++;
                             //主
@@ -130,6 +149,13 @@
                         }
                         
                     }else {
+                        //单双
+                        if (model.awayScore.integerValue%2 == 0) {
+                            team_double_score++;
+                        }else {
+                            team_single_score++;
+                        }
+                        
                         awayCount++;
                         
                         if (model.BfAmountHome < model.BfAmountAway && model.BfIndexHome < model.BfIndexAway) {
@@ -180,9 +206,14 @@
                 pushModel.rank = rankkey;
                 
                 [tempArray addObject:pushModel];
+                
+//                NSLog(@"%@-队单双(%zd/%zd)-全场单双(%zd/%zd)",key,team_single_score,team_double_score,single_score,double_score);
+                break;
             }
+        
         }
     }
+    NSLog(@"所有全场单%.2f/双%.2f 场次单%zd/双%zd)",total_single_score*1.0/(total_single_score + total_double_score),total_double_score*1.0/(total_single_score + total_double_score),total_single_score/2,total_double_score/2);
     
     self.datas = tempArray;
     [self.tableView reloadData];

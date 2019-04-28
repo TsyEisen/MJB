@@ -201,6 +201,11 @@ SYSingleton_implementation(SYSportDataManager)
             
             NSArray *temp = mutableDict.allValues;
             
+            
+//            for (NSString *name in mutableDict.allKeys) {
+//                NSLog(@"%@",name);
+//            }
+            
             NSArray *array = [temp sortedArrayUsingComparator:^NSComparisonResult(NSArray *  _Nonnull obj1, NSArray *  _Nonnull obj2) {
                 [self bindProbabilityWithModels:obj1 sameSport:YES];
                 [self bindProbabilityWithModels:obj2 sameSport:YES];
@@ -222,6 +227,8 @@ SYSingleton_implementation(SYSportDataManager)
         }else if (type == SYListTypeNoScore) {
             
             NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
+            NSMutableArray *deleateArray = [NSMutableArray array];
+            
             for (SYGameListModel *model in self.allGames) {
                 if (model.score.length == 0 && model.dateSeconds + 7200 < [[NSDate date] timeIntervalSince1970]) {
                     NSMutableArray *temp = [mutableDict objectForKey:model.SortName];
@@ -229,21 +236,38 @@ SYSingleton_implementation(SYSportDataManager)
                         temp = [NSMutableArray array];
                         [mutableDict setObject:temp forKey:model.SortName];
                     }
-                    [temp addObject:model];
+                    if ((model.KellyHome == 0 && model.KellyDraw == 0 && model.KellyAway == 0)||model.totalPAmount < 1000) {
+                        [deleateArray addObject:model];
+                    }else {
+                         [temp addObject:model];
+                    }
                 }
+            }
+            
+            if (deleateArray.count > 0) {
+                //删除无效数据
+                for (SYGameListModel *model in deleateArray) {
+                    [self.gameJsons removeObjectForKey:[NSString stringWithFormat:@"%ld#%@",(long)model.EventId,model.MatchTime]];
+                }
+                [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
+                _allGames = [SYGameListModel mj_objectArrayWithKeyValuesArray:self.gameJsons.allValues];
+                [MBProgressHUD showSuccess:[NSString stringWithFormat:@"今日清楚无效数据%zd",deleateArray.count] toView:nil];
             }
             
             NSMutableArray *temp = [NSMutableArray arrayWithArray:mutableDict.allValues];
             NSSortDescriptor *timeSD=[NSSortDescriptor sortDescriptorWithKey:@"dateSeconds" ascending:NO];
 
+            NSMutableArray *noNullArray = [NSMutableArray array];
             for (int i = 0; i < temp.count; i++) {
                 NSArray *games = temp[i];
                 NSArray * newgames = [games sortedArrayUsingDescriptors:@[timeSD]];
-                [temp replaceObjectAtIndex:i withObject:newgames];
+//                [temp replaceObjectAtIndex:i withObject:newgames];
+                if (games.count > 0) {
+                    [noNullArray addObject:newgames];
+                }
             }
             
-            NSArray *array = [temp sortedArrayUsingComparator:^NSComparisonResult(NSArray *  _Nonnull obj1, NSArray *  _Nonnull obj2) {
-                
+            NSArray *array = [noNullArray sortedArrayUsingComparator:^NSComparisonResult(NSArray *  _Nonnull obj1, NSArray *  _Nonnull obj2) {
                 return obj1.count < obj2.count;
             }];
             
@@ -334,6 +358,27 @@ SYSingleton_implementation(SYSportDataManager)
 //        NSLog(@"--%@",error);
         completion(nil);
     }];
+}
+
+- (void)washData {
+    
+    NSInteger count = 0;
+    for (SYGameListModel *model in self.allGames) {
+        if (model.KellyHome == 0 && model.KellyAway == 0 && model.KellyDraw == 0) {
+            [self.gameJsons removeObjectForKey:[NSString stringWithFormat:@"%ld#%@",(long)model.EventId,model.MatchTime]];
+            count++;
+        }else if (model.totalPAmount < 1000) {
+            [self.gameJsons removeObjectForKey:[NSString stringWithFormat:@"%ld#%@",(long)model.EventId,model.MatchTime]];
+            count++;
+        }
+    }
+    
+    if (count > 0) {
+        [self sy_writeToFile:self.gameJsons forPath:[self dataPathWithFileName:gamesJsonPath]];
+        NSLog(@"清除%zd个无效数据",count);
+    }
+    
+    
 }
 
 - (void)deleteModel:(SYGameListModel *)model {
@@ -455,6 +500,7 @@ SYSingleton_implementation(SYSportDataManager)
 
     if (needRefresh) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"dataNeedRefresh" object:nil];
+        NSLog(@"F刷新一次 %@",[[NSDate date] sy_stringWithFormat:@"yyyy-MM-dd HH:mm:ss"]);
     }
 }
 
