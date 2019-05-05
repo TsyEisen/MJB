@@ -193,10 +193,32 @@
 		F0AED8EF2200860600D656FA /* SYGameTeamAnalysisCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AED8ED2200860600D656FA /* SYGameTeamAnalysisCell.m */; };
 		F0AED8F02200860600D656FA /* SYGameTeamAnalysisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AED8EE2200860600D656FA /* SYGameTeamAnalysisCell.xib */; };
 		F0AED8F322008C0A00D656FA /* SYGameTeamAnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AED8F222008C0A00D656FA /* SYGameTeamAnalysisViewController.m */; };
-		F0B9479B227573EC00BC65D2 /* NBA-20190428.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0B9479A227573EC00BC65D2 /* NBA-20190428.plist */; };
-		F0B9479D227573F500BC65D2 /* 20190428.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0B9479C227573F500BC65D2 /* 20190428.plist */; };
 		F0E242D7216F6360008CB6D8 /* ERSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E242D6216F6360008CB6D8 /* ERSwitchView.m */; };
 		F0E4E74C2179B7C8007C7FAB /* SYNormalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E4E74B2179B7C5007C7FAB /* SYNormalListViewController.m */; };
+		F0F1EAC422758112003563A5 /* gameIdToResultGameName.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAAB22758112003563A5 /* gameIdToResultGameName.plist */; };
+		F0F1EAC522758112003563A5 /* gamesJsonPath.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAAC22758112003563A5 /* gamesJsonPath.plist */; };
+		F0F1EAC622758112003563A5 /* globalProbability.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAAD22758112003563A5 /* globalProbability.plist */; };
+		F0F1EAC722758112003563A5 /* hotGamesJsonPath.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAAE22758112003563A5 /* hotGamesJsonPath.plist */; };
+		F0F1EAC822758112003563A5 /* nbaGamesJsonPath.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAAF22758112003563A5 /* nbaGamesJsonPath.plist */; };
+		F0F1EAC922758112003563A5 /* replaceNamePath.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAB022758112003563A5 /* replaceNamePath.plist */; };
+		F0F1EACA22758112003563A5 /* reslut_games.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAB122758112003563A5 /* reslut_games.plist */; };
+		F0F1EACB22758112003563A5 /* reslut_sports.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAB222758112003563A5 /* reslut_sports.plist */; };
+		F0F1EACC22758112003563A5 /* sportIdToResultSprorId.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAB322758112003563A5 /* sportIdToResultSprorId.plist */; };
+		F0F1EACD22758112003563A5 /* sportsJsonPath.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAB422758112003563A5 /* sportsJsonPath.plist */; };
+		F0F1EACE22758112003563A5 /* sportsProbability.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAB522758112003563A5 /* sportsProbability.plist */; };
+		F0F1EACF22758112003563A5 /* SYCachePathType_0_data.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAB622758112003563A5 /* SYCachePathType_0_data.plist */; };
+		F0F1EAD022758112003563A5 /* SYCachePathType_1_data.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAB722758112003563A5 /* SYCachePathType_1_data.plist */; };
+		F0F1EAD122758112003563A5 /* SYCachePathType_2_data.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAB822758112003563A5 /* SYCachePathType_2_data.plist */; };
+		F0F1EAD222758112003563A5 /* SYCachePathType_3_data.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAB922758112003563A5 /* SYCachePathType_3_data.plist */; };
+		F0F1EAD322758112003563A5 /* SYCachePathType_4_data.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EABA22758112003563A5 /* SYCachePathType_4_data.plist */; };
+		F0F1EAD422758112003563A5 /* SYRecommend_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EABC22758112003563A5 /* SYRecommend_1.plist */; };
+		F0F1EAD522758112003563A5 /* SYRecommend_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EABD22758112003563A5 /* SYRecommend_2.plist */; };
+		F0F1EAD622758112003563A5 /* SYRecommend_3.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EABE22758112003563A5 /* SYRecommend_3.plist */; };
+		F0F1EAD722758112003563A5 /* SYRecommend_4.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EABF22758112003563A5 /* SYRecommend_4.plist */; };
+		F0F1EAD822758112003563A5 /* SYRecommend_5.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAC022758112003563A5 /* SYRecommend_5.plist */; };
+		F0F1EAD922758112003563A5 /* SYRecommend_6.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAC122758112003563A5 /* SYRecommend_6.plist */; };
+		F0F1EADA22758112003563A5 /* SYRecommend_7.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAC222758112003563A5 /* SYRecommend_7.plist */; };
+		F0F1EADB22758112003563A5 /* SYRecommendModelsPath.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F1EAC322758112003563A5 /* SYRecommendModelsPath.plist */; };
 		F0F63ACD2154D375000D7A15 /* APIRequest+Sports.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63ACC2154D375000D7A15 /* APIRequest+Sports.m */; };
 		F0F63AD02154D53D000D7A15 /* SYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63ACF2154D53D000D7A15 /* SYTableViewController.m */; };
 		F0F63AF72154D755000D7A15 /* ListRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F63AF52154D755000D7A15 /* ListRequestManager.m */; };
@@ -567,12 +589,34 @@
 		F0AED8EE2200860600D656FA /* SYGameTeamAnalysisCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SYGameTeamAnalysisCell.xib; sourceTree = "<group>"; };
 		F0AED8F122008C0A00D656FA /* SYGameTeamAnalysisViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYGameTeamAnalysisViewController.h; sourceTree = "<group>"; };
 		F0AED8F222008C0A00D656FA /* SYGameTeamAnalysisViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYGameTeamAnalysisViewController.m; sourceTree = "<group>"; };
-		F0B9479A227573EC00BC65D2 /* NBA-20190428.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NBA-20190428.plist"; sourceTree = "<group>"; };
-		F0B9479C227573F500BC65D2 /* 20190428.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 20190428.plist; sourceTree = "<group>"; };
 		F0E242D5216F6360008CB6D8 /* ERSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSwitchView.h; sourceTree = "<group>"; };
 		F0E242D6216F6360008CB6D8 /* ERSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSwitchView.m; sourceTree = "<group>"; };
 		F0E4E74A2179B7C5007C7FAB /* SYNormalListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYNormalListViewController.h; sourceTree = "<group>"; };
 		F0E4E74B2179B7C5007C7FAB /* SYNormalListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYNormalListViewController.m; sourceTree = "<group>"; };
+		F0F1EAAB22758112003563A5 /* gameIdToResultGameName.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gameIdToResultGameName.plist; sourceTree = "<group>"; };
+		F0F1EAAC22758112003563A5 /* gamesJsonPath.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gamesJsonPath.plist; sourceTree = "<group>"; };
+		F0F1EAAD22758112003563A5 /* globalProbability.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = globalProbability.plist; sourceTree = "<group>"; };
+		F0F1EAAE22758112003563A5 /* hotGamesJsonPath.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotGamesJsonPath.plist; sourceTree = "<group>"; };
+		F0F1EAAF22758112003563A5 /* nbaGamesJsonPath.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = nbaGamesJsonPath.plist; sourceTree = "<group>"; };
+		F0F1EAB022758112003563A5 /* replaceNamePath.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = replaceNamePath.plist; sourceTree = "<group>"; };
+		F0F1EAB122758112003563A5 /* reslut_games.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = reslut_games.plist; sourceTree = "<group>"; };
+		F0F1EAB222758112003563A5 /* reslut_sports.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = reslut_sports.plist; sourceTree = "<group>"; };
+		F0F1EAB322758112003563A5 /* sportIdToResultSprorId.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sportIdToResultSprorId.plist; sourceTree = "<group>"; };
+		F0F1EAB422758112003563A5 /* sportsJsonPath.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sportsJsonPath.plist; sourceTree = "<group>"; };
+		F0F1EAB522758112003563A5 /* sportsProbability.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sportsProbability.plist; sourceTree = "<group>"; };
+		F0F1EAB622758112003563A5 /* SYCachePathType_0_data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SYCachePathType_0_data.plist; sourceTree = "<group>"; };
+		F0F1EAB722758112003563A5 /* SYCachePathType_1_data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SYCachePathType_1_data.plist; sourceTree = "<group>"; };
+		F0F1EAB822758112003563A5 /* SYCachePathType_2_data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SYCachePathType_2_data.plist; sourceTree = "<group>"; };
+		F0F1EAB922758112003563A5 /* SYCachePathType_3_data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SYCachePathType_3_data.plist; sourceTree = "<group>"; };
+		F0F1EABA22758112003563A5 /* SYCachePathType_4_data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SYCachePathType_4_data.plist; sourceTree = "<group>"; };
+		F0F1EABC22758112003563A5 /* SYRecommend_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SYRecommend_1.plist; sourceTree = "<group>"; };
+		F0F1EABD22758112003563A5 /* SYRecommend_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SYRecommend_2.plist; sourceTree = "<group>"; };
+		F0F1EABE22758112003563A5 /* SYRecommend_3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SYRecommend_3.plist; sourceTree = "<group>"; };
+		F0F1EABF22758112003563A5 /* SYRecommend_4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SYRecommend_4.plist; sourceTree = "<group>"; };
+		F0F1EAC022758112003563A5 /* SYRecommend_5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SYRecommend_5.plist; sourceTree = "<group>"; };
+		F0F1EAC122758112003563A5 /* SYRecommend_6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SYRecommend_6.plist; sourceTree = "<group>"; };
+		F0F1EAC222758112003563A5 /* SYRecommend_7.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SYRecommend_7.plist; sourceTree = "<group>"; };
+		F0F1EAC322758112003563A5 /* SYRecommendModelsPath.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SYRecommendModelsPath.plist; sourceTree = "<group>"; };
 		F0F63ACB2154D375000D7A15 /* APIRequest+Sports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APIRequest+Sports.h"; sourceTree = "<group>"; };
 		F0F63ACC2154D375000D7A15 /* APIRequest+Sports.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "APIRequest+Sports.m"; sourceTree = "<group>"; };
 		F0F63ACE2154D53D000D7A15 /* SYTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYTableViewController.h; sourceTree = "<group>"; };
@@ -640,6 +684,7 @@
 		9F34989321562F9F0058B99E /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				F0F1EAAA22758112003563A5 /* Documents */,
 				F0E242DA21703AB6008CB6D8 /* lastData */,
 				9F34989421562FE30058B99E /* SYSportDataManager.h */,
 				9F34989521562FE30058B99E /* SYSportDataManager.m */,
@@ -1262,10 +1307,47 @@
 		F0E242DA21703AB6008CB6D8 /* lastData */ = {
 			isa = PBXGroup;
 			children = (
-				F0B9479C227573F500BC65D2 /* 20190428.plist */,
-				F0B9479A227573EC00BC65D2 /* NBA-20190428.plist */,
 			);
 			path = lastData;
+			sourceTree = "<group>";
+		};
+		F0F1EAAA22758112003563A5 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				F0F1EAAB22758112003563A5 /* gameIdToResultGameName.plist */,
+				F0F1EAAC22758112003563A5 /* gamesJsonPath.plist */,
+				F0F1EAAD22758112003563A5 /* globalProbability.plist */,
+				F0F1EAAE22758112003563A5 /* hotGamesJsonPath.plist */,
+				F0F1EAAF22758112003563A5 /* nbaGamesJsonPath.plist */,
+				F0F1EAB022758112003563A5 /* replaceNamePath.plist */,
+				F0F1EAB122758112003563A5 /* reslut_games.plist */,
+				F0F1EAB222758112003563A5 /* reslut_sports.plist */,
+				F0F1EAB322758112003563A5 /* sportIdToResultSprorId.plist */,
+				F0F1EAB422758112003563A5 /* sportsJsonPath.plist */,
+				F0F1EAB522758112003563A5 /* sportsProbability.plist */,
+				F0F1EAB622758112003563A5 /* SYCachePathType_0_data.plist */,
+				F0F1EAB722758112003563A5 /* SYCachePathType_1_data.plist */,
+				F0F1EAB822758112003563A5 /* SYCachePathType_2_data.plist */,
+				F0F1EAB922758112003563A5 /* SYCachePathType_3_data.plist */,
+				F0F1EABA22758112003563A5 /* SYCachePathType_4_data.plist */,
+				F0F1EABB22758112003563A5 /* SYRecommend */,
+				F0F1EAC322758112003563A5 /* SYRecommendModelsPath.plist */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		F0F1EABB22758112003563A5 /* SYRecommend */ = {
+			isa = PBXGroup;
+			children = (
+				F0F1EABC22758112003563A5 /* SYRecommend_1.plist */,
+				F0F1EABD22758112003563A5 /* SYRecommend_2.plist */,
+				F0F1EABE22758112003563A5 /* SYRecommend_3.plist */,
+				F0F1EABF22758112003563A5 /* SYRecommend_4.plist */,
+				F0F1EAC022758112003563A5 /* SYRecommend_5.plist */,
+				F0F1EAC122758112003563A5 /* SYRecommend_6.plist */,
+				F0F1EAC222758112003563A5 /* SYRecommend_7.plist */,
+			);
+			path = SYRecommend;
 			sourceTree = "<group>";
 		};
 		F0F63ABF2154CF7C000D7A15 /* Sports */ = {
@@ -1403,34 +1485,50 @@
 			buildActionMask = 2147483647;
 			files = (
 				F03B91EE1F5566800033A3B5 /* SYHomeNewsViewController.xib in Resources */,
+				F0F1EAD322758112003563A5 /* SYCachePathType_4_data.plist in Resources */,
 				F03FC24E1F5D3ED200DF465B /* MBProgressHUD.bundle in Resources */,
-				F0B9479D227573F500BC65D2 /* 20190428.plist in Resources */,
+				F0F1EACE22758112003563A5 /* sportsProbability.plist in Resources */,
+				F0F1EAC422758112003563A5 /* gameIdToResultGameName.plist in Resources */,
 				F03B91BD1F54FEF30033A3B5 /* SYHomeViewController.xib in Resources */,
 				F03FC22F1F5CFFE400DF465B /* MJRefresh.bundle in Resources */,
 				F0AED8F02200860600D656FA /* SYGameTeamAnalysisCell.xib in Resources */,
 				F03B91F31F556BED0033A3B5 /* SYNewsDetailViewController.xib in Resources */,
+				F0F1EAD722758112003563A5 /* SYRecommend_4.plist in Resources */,
+				F0F1EAD022758112003563A5 /* SYCachePathType_1_data.plist in Resources */,
 				F09A665A216DFC3100C3C20A /* Recommend.plist in Resources */,
-				F0B9479B227573EC00BC65D2 /* NBA-20190428.plist in Resources */,
 				F03FC1B11F5CF3DC00DF465B /* SYDiscoverCell.xib in Resources */,
 				9F42B594218EE198001451A5 /* SYDataAnalysisView.xib in Resources */,
 				F09112F821DDF2BF002FCBEE /* SYMoreVCFootballData.plist in Resources */,
+				F0F1EAC922758112003563A5 /* replaceNamePath.plist in Resources */,
+				F0F1EAD922758112003563A5 /* SYRecommend_6.plist in Resources */,
 				F09A6646216CA1E700C3C20A /* SYCategoryViewController.xib in Resources */,
 				9F767B61218F1262002865EA /* SYDataAnalysisCell.xib in Resources */,
+				F0F1EACF22758112003563A5 /* SYCachePathType_0_data.plist in Resources */,
+				F0F1EAC722758112003563A5 /* hotGamesJsonPath.plist in Resources */,
 				F0499A9521C8F1D9004CD78D /* SYFootballScoreSetViewController.xib in Resources */,
+				F0F1EAD222758112003563A5 /* SYCachePathType_3_data.plist in Resources */,
 				9F1500D32157435700696F7C /* SYGameListCell.xib in Resources */,
 				F03B91C81F55025A0033A3B5 /* SYWebViewController.xib in Resources */,
 				F03E7DA421DEFFE200C45D49 /* SYBasketballScoreSetViewController.xib in Resources */,
+				F0F1EACC22758112003563A5 /* sportIdToResultSprorId.plist in Resources */,
 				F0681D3B2194203800071B23 /* SYAddNewRecommendView.xib in Resources */,
+				F0F1EACB22758112003563A5 /* reslut_sports.plist in Resources */,
+				F0F1EACD22758112003563A5 /* sportsJsonPath.plist in Resources */,
 				F0499A9B21C9E2D8004CD78D /* SYScoreSetCell.xib in Resources */,
 				F03B91021F54FD700033A3B5 /* LaunchScreen.storyboard in Resources */,
 				F0681D36219418A200071B23 /* SYRenameView.xib in Resources */,
 				F03B90FF1F54FD700033A3B5 /* Assets.xcassets in Resources */,
 				F091130221DDF749002FCBEE /* SYBasketballListCell.xib in Resources */,
 				F06801A4215F1EAD0032C4DA /* SYGameDetailView.xib in Resources */,
+				F0F1EAC822758112003563A5 /* nbaGamesJsonPath.plist in Resources */,
+				F0F1EAD622758112003563A5 /* SYRecommend_3.plist in Resources */,
 				F03FC2541F5D425B00DF465B /* SYAboutUsViewController.xib in Resources */,
 				F03FC2411F5D05D100DF465B /* SYDiscoverDetailViewController.xib in Resources */,
+				F0F1EAD822758112003563A5 /* SYRecommend_5.plist in Resources */,
 				F03B91141F54FDC60033A3B5 /* SYViewControllerData.plist in Resources */,
+				F0F1EADB22758112003563A5 /* SYRecommendModelsPath.plist in Resources */,
 				F03B91DF1F5557F70033A3B5 /* SYHomeNewsCell.xib in Resources */,
+				F0F1EADA22758112003563A5 /* SYRecommend_7.plist in Resources */,
 				F03E7DBE21E3593F00C45D49 /* SYTableThreeTextCell.xib in Resources */,
 				F09112F721DDF2BF002FCBEE /* SYMoreVCBasketballData.plist in Resources */,
 				F068019A215E22910032C4DA /* SYCompareViewController.xib in Resources */,
@@ -1439,9 +1537,15 @@
 				F03B91C21F54FF0F0033A3B5 /* SYMineViewController.xib in Resources */,
 				F068019F215F0D150032C4DA /* SYGameTableTitleCell.xib in Resources */,
 				F0AED8E221FEB32300D656FA /* SYDateAnalysisCell.xib in Resources */,
+				F0F1EAD422758112003563A5 /* SYRecommend_1.plist in Resources */,
+				F0F1EACA22758112003563A5 /* reslut_games.plist in Resources */,
 				F03FC2461F5D3CE300DF465B /* SYFeedbackViewController.xib in Resources */,
+				F0F1EAD522758112003563A5 /* SYRecommend_2.plist in Resources */,
 				F03FC23C1F5D047B00DF465B /* SYDiscoverDetailCell.xib in Resources */,
 				F03E7DB921E356CB00C45D49 /* SYBasketballAnalysisView.xib in Resources */,
+				F0F1EAD122758112003563A5 /* SYCachePathType_2_data.plist in Resources */,
+				F0F1EAC622758112003563A5 /* globalProbability.plist in Resources */,
+				F0F1EAC522758112003563A5 /* gamesJsonPath.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

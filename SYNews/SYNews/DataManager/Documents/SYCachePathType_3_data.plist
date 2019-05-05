@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>丹佛掘金</key>
+	<string>西2</string>
+	<key>亚特兰大老鹰</key>
+	<string>东12</string>
+	<key>休士顿火箭</key>
+	<string>西4</string>
+	<key>俄克拉荷马雷霆</key>
+	<string>西6</string>
+	<key>克利夫兰骑士</key>
+	<string>东14</string>
+	<key>华盛顿奇才</key>
+	<string>东11</string>
+	<key>印地安纳步行者</key>
+	<string>东5</string>
+	<key>圣安东尼奥马刺</key>
+	<string>西7</string>
+	<key>夏洛特黄蜂</key>
+	<string>东9</string>
+	<key>多伦多猛龙</key>
+	<string>东2</string>
+	<key>奥兰多魔术</key>
+	<string>东7</string>
+	<key>孟菲斯灰熊</key>
+	<string>西14</string>
+	<key>密尔沃基雄鹿</key>
+	<string>东1</string>
+	<key>布鲁克林篮网</key>
+	<string>东6</string>
+	<key>底特律活塞</key>
+	<string>东8</string>
+	<key>新奥尔良鹈鹕队</key>
+	<string>西12</string>
+	<key>明尼苏达森林狼</key>
+	<string>西11</string>
+	<key>波士顿凯尔特人</key>
+	<string>东4</string>
+	<key>波特兰拓荒者</key>
+	<string>西3</string>
+	<key>洛杉矶快船队</key>
+	<string>西8</string>
+	<key>洛杉矶湖人队</key>
+	<string>西10</string>
+	<key>犹他爵士</key>
+	<string>西5</string>
+	<key>纽约尼克斯</key>
+	<string>东15</string>
+	<key>芝加哥公牛</key>
+	<string>东13</string>
+	<key>菲尼克斯太阳</key>
+	<string>西15</string>
+	<key>萨克拉门托国王</key>
+	<string>西9</string>
+	<key>费城76人</key>
+	<string>东3</string>
+	<key>达拉斯小牛</key>
+	<string>西12</string>
+	<key>迈阿密热浪</key>
+	<string>东10</string>
+	<key>金州勇士</key>
+	<string>西1</string>
+</dict>
+</plist>

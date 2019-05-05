@@ -616,6 +616,11 @@ SYSingleton_implementation(SYSportDataManager)
         
         NSString *documentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/SYRecommend"];
         NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtPath:documentsPath];
+        
+        if (![[NSFileManager defaultManager] fileExistsAtPath:documentsPath]) {
+            [[NSFileManager defaultManager] createDirectoryAtPath:documentsPath withIntermediateDirectories:YES attributes:nil error:nil];
+        }
+        
         for (NSString *fileName in enumerator) {
             BOOL exit = NO;
             for (SYRecommendModel *recommend in _recommends) {
@@ -770,5 +775,43 @@ SYSingleton_implementation(SYSportDataManager)
     [tempArray addObjectsFromArray:@[home,draw,away]];
     NSSortDescriptor *numSD = [NSSortDescriptor sortDescriptorWithKey:@"num" ascending:NO];
     return [[tempArray sortedArrayUsingDescriptors:@[numSD]] mutableCopy];
+}
+
+- (void)writeDataToDocuments {
+    NSArray *dictArray = @[@"gameIdToResultGameName",@"gamesJsonPath",@"globalProbability",@"hotGamesJsonPath",@"nbaGamesJsonPath",@"replaceNamePath",@"reslut_games",@"reslut_sports",@"sportIdToResultSprorId",@"SYCachePathType_0_data",@"SYCachePathType_1_data",@"SYCachePathType_2_data",@"SYCachePathType_3_data",@""];
+    NSArray *arrArray = @[@"sportsJsonPath",@"sportsProbability",@"SYCachePathType_4_data",@"SYRecommendModelsPath"];
+    
+    for (NSString *path in dictArray) {
+        NSString *pathUrl = [[NSBundle mainBundle] pathForResource:path ofType:@"plist"];
+        if (pathUrl.length > 0) {
+            NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:pathUrl];
+            NSString *documentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+            BOOL status = [dict writeToFile:[NSString stringWithFormat:@"%@/%@.plist",documentsPath,path] atomically:YES];
+            NSLog(@"dictArray-%@",status ? @"成功":@"失败");
+        }
+    }
+    
+    for (NSString *path in arrArray) {
+        NSString *pathUrl = [[NSBundle mainBundle] pathForResource:path ofType:@"plist"];
+        if (pathUrl.length > 0) {
+            NSArray *arr = [NSArray arrayWithContentsOfFile:pathUrl];
+            NSString *documentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+            BOOL status = [arr writeToFile:[NSString stringWithFormat:@"%@/%@.plist",documentsPath,path] atomically:YES];
+            NSLog(@"arrArray-%@",status ? @"成功":@"失败");
+        }
+    }
+    
+    [self recommends];
+    
+    for (int i = 1; i < 8; i++) {
+        NSString *pathUrl = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"SYRecommend_%d",i] ofType:@"plist"];
+        if (pathUrl.length > 0) {
+            NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:pathUrl];
+            NSString *documentsPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+            BOOL status = [dict writeToFile:[NSString stringWithFormat:@"%@/SYRecommend/SYRecommend_%d.plist",documentsPath,i] atomically:YES];
+            NSLog(@"SYRecommend-%@",status ? @"成功":@"失败");
+        }
+    }
+    
 }
 @end

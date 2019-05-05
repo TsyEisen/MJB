@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>丹佛掘金</key>
+	<string>丹佛掘金</string>
+	<key>亚特兰大老鹰</key>
+	<string>亚特兰大老鹰</string>
+	<key>休士顿火箭</key>
+	<string>休斯顿火箭</string>
+	<key>俄克拉荷马雷霆</key>
+	<string>俄克拉荷马城雷霆</string>
+	<key>克利夫兰骑士</key>
+	<string>克里夫兰骑士</string>
+	<key>华盛顿奇才</key>
+	<string>华盛顿奇才</string>
+	<key>印地安纳步行者</key>
+	<string>印第安纳步行者</string>
+	<key>圣安东尼奥马刺</key>
+	<string>圣安东尼奥马刺</string>
+	<key>夏洛特黄蜂</key>
+	<string>夏洛特黄蜂</string>
+	<key>多伦多猛龙</key>
+	<string>多伦多猛龙</string>
+	<key>奥兰多魔术</key>
+	<string>奥兰多魔术</string>
+	<key>孟菲斯灰熊</key>
+	<string>孟菲斯灰熊</string>
+	<key>密尔沃基雄鹿</key>
+	<string>密尔沃基雄鹿</string>
+	<key>布鲁克林篮网</key>
+	<string>布鲁克林篮网</string>
+	<key>底特律活塞</key>
+	<string>底特律活塞</string>
+	<key>新奥尔良鹈鹕队</key>
+	<string>新奥尔良鹈鹕</string>
+	<key>明尼苏达森林狼</key>
+	<string>明尼苏达森林狼</string>
+	<key>波士顿凯尔特人</key>
+	<string>波士顿凯尔特人</string>
+	<key>波特兰拓荒者</key>
+	<string>波特兰开拓者</string>
+	<key>洛杉矶快船队</key>
+	<string>洛杉矶快船</string>
+	<key>洛杉矶湖人队</key>
+	<string>洛杉矶湖人</string>
+	<key>犹他爵士</key>
+	<string>犹他爵士</string>
+	<key>纽约尼克斯</key>
+	<string>纽约尼克斯</string>
+	<key>芝加哥公牛</key>
+	<string>芝加哥公牛</string>
+	<key>菲尼克斯太阳</key>
+	<string>菲尼克斯太阳</string>
+	<key>萨克拉门托国王</key>
+	<string>萨克拉门托国王</string>
+	<key>费城76人</key>
+	<string>费城76人</string>
+	<key>达拉斯小牛</key>
+	<string>达拉斯独行侠</string>
+	<key>迈阿密热浪</key>
+	<string>迈阿密热火</string>
+	<key>金州勇士</key>
+	<string>金州勇士</string>
+</dict>
+</plist>

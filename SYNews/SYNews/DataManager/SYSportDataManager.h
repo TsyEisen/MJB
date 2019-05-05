@@ -48,4 +48,6 @@ SYSingleton_interface(SYSportDataManager)
 - (void)replaceNameForTeamId:(NSInteger)teamId byName:(NSString *)name;
 
 - (NSArray *)bindProbabilityWithModels:(NSArray *)models sameSport:(BOOL)same;
+
+- (void)writeDataToDocuments;
 @end
